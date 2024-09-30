@@ -1,0 +1,183 @@
+/* alap */
+body {
+    font-family: 'Open Sans', Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f7fb; /* Light background */
+    color: #333; /* Dark gray text */
+}
+
+/* sticky header */
+header {
+    position: -webkit-sticky; 
+    position: sticky;
+    top: 0;
+    background-color: #3E567C; /* vilagos kek */
+    padding: 20px;
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    color: white;
+    border-bottom: 2px solid #C0C0C0; /* szurke */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* gombcontainer */
+.button-container {
+    text-align: center;
+    margin:3%0;
+}
+
+/* gomb stilus */
+.button-container a {
+    text-decoration: none;
+    padding: 12px 25px;
+    margin: 10px;
+    background-color: #506C8A;
+    color: white;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* gombhover */
+.button-container a:hover {
+    background-color: #FF6F61;
+    transform: translateY(-2px); /* animacio */
+}
+
+/* fejlecek */
+h1, h2, h3, p {
+    text-align: center;
+    color: #3E567C; 
+    font-weight: 600; 
+}
+
+h3{
+    font-size: 1.5em;
+
+}
+
+/* tablazat */
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 70%; 
+    background-color: white; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+    border-radius: 10px; 
+    overflow: hidden; 
+}
+
+hr{
+    border-color: #FFFFFF;
+    border-width: 1.5px; 
+}
+
+/* Table header and cells */
+th, td {
+    border: 1px solid #C0C0C0;
+    padding: 15px;
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+}
+
+/* tabla_fejlec */
+th {
+    background-color: #3E567C;
+    color: white;
+    font-weight: bold;
+}
+
+/* tablazat_subcolor */
+tr:nth-child(even) {
+    background-color: #E0E6EB; 
+}
+
+.paragraphsss {
+    text-align: center;
+    margin-top: 40px;
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.paragraphsss p {
+    margin: 5px 0;
+    font-size: 16px;
+    text-align: left;
+}
+
+.paragraphs {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: -15px;
+    padding: 10px;
+    background-color: #8CA0B1;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#alahuzott{
+	text-decoration: underline;
+ 	font-weight: bold;
+ 	font-style: italic;
+	font-size: 1.2em;
+	color: #506C8A;
+}
+
+#datum{
+	color: white;
+	text-align: center;
+	font-style: italic;
+	font-size: 1.1em;
+	font-weight: bold;
+}
+
+
+/* paragraphs */
+.paragraphs p {
+    margin: 5px 0;
+    font-size: 16px;
+    text-align: left;
+
+}
+
+.kozep{
+	text-align: center;
+}
+
+/* footer */
+footer {
+    background-color: #3E567C; 
+    padding: 15px;
+    text-align: center;
+    color: white;
+    font-size: 14px;
+    margin-top: 40px;
+    border-top: 2px solid #C0C0C0; 
+}
+
+/* footer_szoveg */
+footer p {
+    margin: 0;
+    color: #E0E6EB; 
+}
+
+/* gomb_hover_shadow */
+a:hover {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
+}
+
+.feladatcim{
+	text-decoration: underline;
+ 	font-weight: bold;
+ 	font-style: italic;
+} 	
+
+
+
