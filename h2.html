@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kód Betyárok - Fitness Applikáció</title>
+    <link rel="stylesheet" href="h2.css">
+</head>
+<body>
+
+    <header>Kód Betyárok - Fitness Applikáció</header>
+
+    <div class="button-container">
+        <a href="index.html" target="index.html">H1</a>
+        <a href="h2.html" target="_blank">H2</a>
+        <a href="h3.html" target="_blank">H3</a>
+        <a href="h4.html" target="_blank">H4</a>
+    </div>
+<hr>
+    <h3>Gyakorlatvezető: Mileff Péter</h3>
+
+    <table>
+        <tr>
+            <th>Csoport tagjai</th>
+            <th>Neptun Kód</th>
+            <th>Email</th>
+        </tr>
+        <tr>
+            <td>Vass Martin</td>
+            <td>103URB</td>
+            <td>martin.vass@student.uni-miskolc.hu</td>
+        </tr>
+        <tr>
+            <td>Hliva Gábor</td>
+            <td>F548N</td>
+            <td>gabor.hliva@student.uni-miskolc.hu</td>
+        </tr>
+        <tr>
+            <td>Bodó Tamás</td>
+            <td>HDK6NX</td>
+            <td>tamas.bodo@student.uni-miskolc.hu</td>
+        </tr>
+        <tr>
+            <td>Varga Bence</td>
+            <td>HK74CE</td>
+            <td>varga.bence@student.uni-miskolc.hu</td>
+        </tr>
+        <tr>
+            <td>Lévai Kristóf Zalán</td>
+            <td>EDMO16</td>
+            <td>kristof.zalan.levai@student.uni-miskolc.hu</td>
+        </tr>
+    </table>
+
+    <div class="paragraphs">
+        <p id="alahuzott">Résztevők:</p>
+
+ 	<p>Vass Martin:		103URB (CSAPATVEZETŐ)</p>
+ 	<p>Hliva Gábor:		F548N</p>
+ 	<p>Bodó Tamás:		HDK6NX</p>
+ 	<p>Varga Bence:		HK74CE</p>
+	 <p>Lévai Kristóf:		EDMO16</p>
+
+	<hr>
+
+        <p id="datum">2024.10.13</p>
+    </div>
+
+<div class="paragraphsss">
+
+        <h1>Vízió dokumentáció</h1>
+        <br>
+        <hr>
+       <h3 class="feladatcim">1. Bevezetés</h3>
+
+
+ <p>Ez a dokumentum a Java nyelven fejlesztett Fitness alkalmazás rendszerének céljait és alapvető koncepcióját mutatja be, ismertetve a tervezési és megvalósítási irányelveket.</p>
+
+
+ <h3 class="feladatcim">2. Az applikáció helye</h3>
+
+
+ <p>Az alkalmazás célja, hogy egy olyan modern, felhasználóbarát platformot biztosítson, amely segíti a felhasználókat edzéseik nyomon követésében, fitneszcéljaik elérésében és egészséges életmódjuk fenntartásában. </p>
+
+
+ <h3 class="feladatcim">2.1 Üzleti lehetőségek</h3>
+
+ <p> A projekt célja új lehetőségek kibontakoztatása az egészséges életmód területén, különös tekintettel a megfelelő életmód kialakítására. </p>
+
+
+ <h3 class="feladatcim">2.2 A probléma megfogalmazása</h3>
+
+ <p>Az alkalmazás célja, hogy megoldást nyújtson a felhasználók számára a fenntartható és hatékony fitneszprogramok követésében, mivel sokan küzdenek a megfelelő eszközök és támogatás hiányával az egészséges életmód kialakítása során. A rendszer optimalizált adatkezelést és karbantartható felépítést biztosít, amely lehetővé teszi az edzés előrehaladásának átlátható követését és az egyéni célokhoz igazított tervezést.</p>
+
+ <br>
+ <p>Az érintett résztvevők:</p>
+
+ <ul>
+     <li>Sportlétesítmények, sportszervezetek</li>
+     <li>Oktatási intézmények</li>
+     <li>Személyi edzők</li>
+     <li>Magánszemélyek</li>
+ </ul>
+
+ <p>A probléma hatása a résztvevőkre: </p>
+ 
+ <p>A jelenlegi rendszerek gyakran nem biztosítanak elég támogatást és rugalmasságot, ami megnehezíti a résztvevők számára az egyéni fejlődés nyomon követését. Ez sokszor demotiválólag hathat a résztvevő felekre.</p>
+ 
+ <br>
+ <p>Az applikáció elkészítése csökkentheti a felhasználók számára az egészségtelen életmód folytatását, és egy követhető célt kapnak kaphatnak az eredményeik mérésével.</p>
+
+ <h3 class="feladatcim">2.3 Az elkészült termék helye</h3>
+
+
+     <p>Az alkalmazás sportlétesítmények, sportszervezetek, oktatási intézmények, személyi edzők és magánszemélyek számára készül. A fejlesztés során is használható lesz a program.</p>
+     <p>Kategória szerinti elhelyezkedés: Applikáció fejlesztés</p>
+     <br>
+     <p>Alapvető haszna az egészségtelen életmódot élők számának csökkentése, a fejlődésük motiválása és mérése, ezzel növelve az egyének és szervezetek hatékonyságát.</p>
+     <p>Számos hasonló fitneszalkalmazás érhető el a piacon, amelyek hasonló funkcionalitást nyújtanak, mint például az edzéstervezés és a statisztikai elemzés.</p>
+     <br>
+     <p>A termék főbb különbségei az alternatíváktól: Az applikáció sportlétesítményekkel és edzőkkel való integrációja biztosítja, hogy mind a felhasználók, mind a szakemberek könnyen hozzáférjenek a szükséges adatokhoz és edzésprogramokhoz, amit sok meglévő megoldás nem kínál ilyen mélységben.</p>
+
+
+ <h3 class="feladatcim">3. Érintettek és felhasználók</h3>
+<br>
+ <table>
+     <tr>
+         <th>Elnevezés</th>
+         <th>Leírás</th>
+         <th>Szerep</th>
+     </tr>
+     <tr>
+         <td>Rendszertervezők</td>
+         <td>A rendszer tervezésében résztvevő személyek</td>
+         <td>Felgyorsítják a fejlesztési folyamatot</td>
+     </tr>
+     <tr>
+         <td>Fejlesztők</td>
+         <td>Az applikáció fejlesztésében résztvevő személyek</td>
+         <td>Az applikáció fejlesztése egy már létező rendszerre épül, így a fejlesztési folyamat gyorsabbá válik számukra</td>
+     </tr>
+     <tr>
+         <td>Projektmenedzserek</td>
+         <td>A projektet menedzselő személyek</td>
+         <td>A projektet menedzselik, a fejlesztőkkel tartják a kapcsolatot</td>
+     </tr>
+     <tr>
+         <td>Megrendelők</td>
+         <td>A projekt megrendelői</td>
+         <td>A projekt megrendelői, a projektet finanszírozzák, az alkalmazást használják és tesztelik</td>
+     </tr>
+ </table>
+
+ <h3 class="feladatcim">3.2 A felhasználók összefoglalása</h3>
+ <br>
+ <table>
+     <tr>
+         <th>Elnevezés</th>
+         <th>Leírás</th>
+         <th>Illetékes</th>
+     </tr>
+     <tr>
+         <td>Felhasználók</td>
+         <td>Az applikáció által támogatott felhasználók</td>
+         <td>Fejlesztők</td>
+     </tr>
+     <tr>
+         <td>Tesztelők</td>
+         <td>Az applikáció által támogatott eszköz tesztelői</td>
+         <td>Projekt menedzserek és fejlesztők</td>
+     </tr>
+ </table>
+
+ <h3 class="feladatcim">3.3 Felhasználói környezet</h3>
+
+ <p>A fitness applikáció fejlesztése során a felhasználók különböző operációs rendszereken és fejlesztői környezetekben dolgozhatnak. Az alkalmazás böngészőalapú megoldásként kerül kialakításra, amely lehetővé teszi a mobil eszközökön és asztali számítógépeken történő használatot. Ez a sokoldalúság biztosítja, hogy a felhasználók kényelmesen hozzáférhessenek az applikációhoz, függetlenül attól, hogy hol tartózkodnak.</p>
+<br>
+
+ <p>A felhasználói bázis várhatóan változatos lesz, beleértve mind az egyéni fejlesztőket, akik hobbi szinten tevékenykednek, mind a kisebb-nagyobb fejlesztői csoportokat, akár 20 főig. Az applikáció támogatja a verziókövető rendszerek, például a Git vagy más Push-Pull alapú megoldások használatát, ami megkönnyíti a közös munkát és a forráskód kezelését.</p>
+<br>
+
+ <p>A fejlesztéshez elengedhetetlen a webes technológiák ismerete, mint például HTML, CSS és JavaScript, valamint szerveroldali technológiák, mint a Node.js vagy más backend keretrendszerek. A felhasználói élmény javítása érdekében a projekt során a felhőalapú szolgáltatások integrációja is várható, amely elősegíti a zökkenőmentes verziókezelést és a folyamatos fejlesztést.</p>
+<br>
+ <p>A várható felhasználói szám tekintetében az applikáció átlagosan 50-100 egyidejű felhasználót vár, a maximális felhasználószám pedig akár 500 főre is rúghat a csúcsidőszakokban. A felhasználószám növekedése változhat. A felhasználók várhatóan rendszeresen, heti több alkalommal használják majd az applikációt, a használati idő pedig a felhasználói igényektől és a programok intenzitásától függően változhat.</p>
+ <br>
+ <p>A monetizáció érdekében a harmadik fél által biztosított hirdetéskezelési rendszer beépítése is szükséges lehet, amely keretein belül a hirdetések célzottan jelenhetnek meg a felhasználók számára.</p>
+
+
+ <h3 class="feladatcim">4.1 A termék kapcsolatai</h3>
+ 
+ <p>Az applikáció integrálható lesz különböző fitnesz platformokkal és eszközökkel, például okosórákkal és pulzusmérőkkel, lehetővé téve a felhasználók számára, hogy zökkenőmentesen összekapcsolják az applikációt a már meglévő eszközeikkel. A kapcsolódási forma Bluetooth technológián fog alapulni.</p>
+
+ <h3 class="feladatcim">4.2 A termék használatának előnyei</h3>
+ <table>
+     <tr>
+         <th>A felhasználó előnyei</th>
+         <th>Az ezt támogató rendszer jellemzői</th>
+     </tr>
+     <tr>
+         <td>1. Egyedi edzéstervek kidolgozása különböző célokhoz.</td>
+         <td>Az applikáció minden felhasználót egy "entitásként" kezel, amelyhez különböző edzésprogramok és adatelemzési funkciók kapcsolódnak.</td>
+     </tr>
+     <tr>
+         <td>2. Az edzésprogramok könnyű szűrése.</td>
+         <td>Az edzésprogramok szűrhetők felhasználói célok vagy edzettségi szint alapján, így a felhasználók személyre szabott ajánlásokat kapnak.</td>
+     </tr>
+     <tr>
+         <td>3. Valós idejű teljesítményelemzés.</td>
+         <td>Az alkalmazás folyamatosan elemzi a felhasználó teljesítményét és pulzusát edzés közben, azonnali visszajelzést adva a gyakorlatok helyes végrehajtásáról.</td>
+     </tr>
+     <tr>
+         <td>4. Okosórák adatai feldolgozása.</td>
+         <td>Az applikáció integrálja a különböző okosórák által gyűjtött adatokat, mint például kalóriaégetés, lépésszám vagy alvásminőség, ezzel növelve a felhasználói élményt.</td>
+     </tr>
+     <tr>
+         <td>5. Gyors és egyszerű beállítások módosítása.</td>
+         <td>Az Editor quick-switch funkció lehetővé teszi a felhasználók számára, hogy azonnal láthassák, hogyan módosulnak az edzéstervek, ha egy paramétert változtatnak.</td>
+     </tr>
+     <tr>
+         <td>6. Modern, intuitív felhasználói felület.</td>
+         <td>Az alkalmazás modern grafikai rendszerrel (DearIMGUI) és stabil RMGUI (retained graphical user interface) kialakításával biztosítja az egyszerű és kényelmes használatot.</td>
+     </tr>
+     <tr>
+         <td>7. Folyamatos funkcióbővítés lehetősége.</td>
+         <td>Az edzésprogramok és adatelemzési funkciók egy előre elkészített adatbázisban tárolódnak, és futás közben is folyamatosan bővíthetők.</td>
+     </tr>
+ </table>
+
+ <br>
+
+ <h3 class="feladatcim">4.3 Feltételezések és függőségek</h3>
+
+ <p>Az applikáció működéséhez szükséges hardver- és szoftverkövetelmények az alábbiak:</p>
+
+ <ul>
+     <li>Modern webböngésző: Támogatott böngészők közé tartoznak a Chrome, Firefox, Safari és Edge.</li>
+     <li>Webes technológiák támogatása: Az alkalmazás működéséhez elengedhetetlen a HTML5, CSS3, valamint JavaScript (ES6+ verzió) támogatása.</li>
+     <li>Stabil internetkapcsolat: Az applikáció használatához folyamatos és megbízható internetkapcsolat szükséges.</li>
+     <li>Dinamikusan növekvő adatbázis: Az applikáció adatkezeléséhez skálázható adatbázis szükséges, amely képes a folyamatosan növekvő adatmennyiség kezelésére.</li>
+     <li>Domain és tárhely: Az alkalmazás üzemeltetéséhez megfelelő domain és tárhelyszolgáltatás szükséges.</li>
+ </ul>
+
+ <h3 class="feladatcim">4.4 Költségbecslés</h3>
+ <p>A projekt várható költségei az alábbiak szerint alakulnak:</p>
+ <ul>
+     <li>Fejlesztői munkaerő költsége: A programozók, tervezők és egyéb szakemberek bérének és juttatásainak összege.</li>
+     <li>Hardver költségek: Az applikáció fejlesztéséhez és teszteléséhez szükséges hardver eszközök, mint például számítógépek, szerverek és egyéb eszközök beszerzési költsége.</li>
+     <li>Szoftver költségek: A fejlesztéshez szükséges szoftverlicencek, keretrendszerek és egyéb programok költségei.</li>
+     <li>Egyéb költségek: További kiadások, mint például domain és tárhely díjak, marketing költségek, vagy egyéb adminisztratív kiadások.</li>
+ </ul>
+ <br>
+ <p>Becsült összeg: 1.200.000 Ft</p>
+
+
+
+ <h3 class="feladatcim">4.5 Installáció</h3>
+
+ <p>A rendszer telepítéséhez és üzemeltetéséhez az alábbi követelmények szükségesek:</p>
+
+ <ul>
+     <li>Az applikáció futtatásához elengedhetetlen egy naprakész webböngésző, mint például Chrome, Firefox, Safari vagy Edge.</li>
+     <li>A telepítés előtt biztosítani kell a szükséges webes technológiák, mint a HTML5, CSS3 és JavaScript (ES6+) támogatását.</li>
+ </ul>
+
+ <h3 class="feladatcim">5. Végtermék jellemzői</h3>
+
+ <p>A projekt végterméke egy innovatív fitness web-applikáció, amely lehetőséget nyújt komplex edzésprogramok létrehozására, testreszabására és menedzselésére. Az alkalmazás moduláris felépítése lehetővé teszi különböző külső fejlesztőrendszerek és szolgáltatások, például fitnesz nyomkövetők vagy táplálkozási tervek integrálását.</p>
+
+ <br>
+
+ <p>A célunk, hogy a felhasználói élmény egyszerű és intuitív legyen, lehetővé téve ezzel akár a kevésbé tapasztalt felhasználók számára is, hogy könnyedén hozzanak létre és kezeljenek edzésterveket. Az applikáció tervezése során figyelembe vesszük a felhasználói igényeket, biztosítva, hogy a platform mindenki számára hozzáférhető és könnyen használható legyen.</p>
+
+ <h3 class="feladatcim">6. Korlátozások</h3>
+
+ <p>A szoftver optimális működéséhez elengedhetetlen a minimális rendszerkövetelmények teljesítése, különben nem garantált az alkalmazás megfelelő futása. Nagyobb teljesítményű eszközökön természetesen jobb felhasználói élményt lehet biztosítani.</p>
+
+
+ <h3 class="feladatcim">7. Minőségi elvárások</h3>
+
+ <ul>
+     <li><strong>Teljesítmény:</strong> A rendszer megfelelő működéséhez elengedhetetlen a minimális rendszerkövetelmények teljesítése, biztosítva ezzel a zökkenőmentes és hatékony működést.</li>
+     <li><strong>Válaszidő:</strong> A válaszidő a létrehozott edzésprogramok bonyolultságától függ, azonban általában az alkalmazás gyors és megbízható válaszokat nyújt a felhasználói interakciókra, minimalizálva ezzel a várakozási időt.</li>
+     <li><strong>Felhasználóbarátság:</strong> Az web-applikációt úgy tervezzük, hogy a lehető legátláthatóbb és könnyen használható legyen, akár egy laikus felhasználó számára is.</li>
+ </ul>
+
+ <h3 class="feladatcim">8. Dokumentációkkal kapcsolatos követelmények</h3>
+
+ <p>A projekt fejlesztése során elkészülő dokumentumok közé tartoznak:</p>
+ <ul>
+     <li>Analízis modell</li>
+     <li>Fejlesztői csoport adatok</li>
+     <li>Felhasználói dokumentáció</li>
+     <li>Munkanapló</li>
+     <li>Projekt előkészítés</li>
+     <li>Projekt terv</li>
+     <li>Rendszertervezés</li>
+     <li>Software követelmény specifikáció (SRS)</li>
+     <li>Szótár</li>
+     <li>Telepítési és kezelési útmutató</li>
+ </ul>
+
+ <h3 class="feladatcim">9. Kockázatok</h3>
+ <ul>
+     <li><strong>Kompatibilitás:</strong> Amennyiben a minimális rendszerkövetelmények nem teljesülnek, az applikáció nem fog megfelelően futni.
+         <ul>
+             <li><strong>Intézkedések:</strong> A fejlesztés során alaposan dokumentálni kell a minimális rendszerkövetelményeket, és folyamatosan tesztelni kell a különböző platformokon és eszközökön. Ezenkívül ajánlott a felhasználókat tájékoztatni a rendszerkövetelményekről, hogy elkerülhető legyen a telepítési problémák.</li>
+         </ul>
+     </li>
+
+     <li><strong>Render idő:</strong> Ha a rendszerkövetelmények nem teljesülnek, a betöltési idő túlságosan hosszú lehet, ami kellemetlen élményt nyújt a felhasználóknak.
+         <ul>
+             <li><strong>Intézkedések:</strong> A fejlesztés során optimalizálni kell a kódot és a médiafájlokat, hogy csökkenthető legyen a renderelési idő. Emellett használható a tartalom terhelésének elhalasztása, vagy a tartalom előtöltése a felhasználói élmény javítása érdekében.</li>
+         </ul>
+     </li>
+ </ul>
+
+ <hr>
+
+ <h1>Szótár</h1>
+
+ <hr>
+ <br>
+
+<table>
+    <tr>
+        <th>Szó</th>
+        <th>Magyarázat</th>
+    </tr>
+
+    <tr>
+        <td>Dokumentáció</td>
+        <td>Az alkalmazás használatához és fejlesztéséhez szükséges leírások, amelyek részletezik a működést, felépítést és telepítést.</td>
+    </tr>
+    <tr>
+        <td>Felhasználó/User</td>
+        <td>Az a személy, aki a webes applikációt használja, például egy edző vagy egy magánszemély, aki saját edzésterveket készít.</td>
+    </tr>
+    <tr>
+        <td>Render/futási idő</td>
+        <td>Az a teljes idő, amíg az applikáció aktívan működik és használható, például amíg egy felhasználó edzésprogramot hoz létre vagy módosít.</td>
+    </tr>
+    <tr>
+        <td>Rendszerkövetelmény</td>
+        <td>A minimális hardver- és szoftverfeltételek, amelyek szükségesek ahhoz, hogy az applikáció megfelelően működjön (pl. modern webböngésző).</td>
+    </tr>
+    <tr>
+        <td>Grafikus felhasználói felület (GUI)</td>
+        <td>Az applikáció azon része, amely vizuális elemek (pl. gombok, menük) segítségével biztosítja a felhasználók számára a program kezelését.</td>
+    </tr>
+    <tr>
+        <td>Szoftverfejlesztő (Software Developer)</td>
+        <td>A személy, aki a webes alkalmazás megtervezéséért, megírásáért és karbantartásáért felel.</td>
+    </tr>
+    <tr>
+        <td>Entitás (Entity)</td>
+        <td>Az applikációban minden felhasználót egy entitásként kezelünk, amelyhez különböző edzésprogramok és adatelemzési funkciók kapcsolhatók.</td>
+    </tr>
+    <tr>
+        <td>Komponens (Component)</td>
+        <td>Egy adott funkció vagy modul, amely egy entitáshoz rendelhető, például edzésprogramok vagy szűrési feltételek.</td>
+    </tr>
+    <tr>
+        <td>Rendszer (System)</td>
+        <td>Azok a folyamatok, amelyek a komponenseket feldolgozzák és az entitásokkal kapcsolatos műveleteket végrehajtják (pl. adatgyűjtés, elemzés).</td>
+    </tr>
+    <tr>
+        <td>Moduláris felépítés</td>
+        <td>Olyan architektúra, amely lehetővé teszi az alkalmazás funkcióinak bővítését, például új edzésformák, táplálkozási tervek integrálását.</td>
+    </tr>
+    <tr>
+        <td>Verziókövető rendszer</td>
+        <td>Egy szoftvereszköz, mint például a Git, amely segíti a forráskód kezelést, változások nyomon követését, valamint a közös munkát fejlesztőcsapatok között.</td>
+    </tr>
+    <tr>
+        <td>Valós idejű adatfeldolgozás</td>
+        <td>Az adatok folyamatos feldolgozása és elemzése az applikáció használata közben, például a felhasználói teljesítmény figyelemmel kísérése edzés közben.</td>
+    </tr>
+    <tr>
+        <td>Integráció</td>
+        <td>Külső rendszerek vagy eszközök (pl. fitnesz nyomkövetők, okosórák) összekapcsolása az applikációval a teljesítmény és adatelemzés javítása érdekében.</td>
+    </tr>
+    <tr>
+        <td>Post-Processing</td>
+        <td>Az adatok utólagos feldolgozása, amely helyett az applikáció valós idejű adatfeldolgozást alkalmaz.</td>
+    </tr>
+    <tr>
+        <td>Okosóra integráció</td>
+        <td>Az applikáció képes adatokat fogadni és elemezni különböző okosórákról (pl. pulzus, lépésszám, kalóriaégetés), hogy valós idejű visszajelzést adjon.</td>
+    </tr>
+    <tr>
+        <td>Analízis modell</td>
+        <td>A projekt során végzett elemzések és vizsgálatok összegzése, amely meghatározza a rendszer működésének és igényeinek alapját.</td>
+    </tr>
+    <tr>
+        <td>Fejlesztői csoport adatok</td>
+        <td>A fejlesztési folyamatban részt vevő csapat tagjainak neve, beosztása és elérhetőségei, amelyek segítik a hatékony kommunikációt.</td>
+    </tr>
+    <tr>
+        <td>Felhasználói dokumentáció</td>
+        <td>Az applikáció használatához szükséges útmutatók és leírások, amelyek tájékoztatják a felhasználókat a funkciókról és a használatról.</td>
+    </tr>
+    <tr>
+        <td>Munkanapló</td>
+        <td>A projekt során végzett munkák, események és tapasztalatok nyomon követésére szolgáló dokumentum, amely elősegíti a projekt menedzsmentjét.</td>
+    </tr>
+    <tr>
+        <td>Projekt előkészítés</td>
+        <td>A projekt kezdeti fázisa, amely magában foglalja a célok meghatározását, a szükséges erőforrások és időkeretek kidolgozását.</td>
+    </tr>
+    <tr>
+        <td>Projekt terv</td>
+        <td>A projekt céljait, ütemezését, erőforrásait és felelősségeit összefoglaló dokumentum, amely útmutatást ad a fejlesztési folyamat során.</td>
+    </tr>
+    <tr>
+        <td>Rendszertervezés</td>
+        <td>Az applikáció architektúrájának és felépítésének részletes tervezése, beleértve az adatbázisok és rendszerek közötti kapcsolatok kialakítását.</td>
+    </tr>
+    <tr>
+        <td>Software követelmény specifikáció (SRS)</td>
+        <td>A szoftver működésével és tulajdonságaival kapcsolatos követelmények részletes leírása, amely az alapját képezi a fejlesztési folyamatnak.</td>
+    </tr>
+    <tr>
+        <td>Telepítési és kezelési útmutató</td>
+        <td>A rendszer telepítésének lépéseit és az applikáció használatához szükséges információkat tartalmazó dokumentáció.</td>
+    </tr>
+    <tr>
+        <td>Domain tárhely</td>
+        <td>Az applikáció számára szükséges webcím (domain) és a webhely tárolására szolgáló szolgáltatás, amely biztosítja az elérhetőséget az interneten.</td>
+    </tr>
+    <tr>
+        <td>Adatbázis</td>
+        <td>Az applikáció által használt struktúrált adatok tárolására szolgáló rendszer, amely lehetővé teszi az adatok gyors és hatékony kezelését.</td>
+    </tr>
+    <tr>
+        <td>HTML, CSS, JAVASCRIPT</td>
+        <td>A webfejlesztés alapvető technológiái, amelyek lehetővé teszik az applikáció felhasználói felületének létrehozását és interaktivitását.</td>
+    </tr>
+
+</table>
+
+<br>
+<hr>
+
+ <h1>Munkanapló</h1>
+
+ <hr>
+ <br>
+ 
+ <table border="1" cellpadding="5" cellspacing="0">
+     <tr>
+         <th>Dátum</th>
+         <th>Időtartam</th>
+         <th>Tevékenység</th>
+         <th>Résztvevők</th>
+         <th>Döntések, következtetések, megjegyzések</th>
+     </tr>
+
+     <tr>
+        <td>2024.09.29</td>
+        <td>30 perc</td>
+        <td>Csoportos megbeszélés</td>
+        <td>Mindenki</td>
+        <td>Feladatmegoldási terv készítése</td>
+    </tr>
+
+     <tr>
+         <td>2024.10.01</td>
+         <td>2 óra</td>
+         <td>Csoportos megbeszélés</td>
+         <td>Mindenki</td>
+         <td>Anyagok gyűjtése a feladathoz</td>
+     </tr>
+     <tr>
+         <td>2024.10.03</td>
+         <td>2 óra</td>
+         <td>Csoportos megbeszélés</td>
+         <td>Mindenki</td>
+         <td>Részfeladatok elosztása, vízió dokumentáció szerkesztésének kezdete </td>
+     </tr>
+     <tr>
+         <td>2024.10.04</td>
+         <td>1 óra</td>
+         <td>Vízió dokumentáció szerkesztése</td>
+         <td>Varga Bence, Bodó Tamás</td>
+         <td>A vízió dokumentáció további szerkesztése</td>
+     </tr>
+     <tr>
+         <td>2024.10.05</td>
+         <td>3 óra</td>
+         <td>Csoportos megbeszélés</td>
+         <td>Mindenki</td>
+         <td>Válaszok kidolgozása</td>
+     </tr>
+     <tr>
+         <td>2024.10.05</td>
+         <td>30 perc</td>
+         <td>Helyzetjelentés</td>
+         <td>Mindenki</td>
+         <td>Átbeszéltük a jelenlegi haladást a dokumentumról</td>
+     </tr>
+     <tr>
+         <td>2024.10.07</td>
+         <td>2 óra</td>
+         <td>Dokumentum véglegesítése</td>
+         <td>Mindenki</td>
+         <td>Utolsó változtatások, megbeszélések a programon, dokumentáción</td>
+     </tr>
+     <tr>
+         <td>2024.10.08</td>
+         <td>3 óra</td>
+         <td>Feltöltés</td>
+         <td>Lévai Kristóf, Hliva Gábor</td>  
+         <td>A dokumentumok weboldalra feltöltése és szerkesztése</td>
+     </tr>
+     <tr>
+         <td>2024.10.09</td>
+         <td>1 óra</td>
+         <td>Áttekintés</td>
+         <td>Mindenki</td>
+         <td>FA kész dokumentumok ellenőrzése, átnézése</td>
+     </tr>
+ </table>
+
+</div>
+
+    <!-- Non-sticky Footer -->
+    <footer>
+        <p>&copy; 2024 Kód Betyárok</p>
+    </footer>
+
+</body>
+</html>
+
