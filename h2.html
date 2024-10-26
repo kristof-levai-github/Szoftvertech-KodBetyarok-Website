@@ -74,40 +74,57 @@
        <h3 class="feladatcim">1. Bevezetés</h3>
 
 
- <p>Ez a dokumentum a Java nyelven fejlesztett Fitness alkalmazás rendszerének céljait és alapvető koncepcióját mutatja be, ismertetve a tervezési és megvalósítási irányelveket.</p>
-
+ <p>Ez a dokumentum részletesen bemutatja a Fitness alkalmazás rendszerének céljait, alapvető koncepcióját és tervezési irányelveit.</p>
+ <p>Az applikáció célja, hogy hatékony eszközt biztosítson a felhasználók számára, amely segít nyomon követni a fitnesztevékenységeiket, javítani a teljesítményüket, valamint fenntartani és fejleszteni az egészséges életmódot.</p>
+ <p>A rendszer tervezése során kiemelt figyelmet kap a felhasználói élmény, az adatok átlátható kezelése, a skálázhatóság, valamint az integrációs lehetőségek biztosítása különféle sportlétesítmények és személyi edzők számára.</p>
 
  <h3 class="feladatcim">2. Az applikáció helye</h3>
 
 
- <p>Az alkalmazás célja, hogy egy olyan modern, felhasználóbarát platformot biztosítson, amely segíti a felhasználókat edzéseik nyomon követésében, fitneszcéljaik elérésében és egészséges életmódjuk fenntartásában. </p>
+ <p>Az alkalmazás célja, hogy egy modern, felhasználóbarát platformot biztosítson, amely segít a felhasználóknak edzéseik nyomon követésében, egyedi fitneszcéljaik elérésében, valamint az egészséges életmód fenntartásában. Az applikáció nem csupán egy egyszerű edzéskövető, hanem egy átfogó megoldás, amely lehetővé teszi az egyéni igényekhez igazított edzéstervek készítését, az előrehaladás folyamatos nyomon követését és a statisztikai adatok elemzését is. </p>
 
+ <p>A rendszer integrálható lesz különféle sportlétesítményekkel, személyi edzőkkel, így nemcsak a magánszemélyek, de a szakmai közösségek számára is komoly hozzáadott értéket biztosít.</p>
 
  <h3 class="feladatcim">2.1 Üzleti lehetőségek</h3>
 
  <p> A projekt célja új lehetőségek kibontakoztatása az egészséges életmód területén, különös tekintettel a megfelelő életmód kialakítására. </p>
 
+ <p>Ületi lehetőséget látunk még a különböző monetizációs lépcsők kiépítésében, mint a feliratkozás alapú modellek, amelynek különböző struktúrális szinteket képzeltünk el. A három szint a "Basic", "Standard" és "Pro". Ezek különböző árkategória alatt más-más előnyöket és funkciókat engedélyeznének a felhasználók és intézmények számára. További lehetőség lenne egy Edzői személyes konzultációra is, amelynek szintén több szintje lenne. </p>
+
+
 
  <h3 class="feladatcim">2.2 A probléma megfogalmazása</h3>
 
- <p>Az alkalmazás célja, hogy megoldást nyújtson a felhasználók számára a fenntartható és hatékony fitneszprogramok követésében, mivel sokan küzdenek a megfelelő eszközök és támogatás hiányával az egészséges életmód kialakítása során. A rendszer optimalizált adatkezelést és karbantartható felépítést biztosít, amely lehetővé teszi az edzés előrehaladásának átlátható követését és az egyéni célokhoz igazított tervezést.</p>
+<p><strong>A probléma általános megfogalmazása:</strong></p>
+ <p>A mai világban sokan küzdenek azzal, hogy megfelelő támogatást és eszközöket találjanak az egészséges életmód fenntartásához. A jelenleg elérhető fitneszalkalmazások közül sok nem kínál kellő rugalmasságot, vagy éppen túl bonyolultak a mindennapi használathoz. Ez a helyzet sok felhasználó számára nehézkessé teszi a következetes edzésprogramok követését és a fejlődés átlátható nyomon követését.</p>
+
+ <p>Az applikációnk ezen a problémán segít azáltal, hogy egyszerű, mégis hatékony eszközt kínál az edzéstervek testre szabására, az előrehaladás folyamatos ellenőrzésére, valamint a fitneszcélok követésére.</p>
+
+<p>A felhasználói igények széles körűen lefedik az egyszerű otthoni edzéskövetéstől kezdve a komoly, professzionális fitneszprogramok kezeléséig. Az applikáció kiemelt célja, hogy egyensúlyt teremtsen a könnyű használhatóság és a fejlett funkciók között, mindemellett rugalmas legyen különféle felhasználói igények kiszolgálására.</p>
 
  <br>
- <p>Az érintett résztvevők:</p>
+ <h3 class="feladatcim">2.2.1. Az érintett résztvevők:<h3>
 
  <ul>
-     <li>Sportlétesítmények, sportszervezetek</li>
-     <li>Oktatási intézmények</li>
-     <li>Személyi edzők</li>
-     <li>Magánszemélyek</li>
+     <li><strong>Sportlétesítmények:</strong> Edzőtermek, fitness klubok és wellness központok számára kiváló lehetőséget kínál a felhasználói adatok elemzésére, valamint a vendégek fejlődésének nyomon követésére.</li>
+     <li><strong>Sportszervezetek: </strong> A különböző sportegyesületek, csapatok számára is lehetővé teszi az egyéni és csoportos edzések követését és elemzését.</li>
+     <li><strong>Oktatási intézmények: </strong> Az iskolák és egyetemek sport szakosztályai számára szintén hasznos eszközt biztosít az edzések szervezésére és a diákok előrehaladásának mérésére.</li>
+     <li><strong>Személyi edzők: </strong> Személyi edzők számára lehetőséget biztosít az edzéstervek készítésére, a fejlődés nyomon követésére, valamint a klienssel való szorosabb együttműködésre.</li>
+     <li><strong>Magánszemélyek: </strong>Az egyéni felhasználók számára a legnagyobb előnyt az alkalmazás rugalmassága és testre szabhatósága jelenti, ami lehetővé teszi számukra, hogy saját edzésprogramot állítsanak össze, és nyomon kövessék a fejlődésüket.</li>
  </ul>
 
- <p>A probléma hatása a résztvevőkre: </p>
+<h3 class="feladatcim">2.2.2. A probléma hatása a résztvevőkre: <h3>
  
- <p>A jelenlegi rendszerek gyakran nem biztosítanak elég támogatást és rugalmasságot, ami megnehezíti a résztvevők számára az egyéni fejlődés nyomon követését. Ez sokszor demotiválólag hathat a résztvevő felekre.</p>
+ <p>A jelenlegi rendszerek gyakran nem biztosítanak elégséges támogatást és rugalmasságot, ami miatt a felhasználók nehezen tudják követni az egyéni fejlődésüket. Ez gyakran demotiváló hatással van rájuk, különösen akkor, ha nem látják azonnal a fejlődés jeleit.</p>
  
+  <p>Az applikáció ezt a problémát orvosolja azzal, hogy könnyen értelmezhető statisztikákat és vizuális eszközöket biztosít, amelyek segítségével a felhasználók minden egyes edzésüket nyomon követhetik. Az integrált funkciók lehetővé teszik, hogy a felhasználók az edzőikkel vagy más szakemberekkel is megosszák eredményeiket, ezzel támogatva a hatékonyabb együttműködést.</p>
+
  <br>
  <p>Az applikáció elkészítése csökkentheti a felhasználók számára az egészségtelen életmód folytatását, és egy követhető célt kapnak kaphatnak az eredményeik mérésével.</p>
+
+<h3 class="feladatcim">2.2.3. Az applikáció előnyei a felhasználók számára: <h3>
+
+<p>Az alkalmazás fejlesztésének célja, hogy csökkentse az egészségtelen életmódhoz kapcsolódó problémákat, és támogassa a felhasználókat abban, hogy elérjék céljaikat. Az edzéstervek követhetőek és személyre szabhatóak, így a felhasználók konkrét, mérhető eredményeket érhetnek el. A rendszer emellett motivációt nyújt azáltal, hogy folyamatosan nyomon követi az elért eredményeket, és vizuális visszajelzéseket ad. </p>
 
  <h3 class="feladatcim">2.3 Az elkészült termék helye</h3>
 
@@ -121,8 +138,11 @@
      <p>A termék főbb különbségei az alternatíváktól: Az applikáció sportlétesítményekkel és edzőkkel való integrációja biztosítja, hogy mind a felhasználók, mind a szakemberek könnyen hozzáférjenek a szükséges adatokhoz és edzésprogramokhoz, amit sok meglévő megoldás nem kínál ilyen mélységben.</p>
 
 
- <h3 class="feladatcim">3. Érintettek és felhasználók</h3>
-<br>
+<h3 class="feladatcim">3 Az érintettek összefoglalása</h3>
+
+<p>Az applikáció fejlesztése során számos kulcsfontosságú szereplő játszik központi szerepet. Ezek a résztvevők mindannyian hozzájárulnak a projekt sikeréhez, hiszen a különböző területeken végzett munkájuk elengedhetetlen a végső termék minőségéhez és használhatóságához. Az érintettek részvétele a projekt különböző szakaszaiban változó szerepet jelent, és mindegyikük munkája kritikus a fejlesztési folyamat során. </p>
+
+ <br>
  <table>
      <tr>
          <th>Elnevezés</th>
@@ -130,29 +150,31 @@
          <th>Szerep</th>
      </tr>
      <tr>
-         <td>Rendszertervezők</td>
-         <td>A rendszer tervezésében résztvevő személyek</td>
-         <td>Felgyorsítják a fejlesztési folyamatot</td>
+         <td>Fejlesztők</td>
+         <td>Az applikáció fejlesztésében résztvevő szakemberek, akik a tervek alapján implementálják az alkalmazást.</td>
+         <td>A fejlesztők a rendszer megvalósításáért és a technikai követelmények teljesítéséért felelnek.</td>
      </tr>
      <tr>
-         <td>Fejlesztők</td>
-         <td>Az applikáció fejlesztésében résztvevő személyek</td>
-         <td>Az applikáció fejlesztése egy már létező rendszerre épül, így a fejlesztési folyamat gyorsabbá válik számukra</td>
+         <td>Rendszertervezők</td>
+         <td>A rendszer tervezésében résztvevő szakemberek, akik az applikáció architektúráját és fő funkcióit határozzák meg.</td>
+         <td>A rendszertervezők feladata egy hatékony és skálázható rendszer kialakítása, amely segíti a fejlesztők munkáját.</td>
      </tr>
+
      <tr>
          <td>Projektmenedzserek</td>
-         <td>A projektet menedzselő személyek</td>
-         <td>A projektet menedzselik, a fejlesztőkkel tartják a kapcsolatot</td>
+         <td>A projekt menedzseléséért és a fejlesztési folyamat koordinálásáért felelős szakemberek.</td>
+         <td>A projektmenedzserek felügyelik a fejlesztést, tartják a kapcsolatot a fejlesztőkkel és a megrendelőkkel, és biztosítják a projekt előrehaladását.</td>
      </tr>
+
      <tr>
          <td>Megrendelők</td>
-         <td>A projekt megrendelői</td>
-         <td>A projekt megrendelői, a projektet finanszírozzák, az alkalmazást használják és tesztelik</td>
+         <td>A projekt finanszírozásáért és célkitűzéseinek meghatározásáért felelős személyek vagy szervezetek.</td>
+         <td>A megrendelők biztosítják a projekt költségvetését és meghatározzák az applikációval szemben támasztott elvárásokat, hogy megfeleljen üzleti céljaiknak.</td>
      </tr>
  </table>
 
- <h3 class="feladatcim">3.2 A felhasználók összefoglalása</h3>
- <br>
+ <h3 class="feladatcim">3.2 Érintettek és felhasználók</h3>
+<br>
  <table>
      <tr>
          <th>Elnevezés</th>
@@ -161,34 +183,64 @@
      </tr>
      <tr>
          <td>Felhasználók</td>
-         <td>Az applikáció által támogatott felhasználók</td>
+         <td>Az applikáció által támogatott felhasználók, akik különböző szinten és háttérrel rendelkeznek. A felhasználók közé tartoznak kezdő sportolók, tapasztalt edzők, és olyan személyek, akik az egészséges életmódra törekednek. Az applikáció segít nekik edzéstervek készítésében, nyomon követésében és statisztikai elemzések megtekintésében. A felhasználók a közösségi funkciókat is kihasználhatják, hogy tapasztalataikat megosszák másokkal.</td>
          <td>Fejlesztők</td>
      </tr>
      <tr>
          <td>Tesztelők</td>
-         <td>Az applikáció által támogatott eszköz tesztelői</td>
-         <td>Projekt menedzserek és fejlesztők</td>
+         <td>Az applikáció által támogatott eszköz tesztelői, akik felelősek az alkalmazás funkcióinak és teljesítményének ellenőrzéséért. A tesztelők különböző tesztelési módszereket alkalmaznak, beleértve a funkcionális, teljesítmény- és felhasználói élmény tesztelést. Céljuk, hogy észleljék a hibákat, és biztosítsák, hogy az applikáció a felhasználói elvárásoknak megfelelően működjön. Ezen kívül visszajelzéseiket a fejlesztési csapat felé továbbítják, hogy javítsák az alkalmazás minőségét.</td>
+         <td>Projektmenedzserek és fejlesztők</td>
+     </tr>
+     <tr>
+         <td>Személyi edzők</td>
+         <td>Olyan szakemberek, akik az applikációt használják ügyfeleik edzési programjainak nyomon követésére és optimalizálására. A személyi edzők képesek személyre szabott edzéstervet készíteni, figyelemmel kísérni ügyfeleik fejlődését, és szükség esetén módosításokat javasolni. Az applikáció funkciói segítik őket a hatékonyabb edzésvezetésben és a motiváció fenntartásában.</td>
+         <td>Fejlesztők</td>
+     </tr>
+     <tr>
+         <td>Sportlétesítmények</td>
+         <td>Olyan intézmények, amelyek az applikációt használják a tagjaik edzéseinek és aktivitásainak nyomon követésére. A sportlétesítmények a szoftver segítségével optimalizálhatják a programjaikat, és biztosíthatják, hogy a tagjaik hatékonyan kihasználják a szolgáltatásaikat. Ezen kívül információkat gyűjthetnek a tagjaik teljesítményéről és preferenciáikról, amely segít a létesítmények fejlesztésében.</td>
+         <td>Projektmenedzserek</td>
+     </tr>
+
+  <tr>
+         <td>Oktatási intézmények</td>
+         <td>Az applikációt használó iskolák és egyetemek, amelyek a fizikai aktivitás és az egészséges életmód népszerűsítésére törekszenek. Az intézmények integrálhatják az applikációt az edzésprogramjaikba, így támogatva a diákok fejlődését és egészségügyi céljaik elérését. A diákoknak lehetőségük van csoportos edzések tervezésére és nyomon követésére az applikáción keresztül.</td>
+         <td>Fejlesztők</td>
      </tr>
  </table>
 
+ 
+
  <h3 class="feladatcim">3.3 Felhasználói környezet</h3>
 
- <p>A fitness applikáció fejlesztése során a felhasználók különböző operációs rendszereken és fejlesztői környezetekben dolgozhatnak. Az alkalmazás böngészőalapú megoldásként kerül kialakításra, amely lehetővé teszi a mobil eszközökön és asztali számítógépeken történő használatot. Ez a sokoldalúság biztosítja, hogy a felhasználók kényelmesen hozzáférhessenek az applikációhoz, függetlenül attól, hogy hol tartózkodnak.</p>
+ <p>A fitness applikáció fejlesztése során fontos szempont, hogy a felhasználók különböző operációs rendszereken és fejlesztői környezetekben dolgozhassanak. Az alkalmazás böngészőalapú megoldásként kerül kialakításra, amely lehetővé teszi a mobil eszközökön és asztali számítógépeken történő használatot. Ez a sokoldalúság és rugalmasság biztosítja, hogy a felhasználók kényelmesen hozzáférhessenek az applikációhoz, függetlenül attól, hogy hol tartózkodnak, legyen szó otthoni edzésről, edzőteremben való használatról, vagy akár úton lévő felhasználókról.</p>
 <br>
 
- <p>A felhasználói bázis várhatóan változatos lesz, beleértve mind az egyéni fejlesztőket, akik hobbi szinten tevékenykednek, mind a kisebb-nagyobb fejlesztői csoportokat, akár 20 főig. Az applikáció támogatja a verziókövető rendszerek, például a Git vagy más Push-Pull alapú megoldások használatát, ami megkönnyíti a közös munkát és a forráskód kezelését.</p>
+ <p>A felhasználói bázis várhatóan rendkívül változatos lesz, beleértve mind az egyéni fejlesztőket, akik hobbi szinten tevékenykednek, mind a kisebb-nagyobb fejlesztői csoportokat, akár 20 főig. Ez a változatosság lehetővé teszi, hogy a projekt különböző igényekhez és preferenciákhoz igazodjon, biztosítva ezzel a széleskörű elfogadottságot a felhasználók körében. Az applikáció támogatja a verziókövető rendszerek, például a Git, valamint más Push-Pull alapú megoldások használatát, amelyek jelentősen megkönnyítik a közös munkát, a forráskód kezelését és a csapatok közötti együttműködést.</p>
 <br>
 
- <p>A fejlesztéshez elengedhetetlen a webes technológiák ismerete, mint például HTML, CSS és JavaScript, valamint szerveroldali technológiák, mint a Node.js vagy más backend keretrendszerek. A felhasználói élmény javítása érdekében a projekt során a felhőalapú szolgáltatások integrációja is várható, amely elősegíti a zökkenőmentes verziókezelést és a folyamatos fejlesztést.</p>
+ <p>A fejlesztéshez elengedhetetlen a webes technológiák alapos ismerete, mint például HTML, CSS és JavaScript, valamint szerveroldali technológiák, mint a Node.js vagy más backend keretrendszerek. A fejlesztési folyamat során külön figyelmet kap a felhasználói élmény javítása, amelyhez várhatóan a felhőalapú szolgáltatások integrációja is hozzájárul. Ezek a szolgáltatások elősegítik a zökkenőmentes verziókezelést, a folyamatos integrációt és a folyamatos fejlesztést, így a felhasználók mindig a legfrissebb funkciókat élvezhetik.</p>
 <br>
- <p>A várható felhasználói szám tekintetében az applikáció átlagosan 50-100 egyidejű felhasználót vár, a maximális felhasználószám pedig akár 500 főre is rúghat a csúcsidőszakokban. A felhasználószám növekedése változhat. A felhasználók várhatóan rendszeresen, heti több alkalommal használják majd az applikációt, a használati idő pedig a felhasználói igényektől és a programok intenzitásától függően változhat.</p>
+ <p>A várható felhasználói szám tekintetében az applikáció átlagosan 50-100 egyidejű felhasználót vár. A maximális felhasználószám pedig akár 500 főre is rúghat a csúcsidőszakokban, például a hétvégi edzések alatt, amikor a felhasználók aktívan részt vesznek az applikáció által kínált programokban. A felhasználószám növekedése időszakonként változhat, ami kihívást jelenthet a rendszer terhelhetősége és a felhasználói élmény szempontjából.</p>
  <br>
- <p>A monetizáció érdekében a harmadik fél által biztosított hirdetéskezelési rendszer beépítése is szükséges lehet, amely keretein belül a hirdetések célzottan jelenhetnek meg a felhasználók számára.</p>
-
+ <p>A felhasználók várhatóan rendszeresen, heti több alkalommal használják majd az applikációt. A használati idő a felhasználói igényektől és a programok intenzitásától függően változhat; például az intenzív edzésekhez és edzőprogramokhoz kapcsolódó aktivitás várhatóan hosszabb időtartamot igényel. A felhasználói élmény javítása érdekében figyelembe kell venni a felhasználók visszajelzéseit és igényeit, így a rendszer folyamatosan alkalmazkodhat a felhasználók változó preferenciáihoz.</p>
+<br>
+ <p>A monetizáció érdekében a harmadik fél által biztosított hirdetéskezelő rendszerek integrálása is a tervek között szerepel. Ezen megoldások révén az applikáció nemcsak az ingyenes használat lehetőségét biztosítja, hanem lehetőséget teremt arra is, hogy a felhasználók extra funkciókhoz jussanak, például prémium edzéstervekhez vagy személyre szabott edzői támogatáshoz. Emellett az integrált fejlesztői környezetek (IDE-k) használata, mint például az IntelliJ IDEA vagy a Visual Studio Code, szintén alapvető fontosságú a fejlesztési folyamat zökkenőmentessége szempontjából.</p>
 
  <h3 class="feladatcim">4.1 A termék kapcsolatai</h3>
  
- <p>Az applikáció integrálható lesz különböző fitnesz platformokkal és eszközökkel, például okosórákkal és pulzusmérőkkel, lehetővé téve a felhasználók számára, hogy zökkenőmentesen összekapcsolják az applikációt a már meglévő eszközeikkel. A kapcsolódási forma Bluetooth technológián fog alapulni.</p>
+ <p>Az applikáció tervezése során kiemelt figyelmet kaptak a különböző fitnesz platformokkal és eszközökkel való integrációs lehetőségek. Az alkalmazás célja, hogy széleskörű kompatibilitást biztosítson, így a felhasználók könnyedén összekapcsolhatják az applikációt a már meglévő eszközeikkel, mint például okosórák, pulzusmérők, aktivitásmérők és egyéb fitnesz kiegészítők. Ez a fajta integráció lehetővé teszi, hogy a felhasználók valós időben követhessék edzésadataikat, és a mért értékeket automatikusan szinkronizálják az applikációval.</p>
+
+<p>A kapcsolódási forma Bluetooth technológián fog alapulni, amely biztonságos és megbízható adatátvitelt tesz lehetővé a különböző eszközök között. A Bluetooth-alapú megoldás nemcsak a közvetlen adatátvitelt biztosítja, hanem lehetővé teszi a felhasználók számára, hogy egyszerűen párosíthassák eszközeiket az applikációval. Ezen kívül a rendszer képes lesz az eszközök automatikus észlelésére, így a felhasználók számára nem szükséges manuálisan beállítani a kapcsolódást minden alkalommal.</p>
+
+<p>
+A termék kapcsolatai kiterjednek a különböző fitneszplatformokra is, mint például a MyFitnessPal, Fitbit és Strava, amelyek népszerű adatkezelő és edzéskövető szolgáltatásokat kínálnak. Ezen integrációk révén a felhasználók összegyűjthetik és elemezhetik a különböző fitnesz adataikat egy központi helyen, amely lehetővé teszi számukra, hogy átfogóbb képet kapjanak fejlődésükről és eredményeikről. Az applikáció összekapcsolódása harmadik fél szolgáltatásaival szintén hozzájárul a felhasználói élmény gazdagításához, hiszen így a felhasználók hozzáférhetnek a különféle edzéstervekhez, táplálkozási tanácsokhoz és közösségi funkciókhoz is.
+</p>
+
+<p> A rendszer fejlesztése során a biztonság és az adatvédelem kiemelt figyelmet kap. Mivel a felhasználók érzékeny egészségügyi és fitneszadatokat osztanak meg, az applikáció olyan biztonsági intézkedéseket alkalmaz, mint az adatok titkosítása és a hozzáférési jogosultságok szigorú kezelése. Ezek az intézkedések biztosítják, hogy a felhasználók adatai védve legyenek, és csak a megfelelő személyek férhessenek hozzájuk.</p>
+
+<p> Összességében az applikáció kapcsolatai és integrációs lehetőségei nemcsak a felhasználók kényelmét szolgálják, hanem hozzájárulnak a felhasználói élmény gazdagításához is, lehetővé téve, hogy a felhasználók még hatékonyabban követhessék fitneszcéljaikat és egészséges életmódjukat támogassák.</p>
+
 
  <h3 class="feladatcim">4.2 A termék használatának előnyei</h3>
  <table>
@@ -198,90 +250,140 @@
      </tr>
      <tr>
          <td>1. Egyedi edzéstervek kidolgozása különböző célokhoz.</td>
-         <td>Az applikáció minden felhasználót egy "entitásként" kezel, amelyhez különböző edzésprogramok és adatelemzési funkciók kapcsolódnak.</td>
+         <td>Az applikáció minden felhasználót egy "entitásként" kezel, amelyhez különböző edzésprogramok és adatelemzési funkciók kapcsolódnak. A felhasználók megadhatják személyes céljaikat, mint például a fogyás, izomtömeg növelés vagy állóképesség fejlesztése, így az applikáció testreszabott ajánlásokat tud adni.</td>
      </tr>
      <tr>
          <td>2. Az edzésprogramok könnyű szűrése.</td>
-         <td>Az edzésprogramok szűrhetők felhasználói célok vagy edzettségi szint alapján, így a felhasználók személyre szabott ajánlásokat kapnak.</td>
+         <td>Az edzésprogramok szűrhetők felhasználói célok, edzettségi szint vagy preferált edzésformák alapján, így a felhasználók személyre szabott ajánlásokat kapnak. A szűrési lehetőségek révén a felhasználók gyorsan megtalálhatják az ő számukra legmegfelelőbb programokat.</td>
      </tr>
      <tr>
          <td>3. Valós idejű teljesítményelemzés.</td>
-         <td>Az alkalmazás folyamatosan elemzi a felhasználó teljesítményét és pulzusát edzés közben, azonnali visszajelzést adva a gyakorlatok helyes végrehajtásáról.</td>
+         <td>Az alkalmazás folyamatosan elemzi a felhasználó teljesítményét és pulzusát edzés közben, azonnali visszajelzést adva a gyakorlatok helyes végrehajtásáról. Ez nemcsak a felhasználók biztonságát növeli, hanem segít optimalizálni az edzést is.</td>
      </tr>
      <tr>
-         <td>4. Okosórák adatai feldolgozása.</td>
-         <td>Az applikáció integrálja a különböző okosórák által gyűjtött adatokat, mint például kalóriaégetés, lépésszám vagy alvásminőség, ezzel növelve a felhasználói élményt.</td>
+         <td>4. Okosórák adatainak feldolgozása.</td>
+         <td>Az applikáció integrálja a különböző okosórák által gyűjtött adatokat, mint például kalóriaégetés, lépésszám vagy alvásminőség, ezzel növelve a felhasználói élményt. Az adatokat a felhasználók valós időben is megtekinthetik, ami segít az edzés hatékonyságának növelésében.</td>
      </tr>
      <tr>
          <td>5. Gyors és egyszerű beállítások módosítása.</td>
-         <td>Az Editor quick-switch funkció lehetővé teszi a felhasználók számára, hogy azonnal láthassák, hogyan módosulnak az edzéstervek, ha egy paramétert változtatnak.</td>
+         <td>Az Editor quick-switch funkció lehetővé teszi a felhasználók számára, hogy azonnal láthassák, hogyan módosulnak az edzéstervek, ha egy paramétert változtatnak. Ez segíti a felhasználókat abban, hogy könnyedén kísérletezzenek különböző edzésterv-változatokkal</td>
      </tr>
      <tr>
          <td>6. Modern, intuitív felhasználói felület.</td>
-         <td>Az alkalmazás modern grafikai rendszerrel (DearIMGUI) és stabil RMGUI (retained graphical user interface) kialakításával biztosítja az egyszerű és kényelmes használatot.</td>
+         <td>Az alkalmazás modern grafikai rendszerrel (DearIMGUI) és stabil RMGUI (retained graphical user interface) kialakításával biztosítja az egyszerű és kényelmes használatot. A felhasználói élmény javítása érdekében a dizájn figyelembe veszi a felhasználói visszajelzéseket is, folyamatosan optimalizálva az interakciókat.</td>
      </tr>
      <tr>
          <td>7. Folyamatos funkcióbővítés lehetősége.</td>
-         <td>Az edzésprogramok és adatelemzési funkciók egy előre elkészített adatbázisban tárolódnak, és futás közben is folyamatosan bővíthetők.</td>
+         <td>Az edzésprogramok és adatelemzési funkciók egy előre elkészített adatbázisban tárolódnak, és futás közben is folyamatosan bővíthetők. A felhasználók visszajelzései alapján a fejlesztők folyamatosan új funkciókat integrálnak, így a rendszer mindig naprakész marad.</td>
      </tr>
+
+ <tr>
+         <td>8. Közösségi funkciók és versenyek.</td>
+         <td>Az applikáció lehetőséget biztosít a felhasználók számára, hogy csatlakozzanak közösségekhez, versenyekhez és kihívásokhoz, így motiválva őket a kitűzött céljaik elérésére. A közösségi funkciók lehetővé teszik a felhasználók közötti interakciót, tapasztalatok megosztását, valamint baráti kihívások lebonyolítását.</td>
+     </tr>
+
+ <tr>
+         <td>9. Táplálkozási tanácsok és étrendkiegészítők integrálása </td>
+         <td>Az applikáció táplálkozási ajánlásokat is nyújt, lehetővé téve a felhasználók számára, hogy a megfelelő étrenddel támogassák edzéseik hatékonyságát. A táplálkozási tanácsok személyre szabhatók, figyelembe véve a felhasználók egyéni igényeit és céljait.</td>
+     </tr>
+
+ <tr>
+         <td>10. Részletes statisztikák és jelentések generálása.</td>
+         <td>A felhasználók részletes statisztikákat kaphatnak edzéseik előrehaladásáról, teljesítményükről és egészségi állapotukról. Az applikáció lehetőséget biztosít havi és heti jelentések generálására, amelyek segítik a felhasználókat a céljaik elérésében.</td>
+     </tr>
+
+
  </table>
 
  <br>
 
  <h3 class="feladatcim">4.3 Feltételezések és függőségek</h3>
 
- <p>Az applikáció működéséhez szükséges hardver- és szoftverkövetelmények az alábbiak:</p>
+ <p>Az applikáció sikeres működéséhez és zökkenőmentes felhasználói élmény biztosításához elengedhetetlen néhány kulcsfontosságú hardver- és szoftverkövetelmény. </p>
 
  <ul>
-     <li>Modern webböngésző: Támogatott böngészők közé tartoznak a Chrome, Firefox, Safari és Edge.</li>
-     <li>Webes technológiák támogatása: Az alkalmazás működéséhez elengedhetetlen a HTML5, CSS3, valamint JavaScript (ES6+ verzió) támogatása.</li>
-     <li>Stabil internetkapcsolat: Az applikáció használatához folyamatos és megbízható internetkapcsolat szükséges.</li>
-     <li>Dinamikusan növekvő adatbázis: Az applikáció adatkezeléséhez skálázható adatbázis szükséges, amely képes a folyamatosan növekvő adatmennyiség kezelésére.</li>
-     <li>Domain és tárhely: Az alkalmazás üzemeltetéséhez megfelelő domain és tárhelyszolgáltatás szükséges.</li>
+     <li><strong>Modern webböngésző:</strong> Az alkalmazás a legújabb webtechnológiákra épül, ezért a felhasználóknak szükségük lesz egy modern webböngészőre. Támogatott böngészők közé tartoznak a Chrome, Firefox, Safari és Edge legfrissebb verziói. Fontos, hogy a felhasználók rendszeresen frissítsék böngészőjüket, hogy kihasználhassák az új funkciókat és javításokat.</li>
+     <li><strong>Webes technológiák támogatása:</strong> Az alkalmazás működéséhez elengedhetetlen a HTML5, CSS3, valamint JavaScript (ES6+ verzió) támogatása. Ezek a technológiák lehetővé teszik az interaktív és dinamikus felhasználói élményt, és biztosítják az applikáció reszponzív megjelenését különböző eszközökön.</li>
+     <li><strong>Stabil internetkapcsolat: </strong> Az applikáció használatához folyamatos és megbízható internetkapcsolat szükséges. Mivel az alkalmazás böngészőalapú, a felhasználók számára fontos, hogy legalább 5 Mbps sebességű internetkapcsolattal rendelkezzenek a zökkenőmentes működéshez. Emellett a késleltetés minimalizálása érdekében a felhasználók számára javasolt a vezetékes internetkapcsolat használata.</li>
+     <li><strong>Dinamikusan növekvő adatbázis: </strong> Az applikáció adatkezeléséhez skálázható adatbázis szükséges, amely képes a folyamatosan növekvő adatmennyiség kezelésére. Az adatbázisnak rugalmasnak kell lennie, hogy könnyedén kezelje a felhasználói adatok, edzéstervek és teljesítménystatisztikák növekvő mennyiségét, valamint biztosítania kell a gyors adatlekérdezést és -mentést.</li>
+     <li><strong>Domain és tárhely:</strong> Az alkalmazás üzemeltetéséhez megfelelő domain és tárhelyszolgáltatás szükséges. A választott domainnek tükröznie kell az applikáció funkcióit, míg a tárhelyszolgáltatásnak megbízhatónak kell lennie, garantálva a magas rendelkezésre állást és gyors adatátviteli sebességet. Az ideális tárhelyszolgáltatónak támogatnia kell a szükséges technológiákat, mint például a PHP, MySQL vagy Node.js.</li>
  </ul>
 
  <h3 class="feladatcim">4.4 Költségbecslés</h3>
- <p>A projekt várható költségei az alábbiak szerint alakulnak:</p>
+ <p>A projekt várható költségei az alábbiak szerint alakulnak, figyelembe véve a fejlesztési, üzemeltetési és marketing költségeket:</p>
  <ul>
-     <li>Fejlesztői munkaerő költsége: A programozók, tervezők és egyéb szakemberek bérének és juttatásainak összege.</li>
-     <li>Hardver költségek: Az applikáció fejlesztéséhez és teszteléséhez szükséges hardver eszközök, mint például számítógépek, szerverek és egyéb eszközök beszerzési költsége.</li>
-     <li>Szoftver költségek: A fejlesztéshez szükséges szoftverlicencek, keretrendszerek és egyéb programok költségei.</li>
-     <li>Egyéb költségek: További kiadások, mint például domain és tárhely díjak, marketing költségek, vagy egyéb adminisztratív kiadások.</li>
+     <li><strong>Fejlesztői munkaerő költsége:</strong> A programozók, tervezők és egyéb szakemberek bérének és juttatásainak összege. A csapatnak tapasztalt fejlesztőkből kell állnia, akik jártasak a webes technológiákban, a szoftverarchitektúrában és a felhasználói élmény optimalizálásában. A várható költség a munkatársak számától és szaktudásától függően változhat, és a bérköltségek mellett figyelembe kell venni a képzések és workshopok költségeit is.</li>
+     <li><strong>Hardver költségek:</strong> Az applikáció fejlesztéséhez és teszteléséhez szükséges hardver eszközök, mint például számítógépek, szerverek és egyéb eszközök beszerzési költsége. A fejlesztés során biztosítani kell, hogy a fejlesztői környezet optimális legyen, így a hardvereknek képesnek kell lenniük a legújabb fejlesztési eszközök futtatására is. Emellett, ha a projekt növekedni fog, szükség lehet a szerverkapacitás bővítésére is.</li>
+     <li><strong>Szoftver költségek:</strong> A fejlesztéshez szükséges szoftverlicencek, keretrendszerek és egyéb programok költségei. Ide tartozik a fejlesztői környezethez szükséges szoftverek, mint például az IDE-k (IntelliJ IDEA, Visual Studio Code), valamint bármilyen harmadik féltől származó könyvtár és plugin. Fontos, hogy a csapat a legfrissebb verziókat használja, hogy a legújabb funkciók és biztonsági frissítések elérhetők legyenek.</li>
+     <li><strong>Egyéb költségek:</strong> További kiadások, mint például domain és tárhely díjak, marketing költségek, vagy egyéb adminisztratív kiadások. A marketing költségek magukban foglalják a hirdetések költségeit, közösségi média kampányokat, valamint a promóciós anyagok előállítását. A költségvetésben figyelembe kell venni a potenciális partnerkapcsolatokat, amelyek segíthetik az applikáció népszerűsítését.</li>
  </ul>
  <br>
- <p>Becsült összeg: 1.200.000 Ft</p>
-
+ <p><strong>Becsült összeg: 1.200.000 Ft</strong></p>
+ <br>
+ <p>A költségbecslés átfogó elemzése segít a projekt pénzügyi tervezésében és a szükséges erőforrások biztosításában, hogy a fejlesztési folyamat zökkenőmentesen haladhasson. A költségek folyamatos figyelemmel kísérése elengedhetetlen ahhoz, hogy a projekt a tervezett kereteken belül maradjon, és a lehető legnagyobb értéket teremtse a felhasználók számára.</p>
 
 
  <h3 class="feladatcim">4.5 Installáció</h3>
 
+ <p>A rendszer telepítése és üzemeltetése során figyelembe kell venni bizonyos követelményeket, amelyek biztosítják az applikáció megfelelő működését és a felhasználói élményt</p>
  <p>A rendszer telepítéséhez és üzemeltetéséhez az alábbi követelmények szükségesek:</p>
 
  <ul>
-     <li>Az applikáció futtatásához elengedhetetlen egy naprakész webböngésző, mint például Chrome, Firefox, Safari vagy Edge.</li>
-     <li>A telepítés előtt biztosítani kell a szükséges webes technológiák, mint a HTML5, CSS3 és JavaScript (ES6+) támogatását.</li>
+     <li><strong>Webböngésző:</strong> Az applikáció futtatásához elengedhetetlen egy naprakész webböngésző, mint például Chrome, Firefox, Safari vagy Edge. A felhasználóknak fontos, hogy mindig a legfrissebb verziót használják, mivel a régi verziók nem biztos, hogy támogathatják az új funkciókat vagy a biztonsági frissítéseket. A böngésző beállításainak optimalizálása érdekében a felhasználóknak engedélyezniük kell a JavaScript futtatását, valamint a cookie-k használatát, mivel ezek elengedhetetlenek a zökkenőmentes működéshez.</li>
+     <li><strong>Webes technológiák támogatása:</strong> A telepítés előtt biztosítani kell a szükséges webes technológiák, mint a HTML5, CSS3 és JavaScript (ES6+) támogatását. Ezek a technológiák lehetővé teszik az applikáció dinamikus működését és a modern felhasználói élményt. A HTML5 és CSS3 használata biztosítja a reszponzív és interaktív felhasználói felület kialakítását, míg a JavaScript lehetővé teszi a komplex funkciók, mint például az adatok valós idejű frissítését és a felhasználói interakciók zökkenőmentes kezelését.</li>
+<li><strong>Internetkapcsolat:</strong>A rendszer optimális működéséhez stabil és megbízható internetkapcsolat szükséges. A felhasználóknak legalább 5 Mbps sebességű kapcsolatot ajánlott használniuk, hogy elkerüljék a késleltetéseket és a megszakításokat az applikáció használata során. Az alkalmazás folyamatos internetkapcsolatot igényel, mivel a funkciók, például a valós idejű adatfeldolgozás és a felhasználói interakciók kezelése az online környezethez kötődnek.</li>
+<li><strong>Adatbázis hozzáférés:</strong>A telepítés előtt győződjön meg arról, hogy a felhasználók rendelkeznek a szükséges jogosultságokkal a kapcsolódó adatbázishoz. Az alkalmazásnak képesnek kell lennie a felhasználói adatok, edzéstervek és teljesítménystatisztikák gyors és hatékony kezelésére, amelyhez egy jól megtervezett adatbázis-struktúra elengedhetetlen. Az adatbázisnak rugalmasnak kell lennie, hogy lehetőséget biztosítson a jövőbeli bővítésekre is.</li>
+<li><strong>Hardverkövetelmények:</strong>A felhasználói eszközöknek teljesíteniük kell a minimum hardverkövetelményeket a zökkenőmentes működés érdekében. Javasolt, hogy a felhasználók rendelkezzenek legalább 4 GB RAM-mal és egy modern, többmagos processzorral, mivel a komplex feladatok, mint például az adatok feldolgozása és az interaktív elemek kezelése, komolyabb számítási teljesítményt igényelnek.</li>
+<li><strong>Feltételek és engedélyek: </strong>A rendszer telepítése előtt a felhasználóknak meg kell ismerkedniük az applikáció használatára vonatkozó feltételekkel és engedélyekkel. Az applikáció használatához a felhasználóknak el kell fogadniuk az adatkezelési irányelveket, amely biztosítja, hogy a személyes adatok kezelése megfeleljen a hatályos jogszabályoknak.</li>
  </ul>
+
+<p>Ezek a követelmények biztosítják, hogy a fitness applikáció zökkenőmentesen telepíthető és használható legyen, lehetővé téve a felhasználók számára, hogy maximálisan kihasználják az alkalmazás által nyújtott előnyöket és funkciókat. </p>
+
+<p>A telepítéshez később <strong>Installációs kézikönyv</strong> is fog tartozni részletes telepítési útmutatókkal és leírásokkal</p>
+
 
  <h3 class="feladatcim">5. Végtermék jellemzői</h3>
 
- <p>A projekt végterméke egy innovatív fitness web-applikáció, amely lehetőséget nyújt komplex edzésprogramok létrehozására, testreszabására és menedzselésére. Az alkalmazás moduláris felépítése lehetővé teszi különböző külső fejlesztőrendszerek és szolgáltatások, például fitnesz nyomkövetők vagy táplálkozási tervek integrálását.</p>
+ <p>A projekt végterméke egy innovatív fitness web-applikáció, amely lehetőséget nyújt komplex edzésprogramok létrehozására, testreszabására és menedzselésére. Az alkalmazás moduláris felépítése lehetővé teszi különböző külső fejlesztőrendszerek és szolgáltatások, például fitnesz nyomkövetők, táplálkozási tervek és wellness programok integrálását. A célunk, hogy a felhasználók könnyedén nyomon követhessék fejlődésüket és elérhessék fitnesz céljaikat.</p>
 
  <br>
 
- <p>A célunk, hogy a felhasználói élmény egyszerű és intuitív legyen, lehetővé téve ezzel akár a kevésbé tapasztalt felhasználók számára is, hogy könnyedén hozzanak létre és kezeljenek edzésterveket. Az applikáció tervezése során figyelembe vesszük a felhasználói igényeket, biztosítva, hogy a platform mindenki számára hozzáférhető és könnyen használható legyen.</p>
+ <p>Az applikáció fejlett funkciói közé tartozik az egyedi edzéstervek kidolgozása, amelyek figyelembe veszik a felhasználó aktuális edzettségi szintjét, preferenciáit és céljait, legyen szó izomnövelésről, fogyásról vagy állóképesség fejlesztéséről. A felhasználói élmény javítása érdekében a rendszer képes személyre szabott ajánlásokat adni a felhasználóknak, figyelembe véve a korábbi edzések adatait és a felhasználói visszajelzéseket.</p>
+
+<p>Az alkalmazás tervezése során fontos szempont volt, hogy a felhasználói élmény egyszerű és intuitív legyen, lehetővé téve ezzel akár a kevésbé tapasztalt felhasználók számára is, hogy könnyedén hozzanak létre és kezeljenek edzésterveket. Az applikáció grafikai felhasználói felülete modern dizájnnal rendelkezik, amely a felhasználók számára vonzó és könnyen navigálható. A felhasználói interakciók zökkenőmentes lebonyolítása érdekében az applikáció tartalmaz interaktív elemeket, amelyek segítségével a felhasználók valós időben követhetik edzésük előrehaladását.</p>
+
+<p>A felhasználói igények folyamatos figyelemmel kísérése érdekében az applikáció rendszeres frissítéseken és funkcióbővítéseken megy keresztül, hogy mindig naprakész és releváns megoldásokat kínáljon a felhasználók számára. Az integrált visszajelzési rendszer lehetővé teszi a felhasználók számára, hogy közvetlenül a fejlesztőknek jelezzék véleményüket és javaslataikat, ezzel elősegítve a közvetlen kommunikációt és a fejlesztési folyamatot.</p>
+
+
 
  <h3 class="feladatcim">6. Korlátozások</h3>
 
- <p>A szoftver optimális működéséhez elengedhetetlen a minimális rendszerkövetelmények teljesítése, különben nem garantált az alkalmazás megfelelő futása. Nagyobb teljesítményű eszközökön természetesen jobb felhasználói élményt lehet biztosítani.</p>
+ <p>A szoftver optimális működéséhez elengedhetetlen a minimális rendszerkövetelmények teljesítése, különben nem garantált az alkalmazás megfelelő futása. Nagyobb teljesítményű eszközökön természetesen jobb felhasználói élményt lehet biztosítani, mivel a komplex adatfeldolgozási igények és a valós idejű frissítések megkövetelik a megfelelő hardvererőforrást. Az alacsony teljesítményű eszközök esetén előfordulhat, hogy az applikáció lassabb válaszidőt, akadozó működést vagy a funkciók korlátozott elérhetőségét tapasztalja a felhasználó.</p>
+
+<p>Továbbá, az applikáció használatához stabil és megbízható internetkapcsolat szükséges. A gyenge vagy megszakadó internetkapcsolat negatívan befolyásolhatja a felhasználói élményt, mivel a funkciók, mint például a valós idejű adatfrissítés és az online edzésprogramok elérése, szoros kapcsolatban állnak az internet elérhetőségével. Az applikáció által használt harmadik fél szolgáltatások és API-k megbízhatósága is hatással lehet a teljesítményre, és esetleges szolgáltatásmegszakítások időszakos problémákat okozhatnak a felhasználók számára.</p>
+
+<p>Ezen kívül, mivel az alkalmazás számos külső eszközhöz, mint például fitnesz nyomkövetők és okosórák, való integrációt is megvalósít, a kompatibilitás kérdései szintén kihívást jelenthetnek. Bizonyos eszközök vagy szolgáltatások korlátozott funkcionalitással rendelkezhetnek, ami megnehezítheti az adatok szinkronizálását és a felhasználói élmény zökkenőmentessé tételét. A fejlesztőknek folyamatosan figyelemmel kell kísérniük a technológiai trendeket és a piaci változásokat, hogy az applikáció mindig a legfrissebb és legjobban támogatható eszközökkel és platformokkal működjön együtt. </p>
+
+
 
 
  <h3 class="feladatcim">7. Minőségi elvárások</h3>
 
+<p>A fitness applikáció fejlesztésénél kiemelt figyelmet fordítunk a minőségi elvárásokra, amelyek biztosítják, hogy az alkalmazás minden felhasználó számára optimális élményt nyújtson. Az alábbiakban részletezünk néhány alapvető minőségi szempontot:</p>
+
+<br>
+
  <ul>
-     <li><strong>Teljesítmény:</strong> A rendszer megfelelő működéséhez elengedhetetlen a minimális rendszerkövetelmények teljesítése, biztosítva ezzel a zökkenőmentes és hatékony működést.</li>
-     <li><strong>Válaszidő:</strong> A válaszidő a létrehozott edzésprogramok bonyolultságától függ, azonban általában az alkalmazás gyors és megbízható válaszokat nyújt a felhasználói interakciókra, minimalizálva ezzel a várakozási időt.</li>
-     <li><strong>Felhasználóbarátság:</strong> Az web-applikációt úgy tervezzük, hogy a lehető legátláthatóbb és könnyen használható legyen, akár egy laikus felhasználó számára is.</li>
+     <li><strong>Teljesítmény:</strong> A rendszer megfelelő működéséhez elengedhetetlen a minimális rendszerkövetelmények teljesítése. A felhasználói élmény javítása érdekében a rendszernek képesnek kell lennie arra, hogy a bonyolultabb edzésprogramok és adatelemzési folyamatok zökkenőmentesen fussanak. A fejlesztés során prioritást élvez az alkalmazás gyorsasága, és törekedni kell arra, hogy a felhasználók mindig azonnali hozzáférést kapjanak a kívánt funkciókhoz.</li>
+     <li><strong>Válaszidő:</strong> A válaszidő a létrehozott edzésprogramok bonyolultságától függ, azonban általában az alkalmazás gyors és megbízható válaszokat nyújt a felhasználói interakciókra. A rendszernek törekednie kell arra, hogy a felhasználók minimális várakozási idővel találkozzanak, különösen a valós idejű funkciók, például a teljesítményelemzés vagy a programok létrehozása során. Célunk, hogy a válaszidő ne haladja meg a 2 másodpercet a felhasználói kérdésekre, így biztosítva a zökkenőmentes interakciót.</li>
+     <li><strong>Felhasználóbarátság:</strong> Az applikációt úgy tervezzük, hogy a lehető legátláthatóbb és könnyen használható legyen, akár egy laikus felhasználó számára is. Az intuitív felhasználói felület kialakítása során figyelembe vesszük a felhasználói szokásokat és igényeket, biztosítva ezzel, hogy a felhasználók könnyedén navigálhassanak a különböző funkciók között. A design során kiemelt figyelmet kap a vizuális hierarchia, a színek és a betűtípusok megválasztása, amelyek hozzájárulnak az applikáció esztétikájához és használhatóságához. A felhasználói visszajelzések alapján folyamatosan finomítjuk a felhasználói felületet, hogy az még inkább megfeleljen a felhasználói elvárásoknak.</li>
+<li><strong>Megbízhatóság:</strong>Az alkalmazásnak stabilan és megbízhatóan kell működnie, függetlenül a felhasználók számától és az alkalmazott funkciók összetettségétől. A rendszer tervezése során figyelembe vesszük a lehetséges hibák minimalizálását, valamint a biztonsági intézkedések beépítését, hogy a felhasználói adatok védve legyenek. A rendszeres frissítések és karbantartások révén biztosítjuk, hogy az applikáció mindig a legmagasabb szintű megbízhatósággal üzemeljen.</li>
+<li><strong>Kompatibilitás:</strong>Az alkalmazásnak többféle operációs rendszerrel és böngészővel is kompatibilisnek kell lennie, hogy a felhasználók különböző eszközökön is zökkenőmentesen használhassák az applikációt. A fejlesztés során teszteljük az alkalmazást különböző platformokon, mint például Windows, macOS, Android és iOS, biztosítva ezzel a széles körű elérhetőséget és a felhasználói élmény maximális fokozását.</li>
+<li><strong>Biztonság:</strong>A felhasználói adatok védelme és a rendszer biztonsága kiemelt prioritás a fejlesztés során. Az applikáció a legújabb biztonsági protokollok és titkosítási módszerek alkalmazásával védi a felhasználók érzékeny információit, mint például a személyes adatok és a pénzügyi tranzakciók. Rendszeres biztonsági auditokat végzünk a potenciális kockázatok azonosítása és csökkentése érdekében.</li>
  </ul>
+
+<p>Ezek a minőségi elvárások nemcsak a felhasználói élményt javítják, hanem hozzájárulnak az applikáció hosszú távú sikeréhez és megbecsüléséhez a piacon. </p>
+
 
  <h3 class="feladatcim">8. Dokumentációkkal kapcsolatos követelmények</h3>
 
@@ -301,18 +403,41 @@
 
  <h3 class="feladatcim">9. Kockázatok</h3>
  <ul>
-     <li><strong>Kompatibilitás:</strong> Amennyiben a minimális rendszerkövetelmények nem teljesülnek, az applikáció nem fog megfelelően futni.
+     <li><strong>Kompatibilitás:</strong> Amennyiben a minimális rendszerkövetelmények nem teljesülnek, az applikáció nem fog megfelelően futni. Ez problémát okozhat a felhasználók számára, akik nem tudják majd használni az alkalmazást a saját eszközeiken.</li>
          <ul>
-             <li><strong>Intézkedések:</strong> A fejlesztés során alaposan dokumentálni kell a minimális rendszerkövetelményeket, és folyamatosan tesztelni kell a különböző platformokon és eszközökön. Ezenkívül ajánlott a felhasználókat tájékoztatni a rendszerkövetelményekről, hogy elkerülhető legyen a telepítési problémák.</li>
+             <li><strong>Intézkedések:</strong> A fejlesztés során alaposan dokumentálni kell a minimális rendszerkövetelményeket, beleértve a támogatott operációs rendszereket és böngészőket. Folyamatosan tesztelni kell az applikációt különböző platformokon és eszközökön a fejlesztési ciklus során. Ajánlott a felhasználókat előre tájékoztatni a rendszerkövetelményekről, hogy elkerülhető legyen a telepítési problémák, és segíteni kell őket a szükséges frissítések elvégzésében.
          </ul>
      </li>
 
-     <li><strong>Render idő:</strong> Ha a rendszerkövetelmények nem teljesülnek, a betöltési idő túlságosan hosszú lehet, ami kellemetlen élményt nyújt a felhasználóknak.
+     <li><strong>Render idő:</strong> Ha a rendszerkövetelmények nem teljesülnek, a betöltési idő túlságosan hosszú lehet, ami kellemetlen élményt nyújt a felhasználóknak. A lassú betöltési idő rontja a felhasználói élményt és növelheti a felhasználói elégedetlenséget.</li>
          <ul>
-             <li><strong>Intézkedések:</strong> A fejlesztés során optimalizálni kell a kódot és a médiafájlokat, hogy csökkenthető legyen a renderelési idő. Emellett használható a tartalom terhelésének elhalasztása, vagy a tartalom előtöltése a felhasználói élmény javítása érdekében.</li>
+             <li><strong>Intézkedések:</strong> A fejlesztés során optimalizálni kell a kódot és a médiafájlokat, hogy csökkenthető legyen a renderelési idő. A képek és egyéb médiafájlok tömörítése, valamint a JavaScript és CSS fájlok minimalizálása kulcsfontosságú lépések. Emellett használható a tartalom terhelésének elhalasztása, vagy a tartalom előtöltése a felhasználói élmény javítása érdekében. Az applikációt fejlesztése során érdemes a legújabb webes technológiákat, mint például a lazy loading (késleltetett betöltés) és az aszinkron adatbetöltés alkalmazása, hogy minimalizáljuk a várakozási időt.</li>
          </ul>
      </li>
+
+  <li><strong>Adatvédelmi kockázatok:</strong> A felhasználói adatok, például személyes információk és egészségügyi adatok kezelése során fontos figyelembe venni a jogszabályi előírásokat és a felhasználói adatvédelmet. A nem megfelelő adatkezelés jogi következményeket vonhat maga után.</li>
+         <ul>
+             <li><strong>Intézkedések:</strong> Az alkalmazás fejlesztése során biztosítani kell a megfelelőséget a GDPR és más vonatkozó jogszabályok tekintetében. Az adatokat titkosítani kell, és biztonságos adatkezelési gyakorlatokat kell alkalmazni. A felhasználóknak világos tájékoztatást kell adni az adataik kezeléséről és jogairól. Rendszeres auditokat kell végezni az adatkezelési folyamatok áttekintésére és javítására.</li>
+         </ul>
+     </li>
+
+
+ <li><strong>Teljesítménycsökkenés:</strong> A rendszer túlterhelése vagy a szerverek nem megfelelő kezelése miatt a rendszer teljesítménye csökkenhet, ami a felhasználói élmény romlásához vezethet.</li>
+         <ul>
+             <li><strong>Intézkedések:</strong> A terheléselosztó rendszerek alkalmazása és a skálázható szerverinfrastruktúra kiépítése lehetővé teszi a rendszer stabil működését nagy forgalom esetén. Monitorozni kell a rendszer teljesítményét, és előre jelezni a potenciális terhelési csúcsokat, hogy időben reagálni lehessen a problémákra. Ezenkívül érdemes tervezni a rendszer redundanciáját, hogy a felhasználók számára zökkenőmentes élményt biztosíthassunk.</li>
+         </ul>
+     </li>
+
+ <li><strong>Felhasználói visszajelzés figyelmen kívül hagyása:</strong> Ha a felhasználói visszajelzéseket nem kezeljük megfelelően, akkor a fejlesztés irányvonalát eltéveszthetjük, ami végső soron a felhasználói elégedetlenséghez vezethet.</li>
+         <ul>
+             <li><strong>Intézkedések:</strong> o	A fejlesztési ciklus során rendszeresen gyűjteni és elemezni kell a felhasználói visszajelzéseket. A visszajelzések figyelembevételével folyamatosan javítani kell az applikációt, és a felhasználókat tájékoztatni kell a végrehajtott változtatásokról. Ezen kívül javasolt felhasználói teszteket végezni a fejlesztés különböző szakaszaiban, hogy az applikáció a felhasználók igényeihez igazodjon.</li>
+         </ul>
+     </li>
+
  </ul>
+
+<p>Ezek a kockázatok és intézkedések segítenek minimalizálni a lehetséges problémákat, és biztosítani a fitness applikáció sikeres fejlesztését és működését. </p>
+<br>
 
  <hr>
 
@@ -519,6 +644,40 @@
          <td>Mindenki</td>
          <td>FA kész dokumentumok ellenőrzése, átnézése</td>
      </tr>
+
+ <tr>
+         <td>2024.10.23</td>
+         <td>2 óra</td>
+         <td>Útólagos javítás</td>
+         <td>Mindenki</td>
+         <td>Témavezető által ajánlott javítások</td>
+     </tr>
+
+    <tr>
+         <td>2024.10.24</td>
+         <td>2,5 óra</td>
+         <td>Útólagos javítás</td>
+         <td>Mindenki</td>
+         <td>Témavezető által ajánlott javítások</td>
+     </tr>
+
+<tr>
+         <td>2024.10.25</td>
+         <td>1,5 óra</td>
+         <td>Útólagos javítás</td>
+         <td>Mindenki</td>
+         <td>Témavezető által ajánlott javítások</td>
+     </tr>
+
+
+	 <tr>
+         <td>2024.10.25</td>
+         <td>0,5 óra</td>
+         <td>Útólagos javítás</td>
+         <td>Mindenki</td>
+         <td>Témavezető által ajánlott javítások feltöltése és weboldalra vitele</td>
+     </tr>
+	 
  </table>
 
 </div>
