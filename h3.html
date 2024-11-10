@@ -1,0 +1,1509 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kód Betyárok - Fitness Applikáció</title>
+    <link rel="stylesheet" href="h3.css">
+</head>
+<body>
+
+    <header>Kód Betyárok - Fitness Applikáció</header>
+
+    <div class="button-container">
+        <a href="index.html" target="index.html">H1</a>
+        <a href="h2.html" target="h2.html">H2</a>
+        <a href="h3.html" target="h3.html">H3</a>
+        <a href="h4.html" target="_blank">H4</a>
+        <a href="felhdoc.html" target="_blank">Felhasználói dokumentáció</a>
+    </div>
+<hr>
+    <h3>Gyakorlatvezető: Mileff Péter</h3>
+
+    <table>
+        <tr>
+            <th>Csoport tagjai</th>
+            <th>Neptun Kód</th>
+            <th>Email</th>
+        </tr>
+        <tr>
+            <td>Vass Martin</td>
+            <td>103URB</td>
+            <td>martin.vass@student.uni-miskolc.hu</td>
+        </tr>
+        <tr>
+            <td>Hliva Gábor</td>
+            <td>F548N</td>
+            <td>gabor.hliva@student.uni-miskolc.hu</td>
+        </tr>
+        <tr>
+            <td>Bodó Tamás</td>
+            <td>HDK6NX</td>
+            <td>tamas.bodo@student.uni-miskolc.hu</td>
+        </tr>
+        <tr>
+            <td>Varga Bence</td>
+            <td>HK74CE</td>
+            <td>varga.bence@student.uni-miskolc.hu</td>
+        </tr>
+        <tr>
+            <td>Lévai Kristóf Zalán</td>
+            <td>EDMO16</td>
+            <td>kristof.zalan.levai@student.uni-miskolc.hu</td>
+        </tr>
+    </table>
+
+    <div class="paragraphs">
+        <p id="alahuzott">Résztevők:</p>
+
+ 	<p>Vass Martin:		103URB (CSAPATVEZETŐ)</p>
+ 	<p>Hliva Gábor:		F548N</p>
+ 	<p>Bodó Tamás:		HDK6NX</p>
+ 	<p>Varga Bence:		HK74CE</p>
+	 <p>Lévai Kristóf:		EDMO16</p>
+
+	<hr>
+
+        <p id="datum">2024.10.25</p>
+    </div>
+
+<div class="paragraphsss">
+
+        <h1>Software követelmény specifikáció (SRS)</h1>
+        <br>
+        <hr>
+
+
+        <h3 class="feladatcim">1. Bevezetés</h3>
+    <p>A fitness alkalmazás fejlesztésének célja egy átfogó és felhasználóbarát platform létrehozása, amely támogatja a felhasználók különböző fitneszcéljainak elérését, az egészséges életmód fenntartását és az egyéni teljesítmény növelését. Ez a dokumentum a Java és Spring Boot technológiákra épülő projekt megvalósításának alapjait fekteti le, részletezve a tervezési folyamatot, az applikáció struktúráját és a megvalósítás során felmerülő technológiai kihívásokat.</p>
+
+    <p>A fitness applikációk piaca folyamatosan bővül, hiszen egyre több felhasználó keres olyan digitális eszközöket, amelyek lehetővé teszik a testmozgás, az étrend és a fizikai fejlődés nyomon követését. A fejlesztés alatt álló alkalmazás nem csupán az egyéni edzéskövetést célozza, hanem olyan funkciókat is kínál, amelyek támogatják a közösségi élményt és a szakmai integrációt: lehetőséget nyújt sportlétesítményekkel és személyi edzőkkel való együttműködésre, valamint statisztikai elemzéseket biztosít az egyéni teljesítmény kiértékelésére.</p>
+
+
+    
+    <h3 class="feladatcim">2. Áttekintés</h3>
+
+    <p>Az alkalmazás tervezésekor kiemelt célunk, hogy az egyéni és közösségi fitneszigényeket is támogató, sokoldalú platformot hozzunk létre. Ehhez egy rugalmas és könnyen testreszabható rendszer szükséges, amely egyaránt segíti a kezdő felhasználókat és a professzionális edzőket céljaik elérésében.</p>
+
+    <h2>2.1. Moduláris és Testreszabható Felépítés</h2>
+    <p>A fitness applikáció moduláris szerkezetének köszönhetően a felhasználók különböző igényeik alapján szabhatják testre az alkalmazást, így lehetőség nyílik az egyedi célokhoz igazított edzéstervek összeállítására, nyomon követésére és optimalizálására. Például, a súlycsökkentésre, izomépítésre vagy állóképesség fejlesztésére vágyók mind személyre szabott ajánlásokat kaphatnak. Ezen kívül az étkezési naplózás funkció lehetőséget biztosít arra, hogy a felhasználók az étkezési szokásaikat is szorosan figyelemmel kísérjék, támogatva ezzel a táplálkozási céljaikat és egészségi állapotuk javítását.</p>
+    <p>Az applikáció belső struktúrája lehetővé teszi a különböző modulok rugalmas kezelését: az új funkciók hozzáadása vagy a meglévők finomítása könnyedén elvégezhető, és a felhasználók visszajelzései alapján az alkalmazás képes folyamatosan fejlődni. Ez a modularitás hosszú távon biztosítja az alkalmazás frissességét és relevanciáját a fitneszpiacon.</p>
+
+
+    <h2>2.2. Felhasználóbarát Felület és Könnyű Használhatóság</h2>
+    <p>A felhasználói élmény középpontjában a letisztult és modern felhasználói felület áll, amely átlátható és egyszerű navigációt biztosít. A cél az, hogy a felhasználók minimális technikai ismeretekkel is képesek legyenek magabiztosan használni az applikációt, így az edzéstervek készítése, módosítása és az előrehaladás nyomon követése mindenki számára könnyedén elérhető legyen. A vizuális megjelenést és az interakciókat úgy terveztük meg, hogy a felhasználók gyorsan megértsék a funkciókat és motiválva érezzék magukat a platform használatára.</p>
+    <p>A felhasználói felület minden eleme logikus sorrendben és intuitív elrendezésben helyezkedik el, ami lehetővé teszi a gyors és gördülékeny navigációt az egyes funkciók között. Az alkalmazásban elérhető interaktív elemek, mint például grafikonok, teljesítménymutatók és eredményriportok, vizuálisan is segítik a felhasználók fejlődésének követését, így motiválva őket a folyamatos edzésre és az életmódbeli célok elérésére.</p>
+
+
+
+    <h2>2.3. Integrációs Lehetőségek</h2>
+    <p>A modern fitness alkalmazások piacán elengedhetetlen, hogy az alkalmazás könnyen integrálható legyen külső eszközökkel és platformokkal. Ennek érdekében az applikáció fejlesztése során számos integrációs lehetőséget építünk be, amelyekkel a felhasználók különböző fitneszkiegészítőket, például okosórákat, pulzusmérőket és lépésszámlálókat kapcsolhatnak össze az alkalmazással. Az eszközök által gyűjtött adatok (például pulzus, kalóriaégetés, alvásminőség) valós időben kerülnek feldolgozásra, így a felhasználók minden edzés után pontos visszajelzést kapnak teljesítményükről.
+        Ezen túlmenően, az alkalmazás lehetőséget nyújt a felhasználók számára, hogy népszerű fitneszplatformokkal, mint például a MyFitnessPal, a Fitbit vagy a Strava, összekapcsolódva szinkronizálják adataikat
+        </p>
+    <p>Ez az integráció lehetővé teszi a felhasználók számára, hogy egyetlen helyen követhessék minden fitnesztevékenységüket, ami átfogóbb képet ad az egészségi állapotukról és a fejlődésükről. A sportlétesítményekkel és személyi edzőkkel történő integrációk révén az alkalmazás nemcsak az egyéni felhasználók számára nyújt hasznos eszközöket, hanem a szakemberek számára is, akik hatékonyabban tudják támogatni klienseiket a fitneszcéljaik elérésében.</p>
+
+
+
+    <h2>2.4. Skálázhatóság és Teljesítmény</h2>
+    <p>Az alkalmazás tervezésekor fontos szempont a skálázhatóság és a rendszer teljesítményének biztosítása. Mivel az applikáció adatbázis-alapú, nagy adatmennyiségek tárolására és gyors feldolgozására képes. A fejlesztés során gondosan megtervezett adatbázis-struktúra és a háttérfolyamatok optimalizálása biztosítja, hogy a rendszer gördülékenyen kezelje a felhasználói adatokat, edzésterveket és teljesítménystatisztikákat. A terheléselosztó mechanizmusok és a nagy teljesítményű szerverkapacitás lehetővé teszi, hogy az applikáció folyamatosan magas színvonalú szolgáltatást nyújtson, még nagy felhasználói terhelés esetén is.</p>
+    <p>A teljesítmény és a gyors válaszidők elérése érdekében a rendszer alapját képező technológiákat, mint a Java és Spring Boot, gondosan választottuk meg. Ezek lehetővé teszik a háttérfolyamatok optimalizálását és a gyors adatlekérdezést, ami hozzájárul a felhasználói élmény magas szintjének fenntartásához. A felhasználók igényei és a használat növekedésével a rendszer könnyen bővíthető, ami garantálja, hogy az applikáció hosszú távon is megbízható és fenntartható megoldás marad.</p>
+
+
+
+
+    <h2>2.5. Versenyelőny és Piaci Pozíció</h2>
+    <p>A piaci helyzet elemzése alapján a jelenlegi fitness alkalmazások közül kevés kínál teljes körű, személyre szabott megoldásokat és integrációkat, amelyek lehetővé tennék a felhasználók számára a testre szabható edzéskövetést és az eszközök széles körű támogatását. Az általunk fejlesztett applikáció célja, hogy egyedülálló módon ötvözze a közösségi, személyes és szakmai célokat támogató eszközöket, amelyek révén a felhasználók valóban egyéni igényeiknek megfelelő megoldást kapnak. Az applikáció skálázhatósága, rugalmassága és a felhasználói élményre való összpontosítása mind hozzájárulnak ahhoz, hogy a piacon kiemelkedő helyet foglaljon el.</p>
+    <p>Összességében, az applikáció fejlesztésekor célunk, hogy egy innovatív, könnyen használható és a modern fitnesztrendekhez igazodó eszközt nyújtsunk, amely segíti a felhasználókat céljaik elérésében, miközben a teljesítmény és a felhasználói élmény szempontjából is megfelel a legmagasabb elvárásoknak.</p>
+
+
+
+    <h3 class="feladatcim">3. A rendszer funkciói</h3>
+
+    <p>A fitness applikáció olyan átfogó funkciókat kínál, amelyek megfelelnek a modern fitneszpiac követelményeinek és segítik a felhasználókat az egészséges életmód fenntartásában. A fejlett grafikai elemekkel, széles körű edzés- és étrendfunkciókkal, valamint egy egyszerű, felhasználóbarát kezelőfelülettel a rendszer célja, hogy átfogó és motiváló élményt nyújtson a felhasználók számára. A következőkben részletesen ismertetjük a rendszer fő funkcióit, amelyek biztosítják, hogy a felhasználók személyre szabott edzéstervet, étrendi ajánlásokat és motivációs támogatást kapjanak céljaik eléréséhez.</p>
+
+    <h2>3.1.1 Edzésterv</h2>
+
+    <p>Az applikáció átfogó, személyre szabható edzésterv modullal rendelkezik, amely lehetővé teszi a felhasználók számára, hogy egyedi céljaiknak és edzettségi szintjüknek megfelelő edzéstervet alakítsanak ki és kövessenek. Az edzésterv funkció átgondolt, könnyen kezelhető felépítésével és a különböző edzéstípusok széles választékával támogatja a felhasználókat fitneszcéljaik elérésében, legyen szó akár erőnléti, állóképességi, mobilitási, vagy általános egészségmegőrzési célokról.</p>
+
+    <ul>
+        <li><strong>Edzésgyűjtemények és Programok:</strong> Az alkalmazásban elérhető különböző edzésgyűjtemények és kész programok az edzés célja szerint csoportosítva állnak rendelkezésre, így a felhasználók könnyen választhatnak a nekik leginkább megfelelő programok közül. Ezek az edzésprogramok tartalmazhatnak például erőnléti edzést, amely az izomerősítést szolgálja; kardió edzést, amely a szív- és érrendszer állóképességének javítására összpontosít; nyújtási és mobilitási gyakorlatokat, amelyek az izmok rugalmasságát és az ízületi mozgékonyságot segítik; valamint funkcionális edzéseket, amelyek mindennapi mozgásokat modelleznek, így növelve a felhasználók mindennapi mozgásminőségét és teljesítőképességét.</li>
+
+        <li><strong>Egyéni Gyakorlatok és Feladatok:</strong>: Az applikáció részletes adatbázist kínál a különféle gyakorlatokról, amelyeket a felhasználók egyedileg válogathatnak össze saját edzéstervükhöz. Minden gyakorlat tartalmazza a szükséges információkat a helyes végrehajtáshoz, így például a technikai leírást, ajánlott ismétlésszámokat és szetteket, valamint pihenőidőket is. Az egyes gyakorlatokhoz multimédiás elemek, például oktatóvideók és illusztrációk kapcsolódnak, amelyek biztosítják a megfelelő kivitelezést. Ezáltal nemcsak az edzőtermekben, de akár otthoni környezetben is biztonságosan végezhetők a gyakorlatok.</li>
+        <li><strong>Edzésterv Tervezés és Testreszabás:</strong>Az edzésterv testreszabási lehetőségeinek köszönhetően a felhasználók minden egyes edzésprogramot az aktuális állapotukhoz és céljaikhoz igazíthatnak. Az alkalmazás figyelembe veszi a felhasználók által megadott edzési célokat, mint például a súlycsökkentést, az izomtömeg növelését vagy az állóképesség fejlesztését, és ezek alapján javasol gyakorlatokat és feladatokat. Az edzésterv összeállításakor a felhasználók beállíthatják az edzések intenzitását, időtartamát, valamint a gyakorlatok sorrendjét, és módosíthatják a tervet az edzettségi szintjük növekedésével.</li>
+        <li><strong>Haladás Nyomon Követése és Elért Mérföldkövek:</strong>Az alkalmazás a felhasználók minden egyes edzését és a fejlődésükhöz kapcsolódó statisztikákat rögzíti, és különböző mutatókkal segíti az elért mérföldkövek követését. Ez magában foglalja az elvégzett gyakorlatok számát, a sorozatok és ismétlések növekedését, valamint az edzések rendszerességét és intenzitását. A felhasználók visszajelzést kapnak az elért eredményekről, például arról, hogy mennyi idő alatt érték el a következő szintet, vagy hogy hány alkalommal teljesítettek egy adott gyakorlatot. Ez a nyomon követés nemcsak a motivációt erősíti, hanem lehetővé teszi a teljesítmény pontos monitorozását és elemzését.</li>
+        <li><strong>Automatizált Ajánlások és Dinamikus Edzésterv-frissítések:</strong>A rendszer automatikus ajánlásokat is nyújt, amelyek figyelembe veszik a felhasználó aktuális fizikai állapotát, terhelhetőségét és az edzési céljait. Például, ha a felhasználó nagyobb hangsúlyt szeretne helyezni az erőnövelésre, az alkalmazás javaslatot tehet a súlyok emelésére vagy az ismétlésszám növelésére, míg állóképesség javítása esetén a kardió programok intenzitásának fokozását ajánlhatja. Az automatizált ajánlások segítségével a felhasználók fokozatosan, biztonságosan növelhetik az edzésterhelést, így elkerülhető a túlzott igénybevétel és az esetleges sérülések.</li>
+        <li><strong>Pihenőidők és Regenerációs Tervezés:</strong>Az alkalmazás az edzések közötti pihenőidőket is figyeli, és segíti a felhasználókat az optimális regeneráció biztosításában. Az edzések és gyakorlatok közötti pihenési idő beállítható, és a rendszer értesítést küld a következő gyakorlat megkezdésekor. Emellett hosszabb távú regenerációs javaslatokat is nyújt, például aktív pihenőnapokat és alacsony intenzitású edzéseket, amelyek elősegítik a test teljes helyreállítását.</li>
+        <li><strong>Edzési Napló és Részletes Visszajelzések:</strong>Az applikáció egy részletes edzési naplót is vezet, amelyben a felhasználók rögzíthetik minden egyes edzésük részleteit, így például a hangulatukat, az energiájukat és a teljesítményüket. Ezen kívül a felhasználók lehetőséget kapnak arra, hogy minden edzés után visszajelzést adjanak, ami alapján az alkalmazás személyre szabott javaslatokat tehet a következő edzésekhez.</li>
+        <li><strong>Célorientált Mérföldkövek és Jutalmazási Rendszer:</strong>A felhasználók számára az alkalmazás különböző mérföldköveket és célokat jelöl ki, amelyek elérése esetén motiváló visszajelzéseket és virtuális „jutalmakat” kaphatnak. Ez a jutalmazási rendszer további ösztönzést biztosít, és segít a felhasználóknak fenntartani a motivációjukat hosszú távon. Például, ha a felhasználó sikeresen befejez egy edzésprogramot, virtuális jelvényeket vagy szinteket érhet el, amelyeket megoszthat barátaival és edzőpartnereivel.</li>
+        <li><strong>Helyzetfüggő Edzési Javaslatok:</strong>Az alkalmazás intelligens módon felismeri a felhasználó jelenlegi helyzetét vagy edzési környezetét, így például az otthoni edzéshez, az edzőteremhez, vagy szabadtéri edzéshez is javaslatokat nyújthat. Ez a funkció lehetővé teszi, hogy a felhasználók a helyszínhez leginkább illeszkedő gyakorlatokat válasszák ki, legyen szó eszközzel végzett vagy saját testsúlyos edzésről.</li>
+        <li><strong>Edzésstatisztikák és Eredmények Megosztása:</strong>Az edzésterv modul lehetőséget biztosít arra, hogy a felhasználók megosszák elért eredményeiket és teljesítményüket másokkal. Az alkalmazás grafikus elemekkel, például diagramokkal és grafikonokkal jeleníti meg az edzési statisztikákat, így a felhasználók könnyen átláthatják fejlődésüket, és megoszthatják eredményeiket barátaikkal, családtagjaikkal vagy edzőpartnereikkel.
+            Az edzésterv funkció átfogó, részletes és maximálisan személyre szabható. A különböző elemek révén a felhasználók teljes kontrollt kapnak saját fitneszprogramjuk felett, és minden edzésnél lehetőségük van visszajelzéseket kapni, fejlődésüket nyomon követni, és új célokat kitűzni. Az alkalmazás minden szintű felhasználó számára optimális edzéstervet biztosít, legyen szó kezdőkről, akik az alapokat szeretnék elsajátítani, vagy haladókról, akik specifikus fitneszcélokat kívánnak elérni.
+            </li>
+    </ul>
+
+    <h2>3.1.2 Étrend</h2>
+
+    <p>Az alkalmazás étrendmodulja lehetőséget nyújt a felhasználóknak, hogy személyre szabott és kiegyensúlyozott étrendet alakítsanak ki, amely támogatja a fitnesz- és egészségügyi céljaikat. Az étrendi funkciók középpontjában az egyéni táplálkozási szükségletek állnak, figyelembe véve a felhasználó aktivitási szintjét, fizikai céljait és ízlését. A modul összetett és könnyen kezelhető felülettel rendelkezik, amely segíti a felhasználókat az egészséges étkezési szokások kialakításában és fenntartásában.</p>
+
+    <ul>
+        <li><strong>Személyre szabott étrendi ajánlások:</strong>Az alkalmazás elemzi a felhasználó egyéni igényeit, mint például az életkorát, nemét, testsúlyát, magasságát, fizikai aktivitási szintjét, valamint a kitűzött célokat (pl. fogyás, izomtömeg növelés, szinten tartás). Az elemzés alapján az alkalmazás javaslatokat ad a napi kalória- és makrotápanyag-bevitelre, amelynek megfelelően személyre szabott étrendet ajánl. Az ajánlások figyelembe veszik a felhasználók étkezési szokásait, például a vegetáriánus vagy vegán étrendet, a glutén- vagy laktózérzékenységet, és ez alapján biztosítanak egyedi étrendi terveket.</li>
+        <li><strong>Kalóriaszámítás és Makrotápanyag-eloszlás:</strong>: Az applikáció segítségével a felhasználók nyomon követhetik a napi kalóriabevitelüket, valamint a makrotápanyag-eloszlást (fehérje, szénhidrát, zsír) is. Az alkalmazás számításokat végez az egyéni célok figyelembevételével, így támogatva a felhasználókat az optimális tápanyagarány elérésében. Az alkalmazás automatikusan figyelmeztet, ha a felhasználó túl- vagy alulmarad a kalória- vagy tápanyagcélokhoz képest, és javaslatokat kínál az egyensúly helyreállítására, ezáltal támogatva a hatékony fogyást vagy éppen az izomépítést.</li>
+        <li><strong>Étkezési Időzítés és Tervezés:</strong>Az alkalmazás étkezési időzítést és tervezést is kínál, amely segíti a felhasználókat az étkezési rutinok kialakításában. Az étkezési időpontokat a napi aktivitás szintje alapján ajánlja, például egy intenzívebb edzés után fehérjében gazdag ételt javasol, amely segíti az izmok regenerációját. Az alkalmazás előre jelzi a napra vagy hétre vonatkozó étkezési terveket, figyelmeztető értesítéseket küld, ha eljött az étkezés ideje, és részletes információkat nyújt az egyes ételek tápanyagtartalmáról, ami segíti az egészséges étkezési szokások fenntartását.</li>
+        <li><strong>Receptgyűjtemény:</strong>Az alkalmazás egy átfogó receptgyűjteményt kínál, amely tápláló, könnyen elkészíthető ételeket tartalmaz. A receptek különféle étrendi preferenciák szerint szűrhetők, mint például vegetáriánus, vegán, gluténmentes vagy alacsony szénhidráttartalmú opciók. Minden recept tartalmazza az elkészítési időt, a hozzávalók listáját, lépésenkénti elkészítési útmutatót, valamint az egyes adagok kalória- és tápanyagtartalmát. A felhasználók kedvenc receptjeiket elmenthetik vagy saját receptjeiket is hozzáadhatják, így a gyűjtemény folyamatosan bővíthető személyes kedvencekkel.</li>
+        <li><strong>Bevásárlólista:</strong>Az étrendi modulban elérhető egy automatikus bevásárlólista funkció is, amely a felhasználók által kiválasztott heti étrend alapján összeállítja a szükséges alapanyagokat. Ez a lista megkönnyíti az étkezéshez szükséges hozzávalók beszerzését, és segít abban, hogy a felhasználók előre felkészülhessenek a heti étkezéseikre. Az alapanyagokat kategóriák szerint csoportosítja, és a felhasználók lehetőséget kapnak arra, hogy egyéni preferenciáik alapján módosítsák a listát.</li>
+        <li><strong>Speciális Étrendi Szűrők és Allergénfigyelmeztetések:</strong>Az alkalmazás lehetőséget biztosít arra, hogy a felhasználók étrendi szűrőket állítsanak be az ételek kiválasztásakor. Például, ha egy felhasználó laktóz- vagy gluténérzékeny, az alkalmazás automatikusan figyelmeztet és alternatív ételeket ajánl, amelyek megfelelnek az étrendi korlátozásoknak. Ezzel az alkalmazás hozzájárul az egészséges és biztonságos étkezéshez, különösen azok számára, akiknek különleges diétára van szükségük.</li>
+        <li><strong>Étkezési Napló és Étrend-visszajelzés:</strong>A felhasználók napi étrendi tevékenységüket és étkezéseiket rögzíthetik az étkezési naplóban, amely részletes adatokat nyújt a fogyasztott kalóriákról és tápanyagokról. Az étkezési napló funkció lehetővé teszi, hogy a felhasználók visszatekintsenek az étkezési szokásaikra, felismerjék az esetleges hibákat, és célzottan javítsanak az étrendjükön. Az alkalmazás emellett személyre szabott étrendi visszajelzéseket nyújt, amelyek motiválják a felhasználókat az egészséges táplálkozási szokások fenntartásában.</li>
+        <li><strong>Folyamatos Kalória- és Tápanyag-nyomon követés:</strong>Az applikáció valós idejű kalória- és tápanyag-nyomon követési rendszert biztosít, amely segíti a felhasználókat abban, hogy minden étkezésüket összhangba hozzák napi kalóriacéljaikkal. A rendszer különböző grafikus elemeket, például diagramokat és grafikonokat használ a kalória- és tápanyagfogyasztás megjelenítésére, így a felhasználók könnyen átláthatják, hogy mennyire állnak közel a napi céljaikhoz. Az alkalmazás emlékeztető értesítéseket küldhet, ha a felhasználó napi kalóriabevitele túllépett egy meghatározott határt, vagy ha valamelyik tápanyagcsoportnál hiány lép fel.</li>
+        <li><strong>Heti és Havi Táplálkozási Jelentések:</strong>Az alkalmazás rendszeres időközönként heti és havi táplálkozási jelentéseket készít, amelyek részletes adatokat nyújtanak a felhasználók kalória- és tápanyagfogyasztásáról, valamint az étrendi célok teljesítéséről. Ezek a jelentések kiemelik a sikereket és az esetleges hiányosságokat, segítve a felhasználókat az étrendjük folyamatos optimalizálásában és hosszú távú céljaik elérésében. A jelentések megoszthatók például dietetikusokkal vagy edzőkkel, ami segíti a szakembereket abban, hogy személyre szabott tanácsokkal támogassák a felhasználókat.</li>
+        <li><strong>Étkezési Szokások Elemzése és Javaslatok:</strong>Az alkalmazás figyeli a felhasználó étkezési szokásait, és statisztikai elemzéseket végez az étrendje alapján. Például, ha a felhasználó gyakran fogyaszt zsírokban gazdag ételeket, az alkalmazás javaslatokat adhat arra, hogyan csökkentse ezek bevitelét. Az elemzés eredményeként az applikáció személyre szabott étrendi tanácsokat ad, amelyek segítik a felhasználókat abban, hogy kiegyensúlyozottabb és egészségesebb étkezési szokásokat alakítsanak ki.</li>
+        <li><strong>Motivációs Eszközök és Tippek:</strong>A felhasználók rendszeres motivációs tippeket és javaslatokat kapnak az étrendi célok elérése érdekében. Ezek a tippek segítenek fenntartani a lelkesedést és támogatják a helyes táplálkozási szokások kialakítását. Az alkalmazás tájékoztatást nyújt arról is, hogy az egészséges étrend hogyan járul hozzá az edzések hatékonyságához és a felhasználók általános jólétéhez.</li>
+    </ul>
+
+    <p>Az étrendmodul összetett, könnyen használható és maximálisan testreszabható, ami lehetővé teszi, hogy a felhasználók olyan étrendet kövessenek, amely nemcsak az edzéstervüket, hanem az életmódbeli céljaikat is támogatja. Az alkalmazás segít az egészséges táplálkozás fenntartásában, és olyan részletes, naprakész információkkal látja el a felhasználókat, amelyek elősegítik a kiegyensúlyozott és egészségtudatos életmódot.</p>
+
+    <h2>3.1.3 Célok és motiváció</h2>
+
+    <p>Az alkalmazásban kiemelt szerepet kap a felhasználók egyéni fitneszcéljainak kitűzése és a motiváció fenntartása, ami segíti őket a hosszú távú életmódbeli és egészségügyi célok elérésében. A célok és motivációs modul számos funkcióval támogatja a felhasználókat abban, hogy fókuszáltak maradjanak és folyamatos visszajelzést kapjanak fejlődésükről. A rendszer figyelembe veszi a felhasználók egyéni preferenciáit és igényeit, így a motivációs eszközök személyre szabottan nyújtanak támogatást.</p>
+
+    <ul>
+        <li><strong>Személyre Szabható Célkitűzés:</strong>A felhasználók beállíthatják saját fitneszcéljaikat az applikációban, például súlycsökkentés, izomtömeg növelés, állóképesség fejlesztés, vagy egyszerűen az általános fittség elérése céljából. Az alkalmazás lehetőséget biztosít arra, hogy a felhasználók részletesen meghatározzák céljaikat, beleértve az elérni kívánt súlyt, az elvárt edzési teljesítményt vagy az edzések gyakoriságát és intenzitását. A célok megadásával az applikáció egyedi edzéstervet és étrendet ajánl, amely illeszkedik az adott felhasználó célkitűzéseihez, és folyamatosan segíti őt az elérni kívánt eredmények felé vezető úton.</li>
+        <li><strong>Részletes Céltervezés és Mérföldkövek:</strong>Az alkalmazás célorientált tervet állít össze a felhasználóknak, amely lépésekre bontja a célkitűzéseket, így azok könnyebben elérhetővé válnak. A mérföldkövek rendszeres elérése segíti a felhasználókat abban, hogy motiváltak maradjanak, hiszen minden egyes kisebb sikerélmény lendületet ad a további fejlődéshez. A mérföldkövek teljesítése során a felhasználók értesítéseket kapnak, amelyek tájékoztatják őket a haladásukról és a következő célokról.</li>
+        <li><strong>Célkövetés és Teljesítménystatisztikák:</strong>Az alkalmazás minden egyes edzés és étrend tevékenységet rögzít, és megjeleníti a felhasználók számára az elért eredményeket és a teljesített mérföldköveket. A célkövetési rendszer vizuálisan megjeleníti a fejlődést, például grafikonokon és diagramokon, így a felhasználók könnyen nyomon követhetik, hogy mennyire közelítik meg a kitűzött célokat. A folyamatos visszajelzés hozzájárul ahhoz, hogy a felhasználók tisztán lássák a fejlődésüket, ami további motivációt ad számukra.</li>
+        <li><strong>Motiváló Üzenetek és Értesítések:</strong>Az alkalmazás rendszeres motivációs üzeneteket és tippeket küld a felhasználóknak, amelyek ösztönzik őket a céljaik elérésére. Ezek az értesítések lehetnek pozitív visszajelzések az elért eredményekről, napi edzési emlékeztetők, vagy éppen olyan inspiráló idézetek, amelyek további kitartást nyújtanak. Az értesítéseket személyre szabottan küldi az alkalmazás, például ha a felhasználó hosszabb ideig nem edzett, akkor egy emlékeztetővel ösztönözheti őt az edzés folytatására.</li>
+        <li><strong>Összetett Motivációs Funkciók és Jutalmazási Rendszer:</strong>A rendszer különböző motivációs eszközökkel segíti a felhasználókat abban, hogy elérjék céljaikat. A célok elérésekor vagy új mérföldkövek megdöntésekor a felhasználók virtuális jutalmakat kapnak, például jelvényeket, szinteket vagy különleges kitüntetéseket, amelyek segítenek fenntartani a motivációjukat. A jutalmazási rendszer továbbá lehetőséget biztosít a felhasználóknak arra, hogy megosszák az elért eredményeiket a közösségi hálózatokon, ami még nagyobb inspirációt adhat számukra.</li>
+        <li><strong>Napi és Heti Célkitűzések és Rutinok:</strong>Az alkalmazás lehetőséget ad arra, hogy a felhasználók napi és heti célkitűzéseket állítsanak be, amelyek segítenek a napi rutinfeladatok rendszeres végrehajtásában. Ezek a rövid távú célok, például egy adott napi kalóriabevitel betartása vagy egy heti edzésszám elérése, kisebb lépésekben támogatják a hosszú távú célok elérését. Az applikáció emlékeztetőket küld ezek teljesítésére, és pozitív visszajelzéseket nyújt a sikeres befejezéskor, ami fokozza a felhasználók önbizalmát és motivációját.</li>
+        <li><strong>Személyre Szabott Motivációs Tartalmak:</strong>Az alkalmazás személyre szabott motivációs tartalmakat is kínál, amelyek támogatják a felhasználókat az egészséges életmód fenntartásában. Ezek a tartalmak lehetnek például inspiráló videók, cikkek vagy blogbejegyzések, amelyek segítenek a felhasználóknak új edzési technikákat, táplálkozási tanácsokat és motivációs stratégiákat megismerni. Az applikáció egyedi motivációs idézeteket is küld a felhasználóknak, amelyek személyre szabottan segítik őket a kitartásban és az optimizmus megőrzésében.</li>
+        <li><strong>Részletes Teljesítmény-összesítők és Eredmények:</strong>Az alkalmazás heti, havi és éves teljesítmény-összesítéseket is készít, amelyek részletes elemzéseket nyújtanak a felhasználók fejlődéséről. Ezek az összesítők megmutatják, hogy milyen lépéseket tettek meg a felhasználók a céljaik elérése érdekében, és rávilágítanak az elért eredményekre, például a leadott kilókra, az elvégzett edzések számára, vagy a megnövekedett erőnlétre. Az ilyen részletes visszajelzések segítenek a felhasználóknak látni a hosszú távú fejlődést, ami további inspirációt nyújt.</li>
+        <li><strong>Kihívások és Közös Célkitűzések:</strong>Az alkalmazás különböző kihívásokat és közös célokat is kínál a felhasználóknak, amelyek növelik a versenyszellemet és a közösségi támogatást. A kihívások lehetnek például egy adott időszak alatt elérendő súlycsökkentési célok, heti edzési gyakoriság növelése, vagy közös futás célok, amelyek során a felhasználók egymást motiválhatják és támogathatják. Ezek a közös célok lehetőséget adnak a felhasználóknak arra, hogy egy támogató közösség részévé váljanak, és még erősebben érezzék a motivációt.</li>
+        <li><strong>Sikeres Felhasználói Történetek és Inspirációs Források:</strong>Az alkalmazás kiemelt figyelmet fordít a motiváció fenntartására sikeres felhasználói történetek és valós példák megosztásával. A felhasználók olvashatnak olyan történeteket, amelyek bemutatják mások fitnesz- és életmódváltási sikereit, és inspirációt meríthetnek ezekből. Az alkalmazásban található inspirációs tartalmak és személyes történetek arra ösztönzik a felhasználókat, hogy tartsanak ki céljaik mellett, és higgyenek abban, hogy a változás lehetséges.</li>
+        <li><strong>Edzői és Táplálkozási Szakértői Tanácsok:</strong>Az alkalmazásban elérhetők edzői és táplálkozási szakértői tanácsok, amelyek kifejezetten a felhasználók céljaihoz igazodnak. Az edzők által kidolgozott célorientált tanácsok és tippek segítenek abban, hogy a felhasználók hatékonyan érjék el fitneszcéljaikat, míg a dietetikusok által ajánlott táplálkozási útmutatók támogatják az egészséges étrend fenntartását. A szakértői tanácsok hozzáférhetőek különböző formátumokban, például videókonferencián, írott anyagokban vagy online tanácsadáson keresztül.</li>
+    </ul>
+
+        <p>Az alkalmazás célok és motivációs modulja komplex és átfogó támogatást nyújt a felhasználóknak abban, hogy elérjék fitnesz- és egészségügyi céljaikat. A rendszer folyamatosan nyomon követi a felhasználók előrehaladását, és motiváló eszközökkel segíti őket a céljaikhoz vezető úton. A személyre szabott célkitűzések, a rendszeres visszajelzések, az inspirációs tartalmak és a jutalmazási rendszer mind hozzájárulnak ahhoz, hogy a felhasználók kitartóak legyenek, és fokozatosan elérjék a kívánt eredményeket.</p>
+
+    <h2>3.1.4 Közösségi funkciók</h2>
+
+        <p>A közösségi funkciók az alkalmazás egyik legfontosabb részét képezik, mivel segítenek a felhasználóknak abban, hogy kapcsolatba lépjenek másokkal, megosszák tapasztalataikat, és támogassák egymást a közös célok elérésében. A közösségi élmény növeli a felhasználók elköteleződését, és segít fenntartani a motivációt, mivel a közösségi interakciók és a közös kihívások révén a felhasználók erősebb közösségi kötelékeket alakíthatnak ki. A közösségi funkciók az alábbiakban részletesebben is kifejtésre kerülnek:</p>
+
+    <ul>
+        <li><strong>Eredmények Megosztása és Támogatás:</strong>A felhasználók lehetőséget kapnak arra, hogy megosszák edzés- és étrendi eredményeiket barátaikkal, családtagjaikkal, valamint más alkalmazásfelhasználókkal. Az eredmények megosztása segít abban, hogy a felhasználók elismerjék saját teljesítményüket, miközben másokat is inspirálnak és motiválnak. Az alkalmazásban lévő „Történet megosztása” funkció lehetővé teszi, hogy a felhasználók fényképeket, előrehaladási grafikonokat, edzésvideókat és étkezési naplóikat osszanak meg, így egymás sikerét látva, új impulzusokat adhatnak egymásnak. Ez a funkció különösen hasznos azok számára, akik szeretnék dokumentálni a fejlődésüket, és elérni a kívánt eredményeket közösségi támogatással.</li>
+        <li><strong>Közösségi Kihívások és Versenyek:</strong>Az applikáció lehetőséget biztosít különböző közösségi kihívások és versenyek indítására, amelyek során a felhasználók közösen dolgozhatnak, hogy elérjék közös fitneszcéljaikat. A kihívások különféle típusúak lehetnek, például heti lépéskihívások, kalóriaégetési versenyek, vagy erőnléti versenyek. A kihívások részletes statisztikákkal és célkitűzésekkel követhetők, amelyek folyamatosan motiválják a felhasználókat, hogy a legjobb formájukat hozzák. Emellett az alkalmazás rendszeres visszajelzéseket küld a kihívások státuszáról, és tájékoztatja a felhasználókat arról, hogy hol tartanak a többiekhez képest.</li>
+        <li><strong>Közösségi Csoportok és Támogatói Közösségek:</strong>Az alkalmazásban különböző közösségi csoportok létrehozására van lehetőség, amelyek alapján a felhasználók másokkal együtt dolgozhatnak közös céljaik elérésén. A csoportok tematikusak lehetnek, például "Kezdők csoportja", "Fogyókúrás közösség", "Izomtömeg növelése", vagy "Maraton felkészülés". Ezek a közösségek segítenek abban, hogy a felhasználók tapasztalatokat cseréljenek, motiválják egymást és kérdéseiket közvetlenül más csoporttagokhoz intézhessék. A közösségi csoportok gyakran különböző eseményekhez, beszélgetésekhez és online edzésekhez is csatlakoznak, amelyek új lehetőségeket adnak a felhasználóknak a tanulásra és a fejlődésre.</li>
+        <li><strong>Barátok és Követés:</strong>Az alkalmazás lehetővé teszi, hogy a felhasználók barátokat és követőket gyűjtsenek, akik figyelemmel kísérhetik fejlődésüket. A barátok közvetlenül láthatják egymás edzés- és étrendi előrehaladását, valamint közvetlen üzeneteket küldhetnek egymásnak. Ez a funkció különösen hasznos azok számára, akik szeretnék, hogy közvetlen motivációt kapjanak ismerősöktől, és közösen dolgozhassanak a céljaik elérésén. A követés lehetővé teszi a felhasználók számára, hogy másokat figyeljenek és inspirálódjanak azok edzésprogramjából, sikerélményeiből.</li>
+        <li><strong>Közösségi Hírcsatorna és Feed: </strong>Az alkalmazás közösségi hírcsatornája lehetőséget biztosít arra, hogy a felhasználók naprakészen követhessék mások eredményeit, edzéseit és tippeket osszanak meg. A hírcsatornán az új edzésprogramok, motiváló idézetek, táplálkozási tippek és sikerült célkitűzések jelennek meg, ami segít az inspiráció folyamatos fenntartásában. Ezen kívül a felhasználók reagálhatnak mások posztjaira, lájkolhatják őket, vagy kommentelhetnek, ezzel hozzájárulva a közösség aktív részévé váláshoz.</li>
+        <li><strong>Közösségi Szavazások és Tippek Megosztása:</strong>Az applikáció lehetőséget biztosít a felhasználóknak arra is, hogy közösségi szavazásokat indítsanak, amelyeken kérdéseket tehetnek fel más felhasználóknak. Például kérhetnek tippeket egy adott edzésprogramhoz, vagy megkérdezhetik, hogy a közösség hogyan érte el bizonyos célokat. Az ilyen szavazások elősegítik a közösségi interakciót, és segítenek új ötletek, tanácsok és motivációs források megosztásában.</li>
+        <li><strong>Sikeres Történetek és Inspirációs Közösségi Bejegyzések:</strong>A felhasználók megoszthatják saját sikerélményeiket, amelyek másokat is inspirálnak. Az applikáció kiemeli azokat a történeteket, amelyek különösen motiválóak, és bemutatják, hogyan értek el mások figyelemre méltó eredményeket. Ezek a történetek segítenek az új felhasználóknak is abban, hogy bízzanak a folyamatban, és elköteleződjenek az egészséges életmód mellett. A közösségi bejegyzések tartalmazhatnak fényképeket, előrehaladási grafikonokat, valamint személyes tapasztalatokat és tanácsokat.</li>
+        <li><strong>Egyéni Edzési Partnerek és Támogatás:</strong>Az alkalmazás segíti a felhasználókat abban, hogy egyéni edzési partnert találjanak, akivel közösen dolgozhatnak céljaik elérésén. Az edzési partnerek kiválasztásakor figyelembe lehet venni a közös célokat, helyszíneket és edzési preferenciákat, így a felhasználók motiváltabbak lehetnek. Az alkalmazás üzenetküldő rendszere segítségével könnyedén kapcsolatba léphetnek a partnerekkel, megoszthatják edzési tapasztalataikat, és támogathatják egymást a fejlődésben.</li>
+        <li><strong>Eredményvisszajelzés és Kiemelkedő Tagok:</strong>Az applikáció minden hónapban vagy negyedévben kiemelheti a legaktívabb és legmotiváltabb közösségi tagokat, akik például a legtöbb kihívást teljesítették, vagy akik a legnagyobb fejlődést mutatták edzésükben. Ezek a tagok különféle jutalmakat kaphatnak, például ingyenes prémium funkciókat, ingyenes tanácsadást személyi edzőktől, vagy ajándékokat, amelyeket a közösség elismeréséül kaphatnak.</li>
+    </ul>
+
+        <p>A közösségi funkciók nemcsak szórakoztatóak, hanem segítenek fenntartani a motivációt és elköteleződést a felhasználók számára. A rendszeres interakciók, támogatás és versenyek hozzájárulnak ahhoz, hogy a felhasználók hosszú távon is aktívan részt vegyenek a fitnesz közösségben, és közösen érjék el a kitűzött céljaikat.</p>
+
+
+    <h2>3.1.5 Motiváló tartalom</h2>
+
+    <p>A motiváló tartalom az egyik legfontosabb összetevője annak, hogy a felhasználók hosszú távon is elköteleződjenek az edzéstervük mellett, és valóban elérjék a kitűzött céljaikat. Mivel a fitness célok gyakran időigényesek és kihívásokkal teli utat jelentenek, elengedhetetlen, hogy folyamatosan fenntartsuk a felhasználók motivációját. Az alkalmazás ezért számos, személyre szabott motivációs elemet kínál, amelyek vizuálisan és érzelmileg is hatékonyan ösztönzik a felhasználókat a fejlődésre és a kitartásra. A motiváló tartalom az edzések során, azok előtt és után is aktívan jelen van, így biztosítva a folyamatos inspirációt.</p>
+
+    <p>Az alkalmazás célja, hogy ne csak fizikai eredményeket, hanem mentális fejlődést is biztosítson a felhasználóknak, hiszen a sikeres edzések mögött gyakran a megfelelő hozzáállás és elhatározás áll. A motiváló tartalom különböző formákban elérhető, így minden felhasználó megtalálhatja a számára legmegfelelőbb eszközöket a folyamatos fejlődéshez.</p>
+
+    <ul>
+        <li><strong>Teljesítménydiagramok és vizuális elemek:</strong>Az alkalmazás grafikus teljesítménydiagramokat biztosít, amelyek folyamatosan nyomon követhetők és megjelenítik a felhasználó edzéseinek fejlődését. A vizuális elemek, mint a színes grafikák, teljesítménymérföldkövek és célkitűzési szintek, lehetővé teszik, hogy a felhasználók könnyen észrevegyék az elért eredményeiket, valamint motiválják őket az előrehaladásra. Az alkalmazás automatikusan frissíti és módosítja a célkitűzéseket, ahogy a felhasználó egyre közelebb kerül az eredményeihez, így biztosítva, hogy a felhasználók mindig elérhető, új és kihívást jelentő célt tűzzenek ki maguk elé. A rendszeres mérföldkövek és célkitűzések elérése különösen fontos, mivel a kis lépésekben történő előrelépés segít megőrizni a felhasználók motivációját, még akkor is, amikor a fejlődés lassú ütemben történik.</li>
+        <li><strong>Inspiráló idézetek és videók:</strong>Az alkalmazás napi szinten inspiráló idézeteket és motiváló videókat kínál, amelyek a felhasználók számára ösztönző erőt adnak a céljaik eléréséhez. Az idézetek és videók különböző tematikákra építenek, mint például a kitartás, a mentalitás ereje, a fizikai és mentális határok átlépése, vagy a sikeres emberek történetei. Ezen tartalmak rendszeres frissítése biztosítja, hogy a felhasználók folyamatosan új és változatos inspirációkhoz jussanak, amelyek segítenek nekik átlépni a nehéz pillanatokon. Az idézetek és videók elérhetősége nemcsak az edzések előtt és után, hanem az edzés közbeni motiváció fenntartásához is hozzájárul. A videók például szakértői tanácsokat, edzési tippeket, vagy éppen a sportolók személyes történeteit tartalmazhatják, amelyek segítenek a felhasználóknak abban, hogy átvészeljék a nehézségeket és folytassák az edzéseket.</li>
+        <li><strong>Motivációs kihívások és versenyek:</strong>Az alkalmazásban rendszeresen kihívások és versenyek kerülnek megrendezésre, amelyek extra ösztönzést biztosítanak a felhasználóknak. Ezek a kihívások különböző szinteken és célok szerint vannak kialakítva, így minden felhasználó számára elérhetőek. A versenyek célja, hogy ne csak a saját teljesítményüket mérjék a felhasználók, hanem másokkal való összehasonlítás által is motiválódjanak. Az alkalmazás lehetőséget biztosít, hogy a felhasználók másokkal közösen teljesítsenek kihívásokat, ezzel erősítve a közösségi érzést és a motivációt. A legjobban teljesítő felhasználók díjakat, érmeket vagy akár ajándékokat nyerhetnek, amelyek további ösztönző erőt adnak.</li>
+        <li><strong>Személyre szabott motivációs üzenetek:</strong>Az alkalmazás mesterséges intelligencia segítségével elemzi a felhasználók eddigi teljesítményét, és személyre szabott motivációs üzeneteket küld nekik, amelyek az adott pillanatban szükséges ösztönzést adják. Az üzenetek figyelembe veszik a felhasználó céljait, előrehaladását és edzési szokásait, és olyan motiváló szövegekkel bátorítják őket, amelyek segítenek fenntartani a lelkesedést. Például egy felhasználó, aki nehezebben ér el edzéscélokat, kaphat olyan üzenetet, amely az előző heti fejlődésére hívja fel a figyelmét, míg egy gyorsabban fejlődő felhasználónak új kihívásokat és magasabb célokat ajánlhat az alkalmazás.</li>
+        <li><strong>Zene és hanganyagok:</strong>A megfelelő zene jelentős hatással van a teljesítményre és a motivációra, ezért az alkalmazás lehetőséget ad arra, hogy a felhasználók személyre szabják a lejátszási listáikat az edzéseikhez. Az alkalmazás zenei és hanganyagokat is biztosít, amelyek kifejezetten a fizikai aktivitás fokozására lettek tervezve. Ezek a zenék gyors üteműek, dinamikusak és energikusak, amelyek segítenek fenntartani a motivációt és lendületet adnak az edzés során. Továbbá, az alkalmazás hanganyagokat is kínál, amelyek inspiráló beszédekkel, relaxációs technikákkal vagy éppen pozitív visszajelzésekkel segítenek a felhasználóknak abban, hogy fókuszáljanak a céljaikra.</li>
+        <li><strong>Közösségi interakciók és támogatás:</strong>Az alkalmazás közösségi funkciói lehetővé teszik, hogy a felhasználók kapcsolatba lépjenek másokkal, megosszák edzésélményeiket és tippeket adjanak egymásnak. A közösségi hálózatok és fórumok segítenek abban, hogy a felhasználók ne érezzék magukat egyedül a fejlődésük során, hanem támogató közösség részei legyenek. Az alkalmazás ösztönzi a felhasználókat arra, hogy kövessék egymást, kommentálják egymás eredményeit, és közösen ünnepeljék meg a sikeres pillanatokat. A közösségi kapcsolatok erősítése hozzájárul a motiváció fenntartásához, mivel a felhasználók gyakran inspirálódnak mások történeteiből és eredményeiből.</li>
+    </ul>
+
+
+
+    <h2>3.1.6 Vizuális statisztikák</h2>
+
+    <p>A vizuális statisztikák kulcsszerepet játszanak abban, hogy a felhasználók könnyen észrevegyék saját fejlődésüket és pontosan nyomon követhessék, hogyan haladnak a kitűzött céljaik felé. Az alkalmazás egyik legfontosabb célja, hogy a statisztikai adatok ne csupán számszerűsítsék az eredményeket, hanem könnyen értelmezhetőek és vizuálisan is átláthatóak legyenek. A statisztikák világos és könnyen érthető grafikus formában jelennek meg, hogy segítsenek a felhasználóknak a folyamatos fejlődésük nyomon követésében, valamint ösztönözzék őket a további fejlődésre.</p>
+
+    <p>Az alkalmazás a statisztikai adatokat különböző típusú vizuális eszközökkel jeleníti meg, amelyek a felhasználók számára biztosítják a fejlődésük folyamatos monitorozását és segítenek abban, hogy egyértelműen lássák, hogyan alakultak eddigi erőfeszítéseik. Az adatokat különböző szempontok szerint rendszerezhetjük és testreszabhatjuk, hogy minden felhasználó a számára legfontosabb mutatókat figyelemmel kísérhesse.</p>
+
+
+
+
+    <ul>
+        <li><strong>Grafikonok és diagramok:</strong>: A legfontosabb edzés- és étrendi mutatók megjelenítése érdekében az alkalmazás interaktív grafikonokat és diagramokat biztosít, amelyek lehetővé teszik a felhasználók számára, hogy vizuálisan is nyomon követhessék a fejlődésüket. A grafikonok és diagramok különböző típusú adatokat tartalmaznak, például a felhasználók súlyának, testzsírszázalékának, izomtömegük alakulásának, vagy akár az elégetett kalóriák és megtett lépések számának változásait. Az időskálán ábrázolt adatok lehetővé teszik a felhasználók számára, hogy hosszú távú trendeket és rövid távú változásokat is láthassanak, így jobban megérthetik, hogy az edzéseik és étrendjük hogyan befolyásolják a fejlődésüket.</li>
+        <li><strong>Teljesítmény-összesítések:</strong>Az alkalmazás heti és havi teljesítmény-összesítéseket is kínál, amelyek segítenek a felhasználóknak átfogó képet kapni az eddigi eredményeikről. Az összesítésekben nemcsak az edzésmunkát, hanem az étrenddel kapcsolatos adatokat is megjelenítjük, így a felhasználók könnyen összevethetik a különböző tényezők hatását. A teljesítmény-összesítések különösen fontosak, mivel segítenek a felhasználóknak azonosítani erősségeiket, valamint azokat a területeket, ahol még szükség van javulásra.</li>
+        <li><strong>Haladás és célok vizualizálása:</strong>Az alkalmazás a felhasználók számára lehetőséget biztosít arra, hogy személyre szabott célokat tűzzenek ki, és nyomon kövessék, hogy mennyire haladnak a céljaik felé. A vizuális statisztikák segítenek abban, hogy a felhasználók a napi, heti és havi célok elérésére koncentráljanak, miközben folyamatosan motiválják őket a célok elérésére. Az alkalmazás különböző színes grafikákkal és százalékos mutatókkal jelzi, hogy hány százalékban érték el a céljaikat, ezzel segítve a felhasználókat abban, hogy reálisan lássák az előrehaladásukat.</li>
+        <li><strong>Összehasonlító statisztikák:</strong>Az alkalmazás lehetőséget ad arra is, hogy a felhasználók összehasonlítsák saját teljesítményüket másokkal vagy az általuk kitűzött múltbeli eredményekkel. Ez segíti a versenyszellemet és lehetőséget ad a felhasználóknak arra, hogy mérjék, hogyan teljesítenek másokkal összevetve. Az összehasonlító statisztikák, például az azonos nemű vagy korosztályú felhasználók teljesítményének elemzésével, segíthetnek az egészséges verseny kialakításában, ami további motivációt adhat.</li>
+        <li><strong>Közösségi és baráti statisztikák:</strong>Az alkalmazás közösségi funkcióit kihasználva a felhasználók másokkal is megoszthatják statisztikai eredményeiket. A közösségi platformok lehetőséget biztosítanak a barátokkal és más felhasználókkal való összehasonlításra, ami újabb motiváló erőforrást jelenthet. A baráti statisztikák nemcsak a teljesítményt mérik, hanem közös célok kitűzésére is ösztönözhetik a felhasználókat.</li>
+    </ul>
+
+    <p>A grafikonok mellett az alkalmazás egyéni szűrőket és testreszabási lehetőségeket is biztosít, amelyek segítségével a felhasználók saját preferenciáik szerint jeleníthetik meg a számukra fontos mutatókat. Az ilyen típusú vizuális eszközök segítenek abban, hogy a felhasználók még inkább elköteleződjenek, mivel folyamatosan láthatják a konkrét eredményeiket és a fejlődésüket. A felhasználók például beállíthatják, hogy napi, heti vagy havi szinten kövessék nyomon az eredményeiket, így rugalmasan igazíthatják az adatokat a saját edzési ciklusaikhoz.</p>
+
+    <p>A vizuális statisztikák tehát nemcsak egy hasznos funkciót jelentenek, hanem az alkalmazás egyik alapvető motivációs és fejlődési segédletét képezik. A felhasználók számára biztosított könnyen érthető és áttekinthető statisztikai eszközök hozzájárulnak ahhoz, hogy folyamatosan nyomon követhessék fejlődésüket, azonosíthassák erősségeiket és gyengeségeiket, és hatékonyan dolgozhassanak céljaik elérésén. Az alkalmazás átfogó, vizuális statisztikai funkciója tehát segít a felhasználóknak a motiváció fenntartásában és a fejlődésük pontos mérésében, miközben hozzájárul az egészséges életmód kialakításához.</p>
+
+    
+    <h2>3.2.1 Interaktív elemek</h2>
+
+        <p>Az interaktív elemek azok a funkciók, amelyek lehetőséget biztosítanak a felhasználók számára, hogy aktívan részt vegyenek az applikáció használatában, és saját döntéseikkel alakítsák az élményt. Az interaktív elemek a felhasználói élmény különböző szakaszaiban jelentős szerepet játszanak, mivel nemcsak információt nyújtanak, hanem ösztönzik a felhasználókat a rendszeres használatra, fejlődésre és közösségi interakcióra is. Az alkalmazás mindezt azáltal valósítja meg, hogy egyedi és vonzó vizuális elemeket, valamint testreszabható lehetőségeket kínál, amelyek segítik a felhasználókat a saját céljaik elérésében.</p>
+
+        <p>Az interaktív elemek több különböző funkcióval rendelkeznek, amelyek lehetővé teszik a felhasználók számára, hogy személyre szabottan és élvezetesen érjék el a kívánt eredményeket. Az alkalmazás folyamatosan reagál a felhasználói inputokra, így azok közvetlenül befolyásolják az élményt, növelve ezzel az elköteleződést és a motivációt.</p>
+
+    <ul>
+       <li><strong>Edzésprogram kiválasztása:</strong>Az edzésprogram kiválasztásához szükséges felület az egyik legfontosabb interaktív elem az alkalmazásban. A felhasználók különböző edzéstípusok és programok közül választhatnak, amelyek a saját céljaiknak, edzettségi szintjüknek és preferenciáiknak megfelelően lettek tervezve. Az interaktív elemek, mint a színes grafikus ikonkészletek, dinamikus gombok, lebegő információs ablakok és animációk, segítenek a választásban. A programok részletes leírása, a nehézségi szint, a várható időtartam, valamint az egyes edzésnapok különböző szakaszai vizuálisan is ábrázolva vannak, hogy a felhasználók könnyen áttekinthetően választhassanak. Az edzésprogramok kiválasztása során egyéni igények és célok is figyelembe vehetők, így a felhasználó személyre szabhatja a számára ideális programot.</li>
+       <li><strong>Teljesítmény nyomon követése:</strong>Az alkalmazás segíti a felhasználókat abban, hogy vizuálisan is nyomon követhessék saját fejlődésüket. A teljesítmény nyomon követése nemcsak a fizikai előrehaladást jelenti, hanem az edzések adatainak és statisztikáinak megértését is. A grafikus elemek – mint a diagramok, kördiagramok és oszlopos grafikonok – világosan bemutatják a felhasználók edzésadatainak változásait. A felhasználók például nyomon követhetik, hogyan alakult a napi lépésszámuk, az elégetett kalóriák vagy a megtett távolságok száma, sőt a testösszetételük alakulását is. Az interaktív statisztikai mutatók lehetőséget biztosítanak a célok kitűzésére és azok folyamatos frissítésére, valamint a fejlődés mérésére, így a felhasználók könnyen motiváltak maradhatnak. Az adatok személyre szabható módon szűrhetők, így a felhasználók a kívánt időszakra vonatkozó statisztikákat érhetnek el.</li>
+       <li><strong>Közösségi funkciók:</strong>Az applikáció egyik erőssége a közösségi élmény, amely lehetővé teszi a felhasználók számára, hogy aktívan interakcióba lépjenek másokkal. A közösségi funkciók különböző módokon ösztönzik a felhasználókat a motiváció fenntartására és az edzések rendszeres végzésére. A felhasználók megoszthatják saját edzésnaplóikat, eredményeiket, és akár kihívásokat is indíthatnak, például heti versenyeket, ahol egy-egy cél (például napi lépésszám) elérése versenytárgyává válhat. A közösségi funkciók elősegítik a csapatmunkát és a közös célok kitűzését, miközben baráti versenyek, illetve motiváló csoportok is létrejöhetnek. Az alkalmazás lehetőséget biztosít arra is, hogy a felhasználók kövessék barátaik eredményeit és teljesítményét, így közvetlen visszajelzéseket kaphatnak a saját előrehaladásukról, valamint inspirációt meríthetnek mások sikeréből.</li>
+       <li><strong>Visszajelzés a felhasználóktól:</strong>Az alkalmazás egyik legfontosabb interaktív funkciója a felhasználói visszajelzések összegyűjtése. A felhasználók lehetőséget kapnak arra, hogy értékeljék az applikáció működését, az edzésprogramokat és az egyéb funkciókat. A visszajelzések gyűjtése nemcsak a felhasználói élmény javítását segíti, hanem a fejlesztői csapat számára is fontos információkat szolgáltat arról, hogy mely funkciók népszerűek, és mely területeken van szükség további fejlesztésekre. A visszajelzések könnyen hozzáférhetők és egyszerűen megadhatók, például értékelő rendszerek, szöveges megjegyzések vagy javaslatok formájában. Az alkalmazás ezenkívül lehetőséget biztosít arra is, hogy a felhasználók közvetlenül kommunikáljanak az ügyfélszolgálattal vagy a fejlesztői csapattal, így az app folyamatosan fejlődhet a felhasználók igényei alapján.</li>
+       <li><strong>Edzés közbeni visszajelzések:</strong>Az edzés során az alkalmazás valós idejű visszajelzéseket ad a felhasználóknak, például értesítésekkel vagy hang- és vizuális figyelmeztetésekkel. A felhasználó láthatja, ha elérte a kitűzött célt, vagy ha az edzés intenzitása túl magas vagy alacsony. Ezen visszajelzések segítenek abban, hogy a felhasználó optimálisan végezze el az edzést, és jobban elérhesse a céljait. A folyamatos visszajelzés növeli a felhasználói élményt és a személyre szabott edzéstámogatást.</li>
+       <li><strong>Interaktív kihívások és versenyek:</strong>Az alkalmazás lehetőséget biztosít arra, hogy a felhasználók különböző interaktív kihívásokban és versenyekben vegyenek részt. Ezek a kihívások különféle céltémák köré építhetők, például heti lépés- vagy kalóriaégetési célok elérése, vagy éppen egy adott edzéstípus elvégzése. A felhasználók nemcsak saját magukkal, hanem más felhasználókkal is versenyezhetnek, és az eredmények ranglisták formájában jelenhetnek meg. A versenyek ösztönzik a felhasználókat a kitartásra, miközben egy kis szórakozást és motivációt is csempésznek az edzéseikbe. Az interaktív kihívások, mint például a "30 napos edzés kihívás", segítenek abban, hogy a felhasználók hosszú távon is elköteleződjenek az egészséges életmód mellett.</li>
+    </ul>
+
+        <p>Az interaktív elemek tehát kulcsszerepet játszanak a felhasználói élményben, mivel lehetőséget biztosítanak arra, hogy a felhasználók aktívan alakíthassák edzéseiket, fejlődésüket és közösségi interakcióikat. Az applikáció ezen elemek segítségével nemcsak információt ad, hanem ösztönöz, motivál és személyre szabott élményt biztosít a felhasználóknak, amely segíti őket céljaik elérésében.</p>
+
+
+    <h2>3.2.2 Árnyékok</h2>
+
+    <p>A vizuális elemek megfelelő árnyékolása kiemelkedő szerepet játszik a webalkalmazás felhasználói élményének javításában, mivel az árnyékok nemcsak esztétikai szempontból fontosak, hanem segítenek a vizuális hierarchia és a térbeli érzékelés kialakításában is. A jól megtervezett árnyékok segítenek a felhasználóknak könnyebben eligibilizálni az alkalmazás különböző elemeit, miközben kiemelik az interaktív komponenseket és javítják azok észlelhetőségét.</p>
+
+    <p>A fitness webalkalmazásban az árnyékok alkalmazása dinamikusan változó elemeket eredményezhet, amelyek javítják a felhasználói élményt és a navigáció hatékonyságát. Az alkalmazás vizuális stílusának fejlesztése érdekében két fő módszert alkalmazhatunk az árnyékok megjelenítésére:</p>
+
+    <p><strong>Valós idejű árnyékmegvalósítás:</strong>Ez a módszer lehetőséget biztosít arra, hogy az alkalmazás minden egyes felhasználói interakciót, például kattintásokat, görgetéseket vagy az elemek mozgatását valós időben tükrözze az árnyékok módosításával. A valós időben történő árnyékolás dinamikusan reagál a környezet és az interakciók változásaira, így az árnyékok folyamatosan alkalmazkodnak az aktuális vizuális komponensekhez. Például, ha egy felhasználó egy gombot nyom meg, vagy az egérrel egy menüpontra húzza, az árnyékok azonnal frissülnek, így mélységet adva az egyes interaktív elemeknek. Ez az eljárás különösen fontos a navigációs és interaktív komponensek, mint a gombok, menük vagy kártyák esetében, mivel a folyamatos vizuális visszajelzés segíti a felhasználói élmény fokozását és a felület intuitív használatát.</p>
+
+    <p><strong>Előre számolt árnyékok alkalmazása:</strong>Ez a módszer statikus elemek esetén használható, például fix helyen elhelyezkedő gombok, szövegek vagy képek esetében. Az előre számolt árnyékok pontosabb és részletesebb megjelenítést biztosítanak, mivel az árnyékok az egyes vizuális elemek rögzített helyéhez igazodnak, és nem reagálnak dinamikusan a felhasználói interakciókhoz. Az előre kalkulált árnyékok segítenek a vizuális kompozíció tisztábbá és könnyebben olvashatóvá tételében, miközben esztétikai szempontból gazdagítják az alkalmazás kinézetét. Ezt a módszert például az alkalmazás stabil háttérképei, információs paneleken található szöveges elemek vagy a navigációs sávok esetében alkalmazhatjuk.</p>
+
+
+    <p>A két árnyékolási technika együttes alkalmazása lehetőséget biztosít arra, hogy a webalkalmazás vizuális elemei reagáljanak a felhasználói interakciókra, miközben a statikus elemek is biztosítják az esztétikai harmóniát és a könnyű navigációt. Az árnyékok megfelelő alkalmazása tehát nemcsak esztétikai szempontból fontos, hanem hozzájárul a felhasználói élmény gazdagításához, segíti a felhasználókat abban, hogy könnyen navigáljanak és hatékonyan használják az applikációt.</p>
+
+
+
+    <h2>3.2.3 Edzési emlékeztetők</h2>
+    
+    <p>Az edzési emlékeztetők kulcsfontosságú szerepet játszanak abban, hogy a felhasználók ne hagyják ki a rendszeres edzéseket, és mindig emlékezzenek a fontos lépésekre a fejlődésük érdekében. Az alkalmazás célja, hogy egy személyre szabott élményt biztosítson, amely segíti a felhasználókat abban, hogy következetesen betartsák az edzésterveiket és elérjék céljaikat.</p>
+
+    <ul>
+        <li><strong>Emlékeztetők beállítása:</strong> Az alkalmazás lehetőséget biztosít a felhasználók számára, hogy a saját igényeik szerint állítsák be az edzéseik időpontjait, és rendszeres emlékeztetéseket kapjanak. A felhasználók rögzíthetik az edzés napját, idejét és típusát, majd az alkalmazás automatikusan értesíti őket a közelgő edzésekről. A beállítások között szerepelhetnek napi, heti vagy akár egyedi ismétlődő értesítések is, amelyek segítenek betartani a napi rutint. Az emlékeztetők formátuma változtatható: hang, vizuális értesítés vagy akár az alkalmazásban megjelenő üzenet is lehet.</li>
+        <li><strong>Személyre szabott értesítések:</strong> Az emlékeztetők nem csupán az edzések időpontjaira vonatkoznak, hanem teljes mértékben testre szabhatóak a felhasználók igényei szerint. A felhasználók beállíthatják, hogy milyen típusú értesítéseket szeretnének kapni: például motiváló üzeneteket a reggeli edzés előtt, vagy emlékeztetőket a céljaik eléréséhez szükséges lépésekre. Az értesítések tartalmát és formáját az alkalmazás az egyéni preferenciák alapján alakíthatja, így a felhasználók az edzési időpontokon kívül egyéb hasznos tippeket, például bemelegítési vagy nyújtási gyakorlatokat is kaphatnak.</li>
+        <li><strong>Rugalmasság és változtathatóság:</strong>Az edzési emlékeztetők lehetőséget biztosítanak arra is, hogy a felhasználók gyorsan módosítsák az időpontokat vagy az értesítéseket, ha váratlan események merülnek fel. Így az edzési terv rugalmasan alkalmazkodhat a felhasználó életstílusához, anélkül, hogy a motiváció csökkenne.</li>
+        <li><strong>Motiváló emlékeztetők és visszajelzések:</strong>Az emlékeztetők nemcsak az edzések időpontjairól, hanem motiváló üzenetekről és visszajelzésekről is szólnak. Az alkalmazás napi, heti vagy havi szintű visszajelzéseket is adhat a felhasználóknak, segítve őket a kitartás fenntartásában. Ha például egy felhasználó egy-egy edzését kihagyja, az applikáció motiváló üzenetekkel emlékeztetheti őt a céljaik fontosságára, hogy ne veszítsék el a fókuszt.</li>
+    </ul>
+
+    <h2>3.2.4 Edzésnapló</h2>
+
+    <p>Az edzésnapló kulcsfontosságú eszköz a felhasználók számára, hogy részletesen nyomon követhessék előrehaladásukat, és könnyen azonosíthassák erősségeiket, valamint fejlesztési területeiket. A napló segít az edzésprogram személyre szabásában és finomhangolásában, valamint lehetőséget ad arra, hogy a felhasználók folyamatosan visszajelzést kapjanak az eddigi eredményeikről.</p>
+
+    <ul>
+        <li><strong>Teljesítmény nyomon követése:</strong> Az edzésnapló lehetővé teszi a felhasználók számára, hogy minden egyes edzésük során rögzítsék a végzett gyakorlatokat, az alkalmazott súlyokat, az ismétléseket, a pihenőidőket, valamint bármilyen egyéb fontos paramétert, mint például az edzés intenzitása vagy az alkalmazott edzésmódszer. Ez az adatgyűjtés lehetőséget ad a felhasználóknak arra, hogy pontosan nyomon követhessék fejlődésüket, valamint hogy az edzésük minden egyes részletét átláthassák. A napló automatikusan tárolja az adatokat, így a felhasználóknak nem kell manuálisan rögzíteniük minden egyes információt.</li>
+        <li><strong>Elemzés és fejlődési minták:</strong> Az edzésnapló segítségével a felhasználók áttekinthetik saját fejlődésüket, és azonosíthatják a különböző területeken mutatkozó fejlődési mintákat. Az alkalmazás különféle elemzéseket végezhet, például a súlyok és ismétlések növekedésének követése, a különböző edzésformák hatékonyságának mérésére, vagy a célok eléréséhez szükséges időtartamok kiszámítására. Az adatok vizualizálása grafikonokkal és diagramokkal segíti a felhasználókat abban, hogy könnyen láthassák a fejlődésüket és az esetleges stagnáló pontokat, amelyekre érdemes odafigyelni</li>
+
+        <li><strong>Célok és edzésprogramok nyomon követése:</strong>Az edzésnapló lehetőséget ad a felhasználók számára, hogy személyre szabott célokat tűzzenek ki az edzéseikkel kapcsolatban. Az alkalmazás segíthet az egyes célok lebontásában, például a heti célok elérésére, vagy az egyes gyakorlatok számára elérhető súlymérők meghatározásában. Az alkalmazás folyamatos visszajelzést adhat, hogy a felhasználók láthassák, hogyan haladnak a kitűzött céljaik elérése felé, és mik azok a területek, ahol még többet kell dolgozniuk.</li>
+        <li><strong>Edzési terv módosítása:</strong>A napló rögzített adatai alapján a felhasználók a saját edzésprogramjukat folyamatosan módosíthatják. Ha egy gyakorlat túl könnyűvé válik, vagy ha egy új cél eléréséhez szükséges változtatni a terven, az alkalmazás segíti a módosítások gyors és egyszerű bevezetését. Az edzésnapló és az edzésprogram integrációja lehetővé teszi, hogy a felhasználók rugalmasan alakíthassák az edzéseiket az aktuális szükségleteik és fejlődési ütemük szerint.</li>
+        <li><strong>Összehasonlítás a közösséggel:</strong>A napló nemcsak a személyes fejlődés nyomon követésére szolgál, hanem lehetőséget biztosít arra is, hogy a felhasználók összehasonlítsák az eredményeiket másokkal, ha szeretnének. Az alkalmazás közösségi funkciói lehetővé teszik, hogy a felhasználók megoszthassák edzésnaplójukat barátaikkal vagy más felhasználókkal, így közvetlen visszajelzéseket kaphatnak, és akár edzéscsoportokat is alkothatnak.</li>
+    </ul>
+
+    <p>Az edzésnapló tehát egy átfogó, személyre szabott eszközt kínál a felhasználóknak, amely segíti őket a fejlődésük folyamatos nyomon követésében, miközben lehetőséget biztosít a célok eléréséhez szükséges lépések megtervezésére és módosítására.</p>
+
+    <h2>3.2.5 Testreszabható profil</h2>
+
+    <p>A felhasználók számára lehetőséget biztosítunk arra, hogy személyre szabott profilt hozzanak létre az alkalmazásban, amely lehetővé teszi számukra, hogy minden edzéssel és étrenddel kapcsolatos igényüket és preferenciájukat megadjanak. A testreszabható profil segít abban, hogy az applikáció mindig az aktuális céljaikhoz és fejlődési ütemükhöz igazodjon, így maximalizálhatják a személyre szabott élményt és a hatékonyságot.</p>
+
+    <ul>
+        <li><strong>Felhasználói profilok:</strong> Az alkalmazás lehetőséget ad arra, hogy a felhasználók teljes mértékben testre szabják profiljukat, amely tartalmazza az összes fontos adatot, mint például az életkor, a testsúly, a magasság, a napi aktivitás szintje, valamint az edzési és étrendi preferenciák. Ezen kívül a felhasználók rögzíthetik a céljaikat is, legyen szó fogyásról, izomtömeg növeléséről, állóképesség javításáról vagy bármilyen más egészségügyi célról. Mindezek az adatok segítenek az alkalmazásnak abban, hogy a lehető legjobban testre szabott edzéstervet és étrendi ajánlásokat kínáljon a felhasználóknak.</li>
+        <li><strong>Célok frissítése és nyomonkövetése:</strong> A felhasználók egyszerűen frissíthetik a céljaikat bármikor, hogy azok mindig a legaktuálisabb állapotot tükrözzék. Az alkalmazás folyamatosan nyomon követi a célok elérését, és valós időben frissíti a felhasználó előrehaladását. Ha a felhasználó úgy érzi, hogy egy cél túlságosan könnyű vagy nehezen elérhető, akkor módosíthatja azt, és az applikáció automatikusan hozzáigazítja az edzési és étrendi ajánlásokat ennek megfelelően. Az applikáció a célok eléréséhez szükséges lépésekre bontva, konkrét iránymutatásokat ad, amelyek segítik a felhasználót a tervezett eredmények elérésében.</li>
+        <li><strong>Egyéni preferenciák és életstílus figyelembevétele:</strong>A profil lehetőséget ad arra is, hogy a felhasználók megadják saját életstílusukat, például étkezési szokásaikat, a napi aktivitási szintjüket (például ülőmunka, aktív életmód), valamint az esetleges ételallergiáikat vagy intoleranciáikat. Ezen adatok alapján az alkalmazás testreszabott étkezési terveket és javaslatokat készít, figyelembe véve a felhasználó egészségi állapotát és táplálkozási szükségleteit. Az applikáció képes az egyes étkezésekhez megfelelő tápanyag-arányokat és kalóriabevitelt javasolni, amelyeket a felhasználók könnyen követhetnek.</li>
+        <li><strong>Edzési és étkezési szokások naprakészen tartása:</strong>Az alkalmazás folyamatosan figyelemmel kíséri a felhasználók edzési és étkezési szokásait, és biztosítja, hogy a profil minden egyes frissítéssel naprakész legyen. Ha a felhasználó új étkezési tervet kezd, vagy egy új edzésformát próbál ki, a rendszer automatikusan frissíti a profil adatokat, és az új szokások alapján módosítja a további javaslatokat és emlékeztetőket. Ez a folyamatos alkalmazkodás segít a felhasználóknak, hogy ne veszítsenek el semmit a fejlődésük során, miközben biztosítja a legfrissebb és legrelevánsabb információkat.</li>
+        <li><strong>Szociális integráció és közösségi élmény:</strong>A profilok nemcsak a személyes edzési és étrendi célokat tartalmazzák, hanem lehetőséget adnak a közösségi élmény növelésére is. A felhasználók összekapcsolhatják profiljukat másokkal, megoszthatják edzés- és étkezési terveiket, valamint motiválhatják egymást az előrehaladásban. Az alkalmazás lehetővé teszi a közösségi funkciók integrálását, mint például edzőpartnerek keresése, közös kihívások indítása, és versenyek szervezése, így a felhasználók támogathatják egymást a céljaik elérésében.</li>
+        <li><strong>A profil és a személyre szabott ajánlások összekapcsolása:</strong>Az alkalmazás az összes profiladatot figyelembe véve folyamatosan finomhangolja a felhasználó számára elérhető edzés- és étkezési javaslatokat. Az applikáció képes személyre szabott edzésterveket és étrendeket generálni, amelyek figyelembe veszik a felhasználó előrehaladását, személyes céljait és az életstílusát. Emellett az alkalmazás az aktuális edzésformákhoz és étrendi szokásokhoz leginkább illeszkedő új ajánlásokat kínál, hogy segítse a felhasználót a legjobb eredmények elérésében.</li>
+        <li><strong>Privát és biztonságos profilkezelés:</strong>Az alkalmazás biztosítja, hogy a felhasználói profilok teljes mértékben privátak és biztonságosak legyenek. A felhasználók kontrollálhatják, hogy mely adatokat osztják meg másokkal, és melyek maradnak privátak. Az applikáció titkosított adatkezelést alkalmaz, így minden felhasználói információ biztonságban van, miközben a felhasználó teljes mértékben irányíthatja, hogy mi jelenjen meg a közösségi funkciókban és milyen módon.</li>
+
+    </ul>
+
+    <h2>3.2.6 Integrált táplálkozási útmutatók</h2>
+
+    <p>Az integrált táplálkozási útmutatók segítenek a felhasználóknak abban, hogy tudatosan és egészségesen étkezzenek, miközben figyelembe veszik az egyéni szükségleteiket és céljaikat. Az alkalmazás részletes és személyre szabott tanácsokkal látja el őket a megfelelő tápanyagbevitelről, az étkezések időzítéséről és a fenntartható étrendről.</p>
+
+    <p>Az útmutatók segítenek abban, hogy a felhasználók a legjobb döntéseket hozzák meg, miközben figyelembe veszik a különböző étkezési szokásokat és életmódot.</p>
+
+
+    <ul>
+        <li><strong>Tápanyag-útmutatók és egyéni ajánlások:</strong> Az applikáció részletes útmutatót nyújt a különböző tápanyagok szerepéről, beleértve a fehérjéket, szénhidrátokat, zsírokat, vitaminokat és ásványi anyagokat, valamint azok hatását a testre és a fizikai teljesítményre. Ezen kívül személyre szabott ajánlásokat is biztosít a felhasználók számára, amelyek figyelembe veszik egyéni céljaikat, például a fogyást, izomnövelést, vagy az állóképesség javítását. Az alkalmazás a felhasználó testtömegindexét (BMI), aktivitási szintjét és egyéb egészségügyi mutatóit figyelembe véve biztosítja az optimális tápanyagbevitelt, hogy azok mindig az adott személy igényeihez és céljaihoz illeszkedjenek.</li>
+        <li><strong>Szezonális helyi alapanyagok ajánlása</strong> Az applikáció segít a felhasználóknak abban, hogy egészséges és fenntartható étrendet kövessenek azáltal, hogy szezonális és helyi alapanyagok használatára ad ajánlásokat. Mivel a szezonális ételek nemcsak frissek, hanem a helyi gazdaságot is támogatják, az alkalmazás különösen hangsúlyozza az olyan alapanyagok előnyben részesítését, amelyek a környezetbarát étkezést és fenntarthatóságot szolgálják. Az applikáció folyamatosan frissíti az alapanyagok szezonális elérhetőségét, így a felhasználók mindig aktuális és friss alapanyagokat választhatnak az étkezéseikhez.</li>
+         <li><strong>Kalóriabevitel és étkezési terv:</strong>Az alkalmazás részletes kalóriabeviteli ajánlásokat kínál, amelyek segítenek a felhasználóknak a kívánt céljaik elérésében. Az étkezési tervek az egyes felhasználók napi kalóriaszükségletére vannak szabva, és magukban foglalják az egészséges és tápláló étkezéseket, amelyek nemcsak finomak, hanem tápanyagban gazdagok is. A felhasználók napi étkezéseik tervezésében segítséget kapnak, így könnyen beépíthetik a tápláló étkezéseket a napi rutinjukba.</li>
+         <li><strong>Ételallergiák és intoleranciák kezelése:</strong>Az alkalmazás figyelembe veszi a felhasználók ételallergiáit és intoleranciáit, és biztosítja, hogy az ajánlott étkezési terveken belül olyan ételek szerepeljenek, amelyek biztonságosak számukra. Ha a felhasználó jelez egy ételallergiát vagy intoleranciát, az applikáció automatikusan kizárja azokat az ételeket a tervezett étkezésekből, és alternatív, allergénmentes étkezési lehetőségeket ajánl. Ez segíti a felhasználókat abban, hogy biztonságosan, ugyanakkor tápláló módon étkezzenek.</li>
+         <li><strong>Tápanyag-egyensúly és étkezési szokások nyomon követése:</strong>Az alkalmazás figyelemmel kíséri a felhasználók tápanyag-egyensúlyát és étkezési szokásait, és valós időben nyújt visszajelzést arról, hogy a felhasználó mennyire tartja be az ajánlott tápanyagarányokat. Ha a felhasználó eltéréseket tapasztal a javasolt tápanyagbevitelhez képest, az alkalmazás ajánlásokat ad arra vonatkozóan, hogy hogyan korrigálhatja étkezéseit. Az applikáció statisztikai eszközei segítenek a felhasználóknak abban, hogy nyomon követhessék tápanyagbevitelüket, és felismerjék, ha bármilyen módosításra van szükségük az étrendjükben.</li>
+         <li><strong>Személyre szabott étkezési tippek és receptek:</strong>Az applikáció nemcsak táplálkozási irányelveket biztosít, hanem napi étkezési tippeket és recepteket is ajánl, amelyek az egyes felhasználók táplálkozási preferenciáihoz és életmódjához igazodnak. Ezek a receptek könnyen elkészíthetők, táplálóak és a felhasználók céljait támogatják. Az étkezési tippek segítenek abban, hogy a felhasználók ne csak egészséges, hanem változatos és ínycsiklandó étkezéseket is fogyasszanak.</li>
+         <li><strong>Fenntarthatóság és étkezési tudatosság</strong>: A felhasználók számára az alkalmazás hangsúlyozza a fenntarthatóságot és a tudatos étkezést. A táplálkozási útmutatók részletesen bemutatják, hogyan csökkenthetik a felhasználók étkezési szokásaik környezeti hatását, például az étel-hulladék csökkentésével, a fenntartható gazdálkodásból származó alapanyagok előnyben részesítésével, és az étkezések helyi termelők termékeivel való gazdagításával. Az applikáció segíti a felhasználókat abban, hogy fenntartható módon étkezzenek, miközben elérhetik táplálkozási céljaikat.</li>
+    </ul>
+
+    <h2>3.2.7 Online szakértői tanácsadás</h2>
+
+    <p>Az online szakértői tanácsadás lehetőséget biztosít a felhasználók számára, hogy közvetlen kapcsolatba lépjenek a legjobb táplálkozási és fitnesz szakértőkkel, személyre szabott támogatást kapjanak és szakmai útmutatást nyerjenek céljaik eléréséhez. Az alkalmazás célja, hogy a felhasználóknak könnyen hozzáférhetővé tegye a szakértők tudását, segítve őket a táplálkozás, edzés és általános egészségügyi kérdések terén.</p>
+
+    <p> A tanácsadás révén a felhasználók biztosak lehetnek abban, hogy az általuk követett edzésterv és étrend a legújabb tudományos ismeretekre és szakmai ajánlásokra épül.</p>
+
+
+    <ul>
+        <li><strong>Szakértői konzultáció és személyre szabott tanácsadás:</strong> Az applikáció lehetőséget biztosít arra, hogy a felhasználók online konzultáljanak táplálkozási szakértőkkel, személyi edzőkkel vagy egyéb egészségügyi szakemberekkel, akik segítenek személyre szabott edzés- és étrendtervek készítésében. A konzultáció során a felhasználók konkrét kérdéseket tehetnek fel, például, hogyan érhetnek el gyorsabb fejlődést, vagy hogyan állíthatják be a megfelelő kalóriabevitelt, figyelembe véve egyéni igényeiket, életmódjukat és egészségi állapotukat. A személyre szabott tanácsadásnak köszönhetően minden felhasználó a saját céljainak és szükségleteinek megfelelő útmutatást kap.</li>
+        <li><strong>Kérdések és válaszok szekció:</strong> Az applikáció lehetőséget biztosít a felhasználók számára, hogy bármilyen kérdést feltegyenek a szakértőknek a fitness, táplálkozás, egészséges életmód vagy más releváns témák terén. A válaszokat a szakértők részletesen és érthetően fogalmazzák meg, így a felhasználók hasznos, tudományos alapú információkat kapnak. Az applikáció rendszeresen frissíti a válaszokat, és azokat egy könnyen elérhető, kereshető adatbázisban tárolja, így a felhasználók könnyen hozzáférhetnek a korábban feltett kérdésekhez és válaszokhoz.</li>
+        <li><strong>Téma-specifikus csoportos konzultációk: </strong>Az alkalmazás időről időre csoportos konzultációkat is kínál, amelyek egy adott téma köré építenek, például "szálkásítás", "izomnövelés", "étrend és edzés kombinálása" vagy "fitnesz és egészségi állapot". A csoportos konzultációk lehetővé teszik, hogy a felhasználók másokkal is megoszthassák tapasztalataikat, kérdéseiket és problémáikat, miközben a szakértők válaszokat adnak a felmerülő kérdésekre. Ez nemcsak egyéni tanácsadást biztosít, hanem közösségi élményt is nyújt a felhasználóknak.</li>
+        <li><strong>Video konzultációk és élő kérdezz-felelek:</strong>Az alkalmazás élő, videó alapú konzultációkat is biztosíthat, amelyek lehetőséget adnak a felhasználóknak, hogy közvetlenül, valós időben konzultáljanak a szakértőkkel. Az élő kérdezz-felelek során a felhasználók azonnali válaszokat kaphatnak a felmerülő kérdéseikre, és mélyebb, részletesebb információkat nyerhetnek a kívánt témákról. A videós konzultációk révén a felhasználók személyre szabott, közvetlen tanácsokban részesülhetnek, így nagyobb eséllyel érik el céljaikat.</li>
+        <li><strong></strong>Az alkalmazás rendszeresen frissíti a szakértők által készített tartalmakat, például blogbejegyzéseket, útmutatókat, kutatásokat vagy edzési tippeket, amelyek segítenek a felhasználóknak naprakészen tartani tudásukat az egészséges életmódról. A szakértői blogokon belül olyan témák szerepelnek, mint az új trendek, tudományos kutatások, gyakori hibák és azok elkerülése, valamint a legújabb edzés- és táplálkozási tippek.</li>
+        <li><strong>Szakértői blog és tartalomfrissítések:</strong></li>
+        <li><strong>Szakértői visszajelzések az edzési és táplálkozási előrehaladásról:</strong>A felhasználók számára a szakértők lehetőséget biztosítanak arra, hogy értékeljék eddigi előrehaladásukat, és személyre szabott visszajelzéseket kapjanak a fejlődésükről. Ez segíti a felhasználókat abban, hogy pontosan lássák, miben kell még fejlődniük, és milyen területeken értek el eredményeket. Az értékelések figyelembe veszik az egyéni célokat, a testreszabott edzéseket és étrendeket, hogy a felhasználók optimális fejlődést érhessenek el.</li>
+    </ul>
+
+    <p>Az online szakértői tanácsadás a fitness applikáció egyik legfontosabb funkciója, amely segíti a felhasználókat abban, hogy céljaikat szakértői támogatással és tudományos alapú irányelvek szerint érhessék el. A rendszeres konzultációk és válaszok segítik a felhasználókat a helyes irány megtalálásában, miközben folyamatos fejlődésüket biztosítják.</p>
+
+    <h2>2.3.8. Monetizációs stratégia</h2>
+
+    <p>A fitness applikáció monetizációja a felhasználók számára különböző szintű, személyre szabott előnyöket kínáló tier rendszer alapú előfizetési modellel történik. A célunk, hogy a felhasználók számára olyan értéket biztosítsunk, amely növeli a motivációjukat és segíti őket a céljaik elérésében, miközben biztosítjuk az applikáció fenntartható bevételszerzését. Az előfizetési szintek és a hozzájuk kapcsolódó különböző juttatások a felhasználók egyedi igényeire építenek, és lehetőséget adnak arra, hogy rugalmasan válasszák ki a számukra legmegfelelőbb csomagot.</p>
+
+    <ul>
+        <li><strong>Tier rendszer alapú előfizetési modellek:</strong>Az alkalmazás három különböző előfizetési szintet kínál: Alap, Közép és Prémium. Minden szint más-más előnyöket biztosít a felhasználók számára, és lehetőséget ad a testreszabott tapasztalatokhoz való hozzáférésre. Az Alap csomag ingyenes, de korlátozott funkcionalitást kínál, míg a Közép és Prémium csomagok fejlettebb funkciókat, például részletes edzéstervet, táplálkozási tanácsokat, online konzultációkat és személyre szabott edzésprogramokat biztosítanak.</li>
+        <li><strong>Flash dealek és akciók</strong>Az applikációban időszakos flash deal ajánlatok kerülnek bevezetésre, amelyek korlátozott ideig elérhetőek és jelentős kedvezményeket biztosítanak a felhasználók számára, ha az adott időszakban előfizetnek egy magasabb szintű csomagra. Ezek a promóciók ösztönzik a felhasználókat, hogy gyors döntéseket hozzanak, miközben extra értéket kapnak. A flash dealek mellett az applikáció személyre szabott ajánlatokat is kínálhat, amelyek az egyéni fejlődést figyelembe véve adnak kedvezményeket a következő hónapok előfizetésére.</li>
+        <li><strong>Eredmény alapú kedvezmények:</strong>Az előfizetési szintekhez kapcsolódó kedvezmények a felhasználóik fejlődését is figyelembe veszik. Az applikáció automatikusan nyújt kedvezményeket a felhasználóknak az elért eredményeik alapján, például a kitűzött céljaik elérése, az edzési célok teljesítése, vagy az egészségi mutatók javulása után. Az elért eredmények alapján a felhasználók előfizetési árcsökkentéseket vagy ingyenes hónapokat kaphatnak. Ez nemcsak a motivációt növeli, hanem segíti a felhasználókat abban, hogy folyamatosan fejlődjenek, miközben pénzügyi előnyökhöz is juthatnak.</li>
+        <li><strong>Bónuszok és hűségprogramok: </strong>A rendszeres felhasználók számára elérhetők lesznek hűségprogramok, amelyek további bónuszokkal és kedvezményekkel járnak. A bónuszok közé tartoznak ingyenes konzultációk, exkluzív edzéstervek vagy extra funkciók, amelyeket csak a hűséges felhasználók kaphatnak meg. A hűségprogram célja, hogy fenntartsa a felhasználók elköteleződését és biztosítsa a hosszú távú kapcsolatok kialakítását.</li>
+        <li><strong>Ajánlói rendszer</strong>Az alkalmazásban egy ajánlói program is működik, amely lehetőséget ad a felhasználóknak arra, hogy barátaikat meghívják az applikáció használatára, cserébe extra kedvezményeket vagy ingyenes hónapokat kaphatnak. Az ajánlói program további ösztönzőt biztosít a felhasználók számára, hogy bővítsék a felhasználói bázist, miközben jutalmazza őket a közösség építéséért.</li>
+        <li><strong>Excluzív tartalmak a prémium felhasználóknak</strong>A prémium előfizetők számára exkluzív hozzáférést biztosítunk a legújabb fitnesz trendekről, táplálkozási tippekről, edzői videókról, és személyre szabott edzésprogramokról. Az ilyen típusú prémium tartalmak segítenek abban, hogy a felhasználók még inkább elköteleződjenek az alkalmazás mellett, és hosszú távon is a szolgáltatás igénybe vételével folytassák fitnesz útjukat.</li>
+    </ul>
+
+
+    <h2>3.3 A textúrák betöltésének optimalizálása</h2>
+
+    <p>A textúrák betöltésének optimalizálása kulcsfontosságú a fitness alkalmazás teljesítményének javításában és a felhasználói élmény fokozásában, különösen akkor, ha a vizuális elemek nem alkotják a program központi elemét. Az optimalizált textúra-kezelés nemcsak gyorsabb betöltést biztosít, hanem csökkenti az eszközök erőforrás-igényét is, ami alapvetően hozzájárul a simább működéshez.</p>
+
+    <ul>
+        <li><strong>Aszinkron betöltés:</strong> : Az aszinkron 
+            textúra-betöltési megoldás lehetővé teszi, hogy a felhasználók az alkalmazás használata közben, a háttérben töltődjenek be a szükséges textúrák, így csökkentve a várakozási időt. Ez nemcsak a felhasználói élményt javítja, hanem zökkenőmentes navigációt és gyors interakciót biztosít az alkalmazás használata közben. A betöltési folyamatok zökkenőmentes elosztása és párhuzamos kezelése elengedhetetlen a felhasználói elégedettség növeléséhez.
+            </li>
+        <li><strong>Textúra méretezés:</strong> Az eszközök és képernyőfelbontások figyelembevételével a textúrák különböző méretekre vannak optimalizálva. A mobil eszközök esetében kisebb, tömörített textúrák használatával csökkenthetjük a memóriahasználatot és javíthatjuk a betöltési időt, így az alkalmazás gyorsabban reagál a felhasználói interakciókra. A különböző eszközökhöz való alkalmazkodás elengedhetetlen a teljesítmény optimalizálása érdekében, legyen szó akár okostelefonról, táblagépről vagy asztali számítógépről.</li>
+        <li><strong>Kompressziós technikák:</strong> A textúrák tömörítése segít jelentősen csökkenteni a fájlméretet anélkül, hogy az képi minőség romlana. A hatékony tömörítési algoritmusok alkalmazása minimalizálja a betöltési időt és csökkenti a hálózati sávszélesség igényét, miközben megőrzi a grafikai elemek élességét és részletességét. A megfelelő tömörítési eljárások alkalmazása elengedhetetlen a gyors, erőforrástakarékos működéshez.</li>
+        <li><strong>Előzetes betöltés:</strong> A gyakran használt textúrák előzetes betöltése lehetővé teszi, hogy azok azonnal rendelkezésre álljanak, amikor a felhasználó eléri őket. Ez különösen akkor fontos, amikor az alkalmazás edzésprogramokat vagy étkezési terveket jelenít meg, mivel ezek gyors megjelenítése növeli a felhasználói élményt. Az előzetes betöltés segít minimalizálni a betöltési időt, így az alkalmazás folyamatosan reagál a felhasználói igényekre.</li>
+        <li><strong>Textúrák csoportosítása:</strong> : A textúrák csoportosítása lehetővé teszi azok hatékony kezelését és gyors betöltését. A textúrák előre meghatározott kategóriákba történő besorolása segíthet optimalizálni a memóriahozzáférést és javítani a rendszer teljesítményét. Az intelligens csoportosítás lehetőséget ad arra, hogy csak a szükséges elemek kerüljenek betöltésre, így nem terhelve túl a rendszer erőforrásait.</li>
+        <li><strong>Minőség- és teljesítménybeállítások:</strong> A felhasználók számára lehetőséget biztosíthatunk a textúrák minőségének és teljesítményének személyre szabására, hogy az alkalmazás a saját eszközük teljesítményéhez igazodjon. Ez nemcsak a felhasználói élményt javítja, hanem lehetővé teszi a memória és a processzor optimális kihasználását, így különböző eszközökön biztosítja a zökkenőmentes működést. A felhasználók így a saját preferenciáik szerint állíthatják be az alkalmazás működését, figyelembe véve az eszközeik képességeit.</li>
+    </ul>
+
+    <h2>3.4.x1 A felhasználói felület (UI)</h2>
+
+    <p>A felhasználói felület (UI) az alkalmazás egyik legfontosabb eleme, mivel közvetlen kapcsolatot biztosít a felhasználóval és lehetővé teszi számukra a céljaik elérését. A UI kialakításának kulcsfontosságú célja, hogy a felhasználók egyszerűen, gyorsan és kényelmesen hozzáférhessenek az edzésprogramokhoz, étkezési terveikhez, valamint a fejlődési statisztikákhoz. Az alkalmazás felhasználói felületének megtervezésekor kiemelt figyelmet fordítunk az esztétikai élményre, a funkcionalitásra, valamint a navigáció egyszerűségére, hogy a felhasználók számára egy élvezetes és hatékony edzésélményt biztosíthassunk.</p>
+
+    <br>
+    <hr>
+    <h3 class="feladatcim">Use Case diagram</h3>
+    <br>
+    <img src="fitnessappusecase.png" alt="use case diagram">
+
+    <br>
+    <hr>
+    <br>
+   
+
+    <h2>3.4.1. Felhasználóbarát navigáció</h2>
+
+    <p>A felhasználói felület navigációjának egyszerűnek és intuitívnak kell lennie. A cél az, hogy a felhasználók gyorsan elérjék a számukra legfontosabb információkat és funkciókat. A navigációs menü világosan struktúrált, könnyen átlátható, és gyors hozzáférést biztosít az edzésprogramokhoz, étkezési tervekhöz, edzésnaplóhoz, és a fejlődési statisztikákhoz.</p>
+
+    <ul>
+        <li><strong>Könnyen hozzáférhető menük</strong>A főoldalon és az aloldalakon található menük világos szimbólumokkal és címkékkel segítik a felhasználókat abban, hogy könnyedén navigáljanak az alkalmazás különböző részein.</li>
+        <li><strong>Rugalmas navigációs elemek</strong>A felhasználók testre szabhatják a menüt, hogy az igényeiknek leginkább megfelelő információk kerüljenek a középpontba. </li>
+        <li><strong>Kiemelt funkciók:</strong>Az alkalmazás legfontosabb funkcióit, mint például az edzésprogramok, táplálkozási útmutatók, és a napi statisztikák, kiemeljük az alkalmazás főképernyőjén, hogy a felhasználók gyorsan és egyszerűen hozzáférhessenek hozzájuk.</li>
+    </ul>
+
+
+    <h2>3.4.2. Reszponzív design</h2>
+
+        <p>A felhasználói felület reszponzív dizájnja biztosítja, hogy az alkalmazás bármely eszközön zökkenőmentesen működjön, legyen szó okostelefonról, táblagépről vagy asztali számítógépről. Az alkalmazás dinamikusan alkalmazkodik a képernyőmérethez, így a felhasználók kényelmesen navigálhatnak bármely eszközön, és élvezhetik a teljes funkciókészletet.</p>
+
+
+        <li><strong>Képernyő optimalizálás</strong>Az alkalmazás képernyőjén lévő elemek a készülék képernyőméretéhez igazodnak, biztosítva, hogy minden információ tisztán és jól láthatóan jelenjen meg.</li>
+        <li><strong>Egységes felhasználói élmény</strong>Akár mobilon, akár asztali gépen használják az alkalmazást, a felhasználói élmény ugyanaz lesz, biztosítva a könnyű navigálhatóságot és az alkalmazás hatékonyságát. </li>
+
+    <h2>3.4.3. Esztétikai élmény és vizuális vonzzerő</h2>
+
+    <p>Az alkalmazás vizuális megjelenítése az egyik legfontosabb eleme annak, hogy a felhasználók szívesen használják azt. A tiszta, modern dizájn és a vonzó színvilág segít a felhasználók elköteleződésében, miközben a funkcionalitás mellett a vizuális élményre is fókuszálunk.</p>
+
+    <li><strong>Színek és tipográfia:</strong>: Az alkalmazás színpalettája friss, dinamikus, de nem zavaró, ami segíti a felhasználókat a hosszú távú használat során, miközben kiemeli az alkalmazás fontos elemeit. Az olvashatóság érdekében jól választott betűtípusokat használunk.</li>
+
+    <li><strong>Ikonográfia és vizuális elemek:</strong>Az alkalmazás ikonográfiáját úgy terveztük meg, hogy vizuálisan is segítse a felhasználókat az információk gyors elérésében. Az ikonok egyszerűek és egyértelműek, hogy a felhasználók gyorsan és könnyedén navigálhassanak.</li>
+
+    <li><strong>Vizuális visszajelzés</strong>Az alkalmazás interakciói során biztosítunk vizuális visszajelzéseket, például animációkat vagy színváltozásokat, amelyek segítenek a felhasználóknak megérteni a rendszer állapotát és biztosítják, hogy az alkalmazás mindig reagáljon a felhasználói műveletekre.</li>
+
+
+
+    <h2>3.4.4. Testreszabás és személyre szabott élmény</h2>
+
+    <p>A felhasználói felület testreszabhatósága lehetőséget biztosít arra, hogy a felhasználók saját igényeikhez és preferenciáikhoz igazítsák az alkalmazás kinézetét és működését.</p>
+
+
+    <li><strong>Személyre szabott témák:</strong>Az alkalmazás lehetőséget biztosít különböző témák (pl. világos/dark mode) választhatására, így minden felhasználó a számára legkényelmesebb környezetben edzhet és követheti céljait.</li>
+    <li><strong>Indikátorok és értesítések:</strong>A felhasználók beállíthatják, hogy mely típusú értesítéseket szeretnék megkapni, legyen szó edzés emlékeztetőkről, napi motivációs idézetekről, vagy az elért céljaikhoz kapcsolódó eredményekről. </li>
+
+
+
+    <h2>3.4.5. Képernyőn kívüli funkciók és könnyű hozzáférhetőség</h2>
+
+    <p>A felhasználói felületnek nemcsak a képernyőn, hanem a külső eszközökkel is integrálódnia kell a felhasználói élmény javítása érdekében.</p>
+
+
+    <li><strong>Hangvezérlés:</strong>Az alkalmazás hangalapú parancsokat is támogat, így a felhasználók edzés közben könnyen vezérelhetik az alkalmazást anélkül, hogy meg kellene érinteniük a képernyőt.</li>
+    <li><strong>Widgetek:</strong>A felhasználók számára lehetőség van az alkalmazás egyes funkcióit (pl. napi edzésterv, fejlődési statisztikák) widgetek formájában elhelyezni az eszközüken, így gyorsan és kényelmesen elérhetik a számukra legfontosabb információkat. </li>
+
+
+
+    <h2>3.4.6. Multimédiás tartalmak integrálása</h2>
+
+    <p>A felhasználói élmény gazdagítása érdekében multimédiás elemeket is integrálunk a felhasználói felületbe, mint például videók, hanganyagok, és interaktív bemutatók.</p>
+
+
+    <li><strong>Edzési videók és tutorialok:</strong>Az alkalmazásban könnyedén elérhetők az edzési videók és oktatóanyagok, amelyek segítenek a felhasználóknak helyesen végezni a gyakorlatokat, miközben vizuálisan segítenek a megfelelő technika elsajátításában.</li>
+    <li><strong>Motiváló tartalom:</strong>A felhasználók napi inspiráló videókat és motivációs tartalmakat kapnak, amelyek támogatják őket a céljaik elérésében és a kitartásban.</li>
+
+
+    <h2>3.4.x2 Felhasználói élmény (UX)</h2>
+
+    <p>A felhasználói élmény (UX) kiemelt szerepet kap a fitness alkalmazás fejlesztése során, mivel közvetlenül befolyásolja a felhasználók elégedettségét és az alkalmazás sikerességét. Célunk egy olyan felhasználói élmény biztosítása, amely egyszerű, intuitív és ösztönző, így a felhasználók könnyedén elérhetik edzési és táplálkozási céljaikat, miközben élvezetes módon használják az alkalmazást.</p>
+
+
+    <h2>3.4.1. Felhasználói útvonalak optimalizálása</h2>
+
+    <p>A felhasználói élmény javítása érdekében az alkalmazás felhasználói útvonalait folyamatosan optimalizáljuk. Ez azt jelenti, hogy az alkalmazás folyamatosan alkalmazkodik a felhasználók viselkedéséhez és visszajelzéseihez, hogy minden felhasználó a számára legmegfelelőbb módon érhesse el a kívánt célokat.</p>
+
+
+    <li><strong>Automatikus személyre szabás:</strong>: Az alkalmazás a felhasználók által végzett interakciók alapján finomítja a navigációs ajánlásokat és javaslatokat, így minden felhasználó a legrelevánsabb információkat kapja.</li>
+    <li><strong>Hibamentes átjárhatóság:</strong>A különböző szakaszok közötti átjárás gyors és egyszerű, a felhasználókat nem zavarják fölösleges lépések vagy bonyolult menük, így a felhasználói élmény simábbá válik.</li>
+
+
+
+
+    <h2>3.4.2. Motiváló vizuális elemek</h2>
+
+    <p>A vizuális megjelenés és az esztétikai szempontok szoros kapcsolatban állnak a felhasználói élménnyel, ezért a dizájn egyes elemei motiváló hatással bírnak, segítve a felhasználókat abban, hogy elérjék céljaikat.</p>
+
+
+    <li><strong>Személyre szabott motiváció:</strong>: Az alkalmazás napi inspiráló üzeneteket, visszajelzéseket és elért eredményeket jelenít meg, hogy a felhasználók folyamatosan motiváltak maradjanak.</li>
+    <li><strong>Grafikus elemek:</strong>A dinamikusan változó grafikus elemek – mint például az edzés előrehaladását szemléltető diagramok és statisztikák – a felhasználók számára folyamatosan nyújtanak vizuális visszajelzést és erősítik az elért eredményekről szerzett érzést.</li>
+
+
+    <h2>3.4.3. Optimalizált betöltési idő</h2>
+
+    <p>A felhasználói élmény egyik alapvető tényezője a gyors betöltési idő. Az alkalmazás optimalizálása érdekében külön figyelmet fordítunk arra, hogy a felhasználók ne kelljen hosszú percekig várakozniuk az alkalmazás betöltődésére.</p>
+
+
+    <li><strong>Aszinkron betöltés:</strong>: : A betöltési idő minimalizálása érdekében az alkalmazás aszinkron módon töltődik be, lehetővé téve a felhasználók számára, hogy az alkalmazás bizonyos részeit már akkor használják, amikor más elemek még betöltődnek.</li>
+    <li><strong>Reszponzív animációk: </strong>: Az alkalmazás animációi gyorsak és simák, a felhasználói élményt nem zavarják a várakozási időszakok, így az alkalmazás gyorsan reagál a felhasználói interakciókra.</li>
+
+
+
+    <h2>3.4.4. Felhasználói visszajelzések integrálása</h2>
+
+    <p>A folyamatos fejlesztés érdekében az alkalmazásban lehetőséget biztosítunk a felhasználók számára, hogy visszajelzéseket adjanak, amelyeket az új verziókban figyelembe veszünk. Ezen visszajelzések alapján folyamatosan finomítjuk a navigációt, a funkciókat és a vizuális elemeket, hogy még jobb élményt biztosítsunk.</p>
+
+
+    <li><strong>Visszajelzés kérése:</strong>: Az alkalmazás rendszeresen felkéri a felhasználókat, hogy értékeljék az alkalmazást, így biztosítva, hogy az fejlesztési irányai mindig a felhasználói igényekhez igazodjanak.</li>
+   
+
+    <h2>3.5. Az adattárolás</h2>
+
+    <p>Az adattárolás kulcsfontosságú tényező a fitness alkalmazás működésében, mivel az itt tárolt adatok határozzák meg az applikáció funkcionalitását és teljesítményét. Az alkalmazás összes adatának, beleértve a felhasználói információkat, edzésprogramokat, étrendi adatokat és fejlődési statisztikákat, megfelelő módon kell tárolódnia, hogy biztosítva legyen a gyors hozzáférhetőség és a megbízhatóság. Az adattárolásnak emellett képesnek kell lennie skálázódni a növekvő adatbázisok kezelésére, miközben biztosítja az alkalmazás teljesítményét és adatvédelmét.</p>
+
+    <h2>3.5.1. Megbízhatóság és skálázhatóság</h2>
+
+    <p>Az adattárolás egyik legfontosabb aspektusa a megbízhatóság. Mivel a felhasználói adatok és az alkalmazásban tárolt egyéb információk érzékenyek, az adattárolási rendszernek biztosítania kell az adatok védelmét. Emellett az adatbázisnak képesnek kell lennie gyorsan skálázódni, ahogy az alkalmazás növekvő felhasználói bázisa és adatforrásai egyre bővülnek. Ez biztosítja, hogy a rendszer mindig képes legyen kezelni az adatokat, függetlenül azok mennyiségétől.</p>
+
+
+    <ul>    
+        <li><strong>Skálázható adatbázis:</strong>A folyamatosan bővülő felhasználói adatok és statisztikák hatékony kezelésére skálázható adatbázist alkalmazunk, amely képes a növekvő adatforgalom kezelésére, és nem csökkenti az alkalmazás teljesítményét.</li>
+        <li><strong>Adatvédelmi intézkedések:</strong>A személyes adatok védelme érdekében az adatokat titkosítva tároljuk, és megfelelünk a legszigorúbb adatvédelmi előírásoknak, biztosítva a felhasználók bizalmát.</li>
+    </ul>
+
+
+
+    <h2>3.5.2. Adatok szakszerű tárolása</h2>
+
+    <p>Az adatokat az alkalmazásban különböző entitásokban tároljuk, amelyek az applikáció különböző funkcióit reprezentálják. Minden entitásnak egyedi azonosítót rendelünk, amely automatikusan generálódik az új entitások létrehozásakor. Ezen azonosítók segítségével a rendszer gyorsan hozzáférhet az entitásokhoz, és biztosítja a hatékony keresést és a gyors adatkezelést.</p>
+
+
+    <ul>    
+        <li><strong>Egyedi azonosítók:</strong>Az alkalmazás minden egyes entitásához automatikusan generált egyedi azonosító tartozik, amely lehetővé teszi az adatok gyors és pontos lekérdezését. Az azonosítók biztosítják, hogy az adatok ne keveredjenek, és minden entitás különböző azonosítóval rendelkezzen.</li>
+        <li><strong>Komponens alapú adattárolás:</strong>Az adatok és tulajdonságok komponensenként kerülnek tárolásra. Minden entitásnak különböző komponensei vannak, mint például a felhasználói profil, edzési előzmények, táplálkozási adatok és egyéb paraméterek, amelyek rugalmas adattárolást és gyors hozzáférést tesznek lehetővé.</li>
+    </ul>
+
+
+    <h2>3.5.3. Adatbiztonság és integritás</h2>
+
+    <p>A fitness alkalmazásban tárolt adatok integritása és biztonsága kiemelkedően fontos. Az adattárolás során minden szükséges intézkedést megteszünk annak érdekében, hogy az adatok ne kerüljenek illetéktelen kezekbe, és a rendszer mindig biztosítja az adatok megbízhatóságát.</p>
+
+
+    <ul>    
+        <li><strong>Biztonságos adatátvitel:</strong>Az adatok biztonságos átvitele érdekében titkosított kapcsolatokon keresztül történik az adatcserélés, garantálva, hogy az információk nem kerülnek kockázatba.</li>
+        <li><strong>Integritásellenőrzés:</strong>Az adatok integritását folyamatosan ellenőrizzük, és megelőző intézkedéseket teszünk, hogy elkerüljük az adatvesztést vagy -sérülést. Az adatok változtatásait naplózzuk, így mindig visszakövethetők az esetleges hibák és módosítások.</li>
+    </ul>
+
+
+    <h2>3.5.4. Adatok gyors elérhetősége</h2>
+
+    <p>A felhasználói élmény javítása érdekében az alkalmazásnak gyors hozzáférést kell biztosítania az adatbázisban tárolt információkhoz. Ez magában foglalja az edzésprogramok, étkezési tervek és fejlődési statisztikák gyors betöltését és megjelenítését.</p>
+
+
+    <ul>    
+        <li><strong>Gyors keresés és lekérdezés: </strong>Az adatok gyors keresése érdekében az adatbázisban indexeket alkalmazunk, így a felhasználók szinte azonnal hozzáférhetnek az általuk keresett információkhoz.</li>
+        <li><strong>Előre betöltött adatok: </strong>A leggyakrabban használt adatok előre betöltődnek a rendszerbe, így azok azonnal elérhetők lesznek, amikor a felhasználó szükségét érzi.</li>
+    </ul>
+
+
+    <h2>3.5.5 Az entitások és komponenseik</h2>
+
+    <p>A megfelelő adattárolás érdekében az entitásokhoz tartozó adatok és tulajdonságok külön komponensek formájában kerülnek tárolásra. Mindez lehetővé teszi a rugalmas adattárolást, amely alkalmazkodik a felhasználók egyedi igényeihez és a rendszer bővítéséhez. Az entitások és azok komponensei az alábbi módon működnek:</p>
+
+
+    <ul>
+        <li><strong>Egyedi azonosítók generálása: </strong>Minden egyes entitás létrehozásakor automatikusan generálódik egy egyedi azonosító. Ez biztosítja, hogy minden entitás könnyen azonosítható legyen az adatbázisban, megkönnyítve a hozzáférést és kezelést. Az azonosítók egyértelműen megkülönböztetik az entitásokat, és biztosítják, hogy az adatok ne keveredjenek össze.</li>
+        <li><strong>Komponens alapú adattárolás: </strong>Az entitásokhoz kapcsolódó adatok külön komponensek formájában kerülnek tárolásra. Például a felhasználói fiókhoz tartozhatnak a személyes adatok, edzési előzmények, táplálkozási adatok és egyéb paraméterek, amelyek mind külön komponensben kerülnek tárolásra. Ez lehetővé teszi a hatékony adattárolást és gyors hozzáférést, mivel az egyes komponensek gyorsan lekérdezhetők és módosíthatók.</li>
+        <li><strong>Kapcsolatok és összefüggések: </strong>Az entitások között különféle kapcsolatok és összefüggések létezhetnek, amelyeket az adatbázisban megfelelően kell tárolni. Például egy felhasználói fiókhoz több edzésprogram és étkezési napló is tartozhat, amelyeket az entitások közötti kapcsolatok segítségével lehet összekapcsolni. A megfelelő kapcsolatok biztosítják, hogy a felhasználók adatainak minden aspektusa átfogóan és integrált módon legyen kezelve.</li>
+        <li><strong>Adatbázis integritás és gyors hozzáférés: </strong>Az entitások és azok komponenseinek tárolása az adatbázisban úgy van optimalizálva, hogy a hozzáférés gyors és hatékony legyen. Az indexek alkalmazásával az alkalmazás biztosítja, hogy az adatok gyorsan és pontosan kereshetők legyenek, minimalizálva a válaszidőt és javítva a felhasználói élményt.</li>
+        <li><strong>Dinamikus frissítés és bővítés: </strong>Az entitások rugalmasan frissíthetők, így ha új funkciók, adatok vagy komponensek kerülnek hozzáadásra, az alkalmazás könnyedén alkalmazkodik az új igényekhez. Mivel az entitások jól strukturáltak, az adatbázis bővítése és módosítása nem okoz problémát a meglévő rendszerben, így biztosítva a folyamatos működést és a zavartalan felhasználói élményt.</li>
+    </ul>
+    
+
+    <h2>3.6 Eseménykezelés</h2>
+    <p>Az eseménykezelés kulcsszerepet játszik a fitness alkalmazás interaktív működésében, lehetővé téve a felhasználók számára, hogy aktívan részt vegyenek az edzési és táplálkozási folyamatokban. Az eseménykezelés célja, hogy biztosítsa az alkalmazás gyors és megfelelő reakcióját a felhasználói interakciókra, valamint a rendszer állapotának változásaira, ezzel biztosítva a folyamatos és zökkenőmentes működést.
+        Az események megfelelő kezelése segít abban, hogy az alkalmazás valóban dinamikusan reagáljon a felhasználói igényekre és biztosítja a felhasználói élmény folyamatos javulását. Az eseménykezelés hatékony implementálásával a rendszer képes kezelni a különböző típusú eseményeket és biztosítani, hogy a felhasználók számára mindig a megfelelő válaszokat és információkat adja vissza.
+    </p>
+
+
+    <h2>Események típusai</h2>
+    <ul>
+        <li><strong>Felhasználói interakciók:</strong> : Ezek a leggyakoribb események, amelyek közé tartoznak a gombnyomások, érintések, húzások, illetve egyéb felhasználói műveletek. Például, amikor a felhasználó elindít egy edzést, beállít egy étkezési tervet, vagy módosítja a napi célját, az alkalmazásnak azonnal reagálnia kell az adott interakcióra. A felhasználói interakciók gyors és pontos feldolgozása kulcsfontosságú a pozitív élmény biztosításában.</li>
+        <li><strong>Rendszeresemények:</strong> Azok az események, amelyek a rendszer működésével kapcsolatosak. Ilyenek például az adatok betöltése, az alkalmazás frissítései, háttérfolyamatok befejezése, vagy az új funkciók elérhetősége. Ezen események figyelése és hatékony kezelése nemcsak a rendszer stabilitásának fenntartásában segít, hanem hozzájárul a folyamatos fejlesztésekhez is.</li>
+        <li><strong>Időzített események:</strong> Az edzések, étkezések és más aktivitások időpontjának ütemezése érdekében az alkalmazásnak képesnek kell lennie a pontos időzítésű események kezelésére. Ezek lehetnek például emlékeztetők, amelyek értesítik a felhasználót az elkövetkező edzésről, étkezési időpontokról vagy a napi célok eléréséről. Az időzített események biztosítják, hogy a felhasználók soha ne felejtsenek el egy fontos lépést sem a céljaik elérésében.</li>
+    </ul>
+
+    <h2>Eseménykezelési mechanizmus</h2>
+    <ul>
+        <li><strong>Eseményfigyelők:</strong>Az eseménykezelés során a felhasználói interakciókat és a rendszer állapotváltozásait eseményfigyelők regisztrálják. Az eseményfigyelők folyamatosan figyelik a felhasználói műveleteket, és amikor egy esemény bekövetkezik, az eseményfigyelő észleli a változást, és elindítja a szükséges funkciót. Például, ha a felhasználó egy gombot nyom meg az edzésprogram elindításához, az eseményfigyelő észleli ezt, és aktiválja a megfelelő edzési funkciót.</li>
+        <li><strong>Események kezelése:</strong> Az események kezelése magában foglalja az események feldolgozását, a megfelelő válaszok generálását és azok végrehajtását. Ez magában foglalhatja például egy üzenet megjelenítését a felhasználónak, adatmentést, egy új képernyő betöltését, vagy egy másik funkció aktiválását. Az események gyors és pontos kezelése növeli a felhasználói élményt, mivel csökkenti a várakozási időt és növeli az alkalmazás interaktivitását.</li>
+        <li><strong>Visszajelzés a felhasználóknak:</strong> Az események kezelése során a felhasználóknak azonnali visszajelzést kell kapniuk a műveleteik sikerességéről. Ez lehet vizuális visszajelzés formájában, például színes animációk, piktogramok, hangjelzések vagy felugró üzenetek, amelyek megerősítik a felhasználó számára, hogy az interakciója sikeres volt. A gyors és érthető visszajelzések segítenek a felhasználói elégedettség növelésében.</li>
+    </ul>
+
+    <h2>Eseménykezelés optimalizálása</h2>
+    <ul>
+        <li><strong>Teljesítményfigyelés:</strong> A rendszer teljesítményének optimalizálása érdekében folyamatosan figyelni kell az események feldolgozási idejét és hatékonyságát. Az események feldolgozásának sebessége közvetlen hatással van a felhasználói élményre, így a rendszer elemzi az események kezelésének hatékonyságát, hogy az esetleges lassú vagy nem megfelelően kezelt események azonosíthatók legyenek. Az ilyen események kijavítása kulcsfontosságú a rendszer gyorsaságának és stabilitásának fenntartásában.</li>
+        <li><strong>Hibakezelés:</strong> Az események kezelése során előfordulhatnak hibák, amelyek rontják a felhasználói élményt, például egy gombnyomásra nem történik reakció, vagy egy időzített emlékeztető nem jelenik meg időben. A hibák észlelésére és kezelésére szolgáló mechanizmusok bevezetése elengedhetetlen, hogy minimalizálják a felhasználói élmény romlását. A hibakezelési algoritmusok biztosítják, hogy a problémák gyorsan és hatékonyan legyenek orvosolva, és a felhasználói élmény mindig optimális maradjon.</li>
+    </ul>
+
+    <h2>3.7 A kész szoftver fájlformátuma</h2>
+
+    <p>A kész fitness alkalmazás fájlformátuma meghatározza, hogyan tárolódnak az alkalmazás adatai és konfigurációs beállításai. A megfelelő fájlformátum kiválasztása kulcsfontosságú a szoftver teljesítményének, skálázhatóságának és karbantarthatóságának biztosításában. Az alábbiakban részletezzük a legfontosabb fájlformátumokat és azok szerepét az alkalmazásban.</p>
+
+
+
+
+    <h2>3.7.1 Konfigurációs fájlok</h2>
+
+    <p>A konfigurációs fájlok tárolására olyan formátumokat alkalmazunk, amelyek egyszerűen olvashatók és könnyen kezelhetők, miközben lehetővé teszik az alkalmazás beállításainak és preferenciáinak strukturált tárolását. Ezek a fájlok alapvető szerepet játszanak az alkalmazás testreszabhatóságában és működésében.</p>
+
+    <ul>
+        <li><strong>JSON (JavaScript Object Notation):</strong>A JSON formátumot használjuk az alkalmazás konfigurációs beállításainak tárolására. Mivel a JSON széles körben elterjedt és könnyen olvasható, ideális választás az alkalmazás preferenciáinak, edzésprogramoknak, táplálkozási terveinknek és egyéb beállításoknak a tárolására. A JSON formátum rugalmas és könnyen bővíthető, így bármikor módosítható, ha új konfigurációs elemek kerülnek be az alkalmazásba.</li>
+        <li><strong>YAML (YAML Ain't Markup Language):</strong> A YAML formátumot alternatív konfigurációs fájlként alkalmazzuk, mivel tiszta és könnyen érthető szintaxisa van. A YAML lehetővé teszi a hierarchikus adatok tárolását, így ideális választás azok számára, akik a konfigurációs fájlok szervezését és strukturáltságát előnyben részesítik. Az alkalmazásunk esetében a YAML alkalmazása biztosítja a kényelmes adatkezelést, különösen komplexebb, több szintű konfigurációk esetén.</li>
+    </ul>
+
+    <h2>3.7.2 Adattárolás fájlformátuma</h2>
+
+    <ul>
+        <li><strong>SQL:</strong> Az alkalmazás alapvető adatbázisa SQL-alapú, amely lehetővé teszi a felhasználói profilok, edzésstatisztikák, táplálkozási információk és egyéb adatok tárolását és kezelését. Az SQL adatbázis segítségével az adatok könnyen lekérdezhetők, frissíthetők és módosíthatók, biztosítva a gyors válaszidőt és az optimális adatkezelést. Mivel az SQL alapú adatbázisok skálázhatók, könnyen bővíthetők, és a rendszer nagy mennyiségű adatot képes kezelni.</li>
+        <li><strong>CSV (Comma-Separated Values):</strong> A CSV formátumot az adatok importálására és exportálására használjuk. Ez az egyszerű szöveges formátum lehetővé teszi, hogy a felhasználók könnyen megosszák edzés- és táplálkozási adatokat más alkalmazásokkal, vagy biztonsági mentéseket készítsenek. A CSV előnye a könnyű kezelhetőség, de mivel nem támogatja a bonyolultabb adatstruktúrákat, inkább adatcserére és nem állandó tárolásra alkalmazzuk</li>
+    </ul>
+
+    <h2>3.7.3 Felhasználói adatok fájlformátuma</h2>
+
+    <p>A felhasználói adatok tárolása különös figyelmet igényel, mivel ezek a személyes és érzékeny információk, amelyeket biztonságosan és hatékonyan kell kezelni.</p>
+    <ul>
+        <li><strong>XML (eXtensible Markup Language):</strong> Az XML formátumot alkalmazzuk a felhasználói személyre szabott adatok, mint például az egyéni edzéstervek és táplálkozási javaslatok tárolására. Az XML ideális választás, mivel könnyen olvasható és struktúrált formában tárolja az adatokat, amelyek így más rendszerek számára is feldolgozhatók. Az XML előnye, hogy jól támogatja a komplex hierarchikus adatokat és a bővíthetőséget, miközben biztosítja az adatbiztonságot és integritást.</li>
+    </ul>
+
+    <h2>3.7.4 Biztonsági mentések és helyreállítások</h2>
+
+    <p>A felhasználói adatok védelme és visszaállíthatósága érdekében biztonsági mentéseket készítünk, amelyek segítenek a rendszer helyreállításában, ha adatvesztés vagy más problémák lépnek fel.</p>
+    <ul>
+        <li><strong>ZIP:</strong>A biztonsági mentések tárolása ZIP formátumban történik, amely tömöríti az adatokat, csökkentve ezzel a tárolási helyet és gyorsítva a mentési folyamatot. A ZIP fájlok lehetővé teszik az összes adat egyszerre történő mentését és visszaállítását, ami kényelmes és hatékony módszer a felhasználói adatok védelmére. Ezen kívül az adatok gyors tömörítése és kicsomagolása segít megőrizni az alkalmazás teljesítményét.</li>
+    </ul>
+
+    <h2>3.7.5 Naplófájlok</h2>
+
+    <p>A rendszer teljesítményének monitorozása és a hibák nyomon követése érdekében naplófájlokat használunk, amelyek biztosítják a hibaelhárítást és a rendszer állapotának figyelemmel kísérését.</p>
+    <ul>
+        <li><strong>Plain Text (.txt):</strong> Az eseményeket és hibákat naplózó fájlok egyszerű szövegformátumban kerülnek tárolásra. A sima szövegformátum (.txt) lehetővé teszi, hogy a fejlesztők gyorsan és könnyen hozzáférjenek a naplózott információkhoz. Az ilyen típusú fájlok könnyen olvashatók, és gyorsan feldolgozhatók a rendszer állapotának figyelemmel kísérésére. A naplófájlok segítenek az esetleges problémák azonosításában, és biztosítják a hibaelhárítási folyamatok hatékonyságát.</li>
+    </ul>
+
+    <h2>3.7.6 Szoftver verziókezelése</h2>
+
+    <p>A szoftver verziókezelése kritikus fontosságú a fejlesztési folyamatok nyomon követésében és a kiadások kezelésében. A verziók kezelése lehetővé teszi, hogy minden egyes frissítés, javítás vagy új funkció követhető legyen, biztosítva, hogy a felhasználók a legfrissebb verzióval dolgozzanak.</p>
+    <ul>
+        <li><strong>Versioning Files:</strong> A szoftver verziókezelésére és frissítéseire vonatkozó információkat dedikált fájlokban tároljuk, amelyek tartalmazzák a verziószámokat, a kiadási dátumokat, a módosítások és javítások részletes leírásait, valamint az új funkciók bevezetését. Ezek a fájlok lehetővé teszik, hogy a fejlesztők és felhasználók könnyen nyomon követhessék a rendszer állapotát és annak változásait, valamint gyorsan azonosíthassák, hogy melyik verzió tartalmazza a kívánt funkciókat vagy hibajavításokat. A verziókezelési fájlok az alkalmazás frissítéseinek és visszagörgetéseinek biztosítására szolgálnak, így a felhasználók számára egy átlátható és könnyen kezelhető nyomkövetési rendszer biztosítja a fejlesztések hatékonyságát és követhetőségét.</li>
+    </ul>
+
+
+
+
+
+    <h3 class="feladatcim">3.8 Az alkalmazás funkciói</h3>
+
+    <p>Az alkalmazás kulcsfontosságú funkciói a felhasználók fitness céljainak elérését segítik, azáltal, hogy különböző algoritmusokat és eszközöket kínálnak a testreszabott edzések és táplálkozási tervek kezelésére. Az alkalmazás lehetővé teszi a felhasználók számára, hogy nyomon követhessék fejlődésüket és optimalizálják edzéseiket, mindezt személyre szabott módon.</p>
+
+
+   
+    <ul>
+        <li><strong>Funkciók és formátumok: </strong>Az applikációban alkalmazott funkciók saját, előre meghatározott formátummal rendelkeznek. Ez a formátum segít az alkalmazásnak a szükséges paraméterek és adatstruktúrák megfelelő beazonosításában és kezelésében a használat során. Az egyes funkciók testreszabható beállításokkal és operátorokkal rendelkeznek, lehetővé téve, hogy opcionálisan engedélyezett funkciókat hozzanak létre a felhasználók. Mindezek biztosítják a megfelelő rugalmasságot és a különböző igényekhez való alkalmazkodást.</li>
+        <li><strong>Edzés- és táplálkozási funkciók: </strong>Az alapértelmezett funkciók közé tartozik a felhasználók edzésének és táplálkozásának nyomon követése. Emellett a felhasználók saját igényeik szerint testreszabott edzésprogramokat és étkezési terveket hozhatnak létre, amelyeket az alkalmazásban futtathatnak. A személyre szabott edzés- és étkezési terv lehetősége segít abban, hogy a felhasználók a legoptimálisabb módon érjék el fitness céljaikat.</li>
+        <li><strong>Funkciók tárolása és cache-elése: </strong>A funkciókat a WorkoutComponent-ben tároljuk, amely lehetővé teszi a felhasználók számára, hogy személyre szabott edzésprogramokat és étkezési terveket rögzítsenek fiókjukban. A rendszer képes cache-elni a funkciókat a nevük alapján, így az alkalmazás futása alatt nem szükséges újra beállítani őket, ha már korábban használatba lettek véve. Ez biztosítja a gyors és hatékony működést, valamint csökkenti a felesleges adatkezelést.</li>
+    </ul>
+    
+
+
+
+    <h3 class="feladatcim">3.9 Egyéb funkciók</h3>
+
+    <p>A fitness alkalmazás számos olyan egyéb, speciális funkcióval is rendelkezik, amelyek nem esnek közvetlenül a fő funkciók közé, de nagyban hozzájárulnak a felhasználói élmény javításához és a fejlődés nyomon követéséhez.</p>
+
+
+    <ul>
+        <li><strong>Egyedi eszközök és funkciók: </strong>Az applikáció lehetőséget biztosít a felhasználók számára, hogy egyedi eszközöket és funkciókat használjanak a személyes céljaik elérésére. Ilyenek lehetnek például a fejlődési statisztikák részletes elemzése, az edzési eredmények megosztása, illetve a különböző külső rendszerekkel való integráció.</li>
+        <li><strong>Motivációs funkciók: </strong>A felhasználók motiválása érdekében az alkalmazás különféle eszközöket kínál, mint például napi kihívások, célkitűzések és jutalmak, amelyek segítenek fenntartani a felhasználók elkötelezettségét és támogatják őket a folyamatos fejlődésben.</li>
+        <li><strong>Együttműködési lehetőségek: </strong>A közösségi funkciók révén a felhasználók megoszthatják eredményeiket másokkal, csatlakozhatnak kihívásokhoz, vagy akár barátokat is meghívhatnak az alkalmazásba, hogy közösen dolgozzanak a céljaik elérésén.</li>
+    </ul>
+    
+
+    <h2>3.9.1 Ablak beállításai</h2>
+
+    <p>Az alkalmazásban a felhasználók számára biztosított testreszabhatóság lehetőségei révén a felhasználói élmény még inkább személyre szabható, lehetővé téve, hogy mindenki a saját igényei szerint alakíthassa a megjelenítést és a működést.</p>
+
+    <p>A következő beállítások elérhetők a felhasználók számára, hogy az alkalmazás kinézete és működése a lehető legjobban illeszkedjen a preferenciáikhoz és a használati szokásaikhoz:</p>
+
+
+    <ul>
+        <li><strong>Méret: </strong>A felhasználók választhatják a képernyőn megjelenő ablak méretét, lehetőségük van az alkalmazás ablakának tetszőleges módosítására, hogy kényelmesebben használhassák, akár több ablakot is egyszerre.</li>
+        <li><strong>Cím: </strong>Az alkalmazás ablaka címének módosítása lehetőséget biztosít a felhasználóknak a személyes élmény fokozására, például az egyéni edzéscélokhoz illő nevek megadásával.</li>
+        <li><strong>Ikon: </strong>Az alkalmazás ikonjának testreszabása egyszerűsíti az alkalmazás azonosítását a felhasználók számára, így könnyebben megtalálják és elérhetik a programot.</li>
+        <li><strong>Teljes képernyős mód: </strong>A felhasználók teljes képernyős módra válthatják az alkalmazást, hogy maximális látóteret biztosítsanak az edzéshez vagy táplálkozási tanácsadáshoz, különösen akkor, ha több információra van szükségük egy időben.</li>
+        <li><strong>Ablak átméretezhetősége: </strong>Az alkalmazás rugalmasan átméretezhető, így a felhasználók az igényeiknek megfelelően módosíthatják az ablak méretét, például akkor, ha egyszerre több alkalmazás vagy adatot kívánnak megjeleníteni.</li>
+        <li><strong>Felbontás: </strong>A felhasználók számára elérhető a képernyő felbontásának beállítása is, amely lehetővé teszi számukra a grafikai megjelenítés finomhangolását, optimalizálva ezzel az alkalmazás vizuális élményét a használt eszközhöz.</li>
+    </ul>
+    
+    <p>További testreszabási lehetőségek is elérhetők, mint például színek, betűtípusok, és egyéb vizuális elemek, amelyek hozzájárulnak a felhasználói élmény fokozásához, és segítenek az alkalmazás optimális használatában.</p>
+
+
+
+    <h2>3.9.2 Utility osztályok</h2>
+
+    <p>A utility osztályok az alkalmazás backend rendszerében találhatóak, és céljuk, hogy segítsek a felhasználóknak a különböző funkciók gyors és hatékony végrehajtásában. Ezek az osztályok egy-egy kulcsfontosságú funkciót vagy szolgáltatást reprezentálnak, és a rendszer hátterében működnek, biztosítva a felhasználók számára szükséges eszközöket a céljaik eléréséhez.</p>
+
+    <ul>
+        <li><strong>WorkoutSession (Edzés szekció): </strong>Ez az osztály az edzésprogramok kezelésére szolgál. Lehetővé teszi az edzés szekciók létrehozását, frissítését és nyomon követését. Az edzéssel kapcsolatos adatok, mint a gyakorlatok, ismétlések és sorozatok, a WorkoutSession osztály segítségével kerülnek tárolásra és feldolgozásra. Az osztály emellett figyelhet az edzés intenzitására és időtartamára is, hogy megfelelő statisztikai elemzést kínáljon a felhasználóknak.</li>
+        <li><strong>NutritionPlan (Táplálkozási terv): </strong>Az alkalmazásban elérhető táplálkozási tervek kezelésére szolgáló osztály. A felhasználók testre szabott étkezési terveket hozhatnak létre, amelyeket az osztály biztosít a szükséges kalória-, makro- és mikrotápanyag-összetevők alapján. A NutritionPlan figyeli a felhasználó napi étkezéseit, segít az étkezések logikai felépítésében, és az étkezések között optimális étkezési időpontokat is javasolhat.</li>
+        <li><strong>ProgressTracker (Előrehaladás nyomozó): </strong>Az előrehaladás nyomon követésére szolgáló osztály. A felhasználók az alkalmazás segítségével könnyen nyomon követhetik a kitűzött céljaikhoz való előrehaladást, legyen szó súlycsökkentésről, izomtömeg növelésről vagy állóképesség fejlesztésről. Az osztály vizuális grafikonokkal és egyéb visszajelzésekkel segíti a felhasználókat, hogy nyomon követhessék fejlődésüket.</li>
+        <li><strong>GoalSetting (Célok beállítása): </strong>Ez az osztály segít a felhasználóknak a céljaik meghatározásában és nyomon követésében. A GoalSetting osztály segítségével a felhasználók megadhatják a fitness céljaikat, például heti edzésszámot, súlycsökkentési célt, vagy bármely más személyre szabott célkitűzést. Az osztály folyamatosan figyeli a felhasználók teljesítményét, és intelligens módon módosítja a célokat a fejlődésükkel összhangban.</li>
+        <li><strong>UserProfile (Felhasználói profil): </strong>Az osztály a felhasználói adatokat és beállításokat tárolja, például a felhasználó személyes adatait, edzés és táplálkozási preferenciáit, valamint a teljesítmény- és egészségi statisztikáit. A UserProfile osztály biztosítja a felhasználói élmény testreszabását, és segít a személyes adatkezelésben. Az osztály további információkat is tárolhat, mint például a felhasználó eddigi edzései, valamint a lehetséges allergiákat vagy egyéb egészségi problémákat, amelyek figyelembevételével személyre szabott terveket biztosít.</li>
+        <li><strong>TrainingHistory (Edzéstörténet): </strong>Az edzésekkel kapcsolatos összes korábbi adatot tároló osztály. Ez lehetővé teszi a felhasználók számára, hogy visszamenőleg is áttekintsék eddigi edzéseiket, és a statisztikai adatok alapján értékeljék a fejlődésüket. A TrainingHistory osztály minden edzésről részletes adatokat tárol, például a végrehajtott gyakorlatokat, időtartamot, edzésintenzitást, elégetett kalóriát és az edzés során végrehajtott műveleteket.</li>
+        <li><strong>NotificationManager (Értesítési kezelő): </strong>Ez az osztály kezeli az összes értesítést, amelyet a felhasználónak küld az alkalmazás. Legyen szó emlékeztetőkről az edzésről vagy étkezésről, vagy egyéb fontos rendszerüzenetekről, a NotificationManager osztály biztosítja, hogy a felhasználók mindig időben értesüljenek a fontos eseményekről. Az osztály integrálható a rendszeres értesítési funkciókkal, például push értesítésekkel.</li>
+        <li><strong>WorkoutRecommendation (Edzés ajánló): </strong>Az edzés ajánló osztály segít a felhasználóknak új edzéseket vagy edzésvariációkat találni a személyes céljaik elérése érdekében. A WorkoutRecommendation figyeli a felhasználó edzéstörténetét és preferenciáit, és javaslatokat tesz az edzések módosítására vagy új kihívások bevezetésére. Az osztály gépi tanulás segítségével képes személyre szabott edzési terveket kínálni a felhasználóknak.</li>
+        <li><strong>MealRecommendation (Étel ajánló): </strong>Ez az osztály a felhasználó által megadott étkezési szokások és táplálkozási célok alapján ajánl étkezéseket. A MealRecommendation a felhasználói preferenciák, mint a diéták (pl. vegán, keto, paleo), és a napi kalóriacélok figyelembevételével javasol étkezéseket. A rendszer folyamatosan optimalizálja az ajánlásokat az új adatok és visszajelzések alapján.</li>
+    </ul>
+    
+
+    <p>Ezek az osztályok már beépített metódusokkal és számítási lehetőségekkel rendelkeznek, amelyek segítik a felhasználókat az applikáció hatékony és gördülékeny használatában. A megfelelő osztályok és azok metódusai biztosítják a gyors adatfeldolgozást és a felhasználói élmény folyamatos javítását.</p>
+
+    <h2>3.9.3 Edzéskezelés</h2>
+
+    <p>Az <strong>ActivityComponent</strong> osztály rendelkezik egy statikus <code>activeActivity</code> változóval, amely a jelenleg aktív edzést tartalmazza. Ha az aktív edzést szeretnénk megváltoztatni, akkor csak egy másik edzésen meg kell hívni a <code>setActiveActivity</code> metódust, és az applikáció a többi helyen már automatikusan használni fogja az új edzést.</p>
+
+
+
+    <h2>3.9.4 QoL funkciók</h2>
+
+    <p>Az alkalmazás célja, hogy ne csak az edzéseket és táplálkozást támogassa, hanem a felhasználói élményt is folyamatosan javítsa. Ennek érdekében a következő, a felhasználók életét megkönnyítő funkciók kerülnek beépítésre, amelyek segítenek gyorsan és kényelmesen hozzáférni a legfontosabb információkhoz:</p>
+
+    <ul>
+        <li><strong>Edzésidő és elégetett kalóriák lekérdezése:</strong> Az alkalmazás lehetőséget biztosít arra, hogy a felhasználók bármikor megtekintsék az aktuális edzés időtartamát, valamint az elégetett kalóriák számát. Ez segíti a felhasználókat az edzés hatékonyságának nyomon követésében és a céljaikhoz való alkalmazkodásban.</li>
+        <li><strong>Elérés a kulcsfontosságú változókhoz:</strong> Az applikáció logikai osztályai teljes hozzáférést biztosítanak az <strong>elapsedTime</strong> (eltelt idő), <strong>caloriesBurned</strong> (elégetett kalóriák) és <strong>sessionDuration</strong> (edzés időtartama) változókhoz. Ezek a változók kulcsfontosságúak az edzés teljesítményének mérésében, és a felhasználók számára lehetővé teszik, hogy pontos adatokat kapjanak a végzett tevékenységekről.
+            <ul>
+                <li><strong>elapsedTime</strong>: Az eltelt idő, amely megmutatja, hogy mennyi idő telt el az edzés kezdetétől.</li>
+                <li><strong>caloriesBurned</strong>: A teljesen elégetett kalóriák száma az edzés alatt.</li>
+                <li><strong>sessionDuration</strong>: Az edzés teljes időtartama, amely segít meghatározni, hogy az edzés mennyi ideig tartott.</li>
+            </ul>
+        </li>
+        <li><strong>Felhasználóbarát felület:</strong> Mindezek az adatok könnyen elérhetők lesznek a felhasználók számára egy átlátható, vizuálisan vonzó felületen. Az alkalmazás biztosítja, hogy a legfontosabb információk egyértelműen és gyorsan elérhetők legyenek anélkül, hogy a felhasználóknak bonyolult menüpontokat kellene keresniük.</li>
+    </ul>
+    
+    <h2>További funkciók:</h2>
+    <ul>
+        <li><strong>Gyors kereshetőség:</strong> A felhasználók gyorsan kereshetnek az edzésnaplóikban, étkezési terveikben, valamint a különböző statisztikai mutatókban, segítve ezzel az adatkezelést és a célokhoz való gyors alkalmazkodást.</li>
+        <li><strong>Automatikus frissítések:</strong> Az alkalmazás automatikusan frissíti az adatokat, így a felhasználóknak nem kell manuálisan beírniuk az edzésidőt vagy a kalóriákat – ezek az alkalmazás által generált adatok alapján kerülnek naprakészen megjelenítésre.</li>
+    </ul>
+    
+    <p>A QoL funkciók célja, hogy javítsák a felhasználói élményt, megkönnyítve a mindennapi használatot, és biztosítva, hogy minden fontos információ egy helyen, könnyen hozzáférhető legyen.</p>
+
+
+
+    <h3 class="feladatcim">4. Használhatóság</h3>
+
+    <p>Az alkalmazás használhatósága a felhasználói élmény alapvető pillére, és elengedhetetlen ahhoz, hogy a felhasználók számára hatékony és kényelmes módon segítse a fitness céljaik elérését. A használhatóságot a megfelelő dokumentáció és a felhasználói felület biztosítja, amelyek a felhasználói interakciókat könnyűvé és intuitívvá teszik.</p>
+
+    <ul>
+        <li><strong>Dokumentáció:</strong> A megfelelő dokumentáció elengedhetetlen a szoftver használatának megértéséhez, és biztosítja, hogy a fejlesztők és felhasználók számára egyaránt világos és érthető információk álljanak rendelkezésre az alkalmazás működéséről. Az alkalmazás dokumentációja a következőket tartalmazza:
+            <ul>
+                <li><strong>JavaDocs:</strong> Az alkalmazás kódjához készített részletes dokumentáció, amely segít a fejlesztőknek az alkalmazás különböző osztályainak, metódusainak és változóinak megértésében. A JavaDocs automatikusan generált dokumentáció, amely minden metódushoz és osztályhoz részletes leírást, paramétereket és visszatérési értékeket biztosít.</li>
+                <li><strong>Fejlesztői környezet:</strong> Az alkalmazás fejlesztéséhez a Java nyelvet használjuk, és a megfelelő fejlesztői eszközkészlet biztosítja, hogy a kód könnyen olvasható és karbantartható legyen. A fejlesztői környezet támogatja a hibakeresést, a verziókezelést és az alkalmazás teljesítményének optimalizálását.</li>
+            </ul>
+            A dokumentáció segít nemcsak a fejlesztőknek, hanem az alkalmazás karbantartásáért és frissítéséért felelős csapatok számára is, hogy megértsék az alkalmazás működését és könnyedén módosíthassák azt, ha szükséges.
+        </li>
+        
+        <li><strong>Felhasználói felület:</strong> A felhasználói felület (UI) tervezése és megvalósítása alapvető ahhoz, hogy a felhasználók élvezhessék az alkalmazás használatát. Az UI-t úgy tervezzük, hogy az egyszerű, intuitív és könnyen navigálható legyen, mindezt a következő szempontokat figyelembe véve:
+            <ul>
+                <li><strong>Szerkesztői felület:</strong> Az applikáció egy olyan szerkesztői felületet biztosít a felhasználóknak, amely lehetővé teszi számukra, hogy személyre szabott edzésprogramokat és táplálkozási terveket hozzanak létre. A felhasználók könnyedén szerkeszthetik, módosíthatják és tesztelhetik ezeket a programokat, anélkül hogy újra kellene telepíteniük az alkalmazást.</li>
+                <li><strong>Interaktív élmény:</strong> A felhasználók közvetlenül láthatják az edzésprogramok és étkezési tervek módosításait, valamint az alkalmazás válaszait, így mindig tisztában lesznek az általuk elvégzett változtatásokkal. A felület támogatja a gyors visszajelzéseket, és interaktív módon mutatja a szükséges adatokat, például az edzésidőt, elégetett kalóriákat és más fontos mérőszámokat.</li>
+                <li><strong>Testreszabás:</strong> A felhasználók különböző preferenciákat adhatnak meg az alkalmazás működéséhez, például a nyelvet, megjelenítési módot vagy az edzési célokat. A testreszabhatóság lehetőséget ad arra, hogy minden felhasználó saját igényei szerint alakítsa az applikációt, ami jelentősen növeli az alkalmazás használhatóságát és vonzerejét.</li>
+            </ul>
+            A felhasználói felület célja, hogy minimalizálja a felhasználók számára szükséges tanulási időt, miközben maximális funkcionalitást és testreszabhatóságot biztosít. Az applikáció intuitív módon vezet végig minden egyes lépésen, így a felhasználók gyorsan és kényelmesen használhatják az alkalmazást anélkül, hogy bármilyen komplex ismeretekre lenne szükségük.
+        </li>
+        
+        <li><strong>Használhatósági tesztelés:</strong> A fejlesztés során folyamatosan teszteljük az alkalmazás használhatóságát, hogy biztosítsuk a legjobb felhasználói élményt. A tesztelési folyamat magában foglalja:
+            <ul>
+                <li><strong>Felhasználói visszajelzések gyűjtése:</strong> Beta-tesztelők és korai felhasználók segítségével visszajelzéseket gyűjtünk az applikáció használhatóságáról. Ezen visszajelzések alapján finomítjuk a felhasználói felületet, hogy az minél kényelmesebbé váljon.</li>
+                <li><strong>Automatikus tesztelés:</strong> A rendszeres tesztelés biztosítja, hogy az alkalmazás működése folyamatosan megfeleljen a specifikációknak és a felhasználói elvárásoknak. Az automatikus tesztelési eszközök segítenek az esetleges hibák gyors észlelésében.</li>
+            </ul>
+        </li>
+    </ul>
+    
+
+    <p>A célunk, hogy az alkalmazás minden felhasználó számára könnyen kezelhető és élvezetes legyen, a lehető legjobb használhatóságot biztosítva.</p>
+
+
+
+    <h2>4.1 Betanulás nehézsége - Tanulási görbe</h2>
+
+    <p>Az applikációt úgy tervezzük, hogy a felhasználóknak ne legyen nehéz megtanulniuk használni. Ezért egy könnyen érthető, tisztán angol nyelvű JavaDocs dokumentációval fog rendelkezni az alkalmazás. Ezen kívül az applikációhoz több példaprojekt is elérhető lesz, amelyek bemutatják a funkciók használatát. Az applikációt úgy fogjuk kialakítani, hogy hasonlítson más, már a piacon lévő fitness alkalmazásokra, így a felhasználóknak nem kell teljesen új módszereket megtanulniuk.</p>
+
+
+    <h2>4.2 Összehasonlítás más módszerekkel</h2>
+
+    <p>
+        Az alkalmazás a fitness alkalmazások piacán már kitesztelt, széles körben alkalmazott és jól bevált módszereket és funkcionalitásokat használ, amelyek segítségével a felhasználók gyorsan és hatékonyan érhetik el fitness céljaikat.
+    </p>
+
+    <p>Ezen megoldások előnye, hogy a tanulási görbe nem lesz nagyon meredek, mivel a felhasználók már jól ismerhetik az alkalmazott funkciókat más népszerű platformokon.</p>
+
+    <p>Az alábbiakban néhány hasonló alkalmazást említünk, amelyek hasonló megközelítéseket alkalmaznak:</p>
+
+    <ul>
+        <li><strong>MyFitnessPal:</strong> A MyFitnessPal egy jól ismert és elterjedt alkalmazás, amely az étkezési szokások nyomon követésére, valamint a kalória- és tápanyagbeviteli adatok kezelésére fókuszál. Az alkalmazás lehetőséget biztosít a felhasználók számára, hogy rögzítsék étkezéseiket és edzésprogramjaikat, miközben nyomon követhetik a napi kalóriabevitelt és a tápanyagokat.
+            <ul>
+                <li><strong>Hasonlóságok:</strong> Az alkalmazásunk is hasonló funkciókat kínál, például a táplálkozási tervek és edzésprogramok testreszabásának lehetőségét, valamint az aktivitás és kalóriaégetés figyelemmel kísérését.</li>
+                <li><strong>Különbségek:</strong> Az alkalmazásunk több személyre szabott edzésprogramot és részletesebb táplálkozási ajánlásokat kínál, figyelembe véve a felhasználó egyéni céljait és fejlődési ütemét.</li>
+            </ul>
+        </li>
+        
+        <li><strong>Fitbit:</strong> A Fitbit egy olyan alkalmazás, amely a viselhető eszközök adatainak elemzésére épít, és segítséget nyújt a felhasználóknak a napi aktivitásuk nyomon követésében, beleértve a lépések számát, a pulzusszámot és az alvásminőséget. A Fitbit alkalmazás a felhasználók számára valós idejű visszajelzést ad a fizikai aktivitásukról és egészségi állapotukról.
+            <ul>
+                <li><strong>Hasonlóságok:</strong> Az alkalmazásunk hasonló funkciókat kínál a napi aktivitás követésére, beleértve az edzések és a kalóriaégetés nyomon követését.</li>
+                <li><strong>Különbségek:</strong> Az alkalmazásunk nem csupán a viselhető eszközök adataira épít, hanem teljes körű edzés- és táplálkozási tervet kínál, valamint lehetőséget biztosít a személyre szabott edzéstervek létrehozására.</li>
+            </ul>
+        </li>
+        
+        <li><strong>Strava:</strong> A Strava egy népszerű alkalmazás a sportolók körében, különösen a futók és kerékpárosok körében, amely lehetővé teszi az edzések rögzítését, valamint a felhasználók teljesítményének és haladásának nyomon követését. Az alkalmazás közösségi funkciókat is kínál, így a felhasználók összehasonlíthatják eredményeiket barátaikkal és más sportolókkal.
+            <ul>
+                <li><strong>Hasonlóságok:</strong> Az alkalmazásunk hasonló edzéskövetési funkciókat kínál, és lehetőséget ad a felhasználóknak, hogy nyomon kövessék az előrehaladásukat és teljesítményüket.</li>
+                <li><strong>Különbségek:</strong> Az alkalmazásunk egy szélesebb körű testreszabott edzésprogramot kínál, amely nemcsak a sporttevékenységeket, hanem a táplálkozást és egyéb személyre szabott fitnesz célokat is figyelembe vesz.</li>
+            </ul>
+        </li>
+    </ul>
+    
+
+
+    <h2>4.3 Más alkalmazások, amelyeket használunk a fejlesztés során</h2>
+
+    <p>A fitness webes alkalmazásunk fejlesztése során számos hasznos eszközt és alkalmazást alkalmazunk, amelyek segítik a hatékony munkavégzést, biztosítva a magas szintű fejlesztési élményt és végeredményt. A legfontosabb alkalmazások a következőek:</p>
+
+
+    <ul>
+        <li><strong>IntelliJ IDEA:</strong> Az IntelliJ IDEA egy fejlett Java fejlesztői környezet, amely az alkalmazásunk fejlesztésének központja. Intuitív felületével és széleskörű funkcióival segíti a hatékony kódírást, hibakeresést és kódformázást. Az IDE integrálható különböző verziókezelő rendszerekkel, és gyorsítja a fejlesztési folyamatokat a kódbeli hibák észlelésével és az automatikus kiegészítésekkel.</li>
+    
+        <li><strong>Git:</strong> A Git verziókezelő rendszer lehetővé teszi a kód történetének nyomon követését és a csapat munkájának szinkronizálását. A Git segítségével könnyedén kezelhetjük a különböző fejlesztési ágakat, biztosítva, hogy minden változtatás dokumentált és visszavonható legyen. A GitHub vagy GitLab segítségével távoli tárolókban is könnyen tárolhatjuk és megoszthatjuk a projektet.</li>
+    
+        <li><strong>Adobe Photoshop:</strong> A Photoshop az alkalmazásunk grafikai elemeinek és textúráinak elkészítésére szolgál. Ezen alkalmazás segítségével tervezhetünk logókat, gombokat, háttérképeket és egyéb vizuális elemeket, amelyek az alkalmazás felhasználói felületének szerves részét képezik. A Photoshop támogatja a különböző képfájlformátumokat, és segít az esztétikus megjelenés kialakításában.</li>
+    
+        <li><strong>Adobe Illustrator:</strong> Az Adobe Illustrator vektorgrafikus elemek, például ikonok, ábrák és illusztrációk tervezésére használjuk. Mivel vektorgrafikát készít, az Illustrator biztosítja a skálázhatóságot, így az elkészített grafikák bármilyen képernyőfelbontásra megfelelően jelennek meg, nem veszítve el a minőségükből.</li>
+    
+        <li><strong>Spring Boot:</strong> A Spring Boot a backend fejlesztésének alapját képezi. Ez a Java alapú keretrendszer lehetővé teszi az alkalmazás gyors fejlesztését és skálázását. A Spring Boot segítségével könnyedén beállíthatjuk az alkalmazás különböző moduljait, kezelhetjük az adatbázisokat, és biztosíthatjuk a RESTful API-k működését, amelyek lehetővé teszik a frontend és a backend közötti hatékony kommunikációt.</li>
+    
+        <li><strong>Docker:</strong> A Docker használata segít a fejlesztési és tesztelési környezetek izolálásában. A Docker konténerek lehetővé teszik, hogy az alkalmazásunk egyetlen, könnyen telepíthető környezetben fusson, függetlenül attól, hogy mely operációs rendszert használunk.</li>
+    
+        <li><strong>JIRA:</strong> A JIRA a projektmenedzsment eszközként szolgál, amely segít a feladatok nyomon követésében és a csapattagok közötti kommunikációban. A JIRA segítségével könnyedén kezelhetjük a különböző fejlesztési ciklusokat, feladatokat és határidőket, miközben biztosítjuk, hogy a projekt minden szempontból gördülékenyen haladjon.</li>
+    
+        <li><strong>Postman:</strong> A Postman API tesztelésére és dokumentálására szolgáló eszközként biztosítja a RESTful API-k helyes működésének tesztelését. A Postman segítségével egyszerűen ellenőrizhetjük az alkalmazás API-kapcsolatait és megbizonyosodhatunk azok helyes működéséről.</li>
+    
+        <li><strong>Firebase:</strong> A Firebase a felhőalapú adatkezelést és hitelesítést biztosítja. Használatával valós időben frissíthetjük a felhasználói adatokat, és biztosíthatjuk a felhasználói regisztrációt, bejelentkezést, valamint a jelszókezelést.</li>
+    </ul>
+    
+    <p>Ezek az alkalmazások és eszközök lehetővé teszik számunkra, hogy gyorsan és hatékonyan fejlesszük az alkalmazást, miközben biztosítjuk a felhasználók számára a zökkenőmentes élményt és a magas szintű funkcionalitást.</p>
+    
+
+
+    <h2>4.4 Felhasználói felület</h2>
+    <p>A megfelelő felhasználói felületet az applikáció szerkesztőjében fogjuk megvalósítani, amelyet a felhasználók fognak használni. Ez a felület lehetővé teszi a felhasználók számára, hogy a személyre szabott programjaikat szerkesszék, és teszteljék anélkül, hogy az applikációt újra kellene telepíteniük.</p>
+
+    
+    <h3 class="feladatcim">5. Megbízhatóság</h3>
+    
+    <p><strong>Rendelkezésre állás</strong></p>
+    <p>Az alkalmazás teljes funkcionalitása változhat a felhasználói igények és preferenciák függvényében. A felhasználóknak lehetőségük van testre szabni az edzésprogramokat és étrendi ajánlásokat, így a rendelkezésre állás a felhasználói aktivitás és az alkalmazás frissítéseinek gyakorisága alapján változhat. Az alkalmazás célja, hogy mindig elérhető legyen a felhasználók számára, függetlenül attól, hogy mely funkciókat használják.</p>
+
+    <p><strong>MTBF (Mean Time Between Failures)</strong></p>
+    <p>A fitness alkalmazásunk tervezése során arra törekszünk, hogy minimalizáljuk a hibák előfordulását. Mivel az alkalmazás nem tartalmaz kritikus komponenseket, amelyek ideális körülmények között meghibásodhatnak, ezt a metrikát nem alkalmazzuk. Azonban folyamatos monitorozással és frissítésekkel biztosítjuk a stabil működést.</p>
+
+    <p><strong>MTTR (Mean Time To Repair)</strong></p>
+    <p>Az alkalmazás működése során felmerülő hibák esetén a felhasználóknak a könyvtár frissítésére lesz szükségük, amelyet a Maven Package Manager segítségével tudnak elvégezni. Az esetleges hibák javítási ideje változó lehet, a probléma összetettségétől függően, így ezt a metrikát nem tudjuk pontosan meghatározni.</p>
+
+    <p><strong>A rendszer eredményeinek pontossága és felbontása</strong></p>
+    <p>Az alkalmazás teljesítményét a Tick-Rate szabályozza, azaz azt, hogy milyen gyakran frissülnek a rendszerben elérhető adatok és statisztikák. A tervezés során biztosítjuk, hogy a rendszerek determinisztikusak legyenek, vagyis az alkalmazás ugyanazon kiindulási állapotból mindig ugyanazokat az eredményeket produkálja. Ez növeli a megbízhatóságot és a felhasználói élményt, lehetővé téve a pontos nyomon követést és az eredmények megbízható elemzését.</p>
+
+
+
+
+    <h3 class="feladatcim">6. Teljesítmény</h3>
+
+    <p>Az alkalmazás teljesítménye kulcsfontosságú a felhasználói élmény szempontjából, és számos tényezőtől függ, amelyek projektenként eltérhetnek. A teljesítmény mérésére és javítására vonatkozóan különböző metrikákat alkalmazunk, amelyek lehetővé teszik számunkra, hogy folyamatosan optimalizáljuk az alkalmazás működését. Az alábbiakban bemutatjuk a legfontosabb teljesítménymutatókat, és azokat a megoldásokat, amelyeket alkalmazunk a maximális hatékonyság elérése érdekében.</p>
+
+    <h2>6.1 Válaszidő</h2>
+    <ul>
+        <li><strong>Válaszidő:</strong> A válaszidő az alkalmazás egyik legfontosabb teljesítménymutatója. A felhasználók számára az az ideális, ha az alkalmazás reakciója azonnali, vagy legalábbis minimális késleltetéssel történik. A válaszidőt különösen a backend rendszerek, például adatbázis-lekérdezések és API-hívások optimalizálásával csökkentjük. Ehhez a következő megoldásokat alkalmazzuk:
+            <ul>
+                <li><strong>Cache-elés:</strong> Az ismétlődő lekérdezések gyorsítására memóriában tároljuk a gyakran használt adatokat, csökkentve ezzel az adatbázishoz való hozzáférést.</li>
+                <li><strong>Aszinkron működés:</strong> A háttérfeladatok, például az adatfeldolgozások, aszinkron módon történnek, így a felhasználó nem tapasztalja a rendszer lassulását.</li>
+                <li><strong>API optimalizálás:</strong> Az API-k válaszidejének csökkentésére egyszerűsítjük a végpontok logikáját, és minimalizáljuk az adatforgalmat.</li>
+            </ul>
+        </li>
+    
+        <li><strong>Skálázhatóság:</strong> A skálázhatóság az alkalmazás azon képességét jelenti, hogy képes kezelni a megnövekedett felhasználói terhelést anélkül, hogy jelentősen romlana a teljesítmény. Az alkalmazás skálázhatóságát biztosítjuk az alábbi módszerekkel:
+            <ul>
+                <li><strong>Horizontális skálázás:</strong> A rendszer terhelését több szerverre osztjuk szét, így biztosítva a zökkenőmentes működést magas forgalom mellett is.</li>
+                <li><strong>Load balancing (terheléselosztás):</strong> A bejövő kéréseket egyenletesen osztjuk szét a rendelkezésre álló szerverek között, hogy megakadályozzuk a túlterhelést.</li>
+                <li><strong>Felhőszolgáltatások:</strong> Felhőalapú infrastruktúrát használunk, hogy dinamikusan növelhessük a számítási kapacitást a forgalom függvényében.</li>
+            </ul>
+        </li>
+    
+        <li><strong>Adatbázis Teljesítmény:</strong> A gyors adatkezelés elengedhetetlen ahhoz, hogy az alkalmazás gyors és hatékony legyen. Az adatbázis teljesítményét az alábbi technikák alkalmazásával biztosítjuk:
+            <ul>
+                <li><strong>Indexelés:</strong> Az adatbázis lekérdezések gyorsítására indexeket hozunk létre a leggyakrabban használt mezőkön.</li>
+                <li><strong>Optimalizált SQL lekérdezések:</strong> A lekérdezéseket úgy optimalizáljuk, hogy azok a lehető legkevesebb erőforrást igényeljék, és minimalizáljuk a szükséges adatbázis-hozzáférést.</li>
+                <li><strong>Együttműködés ORM-mel:</strong> A JPA (Java Persistence API) használatával biztosítjuk a hatékony adatkezelést és az objektum-relációs leképezést (ORM), amely lehetővé teszi a gyors és biztonságos adatkezelést.</li>
+            </ul>
+        </li>
+    
+        <li><strong>Memória Használat:</strong> A memóriahasználat optimalizálása elengedhetetlen a stabil működés biztosításához. A memóriahasználat csökkentése érdekében az alábbi megoldásokat alkalmazzuk:
+            <ul>
+                <li><strong>Objektum újrafelhasználás:</strong> A gyakran használt objektumokat újrafelhasználjuk, csökkentve ezzel az új objektumok létrehozásának szükségességét.</li>
+                <li><strong>Memóriahatékony adatstruktúrák:</strong> A programban olyan adatstruktúrákat alkalmazunk, amelyek optimálisan kezelik az adatokat, és minimalizálják a memóriahasználatot.</li>
+            </ul>
+        </li>
+    
+        <li><strong>Energiatakarékosság (Mobilalkalmazások esetén):</strong> Ha az alkalmazás mobil platformokon is elérhető, az energiahatékonyság kiemelten fontos. Az alkalmazás működését úgy optimalizáljuk, hogy minimalizáljuk a háttérfolyamatok és a rendszererőforrások használatát. Ehhez:
+            <ul>
+                <li><strong>Energiatakarékos módok:</strong> A hosszabb futási idő érdekében alvó módot és energiát takarító funkciókat alkalmazunk.</li>
+                <li><strong>Hálózati kérések optimalizálása:</strong> Minimalizáljuk a mobilhálózathoz való hozzáférést, hogy csökkentsük az energiafelhasználást.</li>
+            </ul>
+        </li>
+    
+        <li><strong>Tesztelés és Teljesítményoptimalizálás:</strong> A teljesítmény folyamatos monitorozása és tesztelése az alkalmazás életciklusának része. Rendszeresen végezünk:
+            <ul>
+                <li><strong>Load testing (terheléses tesztelés):</strong> Az alkalmazás terhelésének tesztelése biztosítja, hogy a rendszer képes kezelni a várható felhasználói forgalmat.</li>
+                <li><strong>Stress testing (stressz tesztelés):</strong> A rendszer stabilitásának tesztelése extrém terhelés alatt, hogy biztosítsuk, hogy a rendszer nem omlik össze a túlterhelés következtében.</li>
+                <li><strong>Profiling:</strong> Az alkalmazás futásának nyomon követése és elemzése segít a teljesítménybeli problémák azonosításában és azok kijavításában.</li>
+            </ul>
+        </li>
+    
+        <li><strong>Felhasználói Élmény (UX):</strong> A felhasználói élmény javítása érdekében minden egyes interakciót és műveletet az optimális válaszidőre és a gördülékeny működésre koncentrálunk. Az alkalmazás folyamatosan reagál a felhasználói igényekre és a környezeti feltételekre, biztosítva a kiváló teljesítményt a felhasználók számára.</li>
+    </ul>
+    
+    <p>A fenti teljesítménymutatók és optimalizálási technikák alkalmazásával biztosítjuk, hogy az alkalmazás nemcsak hatékonyan működjön, hanem képes legyen növekvő felhasználói igényeket is kiszolgálni, anélkül hogy a teljesítmény romlana.</p>
+    
+
+
+
+    <h2>6.2 Áteresztőképesség</h2>
+    
+    <p>Az áteresztőképesség azt jelenti, hogy az alkalmazás mennyire képes kezelni a felhasználói forgalmat, azaz hány párhuzamos felhasználó képes egyszerre használni az alkalmazást anélkül, hogy a teljesítmény csökkenne. Az áteresztőképesség kulcsfontosságú mutató, amely meghatározza, hogyan reagál az alkalmazás a nagy számú kérések és a folyamatos terhelés hatására.</p>
+
+    <p>A tervezés során figyelembe vesszük, hogy az alkalmazás folyamatosan magas teljesítményt nyújtson, még akkor is, ha sok felhasználó használja egyszerre. Az áteresztőképesség optimalizálására az alábbi megoldásokat alkalmazzuk:</p>
+
+    <ul>
+        <li><strong>Skálázás és Terheléselosztás:</strong> Ahhoz, hogy az alkalmazás képes legyen kezelni a magas forgalmat, a következő skálázási technikákat alkalmazzuk:
+            <ul>
+                <li><strong>Horizontális skálázás:</strong> A szerverek számának növelésével biztosítjuk, hogy az alkalmazás képes legyen elosztani a felhasználói kéréseket, így azok nem terhelik túl az egyes szervereket.</li>
+                <li><strong>Terheléselosztás (Load Balancing):</strong> Az alkalmazás kéréseit egyenletesen osztjuk szét a különböző szerverek között, hogy a rendszer ne legyen túlterhelve, és minden felhasználó számára gyors válaszidőt biztosítson.</li>
+            </ul>
+        </li>
+    
+        <li><strong>Aszinkron Kérések:</strong> Az alkalmazás különböző feladatokat aszinkron módon végez, így a felhasználói interakciók nem blokkolják a rendszer más műveleteit. Ez különösen fontos, ha az alkalmazásnak nagymennyiségű adatot kell feldolgoznia, például a felhasználói aktivitásokat vagy a fitneszadatokat. Az aszinkron működés lehetővé teszi, hogy az alkalmazás gyorsan reagáljon a felhasználói kérésekre, miközben a háttérben folytatódnak a hosszú ideig tartó számítások.</li>
+    
+        <li><strong>Kéréskezelés Optimalizálása:</strong> Az alkalmazás úgy van optimalizálva, hogy a felhasználói kérések ne terheljék túl a rendszert. A következő technikák segítenek ebben:
+            <ul>
+                <li><strong>Cache-elés:</strong> A leggyakrabban kért adatokat ideiglenesen tároljuk memóriában, így azok gyorsabban elérhetők, és csökkentjük a rendszer terhelését.</li>
+                <li><strong>Gyors lekérdezések:</strong> Az adatbázis lekérdezéseket optimalizáljuk, hogy azok a lehető leggyorsabban és legkevesebb erőforrást igényelve fussanak.</li>
+            </ul>
+        </li>
+    
+        <li><strong>Felhőalapú Infrastruktúra:</strong> A felhőszolgáltatások, mint például az AWS vagy Azure, lehetővé teszik az alkalmazás dinamikus skálázását a felhasználói forgalom növekedésével. A felhő alapú infrastruktúra segít abban, hogy a rendszer automatikusan alkalmazkodjon a terheléshez, és biztosítja, hogy az alkalmazás zökkenőmentesen működjön a nagy terhelés alatt is.</li>
+    
+        <li><strong>Monitoring és Teljesítményfigyelés:</strong> A folyamatos monitoring biztosítja, hogy az alkalmazás teljesítményét valós időben figyelhessük. A terhelés és az áteresztőképesség folyamatos mérésével időben észlelhetjük a problémákat, és gyorsan reagálhatunk rájuk. A figyelés magában foglalja a következőket:
+            <ul>
+                <li><strong>Terheléses tesztelés:</strong> Az alkalmazás terheléses tesztelése lehetővé teszi, hogy meghatározzuk, hány párhuzamos felhasználó tudja használni az alkalmazást anélkül, hogy a teljesítmény romlana.</li>
+                <li><strong>Automatikus riasztások:</strong> Ha a rendszer terhelése meghaladja a megadott határértéket, automatikusan értesítést kapunk, és azonnal intézkedhetünk a probléma megoldása érdekében.</li>
+            </ul>
+        </li>
+    
+        <li><strong>Erőforrás-menedzsment:</strong> A megfelelő erőforrás-menedzsment lehetővé teszi, hogy az alkalmazás optimálisan működjön még magas forgalom esetén is. Ehhez:
+            <ul>
+                <li><strong>Erőforrások priorizálása:</strong> A legfontosabb feladatokat előnyben részesítjük, míg a kevésbé fontos feladatokat a háttérben végezzük el.</li>
+                <li><strong>Adatbázis-optimalizálás:</strong> Az adatbázis lekérdezések és műveletek optimalizálása csökkenti a terhelést és javítja a válaszidőt.</li>
+            </ul>
+        </li>
+    
+        <li><strong>Tesztelés és Iteráció:</strong> A rendszer folyamatos tesztelése és iterációja segít az áteresztőképesség javításában. A különböző tesztelési fázisok során figyeljük a felhasználói terhelés hatásait, és szükség szerint finomítjuk az alkalmazás működését.</li>
+    </ul>
+    
+    <p>Az alkalmazásunk áteresztőképessége az alábbi technikák alkalmazásával biztosítja, hogy a felhasználók számára mindig zökkenőmentes és gyors élményt nyújtson, még nagy terhelés mellett is. Az áteresztőképesség magas szintjének fenntartásával az alkalmazás képes lesz kezelni a folyamatosan növekvő felhasználói bázist.</p>
+    
+
+    <h2>6.3 Kapacitás</h2>
+    <p>A teljesítményt és a kapacitást több tényező is befolyásolja, köztük a 32-bites floating point számok használata és az 8 karakterből álló alfanumerikus azonosítók. Ezek korlátozzák a maximálisan létrehozható entitások számát, és a nagyobb felhasználói számok esetén potenciálisan szűk keresztmetszeteket okozhatnak. A jövőbeni bővítési lehetőségek tervezése kulcsfontosságú.</p>
+
+
+
+
+    <h2>6.4 Erőforrásigény</h2>
+    <p>Az alkalmazás erőforrásigényét úgy terveztük, hogy minimalizálja a szükséges számítástechnikai erőforrásokat, miközben biztosítja a felhasználói élményt és a zökkenőmentes működést. </p>
+
+    <p>A célunk, hogy az alkalmazás könnyedén fusson különböző platformokon, beleértve a régebbi hardverekkel rendelkező eszközöket, valamint a dedikált grafikus kártya nélküli gépeket is. Ennek érdekében az alábbi szempontokat figyelembe vettük a tervezés során:</p>
+
+
+    <ul>
+        <li><strong>Alapvető Hardverigények:</strong> Az alkalmazásnak minimális hardverigényekkel kell működnie, hogy széles körben elérhető legyen. A főbb jellemzők, amelyeket figyelembe veszünk:
+            <ul>
+                <li><strong>CPU:</strong> Az alkalmazás nem igényel nagy teljesítményű processzort, mivel a feladatok nagy része nem igényel intenzív számításokat. Az alapszintű kétmagos processzorok elegendőek a megfelelő működéshez.</li>
+                <li><strong>RAM:</strong> Az alkalmazás optimálisan használja a rendelkezésre álló memóriát. A felhasználói élmény biztosítása érdekében legalább 4 GB RAM ajánlott, de az alkalmazás működhet kevesebb memória mellett is, ha az eszköz erőforrásait megfelelően kezeli.</li>
+                <li><strong>Tárhely:</strong> Az alkalmazás adatainak tárolása az eszközön és a felhőben történik. Az alapvető telepítéshez szükséges tárhely 100 MB körüli, és további tárhely szükséges az adatok tárolásához, ha a felhasználó sok adatot tárol.</li>
+            </ul>
+        </li>
+    
+        <li><strong>Grafikai és Képességek:</strong> Az alkalmazás a grafikus igényeket úgy optimalizálja, hogy ne legyen szükség dedikált grafikus kártyára. A felhasználói felületet egyszerű, de vizuálisan vonzó módon tervezzük meg, minimalizálva a szükséges erőforrásokat. A legfontosabb tényezők:
+            <ul>
+                <li><strong>Felhasználói felület:</strong> Az alkalmazás felülete modern, de nem túl terhelő. Az alapvető grafikai elemek, mint gombok, színek és animációk könnyen kezelhetők régebbi grafikus rendszerek által is.</li>
+                <li><strong>Képek és média:</strong> A nagy felbontású képek és videók optimalizálva lesznek, hogy ne terheljék túl a rendszert. A tömörített képek és videók lehetővé teszik, hogy azok gyorsan betöltődjenek, és ne használjanak túl sok erőforrást.</li>
+            </ul>
+        </li>
+    
+        <li><strong>Internetkapcsolat:</strong> Mivel az alkalmazás a felhasználói adatokat felhőalapú tárolásban is kezeli, minimális internetkapcsolatra van szükség. Az alábbiak biztosítják a megfelelő működést:
+            <ul>
+                <li><strong>Alapvető internetkapcsolat:</strong> Az alkalmazás a felhőhöz való kapcsolódáshoz stabil, de nem túl gyors internetkapcsolatot igényel. Legalább 1 Mbps letöltési sebesség ajánlott az alkalmazás zökkenőmentes működéséhez.</li>
+                <li><strong>Offline mód:</strong> Az alkalmazás egyes funkciói offline módban is működnek, így a felhasználók nem veszítik el az adatokat, ha éppen nincs internetkapcsolat. Az offline adatok szinkronizálása automatikusan megtörténik, amikor az eszköz ismét kapcsolódik a hálózathoz.</li>
+            </ul>
+        </li>
+    
+        <li><strong>Szoftveres Képességek és Optimalizálás:</strong> Az alkalmazás optimalizált kódot és algoritmusokat használ annak érdekében, hogy minimális erőforrást igényeljen. A következő technikák biztosítják a hatékony működést:
+            <ul>
+                <li><strong>Aszinkron műveletek:</strong> Az alkalmazás aszinkron módon dolgozza fel a háttérben futó feladatokat, így a felhasználói interakciók nem blokkolódnak. Ez csökkenti az erőforrások túlzott használatát.</li>
+                <li><strong>Cache-elés:</strong> Az alkalmazás gyakran használt adatokat a memóriában tárolja, így gyorsabb válaszidőt biztosít anélkül, hogy folyamatosan hozzáférne az adatbázishoz.</li>
+            </ul>
+        </li>
+    
+        <li><strong>Kompatibilitás:</strong> Az alkalmazás webes és mobil platformokon is működni fog, így a következő eszközökön lesz elérhető:
+            <ul>
+                <li><strong>Webes verzió:</strong> Működik a legújabb böngészőkben (Chrome, Firefox, Safari, Edge) és nem igényel különleges rendszerigényeket. A legújabb verziójú böngészők biztosítják a legjobb élményt.</li>
+                <li><strong>Mobil verzió:</strong> Az alkalmazás iOS és Android rendszereken egyaránt elérhető lesz, és az alábbi minimális verziókat támogatja:
+                    <ul>
+                        <li>iOS: 12-es verzió vagy újabb</li>
+                        <li>Android: 8.0 (Oreo) vagy újabb</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    
+        <li><strong>Felhasználói Élmény:</strong> A rendszer teljesítményének és erőforrásigényének optimalizálásával a felhasználók élménye nem fog csorbulni, függetlenül attól, hogy milyen eszközt használnak. Az alábbi célokat tartjuk szem előtt:
+            <ul>
+                <li><strong>Gyors válaszidő:</strong> Az alkalmazás válaszideje gyors marad, még a kisebb teljesítményű eszközökön is.</li>
+                <li><strong>Zökkenőmentes navigáció:</strong> A felhasználói felület és az alkalmazás funkciói könnyen navigálhatók és jól reagálnak.</li>
+            </ul>
+        </li>
+    </ul>
+    
+
+    <h3 class="feladatcim">7. Támogatottság</h3>
+    <p>Az alkalmazás közösségalapú támogatottságot biztosít, így a felhasználók hozzáférhetnek a forráskódhoz és részt vehetnek a fejlesztésben. A részletes dokumentáció JavaDocs formátumban lesz elérhető. A felhasználók számára példaprojekteket biztosítunk, és egy Discord szervert is fenntartunk támogatás céljából.</p>
+
+    <h2>7.1 Elnevezési konvenciók</h2>
+    <p>A változók nevei a camelCase konvenciót követik, míg az osztályok és metódusok nevei a PascalCase konvenciót. Ezek a szabályok biztosítják a kód olvashatóságát és karbantarthatóságát.</p>
+
+    <h2>7.2 Üzemeltetés</h2>
+    <p>A webalkalmazásunk zavartalan futtatásához elengedhetetlen, hogy a legfrissebb Java verzióval rendelkező rendszeren történjen a telepítés. Ez biztosítja a legújabb funkciók és biztonsági javítások hozzáférhetőségét. Emellett, mivel az alkalmazás grafikai igényeket is támaszt, szükség van OpenGL támogatásra is. Az Apple gépeken való kompatibilitás érdekében az OpenGL verzióját 3.3-ra fogjuk korlátozni, hogy a legszélesebb körű eszközkínálatot támogathassuk, különös figyelmet fordítva a különböző operációs rendszerekre és azok grafikai képességeire.</p>
+
+    <h2>7.3 Naplózás</h2>
+    <p>A webalkalmazás rendelkezik egy Logger osztállyal, amely segítségével a felhasználók naplózhatják a rendszer futása során felmerülő hibákat. Ezek a naplók segítenek a fejlesztőknek a hibák gyors azonosításában és javításában.</p>
+
+
+    <h3 class="feladatcim">8. Tervezési korlátozások</h3>
+
+    <p>A webalkalmazás Java nyelven készül, így a fejlesztők különböző platformokra történő fejlesztés nélkül is elérhetik céljaikat. Ez azonban kompromisszumokat jelent a teljesítmény terén, mivel a Java alkalmazások nem olyan gyorsak, mint például a C++ nyelven írtak, és nem minden mobilplatformot támogatnak. Az alkalmazás OpenGL-t használ, amely széles körben elérhető, de nem olyan teljesítményű, mint a Vulkan API.</p>
+
+    <p>A rendszer új funkciók hozzáadásakor újrafordítást igényel. Ez lelassíthatja a fejlesztést, mert nem lehet futásidőben új funkciókat hozzáadni. A jövőbeni tervek között szerepel egy szkriptelhető rendszer bevezetése, amely várhatóan Lua szkriptnyelvet fog használni a futásidejű módosításokhoz.</p>
+
+    <p>Bár az optimalizálási lehetőségek korlátozottak, az alkalmazás célja, hogy egyszerűen és gyorsan használható legyen a fejlesztők számára.</p>
+
+    <h3 class="feladatcim">9. Online dokumentáció</h3>
+    <p>A webalkalmazáshoz egy online dokumentációt biztosítunk JavaDocs formájában. Emellett több példaprojekt is elérhető lesz, amelyek bemutatják a rendszer használatát a fejlesztők számára.</p>
+
+    <h3 class="feladatcim">10. Felhasznált kész komponensek</h1>
+    <p>A webalkalmazás különböző könyvtárakat használ a Maven Package Manager segítségével, amelyek a következők:</p>
+    <ul>
+        <li><strong>LWJGL</strong>: Az alapvető felhasználói felület és grafikus API.</li>
+        <li><strong>ASSIMP és STBI</strong>: A fájlkezelés és a grafikus elemek betöltésére.</li>
+        <li><strong>GSON</strong>: A fájlok betöltéséért és mentéséért felelős könyvtár.</li>
+    </ul>
+
+    <p>Az LWJGL az LWJGL License alatt érhető el, míg a GSON az Apache-2.0 licenc alatt ingyenesen használható.</p>
+
+
+
+
+    <h3 class="feladatcim">11. Interfészek</h3>
+    <p>A webalkalmazásunk több interfészt is tartalmazni fog, amelyek a felhasználói hozzáférésért és a módosíthatóságért felelősek.</p>
+
+    <h3 class="feladatcim">11.1 Felhasználói interfészek</h3>
+
+
+    <p>A webalkalmazásunknak két felhasználói interfésze lesz, amelyek az alábbiakat tartalmazzák:</p>
+  
+    <ul>
+        <li><strong>Fejlesztői szerkesztői felület:</strong> Ez a szoftver szerkesztője, amelyet a GUI (grafikus felhasználói felület) segítségével fogunk megvalósítani. A fejlesztői szerkesztő lehetővé teszi a fejlesztők számára, hogy a rendszer paramétereit, funkcióit és konfigurációit módosítsák. Ez a felület kifejezetten a rendszer fejlesztésére és tesztelésére van optimalizálva, és hozzáférést biztosít a fejlesztői eszközökhöz, mint például a kódok és konfigurációk szerkesztése, illetve az alkalmazás tesztelése.</li>
+        <li><strong>Felhasználói felület:</strong> A felhasználók számára szánt interfész, amelyet szintén GUI segítségével valósítanak meg a fejlesztők. Ez a felület lehetővé teszi a felhasználók számára, hogy hozzáférjenek személyre szabott edzéstervükhöz, étkezési terveikhez, valamint figyelemmel kísérjék a fejlődésüket. Az egyszerű navigáció és a felhasználóbarát dizájn kulcsszerepet kap a felhasználói élmény biztosításában.</li>
+    </ul>
+    
+
+
+    <h2>11.2 Módosítási interfészek</h2>
+
+    <p>A webalkalmazásunknak több módosítási interfésze is lesz, amelyek az alábbiakat fogják tartalmazni:</p>
+
+    <ul>
+        <li><strong>JSON fájlok módosítása:</strong> Az alkalmazás által tárolt adatokat tartalmazó fájlok bővítése és módosítása. Lesz egy rendszer, amely lehetővé teszi, hogy az eredeti fájlok lecserélése helyett a már meglévő fájlokat patch-ekkel módosítsuk. Ez segíti az adatkezelést és a verziók kezelését anélkül, hogy a teljes fájlokat újra kellene írni vagy törölni.</li>
+        <li><strong>Lua szkriptek módosítása:</strong> A webalkalmazás logikáját tartalmazó szkriptek bővítése és módosítása. Lesz egy rendszer, amely engedélyezi, hogy az eredeti szkriptek lecserélése helyett a már meglévő szkripteket patch-ekkel módosítsuk, valamint új szkripteket is hozzáadhassunk. A Lua szkriptek a rendszer logikáját és működését befolyásolják, így ezek módosítása lehetővé teszi a testreszabást és az új funkciók beépítését.</li>
+    </ul>
+    
+
+    <h2>11.3 Hardver interfészek</h2>
+
+    <p>A webalkalmazásunk hardver interfészei között az alábbiak találhatók:</p>
+
+    <ul>
+        <li><strong>OpenGL:</strong> A grafikai megjelenítést és a 3D renderelést OpenGL segítségével valósítjuk meg. Mivel az OpenGL a legtöbb eszközön elérhető, ez biztosítja, hogy az alkalmazás széleskörű kompatibilitást élvezzen, és megfelelő grafikai teljesítményt biztosítson minden eszközön.</li>
+        <li><strong>Fájlkezelő rendszer:</strong> Egy alapvető fájlkezelőt biztosítunk a fejlesztők számára, amely a webalkalmazás által használt fájlok kezelésére lesz képes. A fájlkezelő rendszer segítségével a fejlesztők könnyen hozzáférhetnek az alkalmazás adatfájljaikhoz, konfigurációs fájljaikhoz, valamint más, a rendszer működéséhez szükséges fájlokhoz. Az egyszerű és intuitív fájlkezelés biztosítja, hogy a fejlesztők hatékonyan kezelhessék a fájlokat anélkül, hogy bonyolult parancsokat kellene használniuk.</li>
+    </ul>
+    
+
+    <p>Ezek az interfészek biztosítják a felhasználók és a fejlesztők számára a szükséges hozzáférést és módosítási lehetőségeket, miközben fenntartják az alkalmazás rugalmasságát és bővíthetőségét.</p>
+
+
+    <h3 class="feladatcim">12. Alkalmazott Szabványok</h3>
+
+    <p>Webalkalmazásunk számos ipari szabványt fog követni, amelyeket a fejlesztőknek is ajánlott figyelembe venniük. Ezek a szabványok az ipari és piaci megállapodásokból, kódolási konvenciókból és szabványosított fájlformátumokból származnak.</p>
+    
+    <h2>12.1 Kötelezően Alkalmazandó Szabványok</h2>
+    
+    <p>A webalkalmazásunkban az alábbi szabványokat fogjuk alkalmazni:</p>
+
+    <ul>
+        <li><strong>Java Kódolási Konvenciók:</strong> A Java nyelvhez tartozó kódolási konvenciók.</li>
+        <li><strong>Java Elnevezési Konvenciók:</strong> A Java nyelvhez tartozó elnevezési konvenciók.</li>
+        <li><strong>JSON:</strong> A JSON fájlokhoz tartozó szabvány.</li>
+        <li><strong>Maven Project Object Model (POM):</strong> A Maven keretrendszer által előírt projektkonfigurációs szabvány, amely megkönnyíti a függőségek kezelését és a projekt felépítését.</li>
+        <li><strong>OpenGL Shading Language (GLSL):</strong> Az OpenGL-hez kapcsolódó szabvány a grafikus programozás számára, amely segít a grafikai teljesítmény optimalizálásában.</li>
+        <li><strong>Javadoc:</strong> A Java programok dokumentálására szolgáló szabvány, amely lehetővé teszi a kód jól strukturált és érthető dokumentálását.</li>
+        <li><strong>Sématikus Verziózás:</strong> A verziószámok rendszere, amely segít a szoftverfrissítések kezelésében és a kompatibilitás nyomon követésében.</li>
+    </ul>
+    
+    <h2>12.2 Választás Alapján Alkalmazandó Szabványok</h2>
+    
+    <p>A webalkalmazásunkban a következő szabványokat fogjuk alkalmazni:</p>
+    
+    <ul>
+        <li><strong>ECS:</strong> Az Entity-Component-System tervezési minta.</li>
+    </ul>
+
+<hr>
+
+<h1>Szótár</h1>
+
+<hr>
+<br>
+
+<table>
+    <tr>
+        <th>Szó</th>
+        <th>Magyarázat</th>
+    </tr>
+    <tr>
+        <td>Felhasználó/User</td>
+        <td>A felhasználó az a személy, aki a fitness webalkalmazást használja a személyes edzési és egészségügyi céljainak elérésére.</td>
+    </tr>
+    <tr>
+        <td>Profil</td>
+        <td>A profil egy olyan felhasználói adatlap, amely tartalmazza a felhasználó személyes adatait, edzési szokásait és céljait.</td>
+    </tr>
+    <tr>
+        <td>Edzésprogram</td>
+        <td>Az edzésprogram egy testreszabott edzésterv, amely a felhasználó céljai és állapota alapján készült.</td>
+    </tr>
+    <tr>
+        <td>Táplálkozási terv</td>
+        <td>A táplálkozási terv egy olyan étrend, amely segíti a felhasználót a kívánt testsúly vagy izomzat elérésében, figyelembe véve az egyéni igényeket.</td>
+    </tr>
+    <tr>
+        <td>Követés</td>
+        <td>A követés a felhasználó edzési és táplálkozási előrehaladásának nyomon követésére szolgáló funkció, amely lehetővé teszi a fejlődés mérését.</td>
+    </tr>
+    <tr>
+        <td>Funkció</td>
+        <td>A funkció egy adott szolgáltatás vagy lehetőség a webalkalmazásban, például edzésnapló, táplálkozási nyomkövetés vagy közösségi interakció.</td>
+    </tr>
+    <tr>
+        <td>Edzésnapló</td>
+        <td>Az edzésnapló egy felület, ahol a felhasználók rögzíthetik az elvégzett edzéseket, azok időtartamát és intenzitását.</td>
+    </tr>
+    <tr>
+        <td>Közösség</td>
+        <td>A közösség a felhasználók közötti interakciót lehetővé tevő funkció, amely tartalmazhat fórumokat, csoportokat és kihívásokat.</td>
+    </tr>
+    <tr>
+        <td>Célok</td>
+        <td>A célok a felhasználók által kitűzött edzési és táplálkozási elérendő teljesítmények, mint például a fogyás vagy izomtömeg növelése.</td>
+    </tr>
+    <tr>
+        <td>Futási idő</td>
+        <td>A futási idő az a időtartam, amely alatt a webalkalmazás fut, és a felhasználói interakciókra válaszol.</td>
+    </tr>
+    <tr>
+        <td>Rendszerkövetelmény</td>
+        <td>A rendelkezésre álló eszköz legalább azok a hardverelemek, amelyek szükségesek a webalkalmazás zökkenőmentes működéséhez.</td>
+    </tr>
+    <tr>
+        <td>Grafikus felhasználói felület</td>
+        <td>A grafikus felhasználói felület a webalkalmazás vizuális megjelenése, amely felhasználóbarát elemekből áll, mint gombok, menük és diagramok.</td>
+    </tr>
+    <tr>
+        <td>Szoftverfejlesztő</td>
+        <td>A szoftverfejlesztő az a személy, aki a fitness webalkalmazás megtervezéséért és fejlesztéséért felelős.</td>
+    </tr>
+    <tr>
+        <td>Real-time</td>
+        <td>A real-time a valós időben történő adatkezelést jelenti, például edzések és táplálkozási nyomkövetés esetén.</td>
+    </tr>
+    <tr>
+        <td>Böngésző</td>
+        <td>A böngésző egy szoftver, amely lehetővé teszi a felhasználók számára, hogy hozzáférjenek a fitness webalkalmazáshoz az interneten keresztül.</td>
+    </tr>
+    <tr>
+        <td>API (Application Programming Interface)</td>
+        <td>Az API egy olyan interfész, amely lehetővé teszi a különböző szoftverek közötti kommunikációt, például harmadik fél alkalmazások integrálására.</td>
+    </tr>
+    <tr>
+        <td>Mobilbarát</td>
+        <td>A mobilbarát jellemző azt jelenti, hogy a webalkalmazás jól működik és könnyen használható mobil eszközökön is.</td>
+    </tr>
+    <tr>
+        <td>Visszajelzés</td>
+        <td>A visszajelzés a felhasználók által adott információ, amely segít a webalkalmazás fejlesztésében és a felhasználói élmény javításában.</td>
+    </tr>
+    <tr>
+        <td>Személyre szabás</td>
+        <td>A személyre szabás lehetőséget biztosít a felhasználók számára, hogy az alkalmazás funkcióit és megjelenését saját igényeik szerint alakítsák.</td>
+    </tr>
+    <tr>
+        <td>Kihívások</td>
+        <td>A kihívások versenyszerű feladatok, amelyeken a felhasználók részt vehetnek, hogy motiválják egymást és elérjék fitness céljaikat.</td>
+    </tr>
+    <tr>
+        <td>Elemzés</td>
+        <td>Az elemzés a felhasználói adatok részletes vizsgálata, amely segít megérteni a trendeket és javítani a szolgáltatásokat.</td>
+    </tr>
+    <tr>
+        <td>Dokumentáció</td>
+        <td>Az alkalmazás használatához és fejlesztéséhez szükséges leírások, amelyek részletezik a működést, felépítést és telepítést.</td>
+    </tr>
+    <tr>
+        <td>Render/futási idő</td>
+        <td>Az a teljes idő, amíg az applikáció aktívan működik és használható, például amíg egy felhasználó edzésprogramot hoz létre vagy módosít.</td>
+    </tr>
+    <tr>
+        <td>Rendszerkövetelmény</td>
+        <td>A minimális hardver- és szoftverfeltételek, amelyek szükségesek ahhoz, hogy az applikáció megfelelően működjön (pl. modern webböngésző).</td>
+    </tr>
+    <tr>
+        <td>Grafikus felhasználói felület (GUI)</td>
+        <td>Az applikáció azon része, amely vizuális elemek (pl. gombok, menük) segítségével biztosítja a felhasználók számára a program kezelését.</td>
+    </tr>
+    <tr>
+        <td>Szoftverfejlesztő (Software Developer)</td>
+        <td>A személy, aki a webes alkalmazás megtervezéséért, megírásáért és karbantartásáért felel.</td>
+    </tr>
+    <tr>
+        <td>Entitás (Entity)</td>
+        <td>Az applikációban minden felhasználót egy entitásként kezelünk, amelyhez különböző edzésprogramok és adatelemzési funkciók kapcsolhatók.</td>
+    </tr>
+    <tr>
+        <td>Komponens (Component)</td>
+        <td>Egy adott funkció vagy modul, amely egy entitáshoz rendelhető, például edzésprogramok vagy szűrési feltételek.</td>
+    </tr>
+
+
+    <tr>
+        <td>Rendszer (System)</td>
+        <td>Azok a folyamatok, amelyek a komponenseket feldolgozzák és az entitásokkal kapcsolatos műveleteket végrehajtják, például a felhasználói adatok tárolása és kezelése.</td>
+    </tr>
+
+
+    <tr>
+        <td>Moduláris felépítés</td>
+        <td>Olyan architektúra, amely lehetővé teszi az alkalmazás funkcióinak bővítését, például új edzésformák, táplálkozási tervek integrálását.</td>
+    </tr>
+    <tr>
+        <td>Verziókövető rendszer</td>
+        <td>Egy szoftvereszköz, mint például a Git, amely segíti a forráskód kezelést, változások nyomon követését, valamint a közös munkát fejlesztőcsapatok között.</td>
+    </tr>
+    <tr>
+        <td>Valós idejű adatfeldolgozás</td>
+        <td>Az adatok folyamatos feldolgozása és elemzése az applikáció használata közben, például a felhasználói teljesítmény figyelemmel kísérése edzés közben.</td>
+    </tr>
+    <tr>
+        <td>Integráció</td>
+        <td>Külső rendszerek vagy eszközök (pl. fitnesz nyomkövetők, okosórák) összekapcsolása az applikációval a teljesítmény és adatelemzés javítása érdekében.</td>
+    </tr>
+    <tr>
+        <td>Post-Processing</td>
+        <td>Az adatok utólagos feldolgozása, amely helyett az applikáció valós idejű adatfeldolgozást alkalmaz.</td>
+    </tr>
+    <tr>
+        <td>Okosóra integráció</td>
+        <td>Az applikáció képes adatokat fogadni és elemezni különböző okosórákról (pl. pulzus, lépésszám, kalóriaégetés), hogy valós idejű visszajelzést adjon.</td>
+    </tr>
+    <tr>
+        <td>Analízis modell</td>
+        <td>A projekt során végzett elemzések és vizsgálatok összegzése, amely meghatározza a rendszer működésének és igényeinek alapját.</td>
+    </tr>
+    <tr>
+        <td>Fejlesztői csoport adatok</td>
+        <td>A fejlesztési folyamatban részt vevő csapat tagjainak neve, beosztása és elérhetőségei, amelyek segítik a hatékony kommunikációt.</td>
+    </tr>
+    <tr>
+        <td>Felhasználói dokumentáció</td>
+        <td>Az applikáció használatához szükséges útmutatók és leírások, amelyek tájékoztatják a felhasználókat a funkciókról és a használatról.</td>
+    </tr>
+    <tr>
+        <td>Munkanapló</td>
+        <td>A projekt során végzett munkák, események és tapasztalatok nyomon követésére szolgáló dokumentum, amely elősegíti a projekt menedzsmentjét.</td>
+    </tr>
+    <tr>
+        <td>Projekt előkészítés</td>
+        <td>A projekt kezdeti fázisa, amely magában foglalja a célok meghatározását, a szükséges erőforrások és időkeretek kidolgozását.</td>
+    </tr>
+    <tr>
+        <td>Projekt terv</td>
+        <td>A projekt céljait, ütemezését, erőforrásait és felelősségeit összefoglaló dokumentum, amely útmutatást ad a fejlesztési folyamat során.</td>
+    </tr>
+    <tr>
+        <td>Rendszertervezés</td>
+        <td>Az applikáció architektúrájának és felépítésének részletes tervezése, beleértve az adatbázisok és rendszerek közötti kapcsolatok kialakítását.</td>
+    </tr>
+    <tr>
+        <td>Software követelmény specifikáció (SRS)</td>
+        <td>A szoftver működésével és tulajdonságaival kapcsolatos követelmények részletes leírása, amely az alapját képezi a fejlesztési folyamatnak.</td>
+    </tr>
+    <tr>
+        <td>Telepítési és kezelési útmutató</td>
+        <td>A rendszer telepítésének lépéseit és az applikáció használatához szükséges információkat tartalmazó dokumentáció.</td>
+    </tr>
+    <tr>
+        <td>Domain tárhely</td>
+        <td>Az applikáció számára szükséges webcím (domain) és a webhely tárolására szolgáló szolgáltatás, amely biztosítja az elérhetőséget az interneten.</td>
+    </tr>
+    <tr>
+        <td>Adatbázis</td>
+        <td>Az applikáció által használt struktúrált adatok tárolására szolgáló rendszer, amely lehetővé teszi az adatok gyors és hatékony kezelését.</td>
+    </tr>
+    <tr>
+        <td>HTML, CSS, JAVASCRIPT</td>
+        <td>A webfejlesztés alapvető technológiái, amelyek lehetővé teszik az applikáció felhasználói felületének létrehozását és interaktivitását.</td>
+    </tr>
+    <tr>
+        <td>Java</td>
+        <td>A Java egy népszerű, platformfüggetlen programozási nyelv, amelyet különféle alkalmazások, beleértve a webes, asztali és mobilalkalmazások fejlesztésére használnak.</td>
+    </tr>
+    <tr>
+        <td>Bootspring</td>
+        <td>A Spring Boot egy Java alapú keretrendszer, amely lehetővé teszi a mikroszolgáltatások gyors fejlesztését és telepítését, minimalizálva a szükséges konfigurációt.</td>
+    </tr>
+    <tr>
+        <td>OpenGL</td>
+        <td>Az OpenGL (Open Graphics Library) egy nyílt, platformfüggetlen grafikus API, amelyet 2D és 3D grafika renderelésére használnak játékokban és egyéb grafikai alkalmazásokban.</td>
+    </tr>
+    <tr>
+        <td>JSON</td>
+        <td>A JSON (JavaScript Object Notation) egy könnyen olvasható adatcsere-formátum, amelyet gyakran használnak webes alkalmazásokban a strukturált adatok tárolására és továbbítására.</td>
+    </tr>
+    <tr>
+        <td>Maven</td>
+        <td>A Maven egy automatizált projektkezelő eszköz, amelyet Java projektek függőségeinek kezelésére és az építési folyamatok egyszerűsítésére használnak.</td>
+    </tr>
+    <tr>
+        <td>Javadoc</td>
+        <td>A Javadoc egy eszköz a Java forráskód dokumentálására, amely automatikusan generál HTML-formátumú dokumentációt a kód kommentjei alapján.</td>
+    </tr>
+    <tr>
+        <td>LWJGL (Lightweight Java Game Library)</td>
+        <td>Az LWJGL egy Java-alapú könyvtár, amely lehetővé teszi a fejlesztők számára, hogy könnyen hozzáférjenek alacsony szintű grafikai és audio API-khoz, például OpenGL-hez és OpenAL-hoz.</td>
+    </tr>
+    <tr>
+        <td>GSON</td>
+        <td>A GSON egy Java könyvtár, amely lehetővé teszi a Java objektumok JSON formátumúvá alakítását és visszaalakítását, segítve az adatok egyszerű kezelését.</td>
+    </tr>
+    <tr>
+        <td>GitHub repository</td>
+        <td>A GitHub repository (tárhely) egy online tároló, ahol a fejlesztők megoszthatják és kezelhetik a forráskódjukat, valamint együttműködhetnek más programozókkal.</td>
+    </tr>
+    <tr>
+        <td>Discord</td>
+        <td>A Discord egy népszerű kommunikációs platform, amelyet elsősorban játékosok és közösségek használnak, lehetővé téve a szöveges, hang- és videóbeszélgetéseket.</td>
+    </tr>
+    <tr>
+        <td>QoL (Quality of Life)</td>
+        <td>A QoL a felhasználói élmény javítását szolgáló funkciókat jelenti, amelyek megkönnyítik az alkalmazás használatát, például egyszerűbb navigáció vagy hasznos információk hozzáadása.</td>
+    </tr>
+    <tr>
+        <td>YAML (YAML Ain't Markup Language)</td>
+        <td>A YAML egy adatleíró nyelv, amelyet a konfigurációs fájlok és az adatok struktúrált tárolására használnak, könnyen olvasható formátumban.</td>
+    </tr>
+    <tr>
+        <td>CSV (Comma-Separated Values)</td>
+        <td>A CSV egy egyszerű fájlformátum, amelyet az adatok tárolására és exportálására használnak, ahol az értékeket vessző választja el egymástól.</td>
+    </tr>
+    <tr>
+        <td>UI (User Interface)</td>
+        <td>A UI a felhasználói felületet jelenti, amely a felhasználók és az alkalmazás közötti interakciót lehetővé tevő vizuális elemeket foglalja magában, mint például gombok és menük.</td>
+    </tr>
+    <tr>
+        <td>UX (User Experience)</td>
+        <td>A UX a felhasználói élményt jelenti, amely a felhasználók által tapasztalt összes aspektust magában foglalja, beleértve a használhatóságot, az élményt és az elégedettséget a termékkel vagy szolgáltatással kapcsolatban.</td>
+    </tr>
+
+    </table>
+
+
+
+    <br>
+    <hr>
+   
+    <h1>Munkanapló</h1>
+   
+    <hr>
+    <br>
+
+ <table border="1" cellpadding="5" cellspacing="0">
+     <tr>
+         <th>Dátum</th>
+         <th>Időtartam</th>
+         <th>Tevékenység</th>
+         <th>Résztvevők</th>
+         <th>Döntések, következtetések, megjegyzések</th>
+     </tr>
+     <tr>
+         <td>2024.10.17</td>
+         <td>2 óra</td>
+         <td>Csoportos megbeszélés</td>
+         <td>Mindenki</td>
+         <td>Anyagok megbeszélése, kezdeti terv kidolgozása</td>
+     </tr>
+     <tr>
+         <td>2024.10.18</td>
+         <td>30 perc</td>
+         <td>Csoportos megbeszélés</td>
+         <td>Mindenki</td>
+         <td>Feladatok szétosztása</td>
+     </tr>
+     <tr>
+         <td>2024.10.22</td>
+         <td>3 óra</td>
+         <td>Csoportmunka</td>
+         <td>Mindenki</td>
+         <td>SRS dokumentáció pontjainak feldolgozása, dokumentáció kidolgozásának kezdete</td>
+     </tr>
+     <tr>
+         <td>2024.10.23</td>
+         <td>2 óra</td>
+         <td>Csoportmunka</td>
+         <td>Mindenki</td>
+         <td>Dokumentációk kidolgozásának folytatása</td>
+     </tr>
+     <tr>
+         <td>2024.10.24</td>
+         <td>2 óra</td>
+         <td>Csoportos megbeszélés</td>
+         <td>Varga Bence, Bodó Tamás</td>
+         <td>Dokumentációk szerkesztése</td>
+     </tr>
+     <tr>
+         <td>2024.10.25</td>
+         <td>1 óra</td>
+         <td>Helyzetjelentés</td>
+         <td>Mindenki</td>
+         <td>A Dokumentációk végleges verziójának átnézése</td>
+     </tr>
+     <tr>
+         <td>2024.10.28</td>
+         <td>3 óra</td>
+         <td>Edzésterv véglegesítése</td>
+         <td>Mindenki</td>
+         <td>Weboldalra feltöltés, dokumentumok utólagos ellenőrzése</td>
+     </tr>
+
+     <tr>
+        <td>2024.11.07</td>
+        <td>4 óra</td>
+        <td>Bővítés, átdolgozás témavezetővel megbeszéltek alapján</td>
+        <td>Mindenkif</td>
+        <td>Bővítés, átdolgozás témavezetővel megbeszéltek alapján</td>
+    </tr>
+
+    <tr>
+        <td>2024.11.08</td>
+        <td>3 óra</td>
+        <td>Bővítés, átdolgozás témavezetővel megbeszéltek alapján</td>
+        <td>Hliva Gábor, Lévai Kristóf</td>
+        <td>Bővítés, átdolgozás témavezetővel megbeszéltek alapján</td>
+    </tr>
+
+    <tr>
+        <td>2024.10.28</td>
+        <td>2 óra</td>
+        <td>Weboldal átdolgozása, feltöltés</td>
+        <td>Lévai Kristóf</td>
+        <td>Weboldalra feltöltés, dokumentumok utólagos ellenőrzése, felhasználói dokumentáció átdolgozása</td>
+    </tr>
+ </table>
+
+
+ <br>
+ <hr>
+
+
+</div>
+
+    <!-- Non-sticky Footer -->
+    <footer>
+        <p>&copy; 2024 Kód Betyárok</p>
+    </footer>
+
+</body>
+</html>
+
