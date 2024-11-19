@@ -1,0 +1,3289 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kód Betyárok - Fitness Applikáció</title>
+    <link rel="stylesheet" href="h4.css">
+</head>
+<body>
+
+    <header>Kód Betyárok - Fitness Applikáció</header>
+
+    <div class="button-container">
+        <a href="index.html" target="index.html">H1</a>
+        <a href="h2.html" target="h2.html">H2</a>
+        <a href="h3.html" target="h3.html">H3</a>
+        <a href="h4.html" target="_blank">H4</a>
+    </div>
+<hr>
+    <h2>Gyakorlatvezető: Mileff Péter</h3>
+
+    <table>
+        <tr>
+            <th>Csoport tagjai</th>
+            <th>Neptun Kód</th>
+            <th>Email</th>
+        </tr>
+        <tr>
+            <td>Vass Martin</td>
+            <td>103URB</td>
+            <td>martin.vass@student.uni-miskolc.hu</td>
+        </tr>
+        <tr>
+            <td>Hliva Gábor</td>
+            <td>F548N</td>
+            <td>gabor.hliva@student.uni-miskolc.hu</td>
+        </tr>
+        <tr>
+            <td>Bodó Tamás</td>
+            <td>HDK6NX</td>
+            <td>tamas.bodo@student.uni-miskolc.hu</td>
+        </tr>
+        <tr>
+            <td>Varga Bence</td>
+            <td>HK74CE</td>
+            <td>varga.bence@student.uni-miskolc.hu</td>
+        </tr>
+        <tr>
+            <td>Lévai Kristóf Zalán</td>
+            <td>EDMO16</td>
+            <td>kristof.zalan.levai@student.uni-miskolc.hu</td>
+        </tr>
+    </table>
+
+    <div class="paragraphs">
+        <p id="alahuzott">Résztevők:</p>
+
+ 	<p>Vass Martin:		103URB (CSAPATVEZETŐ)</p>
+ 	<p>Hliva Gábor:		F548N</p>
+ 	<p>Bodó Tamás:		HDK6NX</p>
+ 	<p>Varga Bence:		HK74CE</p>
+	 <p>Lévai Kristóf:		EDMO16</p>
+
+	<hr>
+
+        <p id="datum">2024.11.15</p>
+    </div>
+
+<div class="paragraphsss">
+
+        <h1>Rendszertervezés</h1>
+        <br>
+        <hr>
+
+        <h3 class="feladatcim">Tartalomjegyzék</h3>
+<ul>
+    <li>1. Bevezetés</li>
+    <li>2. Felhasználói felület</li>
+    <li>3. Adatmodellek
+        <ul>
+            <li>3.1. Adatbázis kezelő kiválasztása</li>
+            <li>3.2. Szemantikai adatmodell</li>
+            <li>3.3. Relációs adatmodell</li>
+            <li>3.4. Az adatbázis kezelővel kapcsolatot tartó osztályok</li>
+        </ul>
+    </li>
+    <li>4. A funkcionális modell kiegészítése</li>
+    <li>5. Egyéb dokumentációk</li>
+</ul>
+
+    
+    <h3 class="feladatcim">1. Bevezetés</h3>
+        <p>A fitness applikáció egy sokoldalú és innovatív alkalmazás, amely a modern felhasználók igényeit figyelembe véve készül. Célja, hogy támogassa a felhasználókat a különböző edzéstervek kialakításában, nyomon követésében és a gyakorlatok hatékony végrehajtásában, továbbá az étrendek összeállításában.</p>
+        <p>A fitnesz világa folyamatosan fejlődik, és az emberek egyre nagyobb hangsúlyt fektetnek egészségük és fittségük megőrzésére. A rendszer lehetőséget biztosít arra, hogy a felhasználók személyre szabott edzésterveket állítsanak össze, figyelembe véve saját céljaikat, képességeiket és preferenciáikat.</p>
+        <p>A felhasználói élmény maximalizálása érdekében a rendszer intuitív grafikus felhasználói felülettel rendelkezik, amely lehetővé teszi a gyors és egyszerű navigációt. A felhasználók számára készült edzésterv létrehozásának folyamata könnyen érthető lesz, hogy bárki kezelni tudja, kortól és nemtől függetlenül.</p>
+    
+        <h3 class="feladatcim">2. Felhasználói felület (GUI) és felületi koncepciós terv</h3>
+        <p>A grafikus felhasználói felület (GUI) és a felületi koncepciók megtervezése során alapvető célunk, hogy a felhasználók számára intuitív és vonzó élményt nyújtsunk.</p>
+    
+        <h2>2.1. GUI tervezési specifikációk</h2>
+        <ul>
+            <li><strong>Főbb elemek:</strong>
+                <ul>
+                    <li><strong>Főmenü:</strong> A főmenü tartalmazza az applikáció fő funkcióit, például az edzésterv létrehozását, edzések követését és felhasználói profilok kezelését. Az elemek logikusan és könnyen hozzáférhetően helyezkednek el.</li>
+                    <li><strong>Programok ablak:</strong> Ez az ablak a felhasználók által létrehozott edzésterveket és programokat tartalmazza, lehetőséget adva azok gyors hozzáadására és kezelésére. Az új edzésterv létrehozásához szükséges gomb intuitívan helyezkedik el.</li>
+                    <li><strong>Tulajdonságok ablak:</strong> A választott edzésterv részleteit megjelenítő ablak, amely lehetővé teszi a felhasználók számára, hogy módosítsák az edzés paramétereit, például az intenzitást, időtartamot és ismétléseket.</li>
+                    <li><strong>Animációs ablak:</strong> Ez az ablak a felhasználók számára lehetőséget ad a gyakorlatok vizuális megjelenítésére, amely segíti a helyes végrehajtás elsajátítását.</li>
+                    <li><strong>Navigációs sáv:</strong> Az alkalmazás tetején található navigációs sáv, amely lehetővé teszi a felhasználók számára, hogy gyorsan hozzáférjenek a különböző funkciókhoz, mint például az edzésterv, edzésnapló, gyakorlatok és felhasználói profil.</li>
+                    <li><strong>Oldalsó menü:</strong> Bal oldalon elhelyezkedő menü, amely a különböző edzéstípusokat és programokat listázza. Itt található a lehetőség új edzésterv létrehozására is.</li>
+                    <li><strong>Középső tartalom terület:</strong> Az applikáció fő része, ahol a felhasználók interakcióba lépnek a kiválasztott elemekkel, például edzésterv létrehozása vagy gyakorlatok végrehajtása.</li>
+                </ul>
+            </li>
+            <li><strong>Színpaletta:</strong>
+                <ul>
+                    <li>Az alkalmazás színpalettája a fitness és egészség témakörét tükrözi, színek, mint a zöld, kék és narancs használatával.</li>
+                    <li>Az alap háttér színe világos, míg a gombok és interakciós elemek kontrasztos színnel vannak kiemelve a könnyebb észlelhetőség érdekében.</li>
+                </ul>
+            </li>
+            <li><strong>Tipográfia:</strong>
+                <ul>
+                    <li>A betűtípusok kiválasztásánál könnyen olvasható, modern sans-serif betűtípusokat használunk, amelyek jól alkalmazkodnak a digitális környezethez. A fő címekhez nagyobb betűméretet használunk, míg a tartalmi szöveghez kisebbet.</li>
+                </ul>
+            </li>
+        </ul>
+    
+        <h2>2.2. Felületi koncepciók</h2>
+        <ul>
+            <li><strong>Design:</strong> Minden felhasználói felület elemnek egységes stílusa van, amely elősegíti a vizuális koherenciát. A gombok, listák, és egyéb elemek azonos megjelenéssel bírnak, így a felhasználók könnyen kiismerhetik magukat az alkalmazásban.</li>
+            <li><strong>Átmenetek és animációk:</strong> Az elemek közötti átmenetek és animációk finomak és zökkenőmentesek, hogy a felhasználói élmény sima legyen. Például a menü megnyitásakor vagy bezárásakor lágy animációkat használunk.</li>
+            <li><strong>Kép- és ikonhasználat:</strong> Az alkalmazásban használt ikonok és képek figyelemfelkeltőek és relevánsak, támogatva a felhasználói élményt. Az ikonok egyértelműen jelzik a funkciókat, míg a képek motiváló és inspiráló hatással bírnak.</li>
+        </ul>
+    
+        <h2>2.3. Felhasználói élmény (UX) optimalizálása</h2>
+        <ul>
+            <li><strong>Könnyű hozzáférhetőség:</strong> Az applikáció tervezésénél figyelembe vesszük a különböző felhasználói igényeket, beleértve a mozgáskorlátozottakat is. A navigációs elemek megfelelően méretezettek és elérhetőek a különböző eszközökön.</li>
+            <li><strong>Felhasználói tesztelés:</strong> A GUI elemeit felhasználói tesztelések során validáljuk, lehetővé téve a felhasználói visszajelzések figyelembevételét a végső tervezésben. A tesztelés célja, hogy megértsük a felhasználói szokásokat és preferenciákat, majd ezeket integráljuk a tervezésbe.</li>
+            <li><strong>Szcenárió-alapú tervezés:</strong> A felhasználói élmény javítása érdekében szcenáriókat dolgozunk ki, amelyek bemutatják a tipikus felhasználói interakciókat. Ezeket a szcenáriókat felhasználjuk a felhasználói útvonalak megtervezéséhez és optimalizálásához.</li>
+        </ul>
+    
+        <h2>2.4. Jövőbeli fejlesztések</h2>
+
+        <ul>
+            <li><strong>Felhasználói visszajelzések integrálása: </strong> : A jövőbeli frissítések során folyamatosan gyűjtjük és elemezzük a felhasználói visszajelzéseket, hogy a felület még inkább a felhasználói igényekhez igazodjon.</li>
+            <li><strong>Új funkciók bevezetése: </strong>Az applikáció fejlődésével új funkciókat és lehetőségeket integrálunk, mint például a közösségi megosztás, csoportos edzések és kihívások, amelyek gazdagítják a felhasználói élményt.</li>
+        </ul>
+
+        <h3 class="feladatcim">3. Adatmodellek</h3>
+    
+        <h2>3.1. Adatbázis-kezelő kiválasztása</h2>
+        <p>A rendszer az SQL adatbázis-kezelőt használja a felhasználói és edzésadatok tárolására. A MySQL vagy PostgreSQL adatbázisok közül fogunk választani a projekt igényeinek megfelelően. A kapcsolatot az alkalmazás funkcionális részei és az adatbázis-kezelő között JDBC (Java Database Connectivity) segítségével fogjuk megvalósítani.</p>
+    
+        <h2>3.2. Szemantikai adatmodell</h2>
+        <p>A szemantikai adatmodell a következő entitásokat fogja tartalmazni az applikációban:</p>
+
+        <p><strong>Entitások és attribútumok:</strong></p>
+<ol>
+    <li>User (Felhasználó):
+        <ul>
+            <li>Username: a felhasználó neve.</li>
+            <li>Password: a felhasználó jelszava.</li>
+            <li>UserID: egyedi azonosító minden felhasználóhoz.</li>
+            <li>Kapcsolat: egy felhasználónak több edzésterve is lehet a „User's workout plan” kapcsolat alapján.</li>
+        </ul>
+    </li>
+    <li>Entity (Entitás):
+        <ul>
+            <li>Az entitás egy általánosított edzés terv vagy struktúra.</li>
+            <li>Tartalmaz edzéseket (Exercise1, Exercise2, Exercise3 stb.), és ezekhez kapcsolódó „TrainingType” és „Day” attribútumokat.</li>
+            <li>Kapcsolat: egy felhasználó több entitást (edzéstervet) követhet a „User's workout plan” alapján.</li>
+        </ul>
+    </li>
+    <li>Exercise (Gyakorlat):
+        <ul>
+            <li>ExerciseID: egyedi azonosító a gyakorlatokhoz.</li>
+            <li>Name: a gyakorlat neve.</li>
+            <li>Exercise number: a gyakorlat sorszáma.</li>
+            <li>Weight: a használt súly.</li>
+            <li>Repetitions: ismétlésszám.</li>
+            <li>Sets: sorozatok száma.</li>
+            <li>Body part: melyik testrészre hat a gyakorlat.</li>
+            <li>Kapcsolat: egy edzés tervhez több gyakorlat is kapcsolható a „Exercise in plan” kapcsolat alapján.</li>
+        </ul>
+    </li>
+    <li>Tracking (Nyomonkövetés):
+        <ul>
+            <li>TrackingID: egyedi azonosító a nyomonkövetett adatokhoz.</li>
+            <li>Date: dátum, amikor az adatot rögzítették.</li>
+            <li>Weight: testsúly nyomon követése.</li>
+            <li>Chest, Bicep, Thigh, Hips, Waist: a különböző testrészek méreteinek nyomon követése.</li>
+            <li>Kapcsolat: minden felhasználóhoz nyomon követési adatok kapcsolódnak a „User's tracking details” kapcsolat segítségével.</li>
+        </ul>
+    </li>
+</ol>
+
+<p><strong>Kapcsolatok:</strong></p>
+<ol>
+    <li>Exercise in plan (Gyakorlat az edzéstervben):
+        <ul>
+            <li>Több gyakorlat kapcsolódhat egy edzéstervhez (n-n kapcsolat).</li>
+        </ul>
+    </li>
+    <li>User's workout plan (Felhasználó edzésterve):
+        <ul>
+            <li>Minden felhasználónak több edzésterve lehet, és minden edzésterv több felhasználóhoz is tartozhat (n-n kapcsolat).</li>
+        </ul>
+    </li>
+    <li>User's tracking details (Felhasználó nyomonkövetési adatai):
+        <ul>
+            <li>Minden felhasználó több nyomonkövetési adatot rögzíthet (1-n kapcsolat).</li>
+        </ul>
+    </li>
+</ol>
+    
+        <h2>3.3. Relációs adatmodell</h2>
+        <p>A relációs adatmodell az adatok relációkban való tárolását jelenti, ahol a felhasználók, edzéstervek, gyakorlatok és az elért eredmények különböző táblákban kerülnek tárolásra. A táblák között külső kulcsokkal biztosítjuk a kapcsolódást.</p>
+
+        <br>
+
+        <p>A relációs adatmodellt megvalósító táblák pedig a következőek lesznek: </p>
+
+        <br>
+        <h2>ER DIAGRAM:</h2>
+        <img src="ER_diagram.png" alt="ER_diagram">
+        <br>
+
+        <h2>KAPCSOLATI TÁBLA:</h2>
+        <img src="RL_diagram.png" alt="RL_diagram">
+        <h2>3.4. Az adatbázis-kezelővel kapcsolatot tartó osztályok</h2>
+        <p>Az adatbázis kezelővel kapcsolatot tartó osztályok egy Java alapú alkalmazásban általában a DAO (Data Access Object) mintát követik, így mi is ezt a megoldást választottuk.</p>
+    
+<ul>
+    <li><strong>UserDAO:</strong> A felhasználók adataival kapcsolatos műveletek (CRUD), mint például a felhasználók regisztrációja, frissítése, törlése, és lekérdezése a felhasználói azonosítók, jelszavak, email címek, célsúly és kezdeti súly alapján.</li>
+    <li><strong>ExerciseDAO:</strong> A gyakorlatok adataival kapcsolatos műveletek (CRUD), ideértve a gyakorlatok hozzáadását, frissítését, törlését, illetve lekérdezését a gyakorlatok neve, száma, súlyok, ismétlések, testterület stb. alapján.</li>
+    <li><strong>PlanDAO:</strong> Az edzéstervekkel kapcsolatos műveletek (CRUD). Az edzéstervek lekérdezését, hozzáadását, módosítását és törlését végzi, amelyek az egyes felhasználókhoz tartoznak és tartalmazzák az adott felhasználó által elvégzett gyakorlatokat és az edzés típusait.</li>
+    <li><strong>TrackingDAO:</strong> A felhasználók edzéskövetési adataival kapcsolatos műveletek (CRUD), beleértve a súly, dátum, mellkas, bicepsz, csípő, comb stb. mérések tárolását és lekérdezését. Az adatok segítségével követhető a felhasználók fizikai fejlődése.</li>
+    <li><strong>EntityDAO:</strong> Az egyéb entitások (például étrend, egyedi edzés típusok) kezelésével kapcsolatos műveletek (CRUD). Az entitások típusait és hozzárendelt információkat kezeli.</li>
+</ul>
+
+
+
+        <h3 class="feladatcim">4. A funkcionális modell kiegészítése</h3>
+        <p>A funkcionális modell további funkciókat tartalmaz, mint például a felhasználói visszajelzések és statisztikák nyomon követése, valamint a gamifikációs elemek beépítése, amelyek ösztönzik a felhasználókat a folyamatos fejlődésre.</p>
+
+        <h2>4.1 Regisztrációs folyamat</h2>
+        <p><strong>Alapfolyamat:</strong></p>
+<ol>
+    <li>A felhasználó megadja a regisztrációhoz szükséges adatokat (név, email, jelszó, célsúly, kezdeti súly).</li>
+    <li>Az adatok validálása (pl. e-mail formátum ellenőrzése, jelszó erősségének vizsgálata).</li>
+    <li>Az adatok mentése az adatbázisba a UserDAO segítségével.</li>
+    <li>A sikeres regisztráció után a felhasználó belépési képernyőre kerül.</li>
+</ol>
+
+<p><strong>Alternatívák:</strong></p>
+<ul>
+    <li>Ha az email cím már regisztrálva van, a rendszer figyelmeztetést ad és lehetőséget nyújt a jelszó visszaállítására.</li>
+    <li>Ha a jelszó nem felel meg a követelményeknek, hibaüzenet jelenik meg, és a felhasználó új jelszót adhat meg.</li>
+</ul>
+
+
+    <h2>4.2 Edzéstervek kezelése</h2>
+    
+    <p><strong>Alapfolyamat:</strong></p>
+<ol>
+    <li>A felhasználó létrehoz egy új edzéstervet az edzéstervekhez tartozó adatok (pl. gyakorlatok, ismétlések, sorozatok stb.) megadásával.</li>
+    <li>A program hozzáadja a megfelelő gyakorlatokat a tervhez a ExerciseDAO használatával.</li>
+    <li>Az edzésterv mentése az adatbázisba a PlanDAO segítségével.</li>
+</ol>
+
+<p><strong>Alternatívák:</strong></p>
+<ul>
+    <li>Ha a felhasználó el akar távolítani egy gyakorlatot az edzéstervből, a rendszer lehetőséget biztosít erre a műveletre.</li>
+    <li>Hiba esetén (pl. nem létező gyakorlat hozzáadása) figyelmeztetést küld a rendszer, és visszalépésre ad lehetőséget.</li>
+</ul>
+
+<h2>4.3 Edzéskövetés</h2>
+<p><strong>Alapfolyamat:</strong></p>
+<ol>
+    <li>A felhasználó az edzés végén megadja az aktuális fizikai adatait (pl. súly, mellkas, bicepsz).</li>
+    <li>Az adatok validálása (pl. negatív értékek kizárása).</li>
+    <li>Az adatok mentése az adatbázisba a TrackingDAO segítségével.</li>
+    <li>A felhasználó visszajelzést kap a fejlődéséről grafikus formában.</li>
+</ol>
+
+<p><strong>Alternatívák:</strong></p>
+<ul>
+    <li>A felhasználó korábbi adatait is módosíthatja, ha elírás történt, vagy hibás adatokat rögzített.</li>
+    <li>Ha az adatok mentése sikertelen, a rendszer visszajelzést küld a felhasználónak, és lehetőséget biztosít az újbóli mentésre.</li>
+</ul>
+
+<h2>4.4. Hibakezelés és alternatív adatáramlások</h2>
+<ul>
+    <li>A rendszer hibás adatbevitel esetén mindig visszajelzést ad a felhasználónak, és lehetőséget biztosít a hibák kijavítására.</li>
+    <li>Az alternatív adatáramlásokat olyan helyzeteken fogjuk használni, ahol például hálózati hiba, adatbázis hiba, vagy egyéb váratlan körülmény lép fel. A rendszer ilyen esetekben megőrzi a felhasználói adatokat, és lehetőséget biztosít a hibás művelet megismétlésére.</li>
+</ul>
+
+        <h3 class="feladatcim">5. Egyéb dokumentációk</h3>
+        
+        <h2>5.1 Fontosabb algoritmusok és adatszerkezetek</h2>
+    <p>A fitnesz alkalmazásban a következő főbb algoritmusokat és adatszerkezeteket kell dokumentálni:</p>
+    <h2>5.1.1. Algoritmusok:</h2>
+<ul>
+    <li><strong>Felhasználói adatok titkosítása:</strong> A felhasználói jelszavak és egyéb érzékeny adatok biztonságos tárolásához titkosítási algoritmust használunk. A jelszavakat a rendszer bcrypt vagy SHA-256 hash-eléssel tárolja, hogy biztosítsa az adatok integritását.</li>
+    <li><strong>Edzésterv és étrend generálás:</strong> A felhasználó által megadott célok, súly és edzésintenzitás alapján a rendszer automatikusan létrehoz edzésterveket és étrendeket. Az algoritmus figyelembe veszi a felhasználó által megadott testadatokat, mint pl. súly, izomtömeg és célzott testrészek.</li>
+</ul>
+
+       	<hr>
+	<br>
+        <h1>Analízis modell</h1>
+        <br>
+        <hr>
+
+        <h3 class="feladatcim">Tartalomjegyzék</h3>
+        <ul>
+            <li>1. Bevezetés</li>
+            <li>2. Kezdeti osztálydiagram</li>
+            <ul>
+                <li>2.1. Main osztály</li>
+                <li>2.2. Felhasználói felület</li>
+                <li>2.3. Üzleti logika</li>
+                <li>2.4. Üzleti logika menedzser</li>
+                <li>2.5. Erőforrás-kezelő</li>
+                <li>2.6. Entitásgyár</li>
+                <li>2.7. Entitáskezelő</li>
+                <li>2.8. Komponens</li>
+                <li>2.9. Entitás</li>
+                <li>2.10. Gyűjtemény</li>
+                <li>2.11. Mentéskezelő</li>
+                <li>2.12. Sorosítás</li>
+                <li>2.13. Felhasználókezelő</li>
+                <li>3. Kezdeti osztálydiagram elemzése</li>
+                <li>4. Teljes osztálydiagram</li>
+            </ul>
+            <ul>
+                <li>4.1. Main osztály</li>
+                <li>4.2. Fő osztály</li>
+                <li>4.3. Felhasználói felület</li>
+                <li>4.4. Üzleti logika</li>
+                <li>4.5. Üzleti logika menedzser</li>
+                <li>4.6. Erőforrás-kezelő</li>
+                <li>4.7. Entitásgyár</li>
+                <li>4.8. Entitáskezelő</li>
+                <li>4.9. Komponens</li>
+                <li>4.10. Entitás</li>
+                <li>4.11. Gyűjtemény</li>
+                <li>4.12. Mentéskezelő</li>
+                <li>4.13. Sorosítás</li>
+                <li>4.14. Felhasználókezelő</li>
+                <li>4.15. Cél</li>
+                <li>4.16. Motivációkezelő</li>
+                <li>4.17. Kihívás</li>
+                <li>4.18. Étrend</li>
+                <li>4.19. Étrend Napi Terv</li>
+                <li>4.20. Étel</li>
+                <li>4.21. Recept</li>
+                <li>4.22. Bevásárlólista</li>
+                <li>4.23. Edzésterv</li>
+                <li>4.24. Gyakorlat</li>
+                <li>4.25. Edzésterv Napló</li>
+                <li>4.26. Teljesítmény Statisztika</li>
+                <li>4.27. Statisztikai Jelentés</li>
+                <li>4.28. Vizuális Statisztikák</li>
+                <li>4.29. Integráció</li>
+                <li>4.30. API Kapcsolat</li>
+                <li>4.31. Időzítő</li>
+                <li>4.32. Felhasználói Beállítások</li>
+                <li>4.33. Hírcsatorna</li>
+                <li>4.34. Üzenetküldő Rendszer</li>
+                <li>4.35. Szakértői Tanácsok</li>
+                <li>4.36. Alkalmazás Napló</li>
+                <li>4.37. Bejelentkezési Napló</li>
+                <li>4.38. Közösségi Szavazások</li>
+                <li>4.39. Személyre Szabott Ajánlások</li>
+                <li>4.40. Adatbázis-kezelő</li>
+                <li>4.41. Mérföldkő</li>
+                <li>4.42. Rendszerfigyelő</li>
+                <li>4.43. Gamifikációs Rendszer</li>
+                <li>4.44. Jelvény</li>
+                <li>4.45. Eredménytábla</li>
+                <li>4.46. Értesítési Kezelő</li>
+                <li>4.47. Statisztikai Elemző</li>
+                <li>4.48. Külső Eszközök Szinkronizáló</li>
+                <li>4.49. Bejelentkezési Védelem</li>
+                <li>4.50. Helyalapú Szolgáltatások</li>
+                <li>4.51. Személyes Adatvédelem</li>
+                <li>4.52. Edzői Profil</li>
+                <li>4.53. Időjárási Adatkezelő</li>
+                <li>4.54. Automatikus Emlékeztető</li>
+                <li>4.55. Edzési Tippek</li>
+            </ul>
+            <li>5. Bázisosztályok keresése</li>
+            <li>6. Dinamikus modell</li>
+            <li>7. Jövőbeni tervek</li>
+        </ul>
+        
+ 
+    <h3 class="feladatcim">1. Bevezetés</h3>
+        <p>A jelen dokumentum célja, hogy bemutassa a tervezett szoftver objektum-orientált analízisét az analízis modell keretein belül. Az elkészített modell a rendszer főbb osztályait, azok kapcsolatait és funkcionális egységeit tárja fel. Az elemzés az SRS dokumentumban meghatározott használati esetek és követelmények alapján készült, célja pedig, hogy a rendszer alapját képező osztályok és alrendszerek logikus és átlátható struktúráját biztosítsa.</p>
+       
+    
+        <h3 class="feladatcim">2. Kezdeti osztálydiagram</h3>
+            <div class="button-container">
+            <a href="Kezdeti.html" target="_blank">Kezdeti osztálydiagram</a>
+            </div>
+        
+<ul>
+    <li><strong>1. Main (Fő osztály)</strong></li><br>
+        <ul>
+            <li><strong>Leírás:</strong> A fő osztály felel az alkalmazás elindításáért, az inicializálásért, valamint a különböző modulok (edzésterv, étrend, statisztikák stb.) kezeléséért.</li>
+            <li><strong>Kapcsolatok:</strong> Kapcsolatban áll a Felhasználókezelővel, Erőforrás-kezelővel, Értesítési rendszerrel és minden más főbb funkcióért felelős osztállyal.</li>
+        </ul>
+        </ul>
+    </li>
+    <hr>
+<ul>
+    <li><strong>2. Window (Felhasználói felület)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> Az alkalmazás grafikus felületéért felelős osztály, amely megjeleníti a különböző modulokat, funkciókat, statisztikákat.</li>
+            <li><strong>Kapcsolatok:</strong> Kapcsolatban áll az Interakciókezelővel és az Erőforrás-kezelővel, hogy megjelenítse a felhasználók számára fontos adatokat.</li>
+        </ul>
+    </li>
+    <hr>
+    <li><strong>3. Logic (Üzleti logika)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> Az alkalmazás működéséhez szükséges összes logikai műveletet és szabályt tartalmazza, például edzéstervek létrehozása, célkövetés és ajánlások.</li>
+            <li><strong>Kapcsolatok:</strong> Kommunikál az Adatkezelővel és a Motivációs modulokkal, hogy biztosítsa az alkalmazás funkcióinak megfelelő működését.</li>
+        </ul>
+    </li>
+</ul>
+<hr>
+<ul>
+    <li><strong>4. LogicManager (Üzleti logika menedzser)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> A logikai modulok futásáért, karbantartásáért és állapotuk nyomon követéséért felelős osztály.</li>
+            <li><strong>Kapcsolatok:</strong> Folyamatosan kapcsolatban van a Logic osztályokkal és azok almoduljaival, például az Edzésterv logikával vagy az Étrend-kezelő logikával.</li>
+        </ul>
+    </li>
+    <hr>
+    <li><strong>5. ResourceManager (Erőforrás-kezelő)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> Az alkalmazásban használt fájlok, adatbázisok és külső adatok betöltéséért és kezeléséért felelős osztály.</li>
+            <li><strong>Kapcsolatok:</strong> Szorosan együttműködik az Adatbázis-kezelővel és az Integrációs modulokkal.</li>
+        </ul>
+    </li>
+</ul>
+<hr>
+<ul>
+    <li><strong>6. EntityFactory (Entitásgyár)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> Az entitások, például felhasználók, edzéstervek, receptek létrehozásáért felelős osztály. Gyártó osztályként kezeli az összes új entitás létrehozását.</li>
+            <li><strong>Kapcsolatok:</strong> Kapcsolatban áll az EntityManagerrel, hogy az entitásokat megfelelő módon kezelje és alkalmazza az alkalmazás különböző részeiben.</li>
+        </ul>
+    </li>
+    <hr>
+    <li><strong>7. EntityManager (Entitáskezelő)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> Az entitások életciklusának figyelemmel kíséréséért, például létrehozásukért, frissítésükért és törlésükért felelős osztály.</li>
+            <li><strong>Kapcsolatok:</strong> Együttműködik az Adatbázis-kezelővel és az Erőforrás-kezelővel.</li>
+        </ul>
+    </li>
+</ul>
+<hr>
+<ul>
+    <li><strong>8. Component (Komponens)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> Olyan modulok, amelyek az entitásokhoz hozzáadható funkciókat biztosítanak, például edzésterv modul vagy célkövető modul.</li>
+            <li><strong>Kapcsolatok:</strong> Különböző entitásokhoz rendelhető, például a Felhasználó vagy az Edzésterv számára biztosít funkcionalitást.</li>
+        </ul>
+    </li>
+</ul>
+<hr>
+<ul>
+    <li><strong>9. Entity (Entitás)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> Az alkalmazásban használt alapvető objektumok gyűjtőosztálya, amely biztosítja a moduláris hozzáférést az entitásokhoz, például felhasználókhoz, edzéstervekhez, étrendekhez.</li>
+            <li><strong>Kapcsolatok:</strong> Kapcsolódik az összes további osztályhoz, hogy az adatokat és funkciókat kezelje.</li>
+        </ul>
+    </li>
+    <hr>
+    <li><strong>10. Collection (Gyűjtemény)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> Csoportosítja az entitásokat (például felhasználók vagy edzéstervek csoportosítása) a könnyebb hozzáférhetőség érdekében.</li>
+            <li><strong>Kapcsolatok:</strong> Kommunikál az EntityManagerrel és az egyes modulokkal.</li>
+        </ul>
+    </li>
+</ul>
+<hr>
+<ul>
+    <li><strong>11. SaveManager (Mentéskezelő)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> Az entitások állapotának mentéséért, például a felhasználói adatok vagy edzéstervek tárolásáért felelős osztály.</li>
+            <li><strong>Kapcsolatok:</strong> Együttműködik az Erőforrás-kezelővel és az Adatbázis-kezelővel.</li>
+        </ul>
+    </li>
+    <hr>
+    <li><strong>12. Serializable (Sorosítás)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> Minden olyan entitás vagy objektum számára, amelyet fájlban kell eltárolni és később betölteni.</li>
+            <li><strong>Kapcsolatok:</strong> Kommunikál a SaveManagerrel és az Erőforrás-kezelővel.</li>
+        </ul>
+    </li>
+</ul>
+<hr>
+<ul>
+    <li><strong>13. Felhasználókezelő (UserManager)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> A felhasználók kezeléséért felelős osztály, amely regisztrációt, bejelentkezést és felhasználói adatok frissítését végzi.</li>
+            <li><strong>Kapcsolatok:</strong> Szorosan együttműködik a Main osztállyal, valamint az Értesítési rendszerrel és az Adatbázis-kezelővel a felhasználói adatok tárolása és elérése érdekében.</li>
+        </ul>
+    </li>
+</ul>
+
+
+
+
+	<h3 class="feladatcim">3. Kezdeti osztálydiagram elemzése</h3>
+
+
+<p>A következőkben bemutatjuk az alkalmazás főbb osztályait, amelyek a kezdeti osztálydiagram alapját képezik. Ez a kezdeti struktúra a rendszer alapvető funkcióit és felépítését mutatja be, lefedve a legfontosabb funkciókat, mint például az adatkezelést, a felhasználói interakciók kezelését, az üzleti logika megvalósítását és a felhasználói felület megjelenítését. Minden osztály egyedi szerepet tölt be, és kapcsolatban áll más osztályokkal a hatékony működés érdekében. Az alábbi leírások célja, hogy részletesen bemutassák az egyes osztályok funkcióit, felelősségi körét és az alkalmazás működésében betöltött szerepét, ezzel átfogó képet nyújtva a rendszer kezdeti belső felépítéséről és működéséről.</p>
+
+
+
+<h2>3.1 Main (Fő osztály)</h2></p>
+<p>A fő osztály az alkalmazás indításáért felelős, amely az összes szükséges inicializációt elvégzi, beleértve a különböző modulok, például edzéstervek, étrendi tervek, statisztikák és egyéb funkciók betöltését. Ez az osztály irányítja az alkalmazás működését, és összefogja az összes kapcsolódó modul, alrendszer és osztály működését.</p>
+
+
+<h2>3.2 Window (Felhasználói felület)</h2><br>
+<p>A felhasználói felületért felelős osztály, amely biztosítja, hogy az alkalmazás különböző funkciói és moduljai vizuálisan is megjelenjenek. Ezen keresztül érhetők el a különböző statisztikák, funkciók, modulok, amelyek a felhasználói interakciók kezelését és a grafikus megjelenítést biztosítják.</p>
+
+<h2>3.3 Logic (Üzleti logika)</h2><br>
+<p>Ez az osztály tartalmazza az alkalmazás működéséhez szükséges üzleti logikát és szabályokat. Az edzéstervek létrehozásán, a célkövetésen, valamint a felhasználók számára adott ajánlásokon keresztül a Logic biztosítja a megfelelő működést és a felhasználói igények kiszolgálását.</p>
+
+<h2>3.4 LogicManager (Üzleti logika menedzser)</h2><br>
+<p>A logikai modulok futásáért, karbantartásáért és állapotuk figyeléséért felelős osztály. Ez az osztály biztosítja, hogy az összes logikai funkció megfelelően működjön, és ha szükséges, karbantartási műveleteket hajtson végre a különböző logikai almodulokon.</p>
+
+<h2>3.5 ResourceManager (Erőforrás-kezelő)</h2><br>
+<p>Az alkalmazásban használt fájlok, adatbázisok és más külső erőforrások betöltését és kezelését végzi. Az erőforrás-kezelő optimalizálja az alkalmazás működését azáltal, hogy csak a szükséges erőforrásokat tölti be, és felszabadítja a már nem használtakat.</p>
+
+<h2>3.6 EntityFactory (Entitásgyár)</h2><br>
+<p>Az entitások, például felhasználók, edzéstervek, receptek létrehozására szolgáló osztály. Ez a gyár funkciót lát el az entitások létrehozásában, lehetővé téve az alkalmazás számára, hogy új objektumokat hozzon létre szabványosított és könnyen kezelhető formában.</p>
+
+<h2>3.7 EntityManager (Entitáskezelő)</h2><br>
+<p>Az entitások nyilvántartásáért, életciklusuk követéséért, létrehozásukért, frissítésükért és törlésükért felelős osztály. Ez biztosítja, hogy minden entitás megfelelően kezelhető legyen az alkalmazás különböző részei között.</p>
+
+<h2>3.8 Component (Komponens)</h2><br>
+<p>Olyan modulok, amelyek az entitásokhoz hozzáadható további funkciókat biztosítanak. Ezek lehetnek például edzéstervekhez kapcsolódó modulok, célkövető funkciók, vagy más kiegészítő elemek, amelyek az entitások képességeit bővítik.</p>
+
+<h2>3.9 Entity (Entitás)</h2><br>
+<p>Az alkalmazás által kezelt alapvető objektumok gyűjtőosztálya. Az entitás osztály biztosítja az összes adat- és funkciókapcsolatot a különböző modulok között, például felhasználók, edzéstervek és étrendi tervek számára.</p>
+
+<h2>3.10 Collection (Gyűjtemény)</h2><br>
+<p>Az entitások csoportosítására szolgáló osztály, amely lehetővé teszi az objektumok hatékonyabb kezelését és hozzáférhetőségét. A gyűjtemények segítenek az entitások rendszerezésében és könnyebb elérésében.</p>
+
+<h2>3.11 SaveManager (Mentéskezelő)</h2><br>
+<p>A különböző entitások, például felhasználói adatok vagy edzéstervek állapotának mentéséért és visszatöltéséért felelős osztály. Ez lehetővé teszi, hogy az adatok tartósan elérhetők maradjanak és biztonságosan tárolhatók legyenek.</p>
+
+<h2>3.12 Serializable (Sorosítás)</h2><br>
+<p>Azoknak az entitásoknak vagy objektumoknak a kezelésért felelős osztály, amelyeket fájlban kell eltárolni és később betölteni. Ez lehetővé teszi az objektumok állapotának tartósítását és újrafelhasználását.</p>
+
+<h2>3.13 Felhasználókezelő (UserManager)</h2><br>
+<p>A felhasználók kezeléséért felelős osztály, amely magában foglalja a regisztrációt, bejelentkezést és a felhasználói adatok kezelését. Ez az osztály biztosítja, hogy a felhasználói adatok naprakészen tárolódjanak és elérhetőek legyenek az alkalmazás funkciói számára.</p>
+
+
+
+
+<h3 class="feladatcim">4. Teljes osztálydiagram</h3>
+    <div class="button-container">
+        <a href="teljes.html" target="_blank">Teljes osztálydiagram</a>
+    </div>
+<br>
+
+<p>A bővített és teljes osztálydiagram alapján további osztályok és funkciók kerültek meghatározásra, amelyek még jobban kiterjesztik az alkalmazás képességeit és rugalmasságát. Ez a kibővített struktúra az alapvető funkciók mellett további elemeket is magában foglal, például a gamifikáció, a személyre szabott ajánlások és az adatvédelem területein, hogy a felhasználói élményt tovább növelje és még jobban megfeleljen a felhasználói igényeknek. Az alábbi bővített leírás célja, hogy részletesen bemutassa az újonnan hozzáadott osztályok funkcióit és az alkalmazás működésében betöltött szerepét, ezzel teljes képet adva a rendszer kiterjesztett architektúrájáról.</p>
+
+
+
+<ul>
+    <li><strong>Main (Fő osztály)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> A fő osztály felel az alkalmazás elindításáért, az inicializálásért, valamint a különböző modulok (edzésterv, étrend, statisztikák stb.) kezeléséért.</li>
+            <li><strong>Kapcsolatok:</strong> Kapcsolatban áll a Felhasználókezelővel, Erőforrás-kezelővel, Értesítési rendszerrel és minden más főbb funkcióért felelős osztállyal.</li>
+        </ul>
+    </li>
+</ul>
+
+<hr>
+
+<ul>
+    <li><strong>Window (Felhasználói felület)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> Az alkalmazás grafikus felületéért felelős osztály, amely megjeleníti a különböző modulokat, funkciókat, statisztikákat.</li>
+            <li><strong>Kapcsolatok:</strong> Kapcsolatban áll az Interakciókezelővel és az Erőforrás-kezelővel, hogy megjelenítse a felhasználók számára fontos adatokat.</li>
+        </ul>
+    </li>
+
+<hr>
+
+    <li><strong>Logic (Üzleti logika)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> Az alkalmazás működéséhez szükséges összes logikai műveletet és szabályt tartalmazza, például edzéstervek létrehozása, célkövetés és ajánlások.</li>
+            <li><strong>Kapcsolatok:</strong> Kommunikál az Adatkezelővel és a Motivációs modulokkal, hogy biztosítsa az alkalmazás funkcióinak megfelelő működését.</li>
+        </ul>
+    </li>
+
+    <hr>
+
+    <li><strong>LogicManager (Üzleti logika menedzser)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> A logikai modulok futásáért, karbantartásáért és állapotuk nyomon követéséért felelős osztály.</li>
+            <li><strong>Kapcsolatok:</strong> Folyamatosan kapcsolatban van a Logic osztályokkal és azok almoduljaival, például az Edzésterv logikával vagy az Étrend-kezelő logikával.</li>
+        </ul>
+    </li>
+</ul>
+
+<hr>
+
+<ul>
+    <li><strong>ResourceManager (Erőforrás-kezelő)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> Az alkalmazásban használt fájlok, adatbázisok és külső adatok betöltéséért és kezeléséért felelős osztály.</li>
+            <li><strong>Kapcsolatok:</strong> Szorosan együttműködik az Adatbázis-kezelővel és az Integrációs modulokkal.</li>
+        </ul>
+    </li>
+    <hr>
+    <li><strong>EntityFactory (Entitásgyár)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> Az entitások, például felhasználók, edzéstervek, receptek létrehozásáért felelős osztály. Gyártó osztályként kezeli az összes új entitás létrehozását.</li>
+            <li><strong>Kapcsolatok:</strong> Kapcsolatban áll az EntityManagerrel, hogy az entitásokat megfelelő módon kezelje és alkalmazza az alkalmazás különböző részeiben.</li>
+        </ul>
+    </li>
+    <hr>
+    <li><strong>EntityManager (Entitáskezelő)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> Az entitások életciklusának figyelemmel kíséréséért, például létrehozásukért, frissítésükért és törlésükért felelős osztály.</li>
+            <li><strong>Kapcsolatok:</strong> Együttműködik az Adatbázis-kezelővel és az Erőforrás-kezelővel.</li>
+        </ul>
+    </li>
+</ul>
+
+
+<ul>
+    <li><strong>Component (Komponens)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> Olyan modulok, amelyek az entitásokhoz hozzáadható funkciókat biztosítanak, például edzésterv modul vagy célkövető modul.</li>
+            <li><strong>Kapcsolatok:</strong> Különböző entitásokhoz rendelhető, például a Felhasználó vagy az Edzésterv számára biztosít funkcionalitást.</li>
+        </ul>
+    </li>
+    <hr>
+    <li><strong>Entity (Entitás)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> Az alkalmazásban használt alapvető objektumok gyűjtőosztálya, amely biztosítja a moduláris hozzáférést az entitásokhoz, például felhasználókhoz, edzéstervekhez, étrendekhez.</li>
+            <li><strong>Kapcsolatok:</strong> Kapcsolódik az összes további osztályhoz, hogy az adatokat és funkciókat kezelje.</li>
+        </ul>
+    </li>
+    <hr>
+    <li><strong>Collection (Gyűjtemény)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> Csoportosítja az entitásokat (például felhasználók vagy edzéstervek csoportosítása) a könnyebb hozzáférhetőség érdekében.</li>
+            <li><strong>Kapcsolatok:</strong> Kommunikál az EntityManagerrel és az egyes modulokkal.</li>
+        </ul>
+    </li>
+</ul>
+<hr>
+<ul>
+    <li><strong>SaveManager (Mentéskezelő)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> Az entitások állapotának mentéséért, például a felhasználói adatok vagy edzéstervek tárolásáért felelős osztály.</li>
+            <li><strong>Kapcsolatok:</strong> Együttműködik az Erőforrás-kezelővel és az Adatbázis-kezelővel.</li>
+        </ul>
+    </li>
+    <hr>
+    <li><strong>Serializable (Sorosítás)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> Minden olyan entitás vagy objektum számára, amelyet fájlban kell eltárolni és később betölteni.</li>
+            <li><strong>Kapcsolatok:</strong> Kommunikál a SaveManagerrel és az Erőforrás-kezelővel.</li>
+        </ul>
+    </li>
+    <hr>
+    <li><strong>Felhasználókezelő (UserManager)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> A felhasználók kezeléséért felelős osztály, amely regisztrációt, bejelentkezést és felhasználói adatok frissítését végzi.</li>
+            <li><strong>Kapcsolatok:</strong> Szorosan együttműködik a Main osztállyal, valamint az Értesítési rendszerrel és az Adatbázis-kezelővel a felhasználói adatok tárolása és elérése érdekében.</li>
+        </ul>
+    </li>
+    <hr>
+    <li><strong>Cél (Goal)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> Egy adott felhasználói cél (pl. fogyás, izomnövelés), amelyet a felhasználó elérni kíván.</li>
+            <li><strong>Kapcsolatok:</strong> Kapcsolódik a Felhasználó és az Értesítési rendszer osztályokhoz, hogy nyomon követhesse az előrehaladást és értesítéseket küldhessen.</li>
+        </ul>
+    </li>
+</ul>
+<hr>
+<ul>
+    <li><strong>Motivációkezelő (MotivationManager)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> Az alkalmazás motivációs tartalmainak (idézetek, videók, kihívások) kezeléséért felelős osztály.</li>
+            <li><strong>Kapcsolatok:</strong> Szorosan együttműködik a Felhasználókezelővel, az Értesítési rendszerrel és a Kihívás osztállyal a motivációs tartalmak személyre szabása érdekében.</li>
+        </ul>
+    </li>
+    <hr>
+    <li><strong>Kihívás (Challenge)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> Olyan esemény vagy feladat, amelyhez a felhasználók csatlakozhatnak, és amely motiválja őket a céljaik elérésében.</li>
+            <li><strong>Kapcsolatok:</strong> Kapcsolódik a Felhasználó és a Motivációkezelő osztályokhoz, hogy segítse a felhasználói elköteleződést.</li>
+        </ul>
+    </li>
+    <hr>
+    <li><strong>Étrend (DietPlan)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> Személyre szabott étrendterv, amely figyelembe veszi a felhasználó céljait és táplálkozási igényeit.</li>
+            <li><strong>Kapcsolatok:</strong> Kapcsolódik a Felhasználó és az Étrend Napi Terv osztályokhoz, valamint az Adatbázis-kezelőhöz a táplálkozási adatok mentése érdekében.</li>
+        </ul>
+    </li>
+    <hr>
+    <li><strong>Étrend Napi Terv (DailyMealPlan)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> Egy napi étkezési terv, amely az adott napra vonatkozó étkezéseket tartalmazza.</li>
+            <li><strong>Kapcsolatok:</strong> Kapcsolódik az Étrend és az Étel osztályokhoz, hogy összekapcsolja az egyes napi étkezéseket.</li>
+        </ul>
+    </li>
+</ul>
+<hr>
+<ul>
+    <li><strong>Étel (Meal)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> Az étrendtervben szereplő étkezési egység, amely a táplálkozási információkat tartalmazza.</li>
+            <li><strong>Kapcsolatok:</strong> Kapcsolódik a DailyMealPlan és a Recept osztályokhoz, hogy minden egyes étkezés összetevőit részletezze.</li>
+        </ul>
+    </li>
+    <hr>
+    <li><strong>Recept (Recipe)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> Az étrendben szereplő receptek tárolásáért és megjelenítéséért felelős osztály.</li>
+            <li><strong>Kapcsolatok:</strong> Kapcsolatban áll az Étel és Bevásárlólista osztályokkal, hogy az összetevőket és recepteket könnyedén lehessen használni.</li>
+        </ul>
+    </li>
+    <hr>
+    <li><strong>Bevásárlólista (ShoppingList)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> Az étrendi tervhez kapcsolódó lista, amely tartalmazza a receptek elkészítéséhez szükséges alapanyagokat.</li>
+            <li><strong>Kapcsolatok:</strong> Kapcsolódik a Recept és az Erőforrás-kezelő osztályokhoz, hogy biztosítsa a hozzávalók kezelését.</li>
+        </ul>
+    </li>
+    <hr>
+    <li><strong>Edzésterv (WorkoutPlan)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> Az alkalmazásban található edzésterv, amely felhasználók számára testre szabható gyakorlatokat tartalmaz.</li>
+            <li><strong>Kapcsolatok:</strong> Kapcsolódik a Felhasználó és Gyakorlat osztályokhoz, valamint a Cél osztályhoz a felhasználói előrehaladás nyomon követése érdekében.</li>
+        </ul>
+    </li>
+    <hr>
+    <li><strong>Gyakorlat (Exercise)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> Egy edzéstervhez kapcsolódó gyakorlat, amely részletes utasításokat tartalmaz a helyes végrehajtáshoz.</li>
+            <li><strong>Kapcsolatok:</strong> Kapcsolódik az Edzésterv és a Komponens osztályhoz, hogy biztosítsa az egyes gyakorlatok megfelelő végrehajtását.</li>
+        </ul>
+    </li>
+</ul>
+
+
+<ul>
+    <li><strong>Edzésterv Napló (WorkoutLog)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> Az elvégzett edzések és a felhasználói eredmények részletes naplója.</li>
+            <li><strong>Kapcsolatok:</strong> Kapcsolódik a Felhasználó, az Edzésterv és az Adatbázis-kezelő osztályokhoz.</li>
+        </ul>
+    </li>
+    <hr>
+    <li><strong>Teljesítmény Statisztika (PerformanceStats)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> A felhasználó fejlődésének statisztikai összegzése, beleértve az elért mérföldköveket és a célokat.</li>
+            <li><strong>Kapcsolatok:</strong> Szoros kapcsolatban áll a Statisztikai Jelentés és a Vizuális Statisztikák osztályokkal.</li>
+        </ul>
+    </li>
+    <hr>
+    <li><strong>Statisztikai Jelentés (Report)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> A felhasználói teljesítmény heti, havi vagy éves jelentése, amely segíti a fejlődés követését.</li>
+            <li><strong>Kapcsolatok:</strong> Kapcsolódik a Felhasználó és a Vizuális Statisztikák osztályokhoz.</li>
+        </ul>
+    </li>
+    <hr>
+    <li><strong>Vizuális Statisztikák (VisualStats)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> A felhasználók teljesítményének vizuális megjelenítése grafikonok és diagramok segítségével.</li>
+            <li><strong>Kapcsolatok:</strong> Szorosan együttműködik a Statisztikai Jelentés és Teljesítmény Statisztika osztályokkal.</li>
+        </ul>
+    </li>
+    <hr>
+    <li><strong>Integráció (Integration)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> Külső eszközökkel való kapcsolatok kezelése, például okosórákkal és fitnesz kiegészítőkkel való adatmegosztás.</li>
+            <li><strong>Kapcsolatok:</strong> Kapcsolódik az API Kapcsolat osztályhoz, amely biztosítja a külső adatok integrációját az alkalmazással.</li>
+        </ul>
+    </li>
+</ul>
+<hr>
+<ul>
+    <li><strong>API Kapcsolat (APIConnection)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> Az alkalmazás és külső rendszerek közötti adatátviteli kapcsolatok kezeléséért felelős osztály.</li>
+            <li><strong>Kapcsolatok:</strong> Szoros kapcsolatban áll az Integráció és Adatbázis-kezelő osztályokkal, hogy a külső források adatai megfelelően elérhetőek legyenek.</li>
+        </ul>
+    </li>
+    <hr>
+    <li><strong>Időzítő (Timer)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> Az edzések és pihenőidők időzítéséért felelős osztály, amely biztosítja a gyakorlatok közötti időszakok szabályozását.</li>
+            <li><strong>Kapcsolatok:</strong> Kapcsolódik az Edzésterv és Pihenőidő osztályokhoz, hogy az edzés során pontos időzítést biztosítson.</li>
+        </ul>
+    </li>
+    <hr>
+    <li><strong>Felhasználói Beállítások (UserSettings)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> A felhasználó által testreszabható beállítások, például értesítések, nyelvi beállítások és adatvédelmi preferenciák kezelése.</li>
+            <li><strong>Kapcsolatok:</strong> Kapcsolódik a Felhasználókezelő és az Értesítési rendszer osztályokhoz.</li>
+        </ul>
+    </li>
+    <hr>
+    <li><strong>Hírcsatorna (Feed)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> Egy közösségi hírcsatorna, ahol a felhasználók megoszthatják edzési eredményeiket, kihívásaikat, és kapcsolatba léphetnek másokkal.</li>
+            <li><strong>Kapcsolatok:</strong> Kapcsolódik a Közösségi Poszt és Barátok és Követés osztályokhoz.</li>
+        </ul>
+    </li>
+    <hr>
+    <li><strong>Üzenetküldő Rendszer (MessagingSystem)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> Egy rendszer, amely lehetővé teszi a felhasználók számára, hogy üzeneteket küldjenek és fogadjanak, például edzőpartnerekkel vagy csoporttagokkal.</li>
+            <li><strong>Kapcsolatok:</strong> Kapcsolódik a Felhasználó és Közösségi funkciók osztályokhoz.</li>
+        </ul>
+    </li>
+</ul>
+<hr>
+<ul>
+    <li><strong>Szakértői Tanácsok (ExpertAdvice)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> Edzői és táplálkozási szakértői tanácsokat nyújtó modul, amely a felhasználó céljainak megfelelő tanácsokat biztosít.</li>
+            <li><strong>Kapcsolatok:</strong> Kapcsolódik a Felhasználó és Étrend/Edzésterv osztályokhoz.</li>
+        </ul>
+    </li>
+    <hr>
+    <li><strong>Alkalmazás Napló (AppLog)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> A felhasználói interakciók, események és hibák naplózására szolgáló osztály, amely segíti az alkalmazás hibakeresését és fejlesztését.</li>
+            <li><strong>Kapcsolatok:</strong> Kapcsolódik az Erőforrás-kezelő és a Felhasználói Beállítások osztályokhoz.</li>
+        </ul>
+    </li>
+    <hr>
+    <li><strong>Bejelentkezési Napló (LoginLog)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> A felhasználók be- és kijelentkezési eseményeinek nyilvántartása, beleértve a sikeres és sikertelen próbálkozásokat.</li>
+            <li><strong>Kapcsolatok:</strong> Kapcsolódik a Felhasználókezelő és Alkalmazás Napló osztályokhoz.</li>
+        </ul>
+    </li>
+    <hr>
+    <li><strong>Közösségi Szavazások (CommunityPolls)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> A közösségi szavazások és véleménykérések lebonyolításáért felelős osztály, amely a közösségi aktivitás növelésére szolgál.</li>
+            <li><strong>Kapcsolatok:</strong> Kapcsolódik a Hírcsatorna és Közösségi Poszt osztályokhoz.</li>
+        </ul>
+    </li>
+    <hr>
+    <li><strong>Személyre Szabott Ajánlások (PersonalizedRecommendations)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> Egy modul, amely a felhasználó korábbi aktivitása alapján edzési és étrendi ajánlásokat ad.</li>
+            <li><strong>Kapcsolatok:</strong> Kapcsolódik a Felhasználó, Edzésterv, és Étrend osztályokhoz.</li>
+        </ul>
+    </li>
+    <hr>
+    <li><strong>Adatbázis-kezelő (DatabaseManager)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> Az alkalmazás adatainak tárolásáért és eléréséért felelős osztály, beleértve a felhasználói adatokat, edzésterveket, statisztikákat.</li>
+            <li><strong>Kapcsolatok:</strong> Kapcsolódik az összes fő osztályhoz, amelyek adatokkal dolgoznak.</li>
+        </ul>
+    </li>
+</ul>
+<hr>
+
+<ul>
+    <li><strong>Mérföldkő (Milestone)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> Kisebb, elérendő célok vagy állomások, amelyek motiválják a felhasználót a hosszabb távú célok elérésében.</li>
+            <li><strong>Kapcsolatok:</strong> Kapcsolódik a Cél és Felhasználó osztályokhoz.</li>
+        </ul>
+    </li>
+    <hr>
+    <li><strong>Rendszerfigyelő (SystemMonitor)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> Az alkalmazás állapotát és teljesítményét figyelő osztály, amely segít az esetleges hibák azonosításában és a rendszer stabilitásának fenntartásában.</li>
+            <li><strong>Kapcsolatok:</strong> Kapcsolódik a Main és Alkalmazás Napló osztályokhoz.</li>
+        </ul>
+    </li>
+    <hr>
+    <li><strong>Gamifikációs Rendszer (GamificationSystem)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> Olyan modul, amely a felhasználók számára pontokat, jelvényeket és különböző jutalmakat oszt ki a teljesítményükért és aktivitásukért.</li>
+            <li><strong>Kapcsolatok:</strong> Kapcsolódik a Felhasználó és Kihívás osztályokhoz, hogy jutalmazza az elért eredményeket.</li>
+        </ul>
+    </li>
+    <hr>
+    <li><strong>Jelvény (Badge)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> Az alkalmazásban szerzett eredmények elismerésére szolgáló virtuális díjak.</li>
+            <li><strong>Kapcsolatok:</strong> Kapcsolódik a Felhasználó és Gamifikációs Rendszer osztályokhoz.</li>
+        </ul>
+    </li>
+    <hr>
+    <li><strong>Eredménytábla (Leaderboard)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> A felhasználók teljesítményének rangsorolása különböző szempontok szerint, például pontok, kihívások vagy aktivitás alapján.</li>
+            <li><strong>Kapcsolatok:</strong> Kapcsolódik a Gamifikációs Rendszer és Kihívás osztályokhoz.</li>
+        </ul>
+    </li>
+</ul>
+<hr>
+
+<ul>
+    <li><strong>Értesítési Kezelő (NotificationManager)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> Az alkalmazásban generált értesítések kezeléséért felelős osztály, amely lehetővé teszi az értesítések testreszabását.</li>
+            <li><strong>Kapcsolatok:</strong> Kapcsolódik az Értesítés és Felhasználókezelő osztályokhoz.</li>
+        </ul>
+    </li>
+    <hr>
+    <li><strong>Statisztikai Elemző (StatisticalAnalyzer)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> A felhasználói adatok elemzésére szolgáló modul, amely előrejelzéseket, statisztikákat és tendenciákat nyújt az edzés- és táplálkozási szokások alapján.</li>
+            <li><strong>Kapcsolatok:</strong> Kapcsolódik a Teljesítmény Statisztika és Vizuális Statisztikák osztályokhoz.</li>
+        </ul>
+    </li>
+    <hr>
+    <li><strong>Külső Eszközök Szinkronizáló (ExternalDeviceSync)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> A fitnesz eszközök, például okosórák vagy pulzusmérők adatait az alkalmazásba szinkronizáló osztály.</li>
+            <li><strong>Kapcsolatok:</strong> Kapcsolódik az Integráció és API Kapcsolat osztályokhoz.</li>
+        </ul>
+    </li>
+    <hr>
+    <li><strong>Bejelentkezési Védelem (LoginSecurity)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> A felhasználók bejelentkezési biztonságának növeléséért felelős osztály, például kétfaktoros azonosítással.</li>
+            <li><strong>Kapcsolatok:</strong> Kapcsolódik a Felhasználókezelő és Bejelentkezési Napló osztályokhoz.</li>
+        </ul>
+    </li>
+    <hr>
+    <li><strong>Helyalapú Szolgáltatások (LocationServices)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> A felhasználó helyadatait felhasználva ajánlásokat vagy értesítéseket nyújtó modul, például kültéri edzési javaslatokkal.</li>
+            <li><strong>Kapcsolatok:</strong> Kapcsolódik a Felhasználó és Értesítési Kezelő osztályokhoz.</li>
+        </ul>
+    </li>
+</ul>
+<hr>
+
+<ul>
+    <li><strong>Személyes Adatvédelem (PrivacySettings)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> A felhasználók adatvédelmi beállításait kezelő modul, amely lehetővé teszi az adatok megosztásának és tárolásának szabályozását.</li>
+            <li><strong>Kapcsolatok:</strong> Kapcsolódik a Felhasználókezelő és Adatbázis-kezelő osztályokhoz.</li>
+        </ul>
+    </li>
+    <hr>
+    <li><strong>Edzői Profil (TrainerProfile)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> A felhasználók számára elérhető edzői profilokat és azok szakértelmét kezelő modul.</li>
+            <li><strong>Kapcsolatok:</strong> Kapcsolódik a Felhasználó és Szakértői Tanácsok osztályokhoz.</li>
+        </ul>
+    </li>
+    <hr>
+    <li><strong>Időjárási Adatkezelő (WeatherDataManager)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> Külső időjárási adatok lekérésére és kezelésére szolgáló modul, amely például kültéri edzésekre nyújt javaslatokat.</li>
+            <li><strong>Kapcsolatok:</strong> Kapcsolódik a Helyalapú Szolgáltatások és Értesítési Kezelő osztályokhoz.</li>
+        </ul>
+    </li>
+    <hr>
+    <li><strong>Automatikus Emlékeztető (AutoReminder)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> Egy modul, amely automatikusan értesíti a felhasználókat az edzéseikről, étkezéseikről vagy egyéb fontos eseményeikről.</li>
+            <li><strong>Kapcsolatok:</strong> Kapcsolódik a Felhasználó és Értesítési Kezelő osztályokhoz.</li>
+        </ul>
+    </li>
+    <hr>
+    <li><strong>Edzési Tippek (WorkoutTips)</strong><br>
+        <ul>
+            <li><strong>Leírás:</strong> Gyakorlati tanácsok és tippek az edzések hatékonyságának növelésére.</li>
+            <li><strong>Kapcsolatok:</strong> Kapcsolódik az Edzésterv és Felhasználó osztályokhoz.</li>
+        </ul>
+    </li>
+</ul>
+
+
+
+
+
+<h3 class="feladatcim">4.2 Attribútumok azonosítása</h3>
+
+
+<p>Minden osztályhoz és az osztályok közötti kapcsolatokhoz hozzárendeljük a legfontosabb attribútumokat annak érdekében, hogy részletesebben bemutassuk az adott osztály vagy kapcsolat jellemzőit és funkcióit. Az attribútumok hozzárendelése segít meghatározni az osztályok belső struktúráját, jellemző tulajdonságait és azokat az adatokat, amelyeket az adott osztály kezel vagy tárol. Ezen kívül az attribútumok lehetővé teszik, hogy világosan lássuk, milyen információk szükségesek az egyes osztályok működéséhez és hogyan kapcsolódnak egymáshoz az alkalmazás különböző elemei. Ezáltal a rendszer működésének tervezése és a funkciók összekapcsolása is egyszerűbbé és áttekinthetőbbé válik.</p>
+
+
+
+<div>
+    <h2>4.2.1. Fő osztály (class: Main)</h3>
+    <p><strong>Felelőssége, feladata:</strong> Az alkalmazás indításáért és az alapvető modulok (például edzéstervek, étrendi tervek és statisztikák) inicializálásáért felelős. Az osztály irányítja az összes fontos funkciót és kezeli az alapműködést.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>állapot (status) - az alkalmazás aktuális állapotát jelzi</li>
+        <ul>
+            <li>private String status</li>
+        </ul>
+        <li>indítási időpont (start_time) - az indítási időpontot tárolja</li>
+        <ul>
+            <li>private String start_time</li>
+        </ul>
+        <li>aktív modulok listája (active_modules) - az aktív modulok listája</li>
+        <ul>
+            <li>private List&lt;String&gt; active_modules</li>
+        </ul>
+    </ul>
+    <p><strong>Együttműködők:</strong> Felhasználókezelő (class: UserManager), Erőforrás-kezelő (class: ResourceManager), Értesítési rendszer (class: NotificationManager).</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void initializeApplication() (class: MainMethod)</li>
+        <li>private void shutdownApplication() (class: MainMethod)</li>
+    </ul>
+</div>
+
+
+<div>
+    <h2>4.2.2. Felhasználói felület (class: Window)</h3>
+    <p><strong>Felelőssége, feladata:</strong> Az alkalmazás grafikus felületének megjelenítéséért felelős osztály, amely lehetővé teszi a felhasználók számára az interakciót és az alkalmazás funkcióinak elérését.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>aktuális nézet (current_view) - az aktuálisan megjelenített nézet
+            <ul>
+                <li>private String current_view</li>
+            </ul>
+        </li>
+        <li>ablakméret (window_size) - az ablak méretét tárolja
+            <ul>
+                <li>private Dimension window_size</li>
+            </ul>
+        </li>
+        <li>felhasználói események (user_events) - a felhasználói események listája
+            <ul>
+                <li>public List&lt;String&gt; user_events</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Együttműködők:</strong> Interakciókezelő (class: InteractionHandler), Erőforrás-kezelő (class: ResourceManager).</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void renderUI() (class: WindowMethod)</li>
+        <li>private void updateUserInteraction() (class: WindowMethod)</li>
+    </ul>
+</div>
+<div>
+    <h2>4.2.3. Üzleti logika (class: Logic)</h3>
+    <p><strong>Felelőssége, feladata:</strong> Az alkalmazás logikai műveleteit és szabályait kezeli, ideértve az edzéstervek létrehozását, a célkövetést és az ajánlásokat.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>szabályok listája (rules) - a szabályok listája
+            <ul>
+                <li>private List&lt;String&gt; rules</li>
+            </ul>
+        </li>
+        <li>folyamatok állapota (process_status) - az aktuális folyamat állapota
+            <ul>
+                <li>private String process_status</li>
+            </ul>
+        </li>
+        <li>belső változók (internal_variables) - a belső változók tárolása
+            <ul>
+                <li>public Map<String, Object> internal_variables</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Együttműködők:</strong> Adatkezelő (class: DataHandler), Motivációs modulok (class: MotivationManager).</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void processLogic() (class: LogicMethod)</li>
+        <li>private void validateRules() (class: LogicMethod)</li>
+    </ul>
+</div>
+
+
+<div>
+    <h2>4.2.4. Üzleti logika menedzser (class: LogicManager)</h3>
+    <p><strong>Felelőssége, feladata:</strong> Felelős a logikai modulok futtatásáért, állapotuk nyomon követéséért és karbantartásáért, biztosítva, hogy az alkalmazás funkciói megfelelően működjenek.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>aktív logikai modulok (active_logic_modules) - a logikai modulok listája
+            <ul>
+                <li>private List&lt;String&gt; active_logic_modules</li>
+            </ul>
+        </li>
+        <li>futási állapot (runtime_status) - a futási állapot nyomon követése
+            <ul>
+                <li>private boolean runtime_status</li>
+            </ul>
+        </li>
+        <li>hibakezelési szabályok (error_handling) - a hibakezelési szabályok
+            <ul>
+                <li>public List&lt;String&gt; error_handling</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Együttműködők:</strong> Logic modulok, mint például Edzésterv logika (class: WorkoutLogic), Étrend-kezelő logika (class: DietLogic).</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void manageLogicModules() (class: LogicManagerMethod)</li>
+        <li>private void updateModuleStatus() (class: LogicManagerMethod)</li>
+    </ul>
+</div>
+<div>
+    <h2>4.2.5. Erőforrás-kezelő (class: ResourceManager)</h3>
+    <p><strong>Felelőssége, feladata:</strong> Az erőforrások, például fájlok, adatbázisok és külső források kezeléséért felelős osztály, amely segíti az alkalmazás hatékony működését.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>betöltött erőforrások (loaded_resources) - a betöltött erőforrások listája
+            <ul>
+                <li>private List&lt;String&gt; loaded_resources</li>
+            </ul>
+        </li>
+        <li>tárolási hely (storage_location) - az erőforrások tárolási helye
+            <ul>
+                <li>private String storage_location</li>
+            </ul>
+        </li>
+        <li>memóriahasználat (memory_usage) - az erőforrások által használt memória
+            <ul>
+                <li>public int memory_usage</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Együttműködők:</strong> Adatbázis-kezelő (class: DatabaseManager), Integrációs modulok (class: IntegrationModule).</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void loadResources() (class: ResourceManagerMethod)</li>
+        <li>public void freeResources() (class: ResourceManagerMethod)</li>
+    </ul>
+</div>
+
+
+<div>
+    <h2>4.2.6. Entitásgyár (class: EntityFactory)</h3>
+    <p><strong>Felelőssége, feladata:</strong> Az entitások létrehozásáért és kezeléséért felelős osztály, amely biztosítja az entitások szabványosított módon történő létrehozását.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>létrehozási sablonok (creation_templates) - az entitások létrehozási mintái
+            <ul>
+                <li>private List&lt;String&gt; creation_templates</li>
+            </ul>
+        </li>
+        <li>alapértelmezett értékek (default_values) - az entitások alapértelmezett értékei
+            <ul>
+                <li>private Map<String, Object> default_values</li>
+            </ul>
+        </li>
+        <li>entitástípusok (entity_types) - az elérhető entitástípusok
+            <ul>
+                <li>public List&lt;String&gt; entity_types</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Együttműködők:</strong> Entitáskezelő (class: EntityManager).</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public Entity createEntity(String type) (class: EntityFactoryMethod)</li>
+        <li>private void initializeEntityAttributes(Entity entity) (class: EntityFactoryMethod)</li>
+    </ul>
+</div>
+<div>
+    <h2>4.2.7. Entitáskezelő (class: EntityManager)</h3>
+    <p><strong>Felelőssége, feladata:</strong> Az entitások életciklusának kezelését végző osztály (létrehozás, frissítés, törlés). Az entitások integrált működését biztosítja.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>aktív entitások (active_entities) - az aktív entitások listája
+            <ul>
+                <li>private List<Entity> active_entities</li>
+            </ul>
+        </li>
+        <li>életciklus-műveletek (lifecycle_operations) - az entitások életciklus-műveletei
+            <ul>
+                <li>public Map<String, String> lifecycle_operations</li>
+            </ul>
+        </li>
+        <li>hozzáférési szabályok (access_rules) - az entitásokhoz való hozzáférési szabályok
+            <ul>
+                <li>private List&lt;String&gt; access_rules</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Együttműködők:</strong> Adatbázis-kezelő (class: DatabaseManager), Erőforrás-kezelő (class: ResourceManager).</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void addEntity(Entity entity) (class: EntityManagerMethod)</li>
+        <li>private void removeEntity(Entity entity) (class: EntityManagerMethod)</li>
+    </ul>
+</div>
+
+
+<div>
+    <h2>4.2.8. Komponens (class: Component)</h3>
+    <p><strong>Felelőssége, feladata:</strong> Az entitásokhoz adható modulok, amelyek további funkcionalitást biztosítanak, például edzéstervekhez vagy célkövetéshez.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>komponens típus (component_type) - a komponens típusa
+            <ul>
+                <li>private String component_type</li>
+            </ul>
+        </li>
+        <li>konfigurációs beállítások (configuration_settings) - a komponens konfigurációs beállításai
+            <ul>
+                <li>public Map<String, Object> configuration_settings</li>
+            </ul>
+        </li>
+        <li>funkciólista (function_list) - a komponens által biztosított funkciók listája
+            <ul>
+                <li>private List&lt;String&gt; function_list</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Együttműködők:</strong> Felhasználó (class: User), Edzésterv (class: WorkoutPlan).</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void attachToEntity(Entity entity) (class: ComponentMethod)</li>
+        <li>private void configureComponent(Map<String, Object> settings) (class: ComponentMethod)</li>
+    </ul>
+</div>
+<div>
+    <h2>4.2.9. Entitás (class: Entity)</h3>
+    <p><strong>Felelőssége, feladata:</strong> Az alkalmazás alapvető objektumainak gyűjtőosztálya, amely biztosítja az adatokhoz való hozzáférést.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>egyedi azonosító (ID) - az entitás egyedi azonosítója
+            <ul>
+                <li>private String ID</li>
+            </ul>
+        </li>
+        <li>alapértelmezett attribútumok (default_attributes) - az entitás alapértelmezett attribútumai
+            <ul>
+                <li>private Map<String, Object> default_attributes</li>
+            </ul>
+        </li>
+        <li>állapot (state) - az entitás aktuális állapota
+            <ul>
+                <li>public String state</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Együttműködők:</strong> Minden további osztály, amely az adatok kezelésében részt vesz.</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void updateState(String newState) (class: EntityMethod)</li>
+        <li>private void resetAttributes() (class: EntityMethod)</li>
+    </ul>
+</div>
+<div>
+    <h2>4.2.10. Gyűjtemény (class: Collection)</h3>
+    <p><strong>Felelőssége, feladata:</strong> Az entitások csoportosítását végzi, hogy könnyen kezelhető és elérhető legyen.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>entitásgyűjtemény (entity_collection) - az entitások gyűjteménye
+            <ul>
+                <li>private List<Entity> entity_collection</li>
+            </ul>
+        </li>
+        <li>hozzáférési módszerek (access_methods) - az entitásokhoz való hozzáférés szabályai
+            <ul>
+                <li>public List&lt;String&gt; access_methods</li>
+            </ul>
+        </li>
+        <li>keresési szűrők (search_filters) - az entitások keresését segítő szűrők
+            <ul>
+                <li>private List&lt;String&gt; search_filters</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Együttműködők:</strong> Entitáskezelő (class: EntityManager), különböző modulok.</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void addEntityToCollection(Entity entity) (class: CollectionMethod)</li>
+        <li>private List<Entity> searchEntities(String filter) (class: CollectionMethod)</li>
+    </ul>
+</div>
+
+<div>
+    <h2>4.2.11. Mentéskezelő (class: SaveManager)</h3>
+    <p><strong>Felelőssége, feladata:</strong> Az entitások és más adatstruktúrák állapotának mentéséért és visszatöltéséért felelős osztály. Biztosítja az adatok biztonságos tárolását és visszaállítását.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>mentési helyek (save_locations) - az adatok tárolási helyei
+            <ul>
+                <li>private List&lt;String&gt; save_locations</li>
+            </ul>
+        </li>
+        <li>mentési időpont (save_timestamp) - a mentés időpontja
+            <ul>
+                <li>private String save_timestamp</li>
+            </ul>
+        </li>
+        <li>állapot mentési formátuma (save_format) - a mentési állapot formátuma
+            <ul>
+                <li>public String save_format</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Együttműködők:</strong> Erőforrás-kezelő (class: ResourceManager), Adatbázis-kezelő (class: DatabaseManager).</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void saveState(Entity entity) (class: SaveManagerMethod)</li>
+        <li>public Entity loadState(String location) (class: SaveManagerMethod)</li>
+    </ul>
+</div>
+
+
+
+<div>
+    <h2>4.2.11. Mentéskezelő (class: SaveManager)</h3>
+    <p><strong>Felelőssége, feladata:</strong> Az entitások és más adatstruktúrák állapotának mentéséért és visszatöltéséért felelős osztály. Biztosítja az adatok biztonságos tárolását és visszaállítását.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>mentési helyek (save_locations) - az adatok tárolási helyei
+            <ul>
+                <li>private List&lt;String&gt; save_locations</li>
+            </ul>
+        </li>
+        <li>mentési időpont (save_timestamp) - a mentés időpontja
+            <ul>
+                <li>private String save_timestamp</li>
+            </ul>
+        </li>
+        <li>állapot mentési formátuma (save_format) - a mentési állapot formátuma
+            <ul>
+                <li>public String save_format</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Együttműködők:</strong> Erőforrás-kezelő (class: ResourceManager), Adatbázis-kezelő (class: DatabaseManager).</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void saveState(Entity entity) (class: SaveManagerMethod)</li>
+        <li>public Entity loadState(String location) (class: SaveManagerMethod)</li>
+    </ul>
+</div>
+
+
+<div>
+    <h2>4.2.12. Sorosítás (class: Serializable)</h3>
+    <p><strong>Felelőssége, feladata:</strong> Az entitások és objektumok sorosításáért felelős osztály, amely lehetővé teszi az adatok fájlba történő mentését és későbbi visszaolvasását.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>sorosítási formátum (serialization_format) - az adatok sorosítási formátuma
+            <ul>
+                <li>private String serialization_format</li>
+            </ul>
+        </li>
+        <li>támogatott adattípusok (supported_data_types) - az adatstruktúrák sorosítási támogatása
+            <ul>
+                <li>private List&lt;String&gt; supported_data_types</li>
+            </ul>
+        </li>
+        <li>sorosított állapot (serialized_state) - a sorosított objektum állapota
+            <ul>
+                <li>public String serialized_state</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Együttműködők:</strong> Mentéskezelő (class: SaveManager), Erőforrás-kezelő (class: ResourceManager).</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public String serialize(Entity entity) (class: SerializableMethod)</li>
+        <li>public Entity deserialize(String serializedData) (class: SerializableMethod)</li>
+    </ul>
+</div>
+<div>
+    <h2>4.2.13. Felhasználókezelő (class: UserManager)</h3>
+    <p><strong>Felelőssége, feladata:</strong> A felhasználói adatok kezeléséért, regisztrációért, bejelentkezésért és adatmódosításért felelős osztály.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>felhasználói adatok (user_data) - a felhasználók adatai
+            <ul>
+                <li>private Map<String, Object> user_data</li>
+            </ul>
+        </li>
+        <li>bejelentkezési státusz (login_status) - a felhasználók bejelentkezési állapota
+            <ul>
+                <li>private boolean login_status</li>
+            </ul>
+        </li>
+        <li>felhasználói jogosultságok (user_permissions) - a felhasználók jogosultsági szintje
+            <ul>
+                <li>public List&lt;String&gt; user_permissions</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Együttműködők:</strong> Main (class: Main), Értesítési rendszer (class: NotificationManager), Adatbázis-kezelő (class: DatabaseManager).</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void registerUser(Map<String, Object> userData) (class: UserManagerMethod)</li>
+        <li>public boolean loginUser(String username, String password) (class: UserManagerMethod)</li>
+    </ul>
+</div>
+<div>
+    <h2>4.2.14. Cél (class: Goal)</h3>
+    <p><strong>Felelőssége, feladata:</strong> Egy adott felhasználói cél meghatározása és nyomon követése, például fogyás vagy izomnövelés. Az osztály segíti a célok elérését az előrehaladás követésével.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>célkitűzés típusa (goal_type) - a cél típusa, például "fogyás"
+            <ul>
+                <li>private String goal_type</li>
+            </ul>
+        </li>
+        <li>elérendő érték (target_value) - a cél eléréséhez szükséges érték
+            <ul>
+                <li>private int target_value</li>
+            </ul>
+        </li>
+        <li>aktuális előrehaladás (current_progress) - az aktuális haladási szint
+            <ul>
+                <li>public int current_progress</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Együttműködők:</strong> Felhasználó (class: User), Értesítési rendszer (class: NotificationManager).</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void trackProgress(int value) (class: GoalMethod)</li>
+        <li>public boolean isGoalAchieved() (class: GoalMethod)</li>
+    </ul>
+</div>
+
+
+
+
+<div>
+    <h2>4.2.15. Motivációkezelő (class: MotivationManager)</h3>
+    <p><strong>Felelőssége, feladata:</strong> Az alkalmazás motivációs tartalmának kezeléséért felelős, például idézetek, videók és kihívások biztosítása a felhasználóknak.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>motivációs tartalmak listája (motivation_contents) - a motivációs tartalmak listája
+            <ul>
+                <li>private List&lt;String&gt; motivation_contents</li>
+            </ul>
+        </li>
+        <li>személyre szabott ajánlások (personalized_recommendations) - személyre szabott motivációs ajánlások
+            <ul>
+                <li>public Map<String, String> personalized_recommendations</li>
+            </ul>
+        </li>
+        <li>felhasználói aktivitás monitorozása (user_activity_tracking) - a felhasználói aktivitás monitorozása
+            <ul>
+                <li>private Map<String, Integer> user_activity_tracking</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Együttműködők:</strong> Felhasználókezelő (class: UserManager), Értesítési rendszer (class: NotificationManager), Kihívás (class: Challenge).</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void provideMotivation(String userId) (class: MotivationManagerMethod)</li>
+        <li>private void trackUserActivity(String userId, String activity) (class: MotivationManagerMethod)</li>
+    </ul>
+</div>
+<div>
+    <h2>4.2.16. Kihívás (class: Challenge)</h3>
+    <p><strong>Felelőssége, feladata:</strong> Különböző események és feladatok definiálása, amelyekkel a felhasználók csatlakozhatnak és célokat érhetnek el a motiváció növelése érdekében.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>kihívás típusa (challenge_type) - a kihívás típusa, például "heti kihívás"
+            <ul>
+                <li>private String challenge_type</li>
+            </ul>
+        </li>
+        <li>kihívás állapota (challenge_status) - a kihívás aktuális állapota (aktív vagy befejezett)
+            <ul>
+                <li>private String challenge_status</li>
+            </ul>
+        </li>
+        <li>elérhető jutalmak (available_rewards) - a kihívás teljesítéséért járó jutalmak
+            <ul>
+                <li>public List&lt;String&gt; available_rewards</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Együttműködők:</strong> Felhasználó (class: User), Motivációkezelő (class: MotivationManager).</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void startChallenge(String userId) (class: ChallengeMethod)</li>
+        <li>public boolean checkChallengeCompletion(String userId) (class: ChallengeMethod)</li>
+    </ul>
+</div>
+<div>
+    <h2>4.2.17. Étrend (class: DietPlan)</h3>
+    <p><strong>Felelőssége, feladata:</strong> Az étrendi tervek kezeléséért felelős osztály, amely a felhasználó céljainak és igényeinek megfelelő táplálkozási tervet készít.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>étrend típus (diet_type) - az étrend típusa, például "magas fehérjetartalmú"
+            <ul>
+                <li>private String diet_type</li>
+            </ul>
+        </li>
+        <li>napi kalóriabevitel (daily_calories) - a napi ajánlott kalóriabevitel
+            <ul>
+                <li>private int daily_calories</li>
+            </ul>
+        </li>
+        <li>étkezési ajánlások (meal_recommendations) - az ajánlott étkezések listája
+            <ul>
+                <li>public List&lt;String&gt; meal_recommendations</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Együttműködők:</strong> Felhasználó (class: User), Étrend Napi Terv (class: DailyMealPlan), Adatbázis-kezelő (class: DatabaseManager).</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void createDietPlan(String userId) (class: DietPlanMethod)</li>
+        <li>private void updateMealRecommendations() (class: DietPlanMethod)</li>
+    </ul>
+</div>
+
+
+<div>
+    <h2>4.2.18. Étrend Napi Terv (class: DailyMealPlan)</h3>
+    <p><strong>Felelőssége, feladata:</strong> Egy adott napi étrendi tervet tartalmaz, amely a nap különböző étkezéseit részletezi.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>napi étkezések listája (daily_meals) - az adott napi étkezések listája
+            <ul>
+                <li>private List&lt;String&gt; daily_meals</li>
+            </ul>
+        </li>
+        <li>kalóriák napi bontásban (calories_per_day) - napi kalóriák összesen
+            <ul>
+                <li>private int calories_per_day</li>
+            </ul>
+        </li>
+        <li>összetevők listája (ingredients_list) - az egyes étkezésekhez tartozó összetevők
+            <ul>
+                <li>public List&lt;String&gt; ingredients_list</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Együttműködők:</strong> Étrend (class: DietPlan), Étel (class: Meal).</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void addMealToDay(String mealName) (class: DailyMealPlanMethod)</li>
+        <li>public int calculateTotalCalories() (class: DailyMealPlanMethod)</li>
+    </ul>
+</div>
+<div>
+    <h2>4.2.19. Étel (class: Meal)</h3>
+    <p><strong>Felelőssége, feladata:</strong> Az étrendi tervben szereplő egyedi étkezési egységek definiálása, amelyek tartalmazzák az összetevőkre és a tápértékre vonatkozó adatokat.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>étel neve (meal_name) - az étkezés neve
+            <ul>
+                <li>private String meal_name</li>
+            </ul>
+        </li>
+        <li>összetevők listája (ingredient_list) - az étel összetevőinek listája
+            <ul>
+                <li>private List&lt;String&gt; ingredient_list</li>
+            </ul>
+        </li>
+        <li>tápérték adatok (nutritional_values) - az étel tápértékadatai
+            <ul>
+                <li>public Map<String, Integer> nutritional_values</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Együttműködők:</strong> Napi étrendi terv (class: DailyMealPlan), Recept (class: Recipe).</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void updateNutritionalValues() (class: MealMethod)</li>
+        <li>public List&lt;String&gt; getIngredients() (class: MealMethod)</li>
+    </ul>
+</div>
+<div>
+    <h2>4.2.20. Recept (class: Recipe)</h3>
+    <p><strong>Felelőssége, feladata:</strong> Az étrendi tervben használt receptek tárolása és megjelenítése. Az osztály segíti az ételek elkészítését.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>recept neve (recipe_name) - a recept neve
+            <ul>
+                <li>private String recipe_name</li>
+            </ul>
+        </li>
+        <li>elkészítési lépések (cooking_steps) - a recept elkészítési lépései
+            <ul>
+                <li>private List&lt;String&gt; cooking_steps</li>
+            </ul>
+        </li>
+        <li>hozzávalók (ingredients) - az étel elkészítéséhez szükséges hozzávalók listája
+            <ul>
+                <li>public List&lt;String&gt; ingredients</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Együttműködők:</strong> Étel (class: Meal), Bevásárlólista (class: ShoppingList).</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void addIngredient(String ingredient) (class: RecipeMethod)</li>
+        <li>public void displayRecipeSteps() (class: RecipeMethod)</li>
+    </ul>
+</div>
+
+<div>
+    <h2>4.2.21. Bevásárlólista (class: ShoppingList)</h3>
+    <p><strong>Felelőssége, feladata:</strong> Az étrendi tervhez kapcsolódó hozzávalók listájának kezelése, amely segíti a bevásárlás előkészítését.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>termékek listája (product_list) - a listán szereplő termékek
+            <ul>
+                <li>private List&lt;String&gt; product_list</li>
+            </ul>
+        </li>
+        <li>mennyiségek (quantities) - az egyes termékek mennyiségei
+            <ul>
+                <li>private Map<String, Integer> quantities</li>
+            </ul>
+        </li>
+        <li>szükséges hozzávalók (required_ingredients) - az étel elkészítéséhez szükséges hozzávalók
+            <ul>
+                <li>public List&lt;String&gt; required_ingredients</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Együttműködők:</strong> Recept (class: Recipe), Erőforrás-kezelő (class: ResourceManager).</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void addProduct(String product, int quantity) (class: ShoppingListMethod)</li>
+        <li>public void removeProduct(String product) (class: ShoppingListMethod)</li>
+    </ul>
+</div>
+<div>
+    <h2>4.2.22. Edzésterv (class: WorkoutPlan)</h3>
+    <p><strong>Felelőssége, feladata:</strong> A felhasználók számára testreszabott edzésterveket tartalmaz, beleértve a gyakorlatok időzítését és típusait.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>gyakorlatok listája (exercise_list) - az edzéstervhez tartozó gyakorlatok listája
+            <ul>
+                <li>private List&lt;String&gt; exercise_list</li>
+            </ul>
+        </li>
+        <li>ismétlésszám (repetitions) - az egyes gyakorlatok ismétlésszáma
+            <ul>
+                <li>private int repetitions</li>
+            </ul>
+        </li>
+        <li>időzítés (timing) - az edzések időzítése
+            <ul>
+                <li>public String timing</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Együttműködők:</strong> Felhasználó (class: User), Gyakorlat (class: Exercise), Cél (class: Goal).</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void createWorkoutPlan(String userId) (class: WorkoutPlanMethod)</li>
+        <li>public void updateWorkoutPlan() (class: WorkoutPlanMethod)</li>
+    </ul>
+</div>
+<div>
+    <h2>4.2.23. Gyakorlat (class: Exercise)</h3>
+    <p><strong>Felelőssége, feladata:</strong> Egy adott edzéstervhez tartozó gyakorlatok részletezése, beleértve az instrukciókat és a végrehajtási szabályokat.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>gyakorlat neve (exercise_name) - a gyakorlat neve
+            <ul>
+                <li>private String exercise_name</li>
+            </ul>
+        </li>
+        <li>ismétlések (repetitions) - az ismétlések száma
+            <ul>
+                <li>private int repetitions</li>
+            </ul>
+        </li>
+        <li>instrukciók (instructions) - a gyakorlat végrehajtására vonatkozó utasítások
+            <ul>
+                <li>public List&lt;String&gt; instructions</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Együttműködők:</strong> Edzésterv (class: WorkoutPlan), Komponens (class: Component).</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void performExercise() (class: ExerciseMethod)</li>
+        <li>public void updateInstructions(String newInstructions) (class: ExerciseMethod)</li>
+    </ul>
+</div>
+<div>
+    <h2>4.2.24. Edzésterv Napló (class: WorkoutLog)</h3>
+    <p><strong>Felelőssége, feladata:</strong> Az elvégzett edzésekkel kapcsolatos adatok naplózása, beleértve a felhasználói eredményeket, a teljesítést és az előrehaladást.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>naplózott gyakorlatok (logged_exercises) - a naplózott gyakorlatok listája
+            <ul>
+                <li>private List&lt;String&gt; logged_exercises</li>
+            </ul>
+        </li>
+        <li>teljesítési idő (completion_time) - az edzés befejezéséhez szükséges idő
+            <ul>
+                <li>private String completion_time</li>
+            </ul>
+        </li>
+        <li>felhasználói megjegyzések (user_notes) - a felhasználók megjegyzései az edzésről
+            <ul>
+                <li>public List&lt;String&gt; user_notes</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Együttműködők:</strong> Felhasználó (class: User), Edzésterv (class: WorkoutPlan), Adatbázis-kezelő (class: DatabaseManager).</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void logWorkout(String userId, String exercise) (class: WorkoutLogMethod)</li>
+        <li>public List&lt;String&gt; getWorkoutHistory(String userId) (class: WorkoutLogMethod)</li>
+    </ul>
+</div>
+<div>
+    <h2>4.2.25. Teljesítmény Statisztika (class: PerformanceStats)</h3>
+    <p><strong>Felelőssége, feladata:</strong> A felhasználói teljesítmény statisztikai összegzése, beleértve a fejlődést és elért mérföldköveket.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>mérföldkövek (milestones) - a felhasználó által elért mérföldkövek
+            <ul>
+                <li>private List&lt;String&gt; milestones</li>
+            </ul>
+        </li>
+        <li>statisztikai adatok (statistics) - a felhasználói teljesítmény statisztikai adatai
+            <ul>
+                <li>public Map<String, Object> statistics</li>
+            </ul>
+        </li>
+        <li>időbeli változás (time_progression) - a teljesítmény időbeli változásának nyomon követése
+            <ul>
+                <li>private String time_progression</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Együttműködők:</strong> Statisztikai Jelentés (class: Report), Vizuális Statisztikák (class: VisualStats).</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void generateStats(String userId) (class: PerformanceStatsMethod)</li>
+        <li>public Map<String, Object> getProgressOverTime() (class: PerformanceStatsMethod)</li>
+    </ul>
+</div>
+
+<div>
+    <h2>4.2.26. Statisztikai Jelentés (class: Report)</h3>
+    <p><strong>Felelőssége, feladata:</strong> Heti, havi vagy éves teljesítményjelentések készítése a felhasználói adatok alapján, segítve a fejlődés nyomon követését.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>jelentés típusa (report_type) - a jelentés típusa (pl. heti vagy havi)
+            <ul>
+                <li>private String report_type</li>
+            </ul>
+        </li>
+        <li>jelentés időtartama (report_duration) - a jelentés lefedettsége időben
+            <ul>
+                <li>private String report_duration</li>
+            </ul>
+        </li>
+        <li>adatok (data) - a jelentéshez kapcsolódó adatok
+            <ul>
+                <li>public Map<String, Object> data</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Együttműködők:</strong> Felhasználó (class: User), Vizuális Statisztikák (class: VisualStats).</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void generateReport(String userId) (class: ReportMethod)</li>
+        <li>public void displayReport() (class: ReportMethod)</li>
+    </ul>
+</div>
+<div>
+    <h2>4.2.27. Vizuális Statisztikák (class: VisualStats)</h3>
+    <p><strong>Felelőssége, feladata:</strong> A felhasználók teljesítményének vizuális megjelenítése, például grafikonok és diagramok segítségével.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>grafikonok (charts) - a megjelenített grafikonok listája
+            <ul>
+                <li>private List&lt;String&gt; charts</li>
+            </ul>
+        </li>
+        <li>diagramok (diagrams) - az alkalmazásban használt diagramok listája
+            <ul>
+                <li>private List&lt;String&gt; diagrams</li>
+            </ul>
+        </li>
+        <li>adatok megjelenítése (data_visualization) - az adatvizualizációk beállításai
+            <ul>
+                <li>public Map<String, Object> data_visualization</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Együttműködők:</strong> Statisztikai Jelentés (class: Report), Teljesítmény Statisztika (class: PerformanceStats).</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void createChart(String dataType) (class: VisualStatsMethod)</li>
+        <li>public void updateDiagram(String diagramType) (class: VisualStatsMethod)</li>
+    </ul>
+</div>
+<div>
+    <h2>4.2.28. Integráció (class: Integration)</h3>
+    <p><strong>Felelőssége, feladata:</strong> Külső eszközökkel, például okosórákkal és fitnesz kiegészítőkkel történő kapcsolatok kezelése az adatok megosztása érdekében.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>eszközkapcsolatok (device_connections) - a csatlakoztatott eszközök listája
+            <ul>
+                <li>private List&lt;String&gt; device_connections</li>
+            </ul>
+        </li>
+        <li>szinkronizálási beállítások (sync_settings) - az adatok szinkronizálásának beállításai
+            <ul>
+                <li>public Map<String, String> sync_settings</li>
+            </ul>
+        </li>
+        <li>adatformátumok (data_formats) - az alkalmazás által támogatott adatformátumok
+            <ul>
+                <li>private List&lt;String&gt; data_formats</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Együttműködők:</strong> API Kapcsolat (class: APIConnection).</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void synchronizeDevice(String deviceId) (class: IntegrationMethod)</li>
+        <li>private void updateSyncSettings(Map<String, String> settings) (class: IntegrationMethod)</li>
+    </ul>
+</div>
+
+<div>
+    <h2>4.2.29. API Kapcsolat (class: APIConnection)</h3>
+    <p><strong>Felelőssége, feladata:</strong> Az alkalmazás és a külső rendszerek közötti adatátviteli kapcsolatok kezeléséért felelős osztály.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>API kulcsok (api_keys) - az API hozzáféréshez használt kulcsok
+            <ul>
+                <li>private Map<String, String> api_keys</li>
+            </ul>
+        </li>
+        <li>csatlakozási protokollok (connection_protocols) - a támogatott csatlakozási protokollok
+            <ul>
+                <li>private List&lt;String&gt; connection_protocols</li>
+            </ul>
+        </li>
+        <li>adatátviteli módszerek (data_transfer_methods) - az adatátvitelre használt módszerek
+            <ul>
+                <li>public List&lt;String&gt; data_transfer_methods</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Együttműködők:</strong> Integráció (class: Integration), Adatbázis-kezelő (class: DatabaseManager).</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void connectToAPI(String apiKey) (class: APIConnectionMethod)</li>
+        <li>public void transferData(Map<String, Object> data) (class: APIConnectionMethod)</li>
+    </ul>
+</div>
+<div>
+    <h2>4.2.30. Időzítő (class: Timer)</h3>
+    <p><strong>Felelőssége, feladata:</strong> Az edzések és pihenőidők időzítéséért felelős osztály, amely biztosítja az edzési időszakok szabályozását.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>időzítési beállítások (timing_settings) - az időzítő konfigurációs beállításai
+            <ul>
+                <li>private Map<String, String> timing_settings</li>
+            </ul>
+        </li>
+        <li>futási állapot (running_status) - az időzítő aktuális állapota
+            <ul>
+                <li>private boolean running_status</li>
+            </ul>
+        </li>
+        <li>visszaszámlálás (countdown_timer) - visszaszámlálás értéke másodpercben
+            <ul>
+                <li>public int countdown_timer</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Együttműködők:</strong> Edzésterv (class: WorkoutPlan), Pihenőidő (class: RestPeriod).</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void startTimer(int seconds) (class: TimerMethod)</li>
+        <li>public void stopTimer() (class: TimerMethod)</li>
+    </ul>
+</div>
+
+
+<div>
+    <h2>4.2.31. Felhasználói Beállítások (class: UserSettings)</h3>
+    <p><strong>Felelőssége, feladata:</strong> A felhasználók által testreszabható beállításokat kezeli, beleértve az értesítéseket, nyelvi beállításokat és adatvédelmi preferenciákat.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>nyelvi beállítások (language_preferences) - a felhasználó által beállított nyelvi preferenciák
+            <ul>
+                <li>private String language_preferences</li>
+            </ul>
+        </li>
+        <li>értesítési beállítások (notification_settings) - a felhasználói értesítési preferenciák
+            <ul>
+                <li>public Map<String, Boolean> notification_settings</li>
+            </ul>
+        </li>
+        <li>adatvédelmi szabályok (privacy_rules) - a felhasználói adatvédelmi szabályok
+            <ul>
+                <li>private Map<String, String> privacy_rules</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Együttműködők:</strong> Felhasználókezelő (class: UserManager), Értesítési rendszer (class: NotificationManager).</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void updateSettings(Map<String, Object> settings) (class: UserSettingsMethod)</li>
+        <li>public String getLanguagePreference() (class: UserSettingsMethod)</li>
+    </ul>
+</div>
+<div>
+    <h2>4.2.32. Hírcsatorna (class: Feed)</h3>
+    <p><strong>Felelőssége, feladata:</strong> Közösségi hírcsatorna, amely lehetővé teszi a felhasználók számára az edzési eredmények, kihívások és egyéb információk megosztását.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>posztok listája (post_list) - a felhasználók által létrehozott posztok listája
+            <ul>
+                <li>private List&lt;String&gt; post_list</li>
+            </ul>
+        </li>
+        <li>felhasználói aktivitás (user_activity) - a felhasználók aktivitása a hírcsatornában
+            <ul>
+                <li>private Map<String, Integer> user_activity</li>
+            </ul>
+        </li>
+        <li>közösségi interakciók (community_interactions) - a hírcsatornában történő közösségi interakciók
+            <ul>
+                <li>public List&lt;String&gt; community_interactions</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Együttműködők:</strong> Közösségi Poszt (class: SocialPost), Barátok és Követés (class: FriendsAndFollowers).</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void addPost(String postContent) (class: FeedMethod)</li>
+        <li>public List&lt;String&gt; getUserActivity(String userId) (class: FeedMethod)</li>
+    </ul>
+</div>
+<div>
+    <h2>4.2.33. Üzenetküldő Rendszer (class: MessagingSystem)</h3>
+    <p><strong>Felelőssége, feladata:</strong> Az alkalmazáson belüli üzenetküldési funkciókért felelős, lehetővé téve a felhasználók közötti kommunikációt.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>üzenetek listája (messages) - a felhasználók által küldött és fogadott üzenetek listája
+            <ul>
+                <li>private List&lt;String&gt; messages</li>
+            </ul>
+        </li>
+        <li>felhasználói csevegések (user_chats) - a felhasználók között zajló beszélgetések
+            <ul>
+                <li>private Map<String, List&lt;String&gt;> user_chats</li>
+            </ul>
+        </li>
+        <li>értesítések (notifications) - az új üzenetekről szóló értesítések
+            <ul>
+                <li>public List&lt;String&gt; notifications</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Együttműködők:</strong> Felhasználó (class: User), Közösségi funkciók (class: SocialFeatures).</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void sendMessage(String senderId, String recipientId, String message) (class: MessagingSystemMethod)</li>
+        <li>public List&lt;String&gt; getMessages(String userId) (class: MessagingSystemMethod)</li>
+    </ul>
+</div>
+<div>
+    <h2>4.2.34. Szakértői Tanácsok (class: ExpertAdvice)</h3>
+    <p><strong>Felelőssége, feladata:</strong> Edzői és táplálkozási szakértői tanácsokat biztosít a felhasználók számára, figyelembe véve azok céljait és igényeit.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>tanács típusa (advice_type) - a szakértői tanács típusa, például "edzési" vagy "táplálkozási"
+            <ul>
+                <li>private String advice_type</li>
+            </ul>
+        </li>
+        <li>ajánlott cselekvések (recommended_actions) - a felhasználóknak adott konkrét ajánlások
+            <ul>
+                <li>public List&lt;String&gt; recommended_actions</li>
+            </ul>
+        </li>
+        <li>szakértői források (expert_sources) - a szakértői tanácsadás forrásai
+            <ul>
+                <li>private List&lt;String&gt; expert_sources</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Együttműködők:</strong> Felhasználó (class: User), Étrend (class: DietPlan), Edzésterv (class: WorkoutPlan).</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void provideAdvice(String userId) (class: ExpertAdviceMethod)</li>
+        <li>public List&lt;String&gt; getRecommendations(String goalType) (class: ExpertAdviceMethod)</li>
+    </ul>
+</div>
+
+
+<div>
+    <h2>4.2.35. Alkalmazás Napló (class: AppLog)</h3>
+    <p><strong>Felelőssége, feladata:</strong> A felhasználói interakciók, események és hibák naplózásáért felelős, segítve az alkalmazás hibakeresését és fejlesztését.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>naplózott események (logged_events) - az alkalmazásban rögzített események
+            <ul>
+                <li>private List&lt;String&gt; logged_events</li>
+            </ul>
+        </li>
+        <li>hibaállapot (error_state) - a felmerült hibák állapota
+            <ul>
+                <li>private boolean error_state</li>
+            </ul>
+        </li>
+        <li>dátum/időbélyegzők (timestamps) - az események dátumai és időpontjai
+            <ul>
+                <li>public List&lt;String&gt; timestamps</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Együttműködők:</strong> Erőforrás-kezelő (class: ResourceManager), Felhasználói Beállítások (class: UserSettings).</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void logEvent(String eventDescription) (class: AppLogMethod)</li>
+        <li>public List&lt;String&gt; getLogs() (class: AppLogMethod)</li>
+    </ul>
+</div>
+<div>
+    <h2>4.2.36. Bejelentkezési Napló (class: LoginLog)</h3>
+    <p><strong>Felelőssége, feladata:</strong> A felhasználók be- és kijelentkezési eseményeinek nyilvántartása.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>felhasználói azonosító (user_id) - az érintett felhasználó azonosítója
+            <ul>
+                <li>private String user_id</li>
+            </ul>
+        </li>
+        <li>bejelentkezési idő (login_time) - a bejelentkezés időpontja
+            <ul>
+                <li>private String login_time</li>
+            </ul>
+        </li>
+        <li>bejelentkezési eredmény (login_result) - a bejelentkezés eredménye (sikeres vagy sikertelen)
+            <ul>
+                <li>public String login_result</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Együttműködők:</strong> Felhasználókezelő (class: UserManager), Alkalmazás Napló (class: AppLog).</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void recordLogin(String userId, boolean success) (class: LoginLogMethod)</li>
+        <li>public List&lt;String&gt; getLoginHistory(String userId) (class: LoginLogMethod)</li>
+    </ul>
+</div>
+<div>
+    <h2>4.2.37. Közösségi Szavazások (class: CommunityPolls)</h3>
+    <p><strong>Felelőssége, feladata:</strong> A közösségi szavazások és véleménykérések lebonyolításáért felelős osztály, amely a közösségi aktivitás növelésére szolgál.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>szavazások listája (poll_list) - az aktív szavazások listája
+            <ul>
+                <li>private List&lt;String&gt; poll_list</li>
+            </ul>
+        </li>
+        <li>szavazási opciók (poll_options) - a szavazások lehetőségei
+            <ul>
+                <li>private Map<String, List&lt;String&gt;> poll_options</li>
+            </ul>
+        </li>
+        <li>szavazati eredmények (vote_results) - a szavazások eredményei
+            <ul>
+                <li>public Map<String, Integer> vote_results</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Együttműködők:</strong> Hírcsatorna (class: Feed), Közösségi Poszt (class: SocialPost).</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void createPoll(String pollTitle, List&lt;String&gt; options) (class: CommunityPollsMethod)</li>
+        <li>public Map<String, Integer> getPollResults(String pollId) (class: CommunityPollsMethod)</li>
+    </ul>
+</div>
+
+<div>
+    <h2>4.2.38. Személyre Szabott Ajánlások (class: PersonalizedRecommendations)</h3>
+    <p><strong>Felelőssége, feladata:</strong> A felhasználó korábbi aktivitása alapján személyre szabott ajánlásokat nyújtó modul.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>ajánlási algoritmus (recommendation_algorithm) - a személyre szabott ajánlásokat végrehajtó algoritmus
+            <ul>
+                <li>private String recommendation_algorithm</li>
+            </ul>
+        </li>
+        <li>felhasználói adatok (user_data) - az ajánlásokhoz használt felhasználói adatok
+            <ul>
+                <li>private Map<String, Object> user_data</li>
+            </ul>
+        </li>
+        <li>ajánlások (recommendations) - a felhasználónak adott ajánlások listája
+            <ul>
+                <li>public List&lt;String&gt; recommendations</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Együttműködők:</strong> Felhasználó (class: User), Edzésterv (class: WorkoutPlan), Étrend (class: DietPlan).</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void generateRecommendations(String userId) (class: PersonalizedRecommendationsMethod)</li>
+        <li>public List&lt;String&gt; getUserRecommendations(String userId) (class: PersonalizedRecommendationsMethod)</li>
+    </ul>
+</div>
+<div>
+    <h2>4.2.39. Adatbázis-kezelő (class: DatabaseManager)</h3>
+    <p><strong>Felelőssége, feladata:</strong> Az alkalmazás adatainak tárolásáért és eléréséért felelős, beleértve a felhasználói adatokat, edzésterveket és statisztikákat.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>adatbázis struktúra (database_structure) - az adatbázis szerkezetének definíciója
+            <ul>
+                <li>private String database_structure</li>
+            </ul>
+        </li>
+        <li>tárolási módszerek (storage_methods) - az adatok tárolására vonatkozó módszerek
+            <ul>
+                <li>private List&lt;String&gt; storage_methods</li>
+            </ul>
+        </li>
+        <li>biztonsági beállítások (security_settings) - az adatbiztonságot biztosító beállítások
+            <ul>
+                <li>public Map<String, String> security_settings</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Együttműködők:</strong> Összes fő osztály, amely adatokat kezel.</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void connectToDatabase() (class: DatabaseManagerMethod)</li>
+        <li>public void executeQuery(String query) (class: DatabaseManagerMethod)</li>
+    </ul>
+</div>
+<div>
+    <h2>4.2.40. Mérföldkő (class: Milestone)</h3>
+    <p><strong>Felelőssége, feladata:</strong> Kisebb, elérendő célok vagy állomások meghatározása, amelyek motiválják a felhasználókat a hosszabb távú célok elérésére.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>mérföldkő leírása (milestone_description) - a mérföldkő leírása
+            <ul>
+                <li>private String milestone_description</li>
+            </ul>
+        </li>
+        <li>elérési időpont (target_date) - a mérföldkő teljesítésének határideje
+            <ul>
+                <li>private String target_date</li>
+            </ul>
+        </li>
+        <li>teljesítési állapot (completion_status) - a mérföldkő teljesítési állapota
+            <ul>
+                <li>public boolean completion_status</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Együttműködők:</strong> Cél (class: Goal), Felhasználó (class: User).</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void createMilestone(String goalId) (class: MilestoneMethod)</li>
+        <li>public boolean checkMilestoneStatus() (class: MilestoneMethod)</li>
+    </ul>
+</div>
+<div>
+    <h2>4.2.41. Rendszerfigyelő (class: SystemMonitor)</h3>
+    <p><strong>Felelőssége, feladata:</strong> Az alkalmazás teljesítményének és állapotának figyelésére szolgáló osztály, amely segít az esetleges hibák azonosításában és a rendszer stabilitásának fenntartásában.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>rendszerállapot (system_status) - az aktuális rendszerállapot
+            <ul>
+                <li>private String system_status</li>
+            </ul>
+        </li>
+        <li>hibajelentések (error_reports) - a jelentett hibák listája
+            <ul>
+                <li>private List&lt;String&gt; error_reports</li>
+            </ul>
+        </li>
+        <li>teljesítmény mutatók (performance_metrics) - a rendszer teljesítményét leíró mutatók
+            <ul>
+                <li>public Map<String, Integer> performance_metrics</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Együttműködők:</strong> Main (class: Main), Alkalmazás Napló (class: AppLog).</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void monitorSystem() (class: SystemMonitorMethod)</li>
+        <li>public void generatePerformanceReport() (class: SystemMonitorMethod)</li>
+    </ul>
+</div>
+<div>
+    <h2>4.2.42. Gamifikációs Rendszer (class: GamificationSystem)</h3>
+    <p><strong>Felelőssége, feladata:</strong> A felhasználók számára pontokat, jelvényeket és egyéb jutalmakat biztosít a teljesítményük és aktivitásuk alapján, ezzel növelve az elköteleződésüket.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>pontszámok (points) - a felhasználók által elért pontszámok
+            <ul>
+                <li>private Map<String, Integer> points</li>
+            </ul>
+        </li>
+        <li>jutalmak listája (rewards) - a megszerezhető jutalmak listája
+            <ul>
+                <li>private List&lt;String&gt; rewards</li>
+            </ul>
+        </li>
+        <li>játékos szintek (player_levels) - a felhasználók szintjei
+            <ul>
+                <li>public Map<String, Integer> player_levels</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Együttműködők:</strong> Felhasználó (class: User), Kihívás (class: Challenge).</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void assignPoints(String userId, int points) (class: GamificationSystemMethod)</li>
+        <li>public void rewardUser(String userId) (class: GamificationSystemMethod)</li>
+    </ul>
+</div>
+<div>
+    <h2>4.2.43. Jelvény (class: Badge)</h3>
+    <p><strong>Felelőssége, feladata:</strong> Virtuális díjak és elismerések biztosítása a felhasználók számára az alkalmazásban elért eredményeikért.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>jelvény neve (badge_name) - a jelvény neve
+            <ul>
+                <li>private String badge_name</li>
+            </ul>
+        </li>
+        <li>megszerzési feltételek (acquisition_conditions) - a jelvény megszerzéséhez szükséges feltételek
+            <ul>
+                <li>private String acquisition_conditions</li>
+            </ul>
+        </li>
+        <li>megszerzés dátuma (acquisition_date) - a jelvény megszerzésének dátuma
+            <ul>
+                <li>public String acquisition_date</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Együttműködők:</strong> Felhasználó (class: User), Gamifikációs Rendszer (class: GamificationSystem).</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void grantBadge(String userId) (class: BadgeMethod)</li>
+        <li>public boolean checkAcquisitionConditions(String userId) (class: BadgeMethod)</li>
+    </ul>
+</div>
+
+
+
+<div>
+    <h2>4.2.44. Eredménytábla (class: Leaderboard)</h3>
+    <p><strong>Felelőssége, feladata:</strong> A felhasználók teljesítményének rangsorolása különböző szempontok szerint, például pontok, kihívások vagy aktivitás alapján.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>ranglista pozíciók (ranking_positions) - a rangsorolási pozíciók listája
+            <ul>
+                <li>private List&lt;String&gt; ranking_positions</li>
+            </ul>
+        </li>
+        <li>pontszámok (scores) - a felhasználók pontszámai
+            <ul>
+                <li>private Map<String, Integer> scores</li>
+            </ul>
+        </li>
+        <li>időszakok (time_periods) - az értékelési időszakok
+            <ul>
+                <li>public List&lt;String&gt; time_periods</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Együttműködők:</strong> Gamifikációs Rendszer (class: GamificationSystem), Kihívás (class: Challenge).</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void updateLeaderboard() (class: LeaderboardMethod)</li>
+        <li>public List&lt;String&gt; getTopPlayers(int topN) (class: LeaderboardMethod)</li>
+    </ul>
+</div>
+<div>
+    <h2>4.2.45. Értesítési Kezelő (class: NotificationManager)</h3>
+    <p><strong>Felelőssége, feladata:</strong> Az alkalmazásban generált értesítések kezelésére szolgáló osztály, amely lehetővé teszi az értesítések testreszabását és kezelését.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>értesítési típusok (notification_types) - az értesítési típusok listája
+            <ul>
+                <li>private List&lt;String&gt; notification_types</li>
+            </ul>
+        </li>
+        <li>értesítési előzmények (notification_history) - az értesítések története
+            <ul>
+                <li>private List&lt;String&gt; notification_history</li>
+            </ul>
+        </li>
+        <li>értesítési beállítások (notification_settings) - az értesítési preferenciák
+            <ul>
+                <li>public Map<String, Boolean> notification_settings</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Együttműködők:</strong> Értesítés (class: Notification), Felhasználókezelő (class: UserManager).</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void sendNotification(String userId, String message) (class: NotificationManagerMethod)</li>
+        <li>public List&lt;String&gt; getNotificationHistory(String userId) (class: NotificationManagerMethod)</li>
+    </ul>
+</div>
+<div>
+    <h2>4.2.46. Statisztikai Elemző (class: StatisticalAnalyzer)</h3>
+    <p><strong>Felelőssége, feladata:</strong> A felhasználói adatok elemzésére szolgáló osztály, amely előrejelzéseket, statisztikákat és trendeket generál az edzés- és táplálkozási szokások alapján.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>elemzési módszerek (analysis_methods) - a különböző statisztikai elemzési módszerek listája
+            <ul>
+                <li>private List&lt;String&gt; analysis_methods</li>
+            </ul>
+        </li>
+        <li>statisztikai modellek (statistical_models) - a használt statisztikai modellek
+            <ul>
+                <li>private List&lt;String&gt; statistical_models</li>
+            </ul>
+        </li>
+        <li>adatkimenetek (data_outputs) - az elemzési eredmények kimenetei
+            <ul>
+                <li>public Map<String, Object> data_outputs</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Együttműködők:</strong> Teljesítmény Statisztika (class: PerformanceStats), Vizuális Statisztikák (class: VisualStats).</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void analyzeUserData(String userId) (class: StatisticalAnalyzerMethod)</li>
+        <li>public Map<String, Object> generateTrends() (class: StatisticalAnalyzerMethod)</li>
+    </ul>
+</div>
+<div>
+    <h2>4.2.47. Külső Eszközök Szinkronizáló (class: ExternalDeviceSync)</h3>
+    <p><strong>Felelőssége, feladata:</strong> A fitnesz eszközök, például okosórák vagy pulzusmérők adatainak szinkronizálását végző osztály, amely az alkalmazásba integrálja a külső adatokat.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>szinkronizációs protokollok (sync_protocols) - a szinkronizációs folyamatban használt protokollok
+            <ul>
+                <li>private List&lt;String&gt; sync_protocols</li>
+            </ul>
+        </li>
+        <li>eszközkapcsolatok (device_connections) - az aktív eszközkapcsolatok
+            <ul>
+                <li>private List&lt;String&gt; device_connections</li>
+            </ul>
+        </li>
+        <li>adatformátumok (data_formats) - a támogatott adatformátumok
+            <ul>
+                <li>public List&lt;String&gt; data_formats</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Együttműködők:</strong> Integráció (class: Integration), API Kapcsolat (class: APIConnection).</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void syncDeviceData(String deviceId) (class: ExternalDeviceSyncMethod)</li>
+        <li>private void convertDataFormat(String formatType) (class: ExternalDeviceSyncMethod)</li>
+    </ul>
+</div>
+
+<div>
+    <h2>4.2.48. Bejelentkezési Védelem (class: LoginSecurity)</h3>
+    <p><strong>Felelőssége, feladata:</strong> A felhasználók bejelentkezési biztonságának növelése, például kétfaktoros azonosítási lehetőségek bevezetésével.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>biztonsági szabályok (security_rules) - az alkalmazott biztonsági szabályok
+            <ul>
+                <li>private List&lt;String&gt; security_rules</li>
+            </ul>
+        </li>
+        <li>hitelesítési módok (authentication_methods) - a bejelentkezéshez használt hitelesítési módok
+            <ul>
+                <li>public List&lt;String&gt; authentication_methods</li>
+            </ul>
+        </li>
+        <li>bejelentkezési próbálkozások (login_attempts) - a felhasználók bejelentkezési próbálkozásainak nyilvántartása
+            <ul>
+                <li>private Map<String, Integer> login_attempts</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Együttműködők:</strong> Felhasználókezelő (class: UserManager), Bejelentkezési Napló (class: LoginLog).</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public boolean validateLogin(String userId, String password) (class: LoginSecurityMethod)</li>
+        <li>public void initiateTwoFactorAuth(String userId) (class: LoginSecurityMethod)</li>
+    </ul>
+</div>
+<div>
+    <h2>4.2.49. Helyalapú Szolgáltatások (class: LocationServices)</h3>
+    <p><strong>Felelőssége, feladata:</strong> A felhasználók helyadatait felhasználva ajánlásokat és értesítéseket nyújt, például kültéri edzési javaslatokat.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>helyadatok (location_data) - a felhasználó helyadatai
+            <ul>
+                <li>private Map<String, Double> location_data</li>
+            </ul>
+        </li>
+        <li>földrajzi határok (geofencing) - a hely alapú szolgáltatásokhoz használt földrajzi határok
+            <ul>
+                <li>private List&lt;String&gt; geofencing</li>
+            </ul>
+        </li>
+        <li>ajánlások (recommendations) - helyalapú ajánlások a felhasználók számára
+            <ul>
+                <li>public List&lt;String&gt; recommendations</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Együttműködők:</strong> Felhasználó (class: User), Értesítési Kezelő (class: NotificationManager).</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void trackUserLocation(String userId) (class: LocationServicesMethod)</li>
+        <li>public List&lt;String&gt; generateLocationBasedRecommendations(String userId) (class: LocationServicesMethod)</li>
+    </ul>
+</div>
+
+<div>
+    <h2>4.2.50. Személyes Adatvédelem (class: PrivacySettings)</h3>
+    <p><strong>Felelőssége, feladata:</strong> A felhasználók adatvédelmi beállításainak kezelésére szolgáló osztály, amely lehetővé teszi az adatok megosztásának és tárolásának szabályozását.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>adatmegosztási szabályok (data_sharing_rules) - a felhasználók által beállított adatmegosztási szabályok
+            <ul>
+                <li>private Map&lt;String, Boolean&gt; data_sharing_rules</li>
+            </ul>
+        </li>
+        <li>felhasználói preferenciák (user_preferences) - a felhasználók preferenciái az adatkezeléssel kapcsolatban
+            <ul>
+                <li>public List&lt;String&gt; user_preferences</li>
+            </ul>
+        </li>
+        <li>adatkezelési beállítások (data_handling_settings) - az adatkezelés konfigurációs beállításai
+            <ul>
+                <li>private Map&lt;String, String&gt; data_handling_settings</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Együttműködők:</strong> Felhasználókezelő (class: UserManager), Adatbázis-kezelő (class: DatabaseManager).</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void updatePrivacySettings(String userId, Map&lt;String, Boolean&gt; settings) (class: PrivacySettingsMethod)</li>
+        <li>public Map&lt;String, Boolean&gt; getUserPrivacySettings(String userId) (class: PrivacySettingsMethod)</li>
+    </ul>
+</div>
+
+<div>
+    <h2>4.2.51. Edzői Profil (class: TrainerProfile)</h3>
+    <p><strong>Felelőssége, feladata:</strong> A felhasználók számára elérhető edzői profilok kezeléséért és azok szakértelmének bemutatásáért felelős modul.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>edzői tapasztalat (experience) - az edző tapasztalata és szakterületei
+            <ul>
+                <li>private String experience</li>
+            </ul>
+        </li>
+        <li>szakterületek (specializations) - az edző szakmai szakterületei
+            <ul>
+                <li>private List&lt;String&gt; specializations</li>
+            </ul>
+        </li>
+        <li>elérhetőség (availability) - az edző elérhetőségi adatai
+            <ul>
+                <li>public String availability</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Együttműködők:</strong> Felhasználó (class: User), Szakértői Tanácsok (class: ExpertAdvice).</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void createTrainerProfile(String trainerId, String experience) (class: TrainerProfileMethod)</li>
+        <li>public List&lt;String&gt; getTrainerSpecializations(String trainerId) (class: TrainerProfileMethod)</li>
+    </ul>
+</div>
+
+<div>
+    <h2>4.2.52. Időjárási Adatkezelő (class: WeatherDataManager)</h3>
+    <p><strong>Felelőssége, feladata:</strong> Külső időjárási adatok kezelésére szolgáló osztály, amely például kültéri edzésekre nyújt javaslatokat.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>időjárási adatok (weather_data) - az aktuális és előrejelzett időjárási adatok
+            <ul>
+                <li>private Map&lt;String, Double&gt; weather_data</li>
+            </ul>
+        </li>
+        <li>időjárási előrejelzések (weather_forecasts) - a várható időjárási viszonyok
+            <ul>
+                <li>private List&lt;String&gt; weather_forecasts</li>
+            </ul>
+        </li>
+        <li>környezeti hatások (environmental_effects) - az időjárás által okozott környezeti hatások
+            <ul>
+                <li>public List&lt;String&gt; environmental_effects</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Együttműködők:</strong> Helyalapú Szolgáltatások (class: LocationServices), Értesítési Kezelő (class: NotificationManager).</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void fetchWeatherData(String location) (class: WeatherDataManagerMethod)</li>
+        <li>public List&lt;String&gt; generateWeatherRecommendations() (class: WeatherDataManagerMethod)</li>
+    </ul>
+</div>
+
+<div>
+    <h2>4.2.53. Automatikus Emlékeztető (class: AutoReminder)</h3>
+    <p><strong>Felelőssége, feladata:</strong> Automatikus értesítések küldése a felhasználóknak az edzéseikről, étkezéseikről vagy más fontos eseményekről.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>emlékeztetők listája (reminders) - az aktív emlékeztetők listája
+            <ul>
+                <li>private List&lt;String&gt; reminders</li>
+            </ul>
+        </li>
+        <li>ismétlési beállítások (recurrence_settings) - az emlékeztetők ismétlési beállításai
+            <ul>
+                <li>private Map&lt;String, String&gt; recurrence_settings</li>
+            </ul>
+        </li>
+        <li>értesítési időzítés (notification_timing) - az emlékeztetők időzítése
+            <ul>
+                <li>public String notification_timing</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Együttműködők:</strong> Felhasználó (class: User), Értesítési Kezelő (class: NotificationManager).</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void createReminder(String userId, String reminderText) (class: AutoReminderMethod)</li>
+        <li>public void scheduleReminders() (class: AutoReminderMethod)</li>
+    </ul>
+</div>
+
+<div>
+    <h2>4.2.54. Edzési Tippek (class: WorkoutTips)</h3>
+    <p><strong>Felelőssége, feladata:</strong> Az edzések hatékonyságának növelésére szolgáló gyakorlati tanácsokat és tippeket biztosít a felhasználóknak.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>tipp kategória (tip_category) - a tippek kategóriája (pl. erőnléti, nyújtó stb.)
+            <ul>
+                <li>private String tip_category</li>
+            </ul>
+        </li>
+        <li>ajánlott gyakorlatok (recommended_exercises) - az adott típushoz tartozó ajánlott gyakorlatok
+            <ul>
+                <li>private List&lt;String&gt; recommended_exercises</li>
+            </ul>
+        </li>
+        <li>hatékonysági mutatók (effectiveness_indicators) - a tippek hatékonysági mutatói
+            <ul>
+                <li>public Map&lt;String, Integer&gt; effectiveness_indicators</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Együttműködők:</strong> Edzésterv (class: WorkoutPlan), Felhasználó (class: User).</p>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public List&lt;String&gt; generateWorkoutTips(String userGoal) (class: WorkoutTipsMethod)</li>
+        <li>public void evaluateTipEffectiveness() (class: WorkoutTipsMethod)</li>
+    </ul>
+</div>
+
+
+<h3 class="feladatcim">5. Bázisosztályok keresése</h3>
+
+
+<p>Fontos megvizsgálni, hogy az osztályok között léteznek-e olyan esetek, ahol az egyes osztályokban ismétlődő argumentumok vagy attribútumok előfordulnak. Ha találunk ilyen ismétlődéseket, ezek az argumentumok és attribútumok egy közös bázisosztályba emelhetők, amely lehetővé teszi az osztályok közötti közös tulajdonságok és funkciók általánosítását és egységes kezelését. Ez a megközelítés csökkentheti a redundanciát és javíthatja a kód átláthatóságát, fenntarthatóságát és újrafelhasználhatóságát.</p>
+
+<p>Amennyiben azonosítottuk az ilyen közös tulajdonságokat, az osztálydiagramot az általánosítás kapcsolatokkal egészítjük ki. Ezek a kapcsolatok az öröklési hierarchiát szemléltetik, és megmutatják, hogy mely osztályok örökölnek közös attribútumokat és viselkedéseket a bázisosztályból.</p>
+
+<p>Az általunk létrehozott osztályok esetében is előfordulhatnak olyan kapcsolatok, ahol az ismétlődő funkciókat vagy attribútumokat célszerű bázisosztályba helyezni.</p>
+
+<p>Ilyenek lehetnek például a Felhasználókezelő (UserManager), az Entitáskezelő (EntityManager), a SaveManager (Mentéskezelő) és a Component (Komponens), amelyek tartalmazhatnak közös elemeket, például az állapotuk kezelésére vagy az adatok mentésére szolgáló attribútumokat. Viszont mi ezeket nem szeretnénk összevonni, mert habár mindegyik tartalmaz közös elemeket, mindegyik valamilyen szinten egyedi. Inkább egy adott dologhoz kapcsolódnak, mintsem hogy egyetlen általános szerepet töltenének be.</p>
+
+<p>A többi osztályunkat sem vonnánk össze, mivel mind más-más funkciókat lát el. Az összevonás az osztályok módosíthatóságának és rugalmasságának elvesztéséhez vezetne, amely ellentétes lenne a tervezési céljainkkal.</p>
+
+
+<div>
+    <p>Ezek az állapotdiagramok részletesen szemléltetnék az alkalmazás különböző funkcióinak belső működését, valamint az egyes folyamatokban betöltött állapotokat és átmeneteket.</p>
+
+    <h2>1. Felhasználói Bejelentkezési és Regisztrációs Folyamat</h4>
+    <ul>
+        <li>Állapotok:
+            <ul>
+                <li>Felhasználói bejelentkezés kezdeti állapot</li>
+                <li>Regisztrációs adatok megadása</li>
+                <li>Adatok ellenőrzése</li>
+                <li>Sikeres bejelentkezés vagy sikertelen bejelentkezés</li>
+                <li>Felhasználói profil betöltése</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Leírás:</strong> Ez az állapotdiagram bemutatja a felhasználói regisztráció és bejelentkezés folyamatát, az adatok ellenőrzésétől a profil betöltéséig.</p>
+
+    <h2>2. Edzésterv Kezelése</h4>
+    <ul>
+        <li>Állapotok:
+            <ul>
+                <li>Edzésterv létrehozása</li>
+                <li>Edzésterv szerkesztése</li>
+                <li>Edzésterv mentése</li>
+                <li>Edzésterv megjelenítése</li>
+                <li>Edzés végrehajtása</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Leírás:</strong> Ez a diagram az edzésterv kezelésének különböző lépéseit mutatja be, beleértve az edzéstervek létrehozását, módosítását és végrehajtását.</p>
+
+    <h2>3. Étrend Kezelése</h4>
+    <ul>
+        <li>Állapotok:
+            <ul>
+                <li>Étrend létrehozása</li>
+                <li>Étrend elemek hozzáadása/módosítása</li>
+                <li>Étrend mentése</li>
+                <li>Étrend követése</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Leírás:</strong> Az állapotdiagram bemutatja az étrendi modul működését, az étrend összeállításától és szerkesztésétől kezdve egészen annak nyomon követéséig.</p>
+
+    <h2>4. Entitások Létrehozása és Kezelése (Entity Management)</h4>
+    <ul>
+        <li>Állapotok:
+            <ul>
+                <li>Új entitás létrehozása (pl. felhasználó, edzésterv, étkezési terv)</li>
+                <li>Entitás állapotának frissítése</li>
+                <li>Entitás mentése</li>
+                <li>Entitás törlése</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Leírás:</strong> Ez az állapotdiagram az entitások kezelését mutatja be a létrehozástól a frissítésen át a törlésig.</p>
+
+    <h2>5. Felhasználói Értesítések Kezelése</h4>
+    <ul>
+        <li>Állapotok:
+            <ul>
+                <li>Új értesítés generálása</li>
+                <li>Értesítés megjelenítése</li>
+                <li>Értesítés olvasása</li>
+                <li>Értesítés törlése</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Leírás:</strong> Az állapotdiagram bemutatja, hogy az értesítések hogyan keletkeznek, jelennek meg a felhasználók számára, és hogyan kezelhetők.</p>
+
+    <h2>6. Mentési és Betöltési Műveletek (SaveManager működése)</h4>
+    <ul>
+        <li>Állapotok:
+            <ul>
+                <li>Mentési művelet kezdeményezése</li>
+                <li>Adatok sorosítása</li>
+                <li>Adatok tárolása</li>
+                <li>Adatok betöltése</li>
+                <li>Sorosított adatok dekódolása</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Leírás:</strong> Ez a diagram a mentési és betöltési folyamatot szemlélteti, beleértve a sorosítást és az adatok tárolását.</p>
+
+    <h2>7. Kihívások és Gamifikációs Elemek Kezelése</h4>
+    <ul>
+        <li>Állapotok:
+            <ul>
+                <li>Új kihívás létrehozása</li>
+                <li>Kihívás aktív állapotban</li>
+                <li>Kihívás lezárása</li>
+                <li>Pontok és jutalmak kiosztása</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Leírás:</strong> Ez a diagram a gamifikációs elemek működését és a kihívásokkal kapcsolatos folyamatokat mutatja be.</p>
+
+    <h2>8. Felhasználói Adatkezelés és Profil Szerkesztése</h4>
+    <ul>
+        <li>Állapotok:
+            <ul>
+                <li>Profil megtekintése</li>
+                <li>Profil adatok szerkesztése</li>
+                <li>Adatok mentése</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Leírás:</strong> Ez az állapotdiagram a felhasználói profil adatainak kezelését és szerkesztését szemlélteti.</p>
+
+    <h2>9. Személyre Szabott Ajánlások Generálása</h4>
+    <ul>
+        <li>Állapotok:
+            <ul>
+                <li>Felhasználói aktivitás elemzése</li>
+                <li>Adatok feldolgozása</li>
+                <li>Ajánlások generálása</li>
+                <li>Ajánlások megjelenítése</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Leírás:</strong> Az állapotdiagram bemutatja a személyre szabott ajánlások generálásának és megjelenítésének folyamatát.</p>
+
+    <h2>10. Adatforrások Szinkronizálása Külső Eszközökkel (Integration)</h4>
+    <ul>
+        <li>Állapotok:
+            <ul>
+                <li>Külső adatkapcsolat létrehozása</li>
+                <li>Adatok lekérése</li>
+                <li>Adatok szinkronizálása az alkalmazásban</li>
+                <li>Adatok frissítése és mentése</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Leírás:</strong> Ez az állapotdiagram bemutatja, hogyan történik az alkalmazás adatainak szinkronizálása külső eszközökkel.</p>
+
+    <div>
+        <h2>Állapotdiagramok közötti kapcsolatok:</h4>
+        <p>Az állapotdiagramok közötti kapcsolatok az egyes folyamatok és modulok egymásra hatására mutatnak rá, megvilágítva, hogy a rendszer különböző részei hogyan működnek együtt a felhasználói élmény, adatkezelés és funkciók biztosítása érdekében.</p>
+    
+        <ul>
+            <li><strong>Felhasználói Bejelentkezési és Regisztrációs Folyamat ↔ Felhasználói Adatkezelés és Profil Szerkesztése:</strong> A bejelentkezési folyamat után a felhasználók hozzáférhetnek saját profiljukhoz, ahol adataikat szerkeszthetik. E két folyamat szorosan összefügg a felhasználói azonosítás és az adatvédelmi beállítások biztosítása érdekében.</li>
+            <li><strong>Felhasználói Bejelentkezési és Regisztrációs Folyamat ↔ Személyre Szabott Ajánlások Generálása:</strong> Miután a felhasználó sikeresen bejelentkezett, az alkalmazás elemzi az előző aktivitást, és személyre szabott ajánlásokat jelenít meg a felhasználó számára. Az adatok feldolgozása és az ajánlások generálása közvetlenül kapcsolódik a bejelentkezési folyamathoz.</li>
+            <li><strong>Edzésterv Kezelése ↔ Kihívások és Gamifikációs Elemek Kezelése:</strong> Az edzéstervek közvetlenül kapcsolódnak a kihívásokhoz és a gamifikációs elemekhez. Egy kihívás része lehet egy adott edzésterv teljesítése, amelyért a felhasználók pontokat és jutalmakat kapnak.</li>
+            <li><strong>Étrend Kezelése ↔ Személyre Szabott Ajánlások Generálása:</strong> Az étrendi modul alapján az alkalmazás képes személyre szabott étrendi ajánlásokat készíteni a felhasználók számára az aktivitásuk, céljaik és korábbi étkezési szokásaik alapján.</li>
+            <li><strong>Entitások Létrehozása és Kezelése ↔ Mentési és Betöltési Műveletek (SaveManager működése):</strong> Az új entitások (például edzéstervek, felhasználói profilok) létrehozása és frissítése során az adatok mentése elengedhetetlen. Az entitáskezelő folyamatosan együttműködik a mentési és betöltési műveletekkel az adatok tárolásának és visszatöltésének biztosítása érdekében.</li>
+            <li><strong>Felhasználói Értesítések Kezelése ↔ Kihívások és Gamifikációs Elemek Kezelése:</strong> Ha egy új kihívás indul, vagy egy jutalom kiosztásra kerül, az értesítési rendszer figyelmezteti a felhasználót. Ezáltal az értesítések és a gamifikáció szoros kapcsolatban állnak egymással.</li>
+            <li><strong>Mentési és Betöltési Műveletek ↔ Felhasználói Adatkezelés és Profil Szerkesztése:</strong> A felhasználói profilban végrehajtott módosításokat a SaveManager segítségével tároljuk, hogy a felhasználói adatokat biztonságosan megőrizzük és a következő bejelentkezéskor visszaállíthassuk.</li>
+            <li><strong>Személyre Szabott Ajánlások Generálása ↔ Adatforrások Szinkronizálása Külső Eszközökkel:</strong> Az alkalmazás külső eszközökkel szinkronizált adatok felhasználásával képes személyre szabott ajánlásokat készíteni, így az adatforrások szinkronizálása közvetlen hatással van az ajánlások generálására.</li>
+            <li><strong>Adatforrások Szinkronizálása Külső Eszközökkel ↔ Felhasználói Értesítések Kezelése:</strong> Amikor új adat érkezik egy külső eszközről, az értesítési rendszer figyelmeztetheti a felhasználót, például új adatot érintő elemzési eredményekről vagy beérkező fitneszinformációkról.</li>
+            <li><strong>Kihívások és Gamifikációs Elemek Kezelése ↔ Edzésterv Kezelése és Étrend Kezelése:</strong> Az edzésterv és az étrend modulok gyakran kapcsolódnak gamifikációs elemekhez (például pontok, jutalmak), amelyek ösztönzik a felhasználókat az adott tervek betartására és a célok elérésére.</li>
+        </ul>
+    </div>
+    
+       
+    <h3 class="feladatcim">6. Jövőbeni tervek</h3>
+
+    <div>
+        <p>Mint a dokumentáció korábbi részeiben bemutatásra került, jelenleg az alkalmazás alapfunkcionalitása biztosítja az alapvető funkciókat és modulokat. A jövőben azonban számos további fejlesztés és bővítés várható annak érdekében, hogy a rendszer még inkább megfeleljen a felhasználói igényeknek és a modern technológiai elvárásoknak. A tervezett jövőbeli fejlesztések az alábbiakat foglalják magukban:</p>
+    
+        <ul>
+            <li>
+                <strong>Interaktív és személyre szabott felhasználói élmény:</strong> Az alkalmazás jövőbeli verziói egyre inkább személyre szabott felhasználói élményt fognak biztosítani. Ez magában foglalja az automatikus ajánlásokat, dinamikus tartalmi változtatásokat, valamint a felhasználói aktivitás figyelembevételével történő finomhangolást.
+            </li>
+            <li>
+                <strong>Többnyelvű támogatás bővítése:</strong> Jelenleg az alkalmazás csak korlátozott nyelvi támogatással rendelkezik, azonban a jövőben a tervek szerint a platform teljes körű többnyelvű támogatást fog biztosítani, beleértve az automatikus nyelvi felismerést és lokalizált tartalmakat.
+            </li>
+            <li>
+                <strong>Bővített értesítési rendszer:</strong> A fejlesztések során a felhasználók számára testreszabható és intelligens értesítési rendszer kerül kiépítésre, amely figyelembe veszi az egyéni preferenciákat, az időzítéseket és a releváns eseményeket.
+            </li>
+            <li>
+                <strong>Továbbfejlesztett adatelemzési és statisztikai funkciók:</strong> Az alkalmazás jövőbeli verzióiban fejlett adatvizualizációs és statisztikai funkciók kerülnek bevezetésre. Ez lehetővé teszi a felhasználók számára, hogy még mélyebb betekintést nyerjenek a fejlődésükbe, valamint egyedi trendeket és elemzéseket kapjanak.
+            </li>
+            <li>
+                <strong>Integráció külső eszközökkel:</strong> A jövőben az alkalmazás kompatibilissé válik további külső eszközökkel, például különböző fitnesz kiegészítőkkel, okosórákkal és más IoT (Internet of Things) eszközökkel, hogy valós idejű adatokat szolgáltasson és gyűjtsön.
+            </li>
+            <li>
+                <strong>Fejlettebb gamifikációs mechanizmusok:</strong> Az alkalmazás elköteleződésének növelése érdekében további gamifikációs elemek kerülnek bevezetésre, például bővített kihívások, új szintek és szintenkénti jutalmak, valamint részletes eredménytáblák és statisztikák.
+            </li>
+            <li>
+                <strong>AI-alapú elemzési és tanácsadó modulok:</strong> A jövőben az alkalmazás mesterséges intelligenciát alkalmazó modulokkal bővül, amelyek képesek lesznek valós időben elemzéseket készíteni és személyre szabott tanácsokat nyújtani a felhasználók számára.
+            </li>
+            <li>
+                <strong>Új interfész és testreszabható felhasználói felület:</strong> A tervek szerint az alkalmazás teljes felhasználói felülete új design elemekkel, bővített testreszabási lehetőségekkel fog bővülni, hogy még inkább megfeleljen a felhasználói elvárásoknak és vizuális igényeknek.
+            </li>
+            <li>
+                <strong>Részletes adatvédelem és biztonsági funkciók:</strong> Az adatok biztonságának és védelmének biztosítása érdekében az alkalmazás további fejlett adatvédelmi és biztonsági mechanizmusokkal fog rendelkezni, például részletes adatvédelmi beállításokkal és kétfaktoros hitelesítéssel.
+            </li>
+        </ul>
+    
+        <p>Ezek a jövőbeli fejlesztések célja, hogy az alkalmazás átfogó és felhasználóbarát megoldássá váljon, amely minden igényt kielégít az edzés, táplálkozás, adatelemzés és felhasználói élmény területén.</p>
+    </div>
+    
+
+    <h1>Szótár</h1>
+
+<hr>
+<br>
+
+<table>
+    <tr>
+        <th>Szó</th>
+        <th>Magyarázat</th>
+    </tr>
+    <tr>
+        <td>Felhasználó/User</td>
+        <td>A felhasználó az a személy, aki a fitness webalkalmazást használja a személyes edzési és egészségügyi céljainak elérésére.</td>
+    </tr>
+    <tr>
+        <td>Profil</td>
+        <td>A profil egy olyan felhasználói adatlap, amely tartalmazza a felhasználó személyes adatait, edzési szokásait és céljait.</td>
+    </tr>
+    <tr>
+        <td>Edzésprogram</td>
+        <td>Az edzésprogram egy testreszabott edzésterv, amely a felhasználó céljai és állapota alapján készült.</td>
+    </tr>
+    <tr>
+        <td>Táplálkozási terv</td>
+        <td>A táplálkozási terv egy olyan étrend, amely segíti a felhasználót a kívánt testsúly vagy izomzat elérésében, figyelembe véve az egyéni igényeket.</td>
+    </tr>
+    <tr>
+        <td>Követés</td>
+        <td>A követés a felhasználó edzési és táplálkozási előrehaladásának nyomon követésére szolgáló funkció, amely lehetővé teszi a fejlődés mérését.</td>
+    </tr>
+    <tr>
+        <td>Funkció</td>
+        <td>A funkció egy adott szolgáltatás vagy lehetőség a webalkalmazásban, például edzésnapló, táplálkozási nyomkövetés vagy közösségi interakció.</td>
+    </tr>
+    <tr>
+        <td>Edzésnapló</td>
+        <td>Az edzésnapló egy felület, ahol a felhasználók rögzíthetik az elvégzett edzéseket, azok időtartamát és intenzitását.</td>
+    </tr>
+    <tr>
+        <td>Közösség</td>
+        <td>A közösség a felhasználók közötti interakciót lehetővé tevő funkció, amely tartalmazhat fórumokat, csoportokat és kihívásokat.</td>
+    </tr>
+    <tr>
+        <td>Célok</td>
+        <td>A célok a felhasználók által kitűzött edzési és táplálkozási elérendő teljesítmények, mint például a fogyás vagy izomtömeg növelése.</td>
+    </tr>
+    <tr>
+        <td>Futási idő</td>
+        <td>A futási idő az a időtartam, amely alatt a webalkalmazás fut, és a felhasználói interakciókra válaszol.</td>
+    </tr>
+    <tr>
+        <td>Rendszerkövetelmény</td>
+        <td>A rendelkezésre álló eszköz legalább azok a hardverelemek, amelyek szükségesek a webalkalmazás zökkenőmentes működéséhez.</td>
+    </tr>
+    <tr>
+        <td>Grafikus felhasználói felület</td>
+        <td>A grafikus felhasználói felület a webalkalmazás vizuális megjelenése, amely felhasználóbarát elemekből áll, mint gombok, menük és diagramok.</td>
+    </tr>
+    <tr>
+        <td>Szoftverfejlesztő</td>
+        <td>A szoftverfejlesztő az a személy, aki a fitness webalkalmazás megtervezéséért és fejlesztéséért felelős.</td>
+    </tr>
+    <tr>
+        <td>Real-time</td>
+        <td>A real-time a valós időben történő adatkezelést jelenti, például edzések és táplálkozási nyomkövetés esetén.</td>
+    </tr>
+    <tr>
+        <td>Böngésző</td>
+        <td>A böngésző egy szoftver, amely lehetővé teszi a felhasználók számára, hogy hozzáférjenek a fitness webalkalmazáshoz az interneten keresztül.</td>
+    </tr>
+    <tr>
+        <td>API (Application Programming Interface)</td>
+        <td>Az API egy olyan interfész, amely lehetővé teszi a különböző szoftverek közötti kommunikációt, például harmadik fél alkalmazások integrálására.</td>
+    </tr>
+    <tr>
+        <td>Mobilbarát</td>
+        <td>A mobilbarát jellemző azt jelenti, hogy a webalkalmazás jól működik és könnyen használható mobil eszközökön is.</td>
+    </tr>
+    <tr>
+        <td>Visszajelzés</td>
+        <td>A visszajelzés a felhasználók által adott információ, amely segít a webalkalmazás fejlesztésében és a felhasználói élmény javításában.</td>
+    </tr>
+    <tr>
+        <td>Személyre szabás</td>
+        <td>A személyre szabás lehetőséget biztosít a felhasználók számára, hogy az alkalmazás funkcióit és megjelenését saját igényeik szerint alakítsák.</td>
+    </tr>
+    <tr>
+        <td>Kihívások</td>
+        <td>A kihívások versenyszerű feladatok, amelyeken a felhasználók részt vehetnek, hogy motiválják egymást és elérjék fitness céljaikat.</td>
+    </tr>
+    <tr>
+        <td>Elemzés</td>
+        <td>Az elemzés a felhasználói adatok részletes vizsgálata, amely segít megérteni a trendeket és javítani a szolgáltatásokat.</td>
+    </tr>
+    <tr>
+        <td>Dokumentáció</td>
+        <td>Az alkalmazás használatához és fejlesztéséhez szükséges leírások, amelyek részletezik a működést, felépítést és telepítést.</td>
+    </tr>
+    <tr>
+        <td>Render/futási idő</td>
+        <td>Az a teljes idő, amíg az applikáció aktívan működik és használható, például amíg egy felhasználó edzésprogramot hoz létre vagy módosít.</td>
+    </tr>
+    <tr>
+        <td>Rendszerkövetelmény</td>
+        <td>A minimális hardver- és szoftverfeltételek, amelyek szükségesek ahhoz, hogy az applikáció megfelelően működjön (pl. modern webböngésző).</td>
+    </tr>
+    <tr>
+        <td>Grafikus felhasználói felület (GUI)</td>
+        <td>Az applikáció azon része, amely vizuális elemek (pl. gombok, menük) segítségével biztosítja a felhasználók számára a program kezelését.</td>
+    </tr>
+    <tr>
+        <td>Szoftverfejlesztő (Software Developer)</td>
+        <td>A személy, aki a webes alkalmazás megtervezéséért, megírásáért és karbantartásáért felel.</td>
+    </tr>
+    <tr>
+        <td>Entitás (Entity)</td>
+        <td>Az applikációban minden felhasználót egy entitásként kezelünk, amelyhez különböző edzésprogramok és adatelemzési funkciók kapcsolhatók.</td>
+    </tr>
+    <tr>
+        <td>Komponens (Component)</td>
+        <td>Egy adott funkció vagy modul, amely egy entitáshoz rendelhető, például edzésprogramok vagy szűrési feltételek.</td>
+    </tr>
+
+
+    <tr>
+        <td>Rendszer (System)</td>
+        <td>Azok a folyamatok, amelyek a komponenseket feldolgozzák és az entitásokkal kapcsolatos műveleteket végrehajtják, például a felhasználói adatok tárolása és kezelése.</td>
+    </tr>
+
+
+    <tr>
+        <td>Moduláris felépítés</td>
+        <td>Olyan architektúra, amely lehetővé teszi az alkalmazás funkcióinak bővítését, például új edzésformák, táplálkozási tervek integrálását.</td>
+    </tr>
+    <tr>
+        <td>Verziókövető rendszer</td>
+        <td>Egy szoftvereszköz, mint például a Git, amely segíti a forráskód kezelést, változások nyomon követését, valamint a közös munkát fejlesztőcsapatok között.</td>
+    </tr>
+    <tr>
+        <td>Valós idejű adatfeldolgozás</td>
+        <td>Az adatok folyamatos feldolgozása és elemzése az applikáció használata közben, például a felhasználói teljesítmény figyelemmel kísérése edzés közben.</td>
+    </tr>
+    <tr>
+        <td>Integráció</td>
+        <td>Külső rendszerek vagy eszközök (pl. fitnesz nyomkövetők, okosórák) összekapcsolása az applikációval a teljesítmény és adatelemzés javítása érdekében.</td>
+    </tr>
+    <tr>
+        <td>Post-Processing</td>
+        <td>Az adatok utólagos feldolgozása, amely helyett az applikáció valós idejű adatfeldolgozást alkalmaz.</td>
+    </tr>
+    <tr>
+        <td>Okosóra integráció</td>
+        <td>Az applikáció képes adatokat fogadni és elemezni különböző okosórákról (pl. pulzus, lépésszám, kalóriaégetés), hogy valós idejű visszajelzést adjon.</td>
+    </tr>
+    <tr>
+        <td>Analízis modell</td>
+        <td>A projekt során végzett elemzések és vizsgálatok összegzése, amely meghatározza a rendszer működésének és igényeinek alapját.</td>
+    </tr>
+    <tr>
+        <td>Fejlesztői csoport adatok</td>
+        <td>A fejlesztési folyamatban részt vevő csapat tagjainak neve, beosztása és elérhetőségei, amelyek segítik a hatékony kommunikációt.</td>
+    </tr>
+    <tr>
+        <td>Felhasználói dokumentáció</td>
+        <td>Az applikáció használatához szükséges útmutatók és leírások, amelyek tájékoztatják a felhasználókat a funkciókról és a használatról.</td>
+    </tr>
+    <tr>
+        <td>Munkanapló</td>
+        <td>A projekt során végzett munkák, események és tapasztalatok nyomon követésére szolgáló dokumentum, amely elősegíti a projekt menedzsmentjét.</td>
+    </tr>
+    <tr>
+        <td>Projekt előkészítés</td>
+        <td>A projekt kezdeti fázisa, amely magában foglalja a célok meghatározását, a szükséges erőforrások és időkeretek kidolgozását.</td>
+    </tr>
+    <tr>
+        <td>Projekt terv</td>
+        <td>A projekt céljait, ütemezését, erőforrásait és felelősségeit összefoglaló dokumentum, amely útmutatást ad a fejlesztési folyamat során.</td>
+    </tr>
+    <tr>
+        <td>Rendszertervezés</td>
+        <td>Az applikáció architektúrájának és felépítésének részletes tervezése, beleértve az adatbázisok és rendszerek közötti kapcsolatok kialakítását.</td>
+    </tr>
+    <tr>
+        <td>Software követelmény specifikáció (SRS)</td>
+        <td>A szoftver működésével és tulajdonságaival kapcsolatos követelmények részletes leírása, amely az alapját képezi a fejlesztési folyamatnak.</td>
+    </tr>
+    <tr>
+        <td>Telepítési és kezelési útmutató</td>
+        <td>A rendszer telepítésének lépéseit és az applikáció használatához szükséges információkat tartalmazó dokumentáció.</td>
+    </tr>
+    <tr>
+        <td>Domain tárhely</td>
+        <td>Az applikáció számára szükséges webcím (domain) és a webhely tárolására szolgáló szolgáltatás, amely biztosítja az elérhetőséget az interneten.</td>
+    </tr>
+    <tr>
+        <td>Adatbázis</td>
+        <td>Az applikáció által használt struktúrált adatok tárolására szolgáló rendszer, amely lehetővé teszi az adatok gyors és hatékony kezelését.</td>
+    </tr>
+    <tr>
+        <td>HTML, CSS, JAVASCRIPT</td>
+        <td>A webfejlesztés alapvető technológiái, amelyek lehetővé teszik az applikáció felhasználói felületének létrehozását és interaktivitását.</td>
+    </tr>
+    <tr>
+        <td>Java</td>
+        <td>A Java egy népszerű, platformfüggetlen programozási nyelv, amelyet különféle alkalmazások, beleértve a webes, asztali és mobilalkalmazások fejlesztésére használnak.</td>
+    </tr>
+    <tr>
+        <td>Bootspring</td>
+        <td>A Spring Boot egy Java alapú keretrendszer, amely lehetővé teszi a mikroszolgáltatások gyors fejlesztését és telepítését, minimalizálva a szükséges konfigurációt.</td>
+    </tr>
+    <tr>
+        <td>OpenGL</td>
+        <td>Az OpenGL (Open Graphics Library) egy nyílt, platformfüggetlen grafikus API, amelyet 2D és 3D grafika renderelésére használnak játékokban és egyéb grafikai alkalmazásokban.</td>
+    </tr>
+    <tr>
+        <td>JSON</td>
+        <td>A JSON (JavaScript Object Notation) egy könnyen olvasható adatcsere-formátum, amelyet gyakran használnak webes alkalmazásokban a strukturált adatok tárolására és továbbítására.</td>
+    </tr>
+    <tr>
+        <td>Maven</td>
+        <td>A Maven egy automatizált projektkezelő eszköz, amelyet Java projektek függőségeinek kezelésére és az építési folyamatok egyszerűsítésére használnak.</td>
+    </tr>
+    <tr>
+        <td>Javadoc</td>
+        <td>A Javadoc egy eszköz a Java forráskód dokumentálására, amely automatikusan generál HTML-formátumú dokumentációt a kód kommentjei alapján.</td>
+    </tr>
+    <tr>
+        <td>LWJGL (Lightweight Java Game Library)</td>
+        <td>Az LWJGL egy Java-alapú könyvtár, amely lehetővé teszi a fejlesztők számára, hogy könnyen hozzáférjenek alacsony szintű grafikai és audio API-khoz, például OpenGL-hez és OpenAL-hoz.</td>
+    </tr>
+    <tr>
+        <td>GSON</td>
+        <td>A GSON egy Java könyvtár, amely lehetővé teszi a Java objektumok JSON formátumúvá alakítását és visszaalakítását, segítve az adatok egyszerű kezelését.</td>
+    </tr>
+    <tr>
+        <td>GitHub repository</td>
+        <td>A GitHub repository (tárhely) egy online tároló, ahol a fejlesztők megoszthatják és kezelhetik a forráskódjukat, valamint együttműködhetnek más programozókkal.</td>
+    </tr>
+    <tr>
+        <td>Discord</td>
+        <td>A Discord egy népszerű kommunikációs platform, amelyet elsősorban játékosok és közösségek használnak, lehetővé téve a szöveges, hang- és videóbeszélgetéseket.</td>
+    </tr>
+    <tr>
+        <td>QoL (Quality of Life)</td>
+        <td>A QoL a felhasználói élmény javítását szolgáló funkciókat jelenti, amelyek megkönnyítik az alkalmazás használatát, például egyszerűbb navigáció vagy hasznos információk hozzáadása.</td>
+    </tr>
+    <tr>
+        <td>YAML (YAML Ain't Markup Language)</td>
+        <td>A YAML egy adatleíró nyelv, amelyet a konfigurációs fájlok és az adatok struktúrált tárolására használnak, könnyen olvasható formátumban.</td>
+    </tr>
+    <tr>
+        <td>CSV (Comma-Separated Values)</td>
+        <td>A CSV egy egyszerű fájlformátum, amelyet az adatok tárolására és exportálására használnak, ahol az értékeket vessző választja el egymástól.</td>
+    </tr>
+    <tr>
+        <td>UI (User Interface)</td>
+        <td>A UI a felhasználói felületet jelenti, amely a felhasználók és az alkalmazás közötti interakciót lehetővé tevő vizuális elemeket foglalja magában, mint például gombok és menük.</td>
+    </tr>
+    <tr>
+        <td>UX (User Experience)</td>
+        <td>A UX a felhasználói élményt jelenti, amely a felhasználók által tapasztalt összes aspektust magában foglalja, beleértve a használhatóságot, az élményt és az elégedettséget a termékkel vagy szolgáltatással kapcsolatban.</td>
+    </tr>
+    <tr>
+        <th>Szó</th>
+        <th>Magyarázat</th>
+    </tr>
+    <tr>
+        <td>Metódus</td>
+        <td>Az osztályokhoz tartozó műveletek vagy funkciók, amelyek működési logikát valósítanak meg.</td>
+    </tr>
+    <tr>
+        <td>Gamifikáció</td>
+        <td>A játékosítás elemeinek bevezetése az alkalmazásban, például pontok vagy kihívások révén.</td>
+    </tr>
+    <tr>
+        <td>Szinkronizáció</td>
+        <td>Adatok összehangolása és frissítése több rendszer vagy eszköz között.</td>
+    </tr>
+    <tr>
+        <td>Sorosítás</td>
+        <td>Adatok olyan formátumba alakítása, amely tárolható és később visszaolvasható.</td>
+    </tr>
+    <tr>
+        <td>Interfész</td>
+        <td>Az alkalmazás felhasználói felülete, amelyen keresztül a felhasználók kapcsolatba léphetnek a rendszerrel.</td>
+    </tr>
+    <tr>
+        <td>Erőforrás-kezelő</td>
+        <td>Az alkalmazásban használt fájlok, adatbázisok és külső források kezeléséért felelős modul.</td>
+    </tr>
+    <tr>
+        <td>API Kapcsolat</td>
+        <td>Az alkalmazás és külső rendszerek közötti kommunikációs csatorna.</td>
+    </tr>
+    <tr>
+        <td>Adatmegosztási Szabályok</td>
+        <td>A felhasználók által meghatározott szabályok, amelyek meghatározzák, hogy mely adatok kerülnek megosztásra.</td>
+    </tr>
+    <tr>
+        <td>Felhasználói Profil</td>
+        <td>A felhasználók által azonosításra használt adatok és beállítások összessége.</td>
+    </tr>
+    <tr>
+        <td>Időzítő</td>
+        <td>A rendszerben található időzítési funkciók és szabályok.</td>
+    </tr>
+    <tr>
+        <td>Integráció</td>
+        <td>Az alkalmazás és külső eszközök vagy szoftverek közötti kapcsolat létrehozása.</td>
+    </tr>
+    <tr>
+        <td>Személyre Szabott Ajánlások</td>
+        <td>Az alkalmazás által a felhasználók igényeihez igazított javaslatok és tartalmak.</td>
+    </tr>
+    <tr>
+        <td>Felhasználókezelő</td>
+        <td>A felhasználói adatok kezeléséért felelős modul, beleértve a regisztrációt és bejelentkezést.</td>
+    </tr>
+    <tr>
+        <td>Mérföldkő</td>
+        <td>Kisebb célkitűzések a felhasználók motiválása érdekében.</td>
+    </tr>
+    <tr>
+        <td>Adatforrások Szinkronizálása</td>
+        <td>Külső adatok integrációja és frissítése az alkalmazásban.</td>
+    </tr>
+    <tr>
+        <td>Helyalapú Szolgáltatások</td>
+        <td>A felhasználók helyadatait használó funkciók, például helyalapú ajánlások.</td>
+    </tr>
+    <tr>
+        <td>Külső Eszközök Szinkronizáló</td>
+        <td>Külső eszközök adatainak integrálása az alkalmazásba.</td>
+    </tr>
+    <tr>
+        <td>Bejelentkezési Védelem</td>
+        <td>A felhasználói bejelentkezési biztonságot növelő funkciók.</td>
+    </tr>
+    <tr>
+        <td>Vizuális Statisztikák</td>
+        <td>A felhasználói adatok grafikus megjelenítése diagramok és grafikonok formájában.</td>
+    </tr>
+    <tr>
+        <td>Gamifikációs Rendszer</td>
+        <td>Játékosítási elemeket tartalmazó modul az alkalmazásban.</td>
+    </tr>
+    <tr>
+        <td>Felhasználói Adatkezelés</td>
+        <td>A felhasználók adatainak tárolása, szerkesztése és kezelése az alkalmazásban.</td>
+    </tr>
+    <tr>
+        <td>Hírcsatorna</td>
+        <td>A felhasználók által megosztott eredmények és információk folyamatosan frissülő listája.</td>
+    </tr>
+    <tr>
+        <td>Üzenetküldő Rendszer</td>
+        <td>Az alkalmazáson belüli kommunikációs modul.</td>
+    </tr>
+    <tr>
+        <td>Adatbázis Struktúra</td>
+        <td>Az adatok tárolására használt rendszer felépítése.</td>
+    </tr>
+    <tr>
+        <td>Felhasználói Jogosultságok</td>
+        <td>A felhasználók számára biztosított hozzáférési szintek.</td>
+    </tr>
+    <tr>
+        <td>LogicManager</td>
+        <td>Az alkalmazás üzleti logikájának kezeléséért felelős modul.</td>
+    </tr>
+    <tr>
+        <td>ResourceManager</td>
+        <td>Az erőforrások hatékony kezelését biztosító osztály.</td>
+    </tr>
+    <tr>
+        <td>Badge</td>
+        <td>Virtuális díjak, amelyeket a felhasználók az alkalmazás használata során szerezhetnek.</td>
+    </tr>
+    <tr>
+        <td>Leaderboard</td>
+        <td>A felhasználók teljesítményének rangsorolása.</td>
+    </tr>
+</table>
+
+
+<h1>Munkanapló</h1>
+<hr>
+<br>
+
+<table border="1" cellpadding="5" cellspacing="0">
+    <tr>
+        <th>Dátum</th>
+        <th>Időtartam</th>
+        <th>Tevékenység</th>
+        <th>Résztvevők</th>
+        <th>Döntések, következtetések, megjegyzések</th>
+    </tr>
+    <tr>
+        <td>2024.11.13</td>
+        <td>1 óra</td>
+        <td>Csoportos megbeszélés</td>
+        <td>Mindenki</td>
+        <td>Feladatmegoldási terv készítése</td>
+    </tr>
+    <tr>
+        <td>2024.11.13</td>
+        <td>2,5 óra</td>
+        <td>Csoportos megbeszélés</td>
+        <td>Mindenki</td>
+        <td>Anyagok gyűjtése a feladathoz</td>
+    </tr>
+    <tr>
+        <td>2024.11.14</td>
+        <td>2 óra</td>
+        <td>Megbeszélés</td>
+        <td>Vass Martin, Bodó Tamás</td>
+        <td>Anyagok gyűjtése a feladathoz</td>
+    </tr>
+    <tr>
+        <td>2024.11.14</td>
+        <td>2 óra</td>
+        <td>Csoportos megbeszélés</td>
+        <td>Mindenki</td>
+        <td>Részfeladatok elosztása, Rendszertervezés dokumentum kidolgozásának kezdete</td>
+    </tr>
+    <tr>
+        <td>2024.11.15</td>
+        <td>4 óra</td>
+        <td>Diagramok, osztályok</td>
+        <td>Hliva Gábor, Lévai Kristóf</td>
+        <td>Részfeladatok elosztása, Analízis modell dokumentum kidolgozásának kezdete</td>
+    </tr>
+    <tr>
+        <td>2024.11.15</td>
+        <td>2 óra</td>
+        <td>Dokumentáció szerkesztése</td>
+        <td>Varga Bence, Hliva Gábor</td>
+        <td>Analízis modell kidolgozásának a folytatása</td>
+    </tr>
+    <tr>
+        <td>2024.11.16</td>
+        <td>5 óra</td>
+        <td>Csoportos megbeszélés</td>
+        <td>Mindenki</td>
+        <td>Válaszok kidolgozása</td>
+    </tr>
+    <tr>
+        <td>2024.11.16</td>
+        <td>4 óra</td>
+        <td>Csoportos megbeszélés</td>
+        <td>Mindenki</td>
+        <td>Válaszok kidolgozása</td>
+    </tr>
+    <tr>
+        <td>2024.11.17</td>
+        <td>50 perc</td>
+        <td>Helyzetjelentés</td>
+        <td>Mindenki</td>
+        <td>Csapatos megbeszélés a haladásról</td>
+    </tr>
+    <tr>
+        <td>2024.11.17</td>
+        <td>4 óra</td>
+        <td>Dokumentum véglegesítése</td>
+        <td>Mindenki</td>
+        <td>Utolsó változtatások a dokumentációkon</td>
+    </tr>
+    <tr>
+        <td>2024.11.18</td>
+        <td>3 óra</td>
+        <td>Áttekintés</td>
+        <td>Mindenki</td>
+        <td>A kész dokumentumok ellenőrzése</td>
+    </tr>
+    <tr>
+        <td>2024.11.18</td>
+        <td>3,5 óra</td>
+        <td>Feltöltés</td>
+        <td>Lévai Kristóf, Bodó Tamás</td>
+        <td>A dokumentumok weboldalra feltöltése és szerkesztése</td>
+    </tr>
+    <tr>
+        <td>2024.11.19</td>
+        <td>4 óra</td>
+        <td>Weboldal átdolgozása</td>
+        <td>Lévai Kristóf</td>
+        <td>Weboldal átdolgozása, dokumentumok külön választása, github rendbe rakása</td>
+    </tr>
+</table>
+
+<br>
+<hr>
+
+
+</div>
+
+    <!-- Non-sticky Footer -->
+    <footer>
+        <p>&copy; 2024 Kód Betyárok</p>
+    </footer>
+
+</body>
+</html>
+
