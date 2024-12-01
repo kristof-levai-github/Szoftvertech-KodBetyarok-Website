@@ -153,63 +153,215 @@
         <p>A szemantikai adatmodell a következő entitásokat fogja tartalmazni az applikációban:</p>
 
         <p><strong>Entitások és attribútumok:</strong></p>
-<ol>
-    <li>User (Felhasználó):
-        <ul>
-            <li>Username: a felhasználó neve.</li>
-            <li>Password: a felhasználó jelszava.</li>
-            <li>UserID: egyedi azonosító minden felhasználóhoz.</li>
-            <li>Kapcsolat: egy felhasználónak több edzésterve is lehet a „User's workout plan” kapcsolat alapján.</li>
-        </ul>
-    </li>
-    <li>Entity (Entitás):
-        <ul>
-            <li>Az entitás egy általánosított edzés terv vagy struktúra.</li>
-            <li>Tartalmaz edzéseket (Exercise1, Exercise2, Exercise3 stb.), és ezekhez kapcsolódó „TrainingType” és „Day” attribútumokat.</li>
-            <li>Kapcsolat: egy felhasználó több entitást (edzéstervet) követhet a „User's workout plan” alapján.</li>
-        </ul>
-    </li>
-    <li>Exercise (Gyakorlat):
-        <ul>
-            <li>ExerciseID: egyedi azonosító a gyakorlatokhoz.</li>
-            <li>Name: a gyakorlat neve.</li>
-            <li>Exercise number: a gyakorlat sorszáma.</li>
-            <li>Weight: a használt súly.</li>
-            <li>Repetitions: ismétlésszám.</li>
-            <li>Sets: sorozatok száma.</li>
-            <li>Body part: melyik testrészre hat a gyakorlat.</li>
-            <li>Kapcsolat: egy edzés tervhez több gyakorlat is kapcsolható a „Exercise in plan” kapcsolat alapján.</li>
-        </ul>
-    </li>
-    <li>Tracking (Nyomonkövetés):
-        <ul>
-            <li>TrackingID: egyedi azonosító a nyomonkövetett adatokhoz.</li>
-            <li>Date: dátum, amikor az adatot rögzítették.</li>
-            <li>Weight: testsúly nyomon követése.</li>
-            <li>Chest, Bicep, Thigh, Hips, Waist: a különböző testrészek méreteinek nyomon követése.</li>
-            <li>Kapcsolat: minden felhasználóhoz nyomon követési adatok kapcsolódnak a „User's tracking details” kapcsolat segítségével.</li>
-        </ul>
-    </li>
-</ol>
-
-<p><strong>Kapcsolatok:</strong></p>
-<ol>
-    <li>Exercise in plan (Gyakorlat az edzéstervben):
-        <ul>
-            <li>Több gyakorlat kapcsolódhat egy edzéstervhez (n-n kapcsolat).</li>
-        </ul>
-    </li>
-    <li>User's workout plan (Felhasználó edzésterve):
-        <ul>
-            <li>Minden felhasználónak több edzésterve lehet, és minden edzésterv több felhasználóhoz is tartozhat (n-n kapcsolat).</li>
-        </ul>
-    </li>
-    <li>User's tracking details (Felhasználó nyomonkövetési adatai):
-        <ul>
-            <li>Minden felhasználó több nyomonkövetési adatot rögzíthet (1-n kapcsolat).</li>
-        </ul>
-    </li>
-</ol>
+        <ol>
+            <li><strong>User (Felhasználó):</strong>
+                <ul>
+                    <li>UserID: Egyedi azonosító.</li>
+                    <li>Username: Felhasználónév.</li>
+                    <li>Password: Jelszó.</li>
+                    <li>Email: Email cím.</li>
+                    <li>Phone: Telefonszám.</li>
+                    <li>DateOfBirth: Születési dátum.</li>
+                    <li>Gender: Nem (férfi/nő/egyéb).</li>
+                    <li>InitialWeight: Kezdeti testsúly.</li>
+                    <li>GoalWeight: Célsúly.</li>
+                    <li>Height: Magasság.</li>
+                    <li>BodyType: Testtípus (mezomorf, endomorf, ektomorf).</li>
+                    <li>ActivityLevel: Napi aktivitási szint.</li>
+                    <li>Preferences: Személyes beállítások.</li>
+                    <li>SubscriptionType: Előfizetési típus.</li>
+                    <li>Avatar: Profilkép.</li>
+                    <li>LastLogin: Utolsó bejelentkezés időpontja.</li>
+                    <li>RegistrationDate: Regisztráció időpontja.</li>
+                    <li>Friends: Barátok listája.</li>
+                </ul>
+                <p>Kapcsolatok:</p>
+                <ul>
+                    <li>1:n: Edzéstervek, étrendek, értesítések, nyomonkövetési adatok, jelvények, statisztikák.</li>
+                    <li>n:m: Barátok, közösségek, kihívások.</li>
+                </ul>
+            </li>
+            <hr>
+            <li><strong>WorkoutPlan (Edzésterv):</strong>
+                <ul>
+                    <li>PlanID: Egyedi azonosító.</li>
+                    <li>Name: Edzésterv neve.</li>
+                    <li>Type: Edzésterv típusa.</li>
+                    <li>DaysPerWeek: Heti edzésnapok száma.</li>
+                    <li>Duration: Időtartam (hetekben).</li>
+                    <li>Goal: Edzésterv célja.</li>
+                    <li>RecommendedCalories: Ajánlott napi kalóriabevitel.</li>
+                    <li>DifficultyLevel: Nehézségi szint.</li>
+                    <li>Personalized: Személyre szabott-e.</li>
+                </ul>
+                <p>Kapcsolatok:</p>
+                <ul>
+                    <li>1:n: Gyakorlatok.</li>
+                    <li>n:m: Felhasználók.</li>
+                </ul>
+            </li>
+            <hr>
+            <li><strong>Exercise (Gyakorlat):</strong>
+                <ul>
+                    <li>ExerciseID: Egyedi azonosító.</li>
+                    <li>Name: Gyakorlat neve.</li>
+                    <li>Repetitions: Ismétlések száma.</li>
+                    <li>Sets: Sorozatok száma.</li>
+                    <li>Weight: Súly.</li>
+                    <li>BodyPart: Testrész.</li>
+                    <li>RestTime: Pihenőidő.</li>
+                    <li>Equipment: Szükséges eszköz.</li>
+                    <li>VideoTutorial: Videó linkje.</li>
+                    <li>CaloriesBurned: Elégetett kalóriák.</li>
+                    <li>ExperienceRequired: Ajánlott edzettségi szint.</li>
+                </ul>
+                <p>Kapcsolatok:</p>
+                <ul>
+                    <li>n:m: Edzéstervek.</li>
+                </ul>
+            </li>
+            <hr>
+            <li><strong>Tracking (Nyomonkövetés):</strong>
+                <ul>
+                    <li>TrackingID: Egyedi azonosító.</li>
+                    <li>UserID: Felhasználói azonosító.</li>
+                    <li>Date: Dátum.</li>
+                    <li>Weight: Testsúly.</li>
+                    <li>Chest: Mellkas méret.</li>
+                    <li>Bicep: Bicepsz méret.</li>
+                    <li>Thigh: Comb méret.</li>
+                    <li>Hips: Csípő méret.</li>
+                    <li>Waist: Derék méret.</li>
+                    <li>CaloriesBurned: Elégetett kalóriák.</li>
+                    <li>Steps: Lépésszám.</li>
+                    <li>HeartRate: Átlagos pulzus.</li>
+                    <li>SleepDuration: Alvás időtartama.</li>
+                    <li>WaterIntake: Vízfogyasztás.</li>
+                    <li>Mood: Hangulat (1-10).</li>
+                </ul>
+                <p>Kapcsolatok:</p>
+                <ul>
+                    <li>1:n: Felhasználók.</li>
+                </ul>
+            </li>
+            <hr>
+            <li><strong>DietPlan (Étrend):</strong>
+                <ul>
+                    <li>DietID: Egyedi azonosító.</li>
+                    <li>Name: Étrend neve.</li>
+                    <li>Calories: Napi kalória bevitel.</li>
+                    <li>Protein: Fehérje.</li>
+                    <li>Carbohydrates: Szénhidrát.</li>
+                    <li>Fats: Zsírok.</li>
+                    <li>WaterIntakeGoal: Napi vízfogyasztási cél.</li>
+                    <li>DietType: Étrend típusa.</li>
+                    <li>Duration: Időtartam.</li>
+                </ul>
+                <p>Kapcsolatok:</p>
+                <ul>
+                    <li>1:n: Napi étkezési tervek.</li>
+                </ul>
+            </li>
+            <hr>
+            <li><strong>DailyMealPlan (Napi étrend):</strong>
+                <ul>
+                    <li>MealPlanID: Egyedi azonosító.</li>
+                    <li>Day: Nap.</li>
+                    <li>TotalCalories: Összes kalória.</li>
+                    <li>MealTiming: Étkezések időpontja.</li>
+                </ul>
+                <p>Kapcsolatok:</p>
+                <ul>
+                    <li>1:n: Ételek.</li>
+                </ul>
+            </li>
+            <hr>
+            <li><strong>Meal (Étel):</strong>
+                <ul>
+                    <li>MealID: Egyedi azonosító.</li>
+                    <li>Name: Étel neve.</li>
+                    <li>Calories: Kalóriák.</li>
+                    <li>Ingredients: Összetevők.</li>
+                    <li>PreparationTime: Elkészítési idő.</li>
+                    <li>ServingSize: Adag mérete.</li>
+                    <li>NutritionFacts: Részletes tápanyagértékek.</li>
+                </ul>
+                <p>Kapcsolatok:</p>
+                <ul>
+                    <li>1:n: Napi étrendek.</li>
+                </ul>
+            </li>
+            <hr>
+            <li><strong>Community (Közösség):</strong>
+                <ul>
+                    <li>CommunityID: Egyedi azonosító.</li>
+                    <li>Name: Közösség neve.</li>
+                    <li>Description: Leírás.</li>
+                    <li>Members: Tagok száma.</li>
+                </ul>
+                <p>Kapcsolatok:</p>
+                <ul>
+                    <li>n:m: Felhasználók, posztok.</li>
+                </ul>
+            </li>
+            <hr>
+            <li><strong>Post (Poszt):</strong>
+                <ul>
+                    <li>PostID: Egyedi azonosító.</li>
+                    <li>Content: Tartalom.</li>
+                    <li>ImageURL: Csatolt kép.</li>
+                    <li>Likes: Kedvelések száma.</li>
+                    <li>Comments: Hozzászólások.</li>
+                </ul>
+                <p>Kapcsolatok:</p>
+                <ul>
+                    <li>n:m: Felhasználók, közösségek.</li>
+                </ul>
+            </li>
+            <hr>
+            <li><strong>Badge (Jelvény):</strong>
+                <ul>
+                    <li>BadgeID: Egyedi azonosító.</li>
+                    <li>Name: Jelvény neve.</li>
+                    <li>Criteria: Feltételek.</li>
+                    <li>Icon: Jelvény ikonja.</li>
+                </ul>
+                <p>Kapcsolatok:</p>
+                <ul>
+                    <li>1:n: Felhasználók.</li>
+                </ul>
+            </li>
+            <hr>
+            <li><strong>Challenge (Kihívás):</strong>
+                <ul>
+                    <li>ChallengeID: Egyedi azonosító.</li>
+                    <li>Name: Kihívás neve.</li>
+                    <li>Description: Leírás.</li>
+                    <li>StartDate: Kezdési időpont.</li>
+                    <li>EndDate: Befejezési időpont.</li>
+                    <li>Reward: Jutalom.</li>
+                </ul>
+                <p>Kapcsolatok:</p>
+                <ul>
+                    <li>n:m: Felhasználók.</li>
+                </ul>
+            </li>
+            <hr>
+            <li><strong>Leaderboard (Eredménytábla):</strong>
+                <ul>
+                    <li>LeaderboardID: Egyedi azonosító.</li>
+                    <li>ChallengeID: Kihíváshoz tartozó rangsor.</li>
+                    <li>UserID: Felhasználói azonosító.</li>
+                    <li>Rank: Helyezés.</li>
+                    <li>Points: Pontok.</li>
+                </ul>
+                <p>Kapcsolatok:</p>
+                <ul>
+                    <li>1:n: Kihívások, felhasználók.</li>
+                </ul>
+            </li>
+        </ol>
+        
     
         <h2>3.3. Relációs adatmodell</h2>
         <p>A relációs adatmodell az adatok relációkban való tárolását jelenti, ahol a felhasználók, edzéstervek, gyakorlatok és az elért eredmények különböző táblákban kerülnek tárolásra. A táblák között külső kulcsokkal biztosítjuk a kapcsolódást.</p>
@@ -220,21 +372,36 @@
 
         <br>
         <h2>ER DIAGRAM:</h2>
-        <img src="ER_diagram.png" alt="ER_diagram">
+        <img src="ER_diagram_uj.png" alt="ER_diagram" class="responsive-container">
         <br>
 
         <h2>KAPCSOLATI TÁBLA:</h2>
-        <img src="RL_diagram.png" alt="RL_diagram">
+        <div style="max-width: 100%; height: auto; display: flex; justify-content: center;">
+            <img src="kapcsolati_tabla_uj_drawio.png" alt="RL_diagram" style="max-width: 100%; height: auto;">
+        </div>
         <h2>3.4. Az adatbázis-kezelővel kapcsolatot tartó osztályok</h2>
         <p>Az adatbázis kezelővel kapcsolatot tartó osztályok egy Java alapú alkalmazásban általában a DAO (Data Access Object) mintát követik, így mi is ezt a megoldást választottuk.</p>
     
-<ul>
-    <li><strong>UserDAO:</strong> A felhasználók adataival kapcsolatos műveletek (CRUD), mint például a felhasználók regisztrációja, frissítése, törlése, és lekérdezése a felhasználói azonosítók, jelszavak, email címek, célsúly és kezdeti súly alapján.</li>
-    <li><strong>ExerciseDAO:</strong> A gyakorlatok adataival kapcsolatos műveletek (CRUD), ideértve a gyakorlatok hozzáadását, frissítését, törlését, illetve lekérdezését a gyakorlatok neve, száma, súlyok, ismétlések, testterület stb. alapján.</li>
-    <li><strong>PlanDAO:</strong> Az edzéstervekkel kapcsolatos műveletek (CRUD). Az edzéstervek lekérdezését, hozzáadását, módosítását és törlését végzi, amelyek az egyes felhasználókhoz tartoznak és tartalmazzák az adott felhasználó által elvégzett gyakorlatokat és az edzés típusait.</li>
-    <li><strong>TrackingDAO:</strong> A felhasználók edzéskövetési adataival kapcsolatos műveletek (CRUD), beleértve a súly, dátum, mellkas, bicepsz, csípő, comb stb. mérések tárolását és lekérdezését. Az adatok segítségével követhető a felhasználók fizikai fejlődése.</li>
-    <li><strong>EntityDAO:</strong> Az egyéb entitások (például étrend, egyedi edzés típusok) kezelésével kapcsolatos műveletek (CRUD). Az entitások típusait és hozzárendelt információkat kezeli.</li>
-</ul>
+        <ul>
+            <li><strong>UserDAO:</strong> A felhasználók adataival kapcsolatos összes műveletet (CRUD) kezeli. Ide tartozik a felhasználók regisztrációja, az adataik frissítése, törlése, valamint azok lekérdezése különböző attribútumok alapján, mint például a felhasználói azonosítók, jelszavak, email címek, telefonszámok, nem, születési dátum, kezdeti és célsúly. Továbbá kezeli a felhasználói értesítések létrehozását, időzítését és törlését, valamint lehetőséget biztosít barátok hozzáadására és eltávolítására. A barátlisták és kapcsolódó interakciók kezelésére külön funkciókat biztosít, például barátok közötti üzenetküldés előkészítésére.</li>
+            <hr>
+            <li><strong>ExerciseDAO:</strong> A gyakorlatok adataival kapcsolatos összes műveletet (CRUD) kezeli. Ez magában foglalja a gyakorlatok hozzáadását, frissítését, törlését és részletes lekérdezését attribútumok, például név, ismétlésszám, sorozatszám, használt súly, célzott testrész és szükséges eszközök alapján. Támogatja a videós útmutatók tárolását és linkelését, lehetőséget adva a felhasználóknak, hogy könnyen megismerjék az egyes gyakorlatok helyes végrehajtását. Emellett elemzéseket végezhet, például hogy melyik gyakorlatot végezték el a legtöbbször egy adott időszakban.</li>
+            <hr>
+            <li><strong>DietPlanDAO:</strong> Az étrendek és étkezési tervek kezeléséért felelős osztály, amely az étrendek létrehozását, frissítését, törlését és attribútumok, például kalóriabevitel, makrotápanyagok (fehérje, szénhidrát, zsír) és étrend típusa (vega, keto, stb.) alapján történő lekérdezését biztosítja. Kezeli a napi étkezési terveket, beleértve az egyes étkezések, összetevők és tápanyagtartalom részletezését. Emellett lehetőséget biztosít az étrendekhez kapcsolódó statisztikák, például napi kalóriabevitel összehasonlítására.</li>
+            <hr>
+            <li><strong>TrackingDAO:</strong> A felhasználók nyomonkövetési adataival foglalkozó osztály, amely a testsúly, mérések (mellkas, bicepsz, comb, csípő, derék), alvás időtartama, vízfogyasztás, elégetett kalóriák, lépésszámok és pulzusadatok tárolását és frissítését végzi. Az adatok lekérdezhetők dátum, felhasználói azonosító vagy más attribútum alapján, hogy támogassák a felhasználók fejlődésének vizuális elemzését, például grafikonok és diagramok készítésével. Továbbá lehetőséget nyújt a hangulatadatok elemzésére és trendek feltárására, mint például a súlycsökkenés vagy az izomtömeg-növekedés időbeli változásai.</li>
+            <hr>
+            <li><strong>EntityDAO:</strong> Az egyéb entitások (például étrend, egyedi edzés típusok) kezelésével kapcsolatos műveletek (CRUD). Az entitások típusait és hozzárendelt információkat kezeli.</li>
+            <hr>
+            <li><strong>CommunityDAO:</strong> A közösségekkel kapcsolatos műveletek (CRUD) kezelését végzi, beleértve a közösségek létrehozását, leírásuk frissítését, tagok hozzáadását és eltávolítását. Támogatja a közösségi posztok létrehozását, módosítását és törlését, valamint a hozzászólások kezelését. Lehetővé teszi a közösségi aktivitás elemzését, például hogy melyik poszt kapta a legtöbb kedvelést vagy hozzászólást.</li>
+            <hr>
+            <li><strong>BadgeDAO:</strong> A felhasználók által megszerezhető jelvények kezelését végzi, beleértve a jelvények létrehozását, feltételek (pl. teljesített kihívások, elégetett kalóriák) frissítését, és a felhasználókhoz történő hozzárendelést. Támogatja a jelvények vizuális megjelenítését, például ikonok vagy grafikus formában, valamint a megszerzett jelvényekhez kapcsolódó statisztikák generálását.</li>
+            <hr>
+            <li><strong>ChallengeDAO:</strong> A kihívások és az ezekhez kapcsolódó eredménytáblák kezeléséért felelős osztály. Feladata a kihívások létrehozása, leírásuk és jutalmaik frissítése, valamint a felhasználók részvételének nyomon követése. Eredménytáblákat generál, amelyek alapján a felhasználók teljesítményét rangsorolja, figyelembe véve a megszerzett pontokat, teljesített célokat vagy más mérföldköveket.</li>
+            <hr>
+            <li><strong>LeaderboardDAO:</strong> Az eredménytáblák generálására és kezelésére szolgáló osztály. Képes felhasználói teljesítményadatok alapján rangsorolni a résztvevőket különböző kihívásokban. Ezenkívül támogatja a globális vagy közösségi szintű ranglisták létrehozását, például a legtöbb pontot elért felhasználók vagy a legtöbb kihívást teljesítők számára.</li>
+        </ul>
+        
 
 
 
