@@ -1,0 +1,1688 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kód Betyárok - Fitness Applikáció</title>
+    <link rel="stylesheet" href="h5.css">
+</head>
+<body>
+
+    <header>Kód Betyárok - Fitness Applikáció</header>
+
+    <div class="button-container">
+            <a href="index.html" target="index.html">H1</a>
+            <a href="h2.html" target="h2.html">H2</a>
+            <a href="h3.html" target="h3.html">H3</a>
+            <a href="h4.html" target="_blank">H4</a>
+            <a href="h5.html" target="_blank">H5</a>
+    </div>
+<hr>
+    <h2>Gyakorlatvezető: Mileff Péter</h3>
+
+    <table>
+        <tr>
+            <th>Csoport tagjai</th>
+            <th>Neptun Kód</th>
+            <th>Email</th>
+        </tr>
+        <tr>
+            <td>Vass Martin</td>
+            <td>I03URB</td>
+            <td>martin.vass@student.uni-miskolc.hu</td>
+        </tr>
+        <tr>
+            <td>Hliva Gábor</td>
+            <td>F5484N</td>
+            <td>gabor.hliva@student.uni-miskolc.hu</td>
+        </tr>
+        <tr>
+            <td>Bodó Tamás</td>
+            <td>HDK6NX</td>
+            <td>tamas.bodo@student.uni-miskolc.hu</td>
+        </tr>
+        <tr>
+            <td>Varga Bence</td>
+            <td>HK74CE</td>
+            <td>varga.bence@student.uni-miskolc.hu</td>
+        </tr>
+        <tr>
+            <td>Lévai Kristóf Zalán</td>
+            <td>EDMO16</td>
+            <td>kristof.zalan.levai@student.uni-miskolc.hu</td>
+        </tr>
+    </table>
+
+    <div class="paragraphs">
+        <p id="alahuzott">Résztevők:</p>
+
+ 	<p>Vass Martin:		103URB (CSAPATVEZETŐ)</p>
+ 	<p>Hliva Gábor:		F548N</p>
+ 	<p>Bodó Tamás:		HDK6NX</p>
+ 	<p>Varga Bence:		HK74CE</p>
+	 <p>Lévai Kristóf:		EDMO16</p>
+
+	<hr>
+
+        <p id="datum">2024.12.01</p>
+    </div>
+
+<div class="paragraphsss">
+
+        <h1>A rendszer vezérlése</h1>
+        <br>
+        <hr>
+
+       
+    
+        <h3 class="feladatcim">A rendszer vezérlése</h3>
+
+        <h2>1. A rendszer vezérlésének alapjai</h2>
+        <p>A vezérlés kidolgozása a rendszer objektumainak szerepkör-alapú szétválasztásával kezdődik. Az objektumokat az alábbi kategóriák szerint osztjuk fel:</p>
+        <ul>
+            <li><strong>Aktív objektumok:</strong> Ezek az objektumok dinamikus folyamatokat indítanak el, állapotot kezelnek, és eseményeket generálnak.</li>
+            <li><strong>Passzív objektumok:</strong> Ezek statikus adatok tárolására és egyszerű műveletek végrehajtására szolgálnak, például entitások vagy adatbázis-rekordok.</li>
+            <li><strong>Vezérlő objektumok:</strong> Felelősek az aktív és passzív objektumok közötti kommunikáció koordinálásáért.</li>
+        </ul>
+    
+        <h3 class="feladatcim">2. Aktív és passzív objektumok azonosítása</h3>
+    
+        <h2>2.1. Aktív objektumok</h2>
+        <p>Az aktív objektumok az alkalmazás különböző funkcióinak futtatásáért és a felhasználói interakciók kezeléséért felelnek. Ezek általában dinamikus logikai és vezérlési folyamatokat hajtanak végre.</p>
+        <ul>
+            <li><strong>Main (Fő osztály):</strong>
+                <ul>
+                    <li>Az alkalmazás alapvető vezérlési pontja, amely inicializálja a rendszer összes modulját, például az adatbáziskezelőt, a felhasználói felületet, és az értesítési rendszert.</li>
+                    <li><strong>Fő funkciók:</strong>
+                        <ul>
+                            <li>Inicializálási folyamatok elindítása.</li>
+                            <li>Hibakezelési mechanizmusok kezelése.</li>
+                            <li>A rendszer állapotának monitorozása és a modulok állapotának nyomon követése.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><strong>LogicManager:</strong>
+                <ul>
+                    <li>Az üzleti logikák központi vezérlője, amely a logikai modulokat indítja és irányítja. Például az edzéstervek létrehozását végzi.</li>
+                    <li><strong>Funkciók:</strong>
+                        <ul>
+                            <li>Az üzleti folyamatok futtatása.</li>
+                            <li>Modulok közötti kommunikáció kezelése.</li>
+                            <li>A hibák és problémák kezelése.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><strong>NotificationManager:</strong>
+                <ul>
+                    <li>Az értesítések kezeléséért és küldéséért felelős. Ez az objektum dinamikusan figyeli a rendszer állapotát, és eseményeket indít el (pl. edzésemlekeztető küldése).</li>
+                    <li><strong>Funkciók:</strong>
+                        <ul>
+                            <li>Esemény alapú értesítések generálása.</li>
+                            <li>Felhasználói preferenciák figyelembevétele az értesítések szűréséhez.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><strong>AnimationWindow:</strong>
+                <ul>
+                    <li>Az animációk és grafikai megjelenítések kezelésére szolgál. Például egy edzési gyakorlat vizuális demonstrációját kezeli.</li>
+                    <li><strong>Funkciók:</strong>
+                        <ul>
+                            <li>Animációs elemek kezelése és megjelenítése.</li>
+                            <li>Felhasználói visszacsatolások kezelése (pl. egy gyakorlat helyes elvégzése).</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><strong>DataSyncManager:</strong>
+                <ul>
+                    <li>A külső eszközökkel (pl. okosórákkal) való adatkapcsolatot biztosítja.</li>
+                    <li><strong>Funkciók:</strong>
+                        <ul>
+                            <li>Az eszközökről érkező adatok szinkronizálása.</li>
+                            <li>Az időzített adatkapcsolatok kezelése.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    
+        <p><strong>Főbb feladataik:</strong></p>
+        <ul>
+            <li>Dinamikus állapotváltozások kezelése.</li>
+            <li>Más modulok elindítása vagy leállítása (pl. értesítések küldése vagy adatbázisműveletek indítása).</li>
+            <li>Felhasználói események figyelése és feldolgozása.</li>
+        </ul>
+        
+        <h2>2.2. Passzív objektumok</h2>
+        <p>A passzív objektumok az alkalmazás által használt alapvető adatokat tárolják, és biztosítják, hogy az aktív objektumok számára a szükséges adatok mindig elérhetők legyenek.</p>
+        <ul>
+            <li><strong>Entity (Entitás):</strong>
+                <ul>
+                    <li>Az alkalmazásban kezelt alapvető objektumok gyűjtőosztálya, mint például felhasználók, edzéstervek, étrendek stb.</li>
+                    <li><strong>Funkciók:</strong>
+                        <ul>
+                            <li>Adattárolás az egyes entitások állapotáról.</li>
+                            <li>Az állapotok alapértelmezett attribútumainak biztosítása.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><strong>Collection (Gyűjtemény):</strong>
+                <ul>
+                    <li>Több entitás csoportosítására szolgál, mint például az edzéstervek egy listája vagy a felhasználók egy csoportja.</li>
+                    <li><strong>Funkciók:</strong>
+                        <ul>
+                            <li>Keresési és szűrési funkciók biztosítása.</li>
+                            <li>Egyszerű hozzáférés a csoportosított adatokhoz.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><strong>Serializable (Sorosítás):</strong>
+                <ul>
+                    <li>Az objektumok állapotának tartósítására és betöltésére szolgáló osztály.</li>
+                    <li><strong>Funkciók:</strong>
+                        <ul>
+                            <li>Adatok mentése fájlba vagy adatbázisba.</li>
+                            <li>Az adatok visszaállítása a mentett állapotból.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><strong>WorkoutPlan (Edzésterv):</strong>
+                <ul>
+                    <li>Egy adott edzésterv adatainak tárolása, beleértve az edzési napok számát, gyakorlatokat és célokat.</li>
+                    <li><strong>Funkciók:</strong>
+                        <ul>
+                            <li>Az edzéstervhez kapcsolódó adatok összegyűjtése és megőrzése.</li>
+                            <li>Egyéni felhasználói igények alapján konfigurálható paraméterek.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><strong>Meal (Étel):</strong>
+                <ul>
+                    <li>Az étrendekhez kapcsolódó adatok tárolására szolgáló passzív objektum.</li>
+                    <li><strong>Funkciók:</strong>
+                        <ul>
+                            <li>Kalória- és tápanyaginformációk tárolása.</li>
+                            <li>Az étkezések struktúrájának meghatározása.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><strong>Badge (Jelvény):</strong>
+                <ul>
+                    <li>A felhasználók által elért eredmények virtuális megjelenítését szolgálja.</li>
+                    <li><strong>Funkciók:</strong>
+                        <ul>
+                            <li>A feltételekhez kötött eredmények megjelenítése.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <p><strong>Főbb feladataik:</strong></p>
+        <ul>
+            <li>Adatok tárolása és átadása más objektumok számára.</li>
+            <li>Nem kezdeményeznek interakciókat, hanem a vezérlő objektumok kérésére reagálnak.</li>
+        </ul>
+    
+        <h3 class="feladatcim">3. Vezérlő objektumok szerepe</h3>
+        <p>A vezérlő objektumok biztosítják a rendszer különböző részeinek összehangolt működését. Ezek az objektumok közvetítik az információt az aktív és passzív objektumok között, és meghatározzák az alkalmazás logikáját.</p>
+    
+        <h2>3.1. LogicManager</h2>
+        <ul>
+            <li><strong>Feladatok:</strong>
+                <ul>
+                    <li>Modulok indítása és leállítása: Például az WorkoutLogic indítása egy új edzésterv létrehozásakor.</li>
+                    <li>Hibakezelés: Hibák figyelése a modulok működése során, és megfelelő válaszlépések megtétele.</li>
+                    <li>Állapotfigyelés: Az aktív modulok futásának és teljesítményének nyomon követése.</li>
+                </ul>
+            </li>
+            <li><strong>Példa folyamat:</strong>
+                <ol>
+                    <li>Egy felhasználó új edzéstervet hoz létre a GUI-n keresztül.</li>
+                    <li>Az InteractionHandler értesíti a LogicManager-t.</li>
+                    <li>A LogicManager meghívja a WorkoutLogic-ot, amely létrehozza az edzéstervet és elmenti az adatbázisba.</li>
+                </ol>
+            </li>
+        </ul>
+    
+        <h2>3.2. NotificationManager</h2>
+        <p>Az értesítési rendszer vezérlője, amely biztosítja, hogy a felhasználók értesítéseket kapjanak a rendszer eseményeiről.</p>
+        <ul>
+            <li><strong>Funkciók:</strong>
+                <ul>
+                    <li>Eseményalapú értesítések: Például edzésemlekeztetők küldése.</li>
+                    <li>Felhasználói preferenciák figyelembevétele: Csak azokat az értesítéseket küldi, amelyek a felhasználó által konfiguráltak.</li>
+                </ul>
+            </li>
+            <li><strong>Példa folyamat:</strong>
+                <ol>
+                    <li>Az WorkoutLog modul értesíti a NotificationManager-t, hogy egy edzés befejeződött.</li>
+                    <li>A NotificationManager értesítést küld a felhasználónak a haladásáról.</li>
+                </ol>
+            </li>
+        </ul>
+    
+        <h2>3.3. InteractionHandler</h2>
+        <ul>
+            <li><strong>Feladatok:</strong>
+                <ul>
+                    <li>Felhasználói események feldolgozása: Kattintások, űrlapkitöltések stb.</li>
+                    <li>Kommunikáció a GUI és a logikai modulok között.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3 class="feladatcim">4. Az üzenetváltás kialakítása</h3>
+<p>Az üzenetváltási mechanizmus biztosítja, hogy az objektumok és modulok hatékonyan kommunikáljanak egymással.</p>
+
+<h2>4.1. Szinkron és aszinkron üzenetváltás</h2>
+<ul>
+    <li><strong>Szinkron üzenetváltás:</strong> Egy művelet során az egyik objektum várakozik a másik válaszára, például egy adatbázis-lekérdezés esetén.</li>
+    <li><strong>Aszinkron üzenetváltás:</strong> Eseményalapú kommunikáció, amely lehetővé teszi, hogy egy objektum folytassa a műveleteit anélkül, hogy azonnal választ várna.</li>
+</ul>
+
+<h2>4.2. Üzenetváltás példái</h2>
+<ul>
+    <li><strong>GUI és LogicManager között:</strong> A felhasználói interakciók átadása a vezérlő logikának.</li>
+    <li><strong>LogicManager és DatabaseManager között:</strong> Az adatbázis-műveletek indítása és az eredmények fogadása.</li>
+</ul>
+
+<h3 class="feladatcim">5. Megvalósítási tervek</h3>
+
+<h2>5.1. Interfészek kialakítása</h2>
+<p>Az interfészek biztosítják a modulok közötti kommunikáció szabványosítását. Például:</p>
+<ul>
+    <li><strong>IEntity interfész:</strong> Definiálja az alapvető műveleteket, mint a <code>save()</code>, <code>load()</code>.</li>
+    <li><strong>ILogic interfész:</strong> Meghatározza az üzleti logika modulok számára szükséges metódusokat.</li>
+</ul>
+
+<h2>5.2. Osztályok közötti kapcsolatok</h2>
+<p>Az osztályok közötti kapcsolatok implementálása UML diagram alapján:</p>
+<ul>
+    <li>A <strong>Main</strong> osztály kapcsolatban áll a <strong>LogicManager</strong>-rel, amely indítja a logikai modulokat.</li>
+    <li>A <strong>ResourceManager</strong> kapcsolatot tart a <strong>DatabaseManager</strong>-rel az erőforrások betöltése során.</li>
+</ul>
+
+<h3 class="feladatcim">6. Esettanulmány: Edzésterv létrehozása</h3>
+
+<h2>6.1. Lépések</h2>
+<ol>
+    <li><strong>Felhasználói interakció:</strong> A felhasználó a GUI-n keresztül elindítja az edzésterv létrehozását.</li>
+    <li><strong>Üzenet küldése a LogicManager-nek:</strong> Az <strong>InteractionHandler</strong> értesíti a <strong>LogicManager</strong>-t.</li>
+    <li><strong>Edzésterv létrehozása:</strong> A <strong>LogicManager</strong> meghívja a <strong>WorkoutLogic</strong>-ot.</li>
+    <li><strong>Adatok mentése:</strong> A <strong>WorkoutLogic</strong> kapcsolatba lép a <strong>DatabaseManager</strong>-rel az adatok tárolásához.</li>
+    <li><strong>Visszacsatolás a GUI felé:</strong> Az eredményeket visszaadja az <strong>InteractionHandler</strong>-nek, amely frissíti a GUI-t.</li>
+</ol>
+
+
+<h3 class="feladatcim">7. Tesztelési terv</h3>
+<p>A tesztelési terv célja, hogy az alkalmazás minden szintjén ellenőrizze a funkcionalitás helyességét, a rendszer stabilitását, és az integráció pontosságát.</p>
+
+<h3 class="feladatcim">1. Tesztelési típusok</h3>
+<ul>
+    <li><strong>Moduláris tesztelés:</strong>
+        <ul>
+            <li>Az egyes modulok és osztályok működésének izolált ellenőrzése.</li>
+        </ul>
+    </li>
+    <li><strong>Integrációs tesztelés:</strong>
+        <ul>
+            <li>Az egymással együttműködő modulok és osztályok közötti kapcsolat tesztelése.</li>
+        </ul>
+    </li>
+    <li><strong>Rendszertesztelés:</strong>
+        <ul>
+            <li>Az egész alkalmazás működésének végponttól végpontig történő ellenőrzése.</li>
+        </ul>
+    </li>
+    <li><strong>Hibakezelés tesztelése:</strong>
+        <ul>
+            <li>Rendkívüli helyzetek és váratlan események kezelésének ellenőrzése.</li>
+        </ul>
+    </li>
+</ul>
+
+<h3 class="feladatcim">2. Moduláris tesztelés</h3>
+
+<h2>2.1. LogicManager tesztelése</h2>
+<p><strong>Cél:</strong> Ellenőrizni, hogy a LogicManager helyesen indítja és állítja le a modulokat.</p>
+<p><strong>Teszt esetek:</strong></p>
+<ol>
+    <li>
+        <strong>Modulok indítása:</strong>
+        <ul>
+            <li><strong>Bemenet:</strong> A <code>startModule()</code> metódus meghívása a WorkoutLogic számára.</li>
+            <li><strong>Elvárt eredmény:</strong> A modul állapota <code>active</code> lesz.</li>
+        </ul>
+    </li>
+    <li>
+        <strong>Modulok leállítása:</strong>
+        <ul>
+            <li><strong>Bemenet:</strong> A <code>stopModule()</code> metódus meghívása a WorkoutLogic számára.</li>
+            <li><strong>Elvárt eredmény:</strong> A modul állapota <code>inactive</code> lesz.</li>
+        </ul>
+    </li>
+    <li>
+        <strong>Helytelen modul azonosító:</strong>
+        <ul>
+            <li><strong>Bemenet:</strong> Nem létező modul indítása.</li>
+            <li><strong>Elvárt eredmény:</strong> Hibakezelés (kivétel dobása).</li>
+        </ul>
+    </li>
+</ol>
+
+<h2>2.2. NotificationManager tesztelése</h2>
+<p><strong>Cél:</strong> Tesztelni az értesítések időzítését és a felhasználói preferenciák figyelembevételét.</p>
+<p><strong>Teszt esetek:</strong></p>
+<ol>
+    <li>
+        <strong>Értesítés létrehozása:</strong>
+        <ul>
+            <li><strong>Bemenet:</strong> Egy edzéstervhez kapcsolódó értesítés létrehozása.</li>
+            <li><strong>Elvárt eredmény:</strong> Az értesítés megjelenik a GUI-n.</li>
+        </ul>
+    </li>
+    <li>
+        <strong>Értesítési időzítés:</strong>
+        <ul>
+            <li><strong>Bemenet:</strong> Értesítés küldése egy megadott időpontban.</li>
+            <li><strong>Elvárt eredmény:</strong> Az értesítés csak a megadott időben jelenik meg.</li>
+        </ul>
+    </li>
+    <li>
+        <strong>Felhasználói preferenciák tesztelése:</strong>
+        <ul>
+            <li><strong>Bemenet:</strong> A felhasználó értesítési beállításai.</li>
+            <li><strong>Elvárt eredmény:</strong> Csak a beállított típusú értesítések kerülnek kiküldésre.</li>
+        </ul>
+    </li>
+</ol>
+
+<h2>3. Rendszertesztelés</h2>
+
+<h2>3.1. Folyamat tesztelése</h2>
+<p><strong>Cél:</strong> Egy teljes edzésterv létrehozási folyamat végigkövetése.</p>
+<p><strong>Lépések:</strong></p>
+<ol>
+    <li>A felhasználó a GUI-n kiválasztja az „Edzésterv létrehozása” opciót.</li>
+    <li>A WorkoutController meghívja a WorkoutService-t, amely létrehoz egy új edzéstervet.</li>
+    <li>Az WorkoutService az adatokat továbbítja a WorkoutDAO-nak, amely elmenti az adatokat.</li>
+    <li>A GUI frissül az új edzésterv adataival.</li>
+</ol>
+<p><strong>Elvárt eredmény:</strong> Az új edzésterv sikeresen megjelenik a GUI-n.</p>
+
+<h2>3.2. Hibakezelés tesztelése</h2>
+<p><strong>Cél:</strong> Bizonyos hibák (pl. adatbázis-kapcsolat megszakadása) megfelelő kezelése.</p>
+<p><strong>Teszt esetek:</strong></p>
+<ol>
+    <li>
+        <strong>Adatbázis-kapcsolat hiba:</strong>
+        <ul>
+            <li><strong>Bemenet:</strong> A DAO nem tud kapcsolódni az adatbázishoz.</li>
+            <li><strong>Elvárt eredmény:</strong> A hiba naplózása és értesítés küldése a felhasználónak.</li>
+        </ul>
+    </li>
+    <li>
+        <strong>Érvénytelen adatok:</strong>
+        <ul>
+            <li><strong>Bemenet:</strong> Hiányzó vagy érvénytelen paraméterek az edzésterv létrehozásakor.</li>
+            <li><strong>Elvárt eredmény:</strong> Hibajelzés a GUI-n.</li>
+        </ul>
+    </li>
+</ol>
+
+<h2>4. Teszteszközök és automatizálás</h2>
+<ul>
+    <li><strong>JUnit:</strong> Használható a Java moduláris és integrációs tesztjeinek megvalósítására.</li>
+    <li><strong>Mockito:</strong> Az osztályok közötti függőségek szimulálására és izolált tesztek készítésére.</li>
+    <li><strong>Selenium:</strong> Automatizált GUI tesztelés a felhasználói felület viselkedésének ellenőrzésére.</li>
+    <li><strong>Postman/Swagger:</strong> REST API tesztelés, ha a rendszer külső szolgáltatásokkal kommunikál.</li>
+</ul>
+
+<h2>5. Tesztelési prioritások</h2>
+<ul>
+    <li><strong>Kritikus funkciók tesztelése:</strong> Modulindítások, hibakezelés, adatbázis-műveletek.</li>
+    <li><strong>Felhasználói interakciók:</strong> GUI tesztelése és visszajelzések ellenőrzése.</li>
+    <li><strong>Hibák és szélsőséges esetek kezelése:</strong> Érvénytelen bemenetek és váratlan környezeti problémák.</li>
+</ul>
+
+<h2>Összefoglalás</h2>
+<p>A tesztelési terv biztosítja a rendszer minden szintjének alapos ellenőrzését. A moduláris, integrációs és rendszertesztek kombinációja lehetővé teszi a fejlesztés során fellépő hibák korai felismerését és javítását, miközben a végleges termék minősége garantált. Ez a terv iteratív módon bővíthető.</p>
+
+<h3 class="feladatcim">8. Láthatóság és annak biztosítása az objektumok között</h3>
+<p>A rendszerben az objektumok közötti láthatóság létrehozása és biztosítása alapvető feltétel a hatékony kommunikációhoz és működéshez. A láthatóság az objektumok közötti közvetlen vagy közvetett kapcsolatok kialakítását jelenti, amelyek lehetővé teszik az információk megosztását és a funkciók integrációját. Az alábbi részletes pontok bemutatják, hogyan alakul ki a láthatóság az objektumok között, és milyen mechanizmusok teszik ezt lehetővé.</p>
+
+<h2>8.1. Láthatóság fogalma az objektumorientált rendszerekben</h2>
+<p>A láthatóság azt jelenti, hogy egy objektum képes más objektumokkal kapcsolatba lépni, és azok adatait vagy metódusait elérni. Ez több szinten is megvalósulhat:</p>
+<ul>
+    <li><strong>Közvetlen referenciák:</strong> Egy objektum közvetlen hivatkozással eléri a másikat (például egy mező vagy paraméter révén).</li>
+    <li><strong>Közvetett hozzáférés interfészeken keresztül:</strong> Egy objektum egy interfész által nyújtott szolgáltatásokat használ, amelyet egy másik objektum valósít meg.</li>
+    <li><strong>Eseményalapú kommunikáció:</strong> Egy objektum eseményeket generál, amelyeket más objektumok figyelnek és kezelnek.</li>
+    <li><strong>Globális szolgáltatók:</strong> Egy központi szolgáltatás vagy "singleton" mintázat biztosítja az objektumok közötti hozzáférést.</li>
+</ul>
+
+<h2>8.2. Láthatóság biztosításának technikái</h2>
+<p>A láthatóság biztosítása különféle programozási mintákat és tervezési elveket követ, amelyeket az alábbiakban részletezünk:</p>
+
+<h2>8.2.1. Konstruktorinjekció</h2>
+<ul>
+    <li>A konstruktorinjekció során az objektumok a szükséges függőségeiket a példányosításuk során kapják meg.</li>
+    <li><strong>Példa:</strong></li>
+</ul>
+<pre><code>class LogicManager {
+    private NotificationManager notificationManager;
+
+    public LogicManager(NotificationManager notificationManager) {
+        this.notificationManager = notificationManager;
+    }
+
+    public void executeBusinessLogic() {
+        notificationManager.sendNotification("Üzleti logika futtatása sikeres.");
+    }
+}
+</code></pre>
+<p><strong>Előnyök:</strong></p>
+<ul>
+    <li>Biztosítja a modulok közötti erős kapcsolatot.</li>
+    <li>A szükséges objektumok mindig elérhetők, így nincs futásidejű hibalehetőség.</li>
+</ul>
+
+<h2>8.2.2. Getter és setter metódusok</h2>
+<ul>
+    <li>Az osztályok publikus metódusokat biztosítanak, amelyekkel más objektumok elérhetik a belső állapotukat vagy funkcióikat.</li>
+    <li><strong>Példa:</strong></li>
+</ul>
+<pre><code>class Entity {
+    private String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+}
+</code></pre>
+<p><strong>Előnyök:</strong></p>
+<ul>
+    <li>Kapszulázás révén szabályozott hozzáférést biztosít.</li>
+    <li>Könnyen testreszabható, például hozzáférési szabályok beépítésével.</li>
+</ul>
+
+<h2>8.2.3. Interfészek és absztrakció</h2>
+<ul>
+    <li>Az interfészek biztosítják a modulok közötti kommunikáció szabványosítását, így az implementáció részletei el vannak rejtve.</li>
+    <li><strong>Példa:</strong></li>
+</ul>
+<pre><code>interface ILogic {
+    void execute();
+}
+
+class WorkoutLogic implements ILogic {
+    @Override
+    public void execute() {
+        System.out.println("Edzésterv logika futtatása.");
+    }
+}
+</code></pre>
+<p><strong>Előnyök:</strong></p>
+<ul>
+    <li>Rugalmasságot biztosít a különböző implementációk cseréjéhez.</li>
+    <li>Csökkenti a modulok közötti függőséget.</li>
+</ul>
+
+
+<h2>8.2.4. Eseményfigyelés (Observer minta)</h2>
+<ul>
+    <li>Egy objektum eseményeket generál, amelyeket más objektumok megfigyelhetnek és kezelhetnek.</li>
+    <li><strong>Példa:</strong></li>
+</ul>
+<pre><code>class WorkoutLog {
+    private List&lt;Observer&gt; observers = new ArrayList&lt;&gt;();
+
+    public void addObserver(Observer observer) {
+        observers.add(observer);
+    }
+
+    public void completeWorkout() {
+        for (Observer observer : observers) {
+            observer.update("Edzés befejeződött.");
+        }
+    }
+}
+</code></pre>
+<p><strong>Előnyök:</strong></p>
+<ul>
+    <li>Lehetővé teszi a laza kapcsolatot az objektumok között.</li>
+    <li>Dinamikusan bővíthető új eseménykezelőkkel.</li>
+</ul>
+
+<h2>8.2.5. Singleton mintázat</h2>
+<ul>
+    <li>Biztosítja, hogy egy objektumnak csak egyetlen példánya létezhessen, amely globálisan elérhető.</li>
+    <li><strong>Példa:</strong></li>
+</ul>
+<pre><code>class DatabaseManager {
+    private static DatabaseManager instance;
+
+    private DatabaseManager() {}
+
+    public static DatabaseManager getInstance() {
+        if (instance == null) {
+            instance = new DatabaseManager();
+        }
+        return instance;
+    }
+}
+</code></pre>
+<p><strong>Előnyök:</strong></p>
+<ul>
+    <li>Egységes hozzáférést biztosít a megosztott erőforrásokhoz.</li>
+    <li>Csökkenti a példányosítás költségeit.</li>
+</ul>
+
+<h2>8.2.6. Globális eseménykezelők</h2>
+<ul>
+    <li>Egy központi eseménykezelő koordinálja az objektumok közötti kommunikációt, minimalizálva a közvetlen referenciák szükségességét.</li>
+    <li><strong>Példa:</strong></li>
+</ul>
+<p>Egy központi <code>EventDispatcher</code> kezeli az összes eseményt, és továbbítja azokat a megfelelő objektumoknak.</p>
+
+<h2>8.3. Példák a láthatóság működésére</h2>
+<p><strong>Példa 1: GUI és LogicManager közötti kommunikáció</strong></p>
+<ol>
+    <li>A felhasználó egy új edzéstervet hoz létre a GUI-n keresztül.</li>
+    <li>A GUI meghívja az InteractionHandler-t.</li>
+    <li>Az InteractionHandler továbbítja az eseményt a LogicManager-nek.</li>
+    <li>A LogicManager meghívja a WorkoutLogic modult az edzésterv létrehozására.</li>
+</ol>
+
+<p><strong>Példa 2: NotificationManager és WorkoutLog közötti kommunikáció</strong></p>
+<ol>
+    <li>Az edzés befejezésének eseményét a WorkoutLog generálja.</li>
+    <li>Az Observer interfészt implementáló NotificationManager értesítést kap.</li>
+    <li>A NotificationManager értesítést küld a felhasználónak.</li>
+</ol>
+
+<h2>8.4. Láthatóság biztosításának előnyei</h2>
+<ul>
+    <li><strong>Modularitás:</strong> Az objektumok közötti tiszta határok lehetővé teszik a modulok független fejlesztését és tesztelését.</li>
+    <li><strong>Skálázhatóság:</strong> Az új funkciók könnyen hozzáadhatók, anélkül hogy a meglévő modulokat módosítani kellene.</li>
+    <li><strong>Karbantarthatóság:</strong> A kód könnyebben érthető és módosítható a láthatósági szabályok betartása mellett.</li>
+</ul>
+
+<p>A láthatóság biztosítása kulcsfontosságú a rendszer átláthatóságának, rugalmasságának és skálázhatóságának fenntartásához, különösen összetett objektumorientált rendszerekben.</p>
+
+<p><strong>MEGJEGYZÉS:</strong> Ezek az előző dokumentumban részletesebben kifejtésre kerültek, ez csak egy összefoglaló tervezet a megvalósításhoz.</p>
+
+<h3 class="feladatcim">2. Osztályok közötti implementáció</h3>
+<p>Az osztályok közötti kapcsolatok implementálása és a modulokba szervezés biztosítja a rendszer strukturált, átlátható felépítését. A modularizáció révén az alkalmazás könnyen bővíthető, skálázható és karbantartható, míg a megfelelő kapcsolati minták alkalmazásával biztosítható a hatékony kommunikáció az osztályok között.</p>
+
+<h2>Az osztályok közötti kapcsolatok implementálási módjainak kidolgozása</h2>
+<p>Az osztályok közötti kapcsolatok implementálása az objektumorientált rendszer alapvető szerkezeti eleme. Ez a szakasz bemutatja, hogyan lehet hatékonyan megtervezni és kivitelezni az osztályok közötti kapcsolatokat, figyelembe véve az alkalmazás modularitását, karbantarthatóságát és skálázhatóságát.</p>
+
+<h2>1. Kapcsolati típusok az osztályok között</h2>
+<ul>
+    <li><strong>Asszociáció:</strong>
+        <ul>
+            <li>Az osztályok közötti általános kapcsolat, ahol az egyik osztály példányai elérhetik a másik osztály példányait.</li>
+            <li><strong>Példa:</strong> Egy WorkoutPlan és egy Exercise osztály közötti kapcsolat (1:n).</li>
+        </ul>
+    </li>
+    <li><strong>Aggregáció:</strong>
+        <ul>
+            <li>Egy gyengébb kapcsolat, amely azt jelzi, hogy egy objektum egy másik részeként létezik, de nem kizárólagosan.</li>
+            <li><strong>Példa:</strong> Egy DietPlan tartalmazhat Meal objektumokat.</li>
+        </ul>
+    </li>
+    <li><strong>Kompozíció:</strong>
+        <ul>
+            <li>Egy erős kapcsolat, amelynél az összetett objektum felelős az alárendelt objektumainak létrehozásáért és élettartamáért.</li>
+            <li><strong>Példa:</strong> Egy UserProfile tartalmazza a felhasználóhoz kapcsolódó Settings és Statistics objektumokat.</li>
+        </ul>
+    </li>
+    <li><strong>Öröklődés:</strong>
+        <ul>
+            <li>Egy kapcsolat, amelyben egy osztály örökli egy másik osztály attribútumait és metódusait.</li>
+            <li><strong>Példa:</strong> Az AdminUser örökli az User osztály tulajdonságait.</li>
+        </ul>
+    </li>
+    <li><strong>Interfész implementáció:</strong>
+        <ul>
+            <li>Az osztály megvalósít egy interfészt, biztosítva, hogy az előírt metódusokat implementálja.</li>
+            <li><strong>Példa:</strong> Az ILogic interfész, amelyet a WorkoutLogic és a DietLogic megvalósít.</li>
+        </ul>
+    </li>
+</ul>
+
+<h2>2. Implementációs osztályok kidolgozása és kiválasztása</h2>
+<p>Az implementációs osztályokat az alábbi szempontok alapján tervezzük meg:</p>
+<ul>
+    <li><strong>Adatkezelő osztályok (DAO-k):</strong>
+        <ul>
+            <li>Felelősek az adatbázis és az üzleti logika közötti kapcsolatért.</li>
+            <li><strong>Példák:</strong></li>
+            <ul>
+                <li>UserDAO: Felhasználók adatainak mentése, lekérdezése, frissítése és törlése.</li>
+                <li>WorkoutDAO: Edzéstervek adatainak kezelése.</li>
+                <li>MealDAO: Ételek adatainak tárolása és lekérdezése.</li>
+            </ul>
+        </ul>
+    </li>
+    <li><strong>Szolgáltatás (Service) osztályok:</strong>
+        <ul>
+            <li>Üzleti logikai funkciókat valósítanak meg, és magas szintű szolgáltatásokat nyújtanak a GUI számára.</li>
+            <li><strong>Példák:</strong></li>
+            <ul>
+                <li>WorkoutService: Edzéstervek létrehozása és kezelése.</li>
+                <li>NotificationService: Értesítések időzítése és küldése.</li>
+            </ul>
+        </ul>
+    </li>
+    <li><strong>Helper osztályok:</strong>
+        <ul>
+            <li>Kiegészítő funkciókat biztosítanak, például adatkonverziókat vagy fájlkezelést.</li>
+            <li><strong>Példa:</strong></li>
+            <ul>
+                <li>DateHelper: Időbélyegek kezelése.</li>
+                <li>FileManager: Fájlok olvasása és írása.</li>
+            </ul>
+        </ul>
+    </li>
+    <li><strong>Vezérlő osztályok (Controller-ek):</strong>
+        <ul>
+            <li>Az események feldolgozásáért felelősek, és a felhasználói interakciókat az üzleti logika felé továbbítják.</li>
+            <li><strong>Példa:</strong></li>
+            <ul>
+                <li>WorkoutController: A felhasználói felületről érkező edzéstervekkel kapcsolatos eseményeket kezeli.</li>
+                <li>UserController: Felhasználók kezeléséhez kapcsolódó eseményeket dolgoz fel.</li>
+            </ul>
+        </ul>
+    </li>
+</ul>
+
+<h2>3. Kapcsolatok implementálása UML diagram alapján</h2>
+<p><strong>Felhasználói és edzésterv kapcsolata:</strong></p>
+<pre><code>class User {
+    private List&lt;WorkoutPlan&gt; workoutPlans;
+
+    public void addWorkoutPlan(WorkoutPlan plan) {
+        workoutPlans.add(plan);
+    }
+}
+</code></pre>
+<p><strong>Edzéstervek és gyakorlatok kapcsolata:</strong></p>
+<pre><code>class WorkoutPlan {
+    private List&lt;Exercise&gt; exercises;
+
+    public void addExercise(Exercise exercise) {
+        exercises.add(exercise);
+    }
+}
+</code></pre>
+
+<h2>Az elemek modulokba (csomagokba) szervezése</h2>
+<p>Az elemek moduláris szervezése kulcsfontosságú az alkalmazás karbantarthatósága és áttekinthetősége szempontjából. Az alábbiakban bemutatjuk a moduláris struktúrát:</p>
+
+<h2>1. Modulok (csomagok) szerkezete</h2>
+<ul>
+    <li><strong>GUI modul:</strong> A felhasználói felülethez kapcsolódó osztályokat tartalmazza.</li>
+    <li><strong>Service modul:</strong> Üzleti logikát és magas szintű szolgáltatásokat biztosít.</li>
+    <li><strong>DataAccess modul:</strong> Az adatbázis-kezeléshez kapcsolódó osztályokat tartalmazza (DAO-k).</li>
+    <li><strong>Model modul:</strong> Az alkalmazás által használt adatmodellek találhatók itt.</li>
+    <li><strong>Helper modul:</strong> Kiegészítő funkciókat és segédosztályokat tartalmaz.</li>
+</ul>
+
+<h2>2. Modulok közötti kapcsolatok</h2>
+<pre><code>WorkoutService service = new WorkoutService();
+service.createWorkoutPlan(userInput);
+
+WorkoutDAO dao = new WorkoutDAO();
+dao.saveWorkoutPlan(plan);
+
+User user = userService.getUserById(userId);
+</code></pre>
+
+<h2>Példa a moduláris hierarchiára:</h2>
+<pre><code>src/
+├── gui/
+│   ├── MainWindow.java
+│   ├── WorkoutView.java
+│   └── NotificationView.java
+├── service/
+│   ├── WorkoutService.java
+│   ├── UserService.java
+│   └── NotificationService.java
+├── dataaccess/
+│   ├── UserDAO.java
+│   ├── WorkoutDAO.java
+│   └── MealDAO.java
+├── model/
+│   ├── User.java
+│   ├── WorkoutPlan.java
+│   └── Exercise.java
+├── helper/
+│   ├── DateHelper.java
+│   └── FileManager.java
+</code></pre>
+
+<h3 class="feladatcim">0. Skeleton Implementáció</h3>
+<p>A skeleton implementáció az osztályok alapvető struktúráját foglalja magában, minimális logikával és metódustörzsekkel.</p>
+
+<h2>1. A Létrehozott Rendszerösszetevők</h2>
+
+<h2>1.1. Adatbázisok</h2>
+<ul>
+    <li><strong>Workout Planner Adatbázis (workout_planner):</strong>
+        <ul>
+            <li><strong>Tárolja:</strong> Felhasználók és edzéstervek adatait.</li>
+            <li><strong>Táblák:</strong>
+                <ul>
+                    <li><code>users:</code> Felhasználói adatok (id, name, email).</li>
+                    <li><code>workout_plans:</code> Edzéstervek adatai (id, name, goal).</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li><strong>Meals Adatbázis (meals_db):</strong>
+        <ul>
+            <li><strong>Tárolja:</strong> Ételekkel kapcsolatos adatokat.</li>
+            <li><strong>Táblák:</strong>
+                <ul>
+                    <li><code>meals:</code> Ételek adatai (id, name, calories, protein, carbs, fats).</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<h2>1.2. Adatmodellek</h2>
+<ul>
+    <li><strong>User:</strong> Felhasználók adatait reprezentáló osztály.</li>
+    <li><strong>WorkoutPlan:</strong> Edzésterveket kezelő osztály.</li>
+    <li><strong>Meal:</strong> Ételeket kezelő osztály, amely kalóriát, tápanyagokat (fehérje, szénhidrát, zsír) tárol.</li>
+</ul>
+
+<h2>1.3. Adatbázis-kapcsolat</h2>
+<ul>
+    <li><strong>DatabaseConnection:</strong> A <code>workout_planner</code> adatbázis kapcsolatát kezeli.</li>
+    <li><strong>MealDatabaseConnection:</strong> A <code>meals_db</code> adatbázis kapcsolatát kezeli.</li>
+</ul>
+
+<h2>1.4. DAO-k (Data Access Objects)</h2>
+<p>CRUD műveletek megvalósítása az adatbázisokkal való közvetlen kommunikációhoz:</p>
+<ul>
+    <li><strong>UserDAO:</strong> Felhasználók lekérdezése, hozzáadása.</li>
+    <li><strong>WorkoutDAO:</strong> Edzéstervek lekérdezése, hozzáadása.</li>
+    <li><strong>MealDAO:</strong> Ételek lekérdezése, hozzáadása, az <code>meals_db</code> adatbázisban.</li>
+</ul>
+
+<h2>1.5. Service Réteg</h2>
+<p>Üzleti logikai műveletek biztosítása:</p>
+<ul>
+    <li><strong>UserService:</strong> Felhasználók üzleti logikáját kezeli (listázás, létrehozás).</li>
+    <li><strong>WorkoutService:</strong> Edzéstervek üzleti logikáját kezeli (listázás, létrehozás).</li>
+    <li><strong>MealService:</strong> Ételek üzleti logikáját kezeli (listázás, létrehozás, részletek lekérése).</li>
+</ul>
+
+<h2>1.6. Vezérlők (Controllers)</h2>
+<p>Felhasználói interakciókat kezelő réteg:</p>
+<ul>
+    <li><strong>UserController:</strong> Felhasználók listázása, új felhasználók hozzáadása.</li>
+    <li><strong>WorkoutController:</strong> Edzéstervek listázása, új edzéstervek létrehozása.</li>
+    <li><strong>MealController:</strong> Ételek listázása, új ételek hozzáadása.</li>
+</ul>
+
+<h2>1.7. Értesítések</h2>
+<ul>
+    <li><strong>NotificationManager:</strong> Értesítések generálása (azonnali és időzített értesítések).</li>
+    <li><strong>Példa:</strong> "Time for your workout!" 5 másodperces késleltetéssel.</li>
+</ul>
+
+<h2>1.8. Grafikus Felhasználói Felület (GUI)</h2>
+<ul>
+    <li><strong>MainWindow:</strong>
+        <ul>
+            <li>Az alkalmazás főablaka, amely gombokat és műveleteket biztosít a felhasználói interakciókhoz.</li>
+            <li><strong>Támogatott műveletek:</strong>
+                <ul>
+                    <li>Felhasználók kezelése:</li>
+                    <ul>
+                        <li>Listázás.</li>
+                        <li>Új felhasználó hozzáadása.</li>
+                    </ul>
+                    <li>Edzéstervek kezelése:</li>
+                    <ul>
+                        <li>Listázás.</li>
+                        <li>Új edzésterv hozzáadása.</li>
+                    </ul>
+                    <li>Ételek kezelése:</li>
+                    <ul>
+                        <li>Listázás.</li>
+                        <li>Új étel hozzáadása.</li>
+                    </ul>
+                    <li>Értesítések kezelése:</li>
+                    <ul>
+                        <li>Azonnali értesítés generálása.</li>
+                        <li>Időzített értesítés létrehozása.</li>
+                    </ul>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<h2>2. A Program Jelenlegi Funkcionalitásai</h2>
+
+<h2>2.1. Felhasználók Kezelése</h2>
+<ul>
+    <li><strong>Listázás:</strong> Az adatbázisban lévő összes felhasználó megjelenítése a konzolon.</li>
+    <li><strong>Új felhasználó hozzáadása:</strong> A GUI-n keresztül megadott név és e-mail cím alapján új felhasználót ad az adatbázishoz.</li>
+</ul>
+
+<h2>2.2. Edzéstervek Kezelése</h2>
+<ul>
+    <li><strong>Listázás:</strong> Az adatbázisban lévő összes edzésterv megjelenítése a konzolon.</li>
+    <li><strong>Új edzésterv hozzáadása:</strong> A GUI-n keresztül megadott név és cél alapján új edzéstervet ad az adatbázishoz.</li>
+</ul>
+
+<h2>2.3. Ételek Kezelése</h2>
+<ul>
+    <li><strong>Listázás:</strong> Az <code>meals_db</code> adatbázisban lévő összes étel megjelenítése a konzolon.</li>
+    <li><strong>Új étel hozzáadása:</strong> A GUI-n keresztül megadott név, kalória és tápanyag-adatok alapján új ételt ad az adatbázishoz.</li>
+</ul>
+
+<h2>2.4. Értesítések</h2>
+<ul>
+    <li><strong>Azonnali értesítések:</strong> A GUI-n keresztül megadott üzenet azonnali megjelenítése a konzolon.</li>
+    <li><strong>Időzített értesítések:</strong> A GUI-n keresztül megadott üzenet megjelenítése meghatározott késleltetéssel (pl. 5 másodperc).</li>
+</ul>
+
+<h2>2.5. GUI Funkcionalitás</h2>
+<ul>
+    <li>A felhasználó egy grafikus felületen keresztül végezheti el a műveleteket.</li>
+    <li><strong>A MainWindow az alábbi gombokat tartalmazza:</strong>
+        <ul>
+            <li>"List Users": Felhasználók listázása.</li>
+            <li>"Create User": Új felhasználó létrehozása.</li>
+            <li>"List Workout Plans": Edzéstervek listázása.</li>
+            <li>"Create Workout Plan": Új edzésterv létrehozása.</li>
+            <li>"List Meals": Ételek listázása.</li>
+            <li>"Create Meal": Új étel létrehozása.</li>
+            <li>"Generate Notification": Azonnali értesítés generálása.</li>
+            <li>"Schedule Notification": Időzített értesítés létrehozása.</li>
+        </ul>
+    </li>
+</ul>
+
+<h2>3. A Program Fejleszthetősége</h2>
+
+<h2>3.1. További Funkcionalitások</h2>
+<ul>
+    <li>Felhasználók, edzéstervek és ételek szerkesztése és törlése.</li>
+    <li>Értesítések naplózása az adatbázisba.</li>
+    <li>Interaktív táblázatos megjelenítés a GUI-ban (pl. JTable használata).</li>
+</ul>
+
+<h2>3.2. Integráció</h2>
+<ul>
+    <li>Egyetlen adatbázis használata a felhasználók, edzéstervek és ételek közötti kapcsolatok kezelésére.</li>
+    <li>REST API fejlesztése a műveletek távoli eléréséhez.</li>
+</ul>
+
+<h3 class="feladatcim">Adatmodellek</h3>
+
+<h2>1.1. User osztály</h2>
+<pre><code>public class User {
+    private int id;
+    private String name;
+    private String email;
+
+    public User(int id, String name, String email) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+}
+</code></pre>
+
+<h2>1.2. WorkoutPlan osztály</h2>
+<pre><code>public class WorkoutPlan {
+    private int id;
+    private String name;
+    private String goal;
+
+    public WorkoutPlan(int id, String name, String goal) {
+        this.id = id;
+        this.name = name;
+        this.goal = goal;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getGoal() {
+        return goal;
+    }
+
+    public void setGoal(String goal) {
+        this.goal = goal;
+    }
+}
+</code></pre>
+
+<h3 class="feladatcim">2. Adatbázis kapcsolat</h3>
+
+<h2>2.1. DatabaseConnection osztály</h2>
+<pre><code>import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class DatabaseConnection {
+    private static final String URL = "jdbc:mysql://localhost:3306/workout_planner";
+    private static final String USER = "root";
+    private static final String PASSWORD = "password";
+
+    public static Connection getConnection() throws SQLException {
+        return DriverManager.getConnection(URL, USER, PASSWORD);
+    }
+}
+</code></pre>
+
+<h3 class="feladatcim">3. DAO-k</h3>
+
+<h2>3.1. UserDAO osztály</h2>
+<pre><code>import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+
+public class UserDAO {
+    public List&lt;User&gt; getAllUsers() {
+        List&lt;User&gt; users = new ArrayList&lt;&gt;();
+        String query = "SELECT * FROM users";
+
+        try (Connection connection = DatabaseConnection.getConnection();
+             Statement statement = connection.createStatement();
+             ResultSet resultSet = statement.executeQuery(query)) {
+
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String name = resultSet.getString("name");
+                String email = resultSet.getString("email");
+                users.add(new User(id, name, email));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return users;
+    }
+
+    public void addUser(User user) {
+        String query = "INSERT INTO users (name, email) VALUES (?, ?)";
+
+        try (Connection connection = DatabaseConnection.getConnection();
+             PreparedStatement statement = connection.prepareStatement(query)) {
+
+            statement.setString(1, user.getName());
+            statement.setString(2, user.getEmail());
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}
+</code></pre>
+
+<h2>3.2. WorkoutDAO osztály</h2>
+<pre><code>import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+
+public class WorkoutDAO {
+    public List&lt;WorkoutPlan&gt; getAllWorkoutPlans() {
+        List&lt;WorkoutPlan&gt; plans = new ArrayList&lt;&gt;();
+        String query = "SELECT * FROM workout_plans";
+
+        try (Connection connection = DatabaseConnection.getConnection();
+             Statement statement = connection.createStatement();
+             ResultSet resultSet = statement.executeQuery(query)) {
+
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String name = resultSet.getString("name");
+                String goal = resultSet.getString("goal");
+                plans.add(new WorkoutPlan(id, name, goal));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return plans;
+    }
+
+    public void addWorkoutPlan(WorkoutPlan plan) {
+        String query = "INSERT INTO workout_plans (name, goal) VALUES (?, ?)";
+
+        try (Connection connection = DatabaseConnection.getConnection();
+             PreparedStatement statement = connection.prepareStatement(query)) {
+
+            statement.setString(1, plan.getName());
+            statement.setString(2, plan.getGoal());
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}
+</code></pre>
+
+<h3 class="feladatcim">4. Szolgáltatások (Service-ek)</h3>
+
+<h2>4.1. UserService osztály</h2>
+<pre><code>import java.util.List;
+
+public class UserService {
+    private UserDAO userDAO = new UserDAO();
+
+    public List&lt;User&gt; getAllUsers() {
+        return userDAO.getAllUsers();
+    }
+
+    public void createUser(String name, String email) {
+        User newUser = new User(0, name, email);
+        userDAO.addUser(newUser);
+    }
+}
+</code></pre>
+
+<h2>4.2. WorkoutService osztály</h2>
+<pre><code>import java.util.List;
+
+public class WorkoutService {
+    private WorkoutDAO workoutDAO = new WorkoutDAO();
+
+    public List&lt;WorkoutPlan&gt; getAllPlans() {
+        return workoutDAO.getAllWorkoutPlans();
+    }
+
+    public void createWorkoutPlan(String name, String goal) {
+        WorkoutPlan newPlan = new WorkoutPlan(0, name, goal);
+        workoutDAO.addWorkoutPlan(newPlan);
+    }
+}
+</code></pre>
+
+<h3>5. Vezérlők (Controllers)</h3>
+
+<h2>5.1. UserController osztály</h2>
+<pre><code>public class UserController {
+    private UserService userService = new UserService();
+
+    public void listUsers() {
+        userService.getAllUsers().forEach(user ->
+            System.out.println(user.getId() + ": " + user.getName() + " - " + user.getEmail())
+        );
+    }
+
+    public void createUser(String name, String email) {
+        userService.createUser(name, email);
+        System.out.println("New user created: " + name + " - " + email);
+    }
+}
+</code></pre>
+
+<h2>5.2. WorkoutController osztály</h2>
+<pre><code>public class WorkoutController {
+    private WorkoutService workoutService = new WorkoutService();
+
+    public void listPlans() {
+        workoutService.getAllPlans().forEach(plan ->
+            System.out.println(plan.getId() + ": " + plan.getName() + " - " + plan.getGoal())
+        );
+    }
+
+    public void createPlan(String name, String goal) {
+        workoutService.createWorkoutPlan(name, goal);
+        System.out.println("New workout plan created: " + name + " - " + goal);
+    }
+}
+</code></pre>
+
+<h3 class="feladatcim">6. Értesítések</h3>
+
+<h2>6.1. NotificationManager osztály</h2>
+<pre><code>import java.util.Timer;
+import java.util.TimerTask;
+
+public class NotificationManager {
+    public void scheduleNotification(String message, long delayInMillis) {
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                System.out.println("Notification: " + message);
+            }
+        }, delayInMillis);
+    }
+
+    public void sendInstantNotification(String message) {
+        System.out.println("Notification: " + message);
+    }
+}
+</code></pre>
+
+<h3>7. GUI</h3>
+
+<h2>7.1. MainWindow osztály</h2>
+<pre><code>import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class MainWindow {
+    private LogicManager logicManager = new LogicManager();
+    private WorkoutController workoutController = new WorkoutController();
+    private UserController userController = new UserController();
+
+    public void createAndShowGUI() {
+        JFrame frame = new JFrame("Workout Planner");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(500, 400);
+
+        JPanel panel = new JPanel();
+        frame.add(panel);
+        placeComponents(panel);
+
+        frame.setVisible(true);
+    }
+
+    private void placeComponents(JPanel panel) {
+        panel.setLayout(null);
+
+        JLabel titleLabel = new JLabel("Workout Planner");
+        titleLabel.setBounds(10, 10, 200, 25);
+        panel.add(titleLabel);
+
+        JButton listPlansButton = new JButton("List Workout Plans");
+        listPlansButton.setBounds(10, 40, 200, 25);
+        panel.add(listPlansButton);
+        listPlansButton.addActionListener(e -> workoutController.listPlans());
+
+        JButton createPlanButton = new JButton("Create Workout Plan");
+        createPlanButton.setBounds(10, 70, 200, 25);
+        panel.add(createPlanButton);
+        createPlanButton.addActionListener(e -> {
+            String name = JOptionPane.showInputDialog("Enter Workout Plan Name:");
+            String goal = JOptionPane.showInputDialog("Enter Workout Plan Goal:");
+            workoutController.createPlan(name, goal);
+        });
+
+        JButton listUsersButton = new JButton("List Users");
+        listUsersButton.setBounds(10, 100, 200, 25);
+        panel.add(listUsersButton);
+        listUsersButton.addActionListener(e -> userController.listUsers());
+
+        JButton createUserButton = new JButton("Create User");
+        createUserButton.setBounds(10, 130, 200, 25);
+        panel.add(createUserButton);
+        createUserButton.addActionListener(e -> {
+            String name = JOptionPane.showInputDialog("Enter User Name:");
+            String email = JOptionPane.showInputDialog("Enter User Email:");
+            userController.createUser(name, email);
+        });
+
+        JButton notifyButton = new JButton("Generate Notification");
+        notifyButton.setBounds(10, 160, 200, 25);
+        panel.add(notifyButton);
+        notifyButton.addActionListener(e -> {
+            String message = JOptionPane.showInputDialog("Enter Notification Message:");
+            logicManager.sendInstantNotification(message);
+        });
+
+        JButton scheduleButton = new JButton("Schedule Notification");
+        scheduleButton.setBounds(10, 190, 200, 25);
+        panel.add(scheduleButton);
+        scheduleButton.addActionListener(e -> {
+            String message = JOptionPane.showInputDialog("Enter Notification Message:");
+            logicManager.scheduleNotification(message, 5000);
+        });
+    }
+}
+</code></pre>
+
+<h3 class="feladatcim">8. Főprogram</h3>
+<pre><code>public class Main {
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.createAndShowGUI();
+        });
+    }
+}
+</code></pre>
+
+<h3 class="feladatcim">9. MealDatabaseConnection osztály</h3>
+<pre><code>import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class MealDatabaseConnection {
+    private static final String URL = "jdbc:mysql://localhost:3306/meals_db";
+    private static final String USER = "root";
+    private static final String PASSWORD = "password";
+
+    public static Connection getConnection() throws SQLException {
+        return DriverManager.getConnection(URL, USER, PASSWORD);
+    }
+}
+</code></pre>
+
+<h3 class="feladatcim">10. Meal Modell Osztály</h3>
+<pre><code>public class Meal {
+    private int id;
+    private String name;
+    private int calories;
+    private float protein;
+    private float carbs;
+    private float fats;
+
+    public Meal(int id, String name, int calories, float protein, float carbs, float fats) {
+        this.id = id;
+        this.name = name;
+        this.calories = calories;
+        this.protein = protein;
+        this.carbs = carbs;
+        this.fats = fats;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getCalories() {
+        return calories;
+    }
+
+    public void setCalories(int calories) {
+        this.calories = calories;
+    }
+
+    public float getProtein() {
+        return protein;
+    }
+
+    public void setProtein(float protein) {
+        this.protein = protein;
+    }
+
+    public float getCarbs() {
+        return carbs;
+    }
+
+    public void setCarbs(float carbs) {
+        this.carbs = carbs;
+    }
+
+    public float getFats() {
+        return fats;
+    }
+
+    public void setFats(float fats) {
+        this.fats = fats;
+    }
+}
+</code></pre>
+
+<h3 class="feladatcim">11. Meal DAO Osztály</h3>
+<pre><code>import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+
+public class MealDAO {
+    public List&lt;Meal&gt; getAllMeals() {
+        List&lt;Meal&gt; meals = new ArrayList&lt;&gt;();
+        String query = "SELECT * FROM meals";
+
+        try (Connection connection = MealDatabaseConnection.getConnection();
+             Statement statement = connection.createStatement();
+             ResultSet resultSet = statement.executeQuery(query)) {
+
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String name = resultSet.getString("name");
+                int calories = resultSet.getInt("calories");
+                float protein = resultSet.getFloat("protein");
+                float carbs = resultSet.getFloat("carbs");
+                float fats = resultSet.getFloat("fats");
+                meals.add(new Meal(id, name, calories, protein, carbs, fats));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return meals;
+    }
+
+    public void addMeal(Meal meal) {
+        String query = "INSERT INTO meals (name, calories, protein, carbs, fats) VALUES (?, ?, ?, ?, ?)";
+
+        try (Connection connection = MealDatabaseConnection.getConnection();
+             PreparedStatement statement = connection.prepareStatement(query)) {
+
+            statement.setString(1, meal.getName());
+            statement.setInt(2, meal.getCalories());
+            statement.setFloat(3, meal.getProtein());
+            statement.setFloat(4, meal.getCarbs());
+            statement.setFloat(5, meal.getFats());
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public Meal getMealById(int id) {
+        Meal meal = null;
+        String query = "SELECT * FROM meals WHERE id = ?";
+
+        try (Connection connection = MealDatabaseConnection.getConnection();
+             PreparedStatement statement = connection.prepareStatement(query)) {
+
+            statement.setInt(1, id);
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                String name = resultSet.getString("name");
+                int calories = resultSet.getInt("calories");
+                float protein = resultSet.getFloat("protein");
+                float carbs = resultSet.getFloat("carbs");
+                float fats = resultSet.getFloat("fats");
+                meal = new Meal(id, name, calories, protein, carbs, fats);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return meal;
+    }
+}
+</code></pre>
+
+<h3 class="feladatcim">12. Meal Service Osztály</h3>
+<pre><code>import java.util.List;
+
+public class MealService {
+    private MealDAO mealDAO = new MealDAO();
+
+    public List&lt;Meal&gt; getAllMeals() {
+        return mealDAO.getAllMeals();
+    }
+
+    public void createMeal(String name, int calories, float protein, float carbs, float fats) {
+        Meal meal = new Meal(0, name, calories, protein, carbs, fats);
+        mealDAO.addMeal(meal);
+    }
+
+    public Meal getMealById(int id) {
+        return mealDAO.getMealById(id);
+    }
+}
+</code></pre>
+
+<h3 class="feladatcim">13. GUI Integráció</h3>
+<pre><code>// Gomb: Ételek listázása
+JButton listMealsButton = new JButton("List Meals");
+listMealsButton.setBounds(10, 220, 200, 25);
+panel.add(listMealsButton);
+listMealsButton.addActionListener(e -> {
+    MealController mealController = new MealController();
+    mealController.listMeals();
+});
+
+// Gomb: Új étel hozzáadása
+JButton createMealButton = new JButton("Create Meal");
+createMealButton.setBounds(10, 250, 200, 25);
+panel.add(createMealButton);
+createMealButton.addActionListener(e -> {
+    String name = JOptionPane.showInputDialog("Enter Meal Name:");
+    int calories = Integer.parseInt(JOptionPane.showInputDialog("Enter Calories:"));
+    float protein = Float.parseFloat(JOptionPane.showInputDialog("Enter Protein (g):"));
+    float carbs = Float.parseFloat(JOptionPane.showInputDialog("Enter Carbs (g):"));
+    float fats = Float.parseFloat(JOptionPane.showInputDialog("Enter Fats (g):"));
+    MealController mealController = new MealController();
+    mealController.createMeal(name, calories, protein, carbs, fats);
+});
+</code></pre>
+
+<h2>Összefoglaló a MAIN osztályról</h2>
+<p>A Main osztály rövidsége és egyszerűsége a Java Swing keretrendszer és a modularizáció előnyeit tükrözi. A SwingUtilities.invokeLater gondoskodik a szálbiztonságról, a jól strukturált osztályok pedig lehetővé teszik a kód karbantarthatóságát és olvashatóságát. A modularitás és az SRP elv biztosítja, hogy minden osztály csak a saját feladatát lássa el. A GUI inicializálása és működtetése a MainWindow osztályban történik, ami logikailag elkülöníti a megjelenítést a programindítástól.</p>
+
+<p>Ez a struktúra teszi lehetővé, hogy a Main osztály elegáns és egyszerű maradjon.</p>
+
+<hr>
+<h1>Szótár</h1>
+
+<hr>
+<br>
+
+<table>
+    <tr>
+        <th>Szó</th>
+        <th>Magyarázat</th>
+    </tr>
+    <tr>
+        <td>MVC</td>
+        <td>Model-View-Controller; tervezési minta az alkalmazás rétegeinek elválasztására.</td>
+    </tr>
+    <tr>
+        <td>CRUD</td>
+        <td>Create, Read, Update, Delete; alapvető adatbázis-műveletek.</td>
+    </tr>
+    <tr>
+        <td>Swing</td>
+        <td>Java GUI keretrendszer, amely vizuális elemek létrehozására szolgál.</td>
+    </tr>
+    <tr>
+        <td>ActionListener</td>
+        <td>Java interfész események (pl. gombnyomások) kezelésére.</td>
+    </tr>
+    <tr>
+        <td>JFrame</td>
+        <td>A Java Swing alkalmazások alapértelmezett ablakkomponense.</td>
+    </tr>
+    <tr>
+        <td>JButton</td>
+        <td>Swing gombkomponens, amely interakciókat tesz lehetővé.</td>
+    </tr>
+    <tr>
+        <td>JPanel</td>
+        <td>Swing komponens, amely tartalmak csoportosítására szolgál.</td>
+    </tr>
+    <tr>
+        <td>Connection</td>
+        <td>JDBC kapcsolati objektum az adatbázis elérésére.</td>
+    </tr>
+    <tr>
+        <td>PreparedStatement</td>
+        <td>JDBC osztály biztonságos SQL lekérdezések készítésére.</td>
+    </tr>
+    <tr>
+        <td>ResultSet</td>
+        <td>JDBC osztály az adatbázis-lekérdezések eredményének kezelésére.</td>
+    </tr>
+    <tr>
+        <td>NotificationManager</td>
+        <td>Értesítések kezeléséért felelős osztály a programban.</td>
+    </tr>
+    <tr>
+        <td>Főprogram</td>
+        <td>Az a Java osztály, amely a program indulását kezeli.</td>
+    </tr>
+    <tr>
+        <td>Adatmodell</td>
+        <td>Egy osztály, amely az adatokat reprezentálja a programban.</td>
+    </tr>
+    <tr>
+        <td>Logika</td>
+        <td>Az üzleti folyamatokat kezelő kódréteg.</td>
+    </tr>
+    <tr>
+        <td>Vezérlő</td>
+        <td>A felhasználói interakciókat és a logika meghívásait kezelő réteg.</td>
+    </tr>
+    <tr>
+        <td>Szál</td>
+        <td>Egy folyamat, amely a Java program végrehajtását irányítja.</td>
+    </tr>
+    <tr>
+        <td>EDT</td>
+        <td>Event Dispatch Thread; a Swing GUI műveletek végrehajtásának dedikált szála.</td>
+    </tr>
+    <tr>
+        <td>Modularitás</td>
+        <td>Az alkalmazás különálló részekre bontása a könnyebb karbantarthatóság érdekében.</td>
+    </tr>
+</table>
+
+<br>
+<hr>
+<h1>Munkanapló</h1>
+<hr>
+<br>
+
+<table border="1" cellpadding="5" cellspacing="0">
+    <tr>
+        <th>Dátum</th>
+        <th>Időtartam</th>
+        <th>Tevékenység</th>
+        <th>Résztvevők</th>
+        <th>Döntések, következtetések, megjegyzések</th>
+    </tr>
+    <tr>
+        <td>2024.11.23</td>
+        <td>2 óra</td>
+        <td>Csoportos megbeszélés</td>
+        <td>Mindenki</td>
+        <td>Feladatmegoldási terv készítése</td>
+    </tr>
+    <tr>
+        <td>2024.11.24</td>
+        <td>2,5 óra</td>
+        <td>Csoportos megbeszélés</td>
+        <td>Mindenki</td>
+        <td>Anyagok gyűjtése a feladathoz</td>
+    </tr>
+    <tr>
+        <td>2024.11.25</td>
+        <td>3 óra</td>
+        <td>Csoportos megbeszélés</td>
+        <td>Mindenki</td>
+        <td>Részfeladatok elosztása</td>
+    </tr>
+    <tr>
+        <td>2024.11.25</td>
+        <td>1 óra</td>
+        <td>Vízió dokumentáció szerkesztése</td>
+        <td>Mindenki</td>
+        <td>Kidolgozás kezdete</td>
+    </tr>
+    <tr>
+        <td>2024.11.26</td>
+        <td>3 óra</td>
+        <td>Csoportos megbeszélés</td>
+        <td>Mindenki</td>
+        <td>Válaszok kidolgozása</td>
+    </tr>
+    <tr>
+        <td>2024.11.27</td>
+        <td>20 perc</td>
+        <td>Helyzetjelentés</td>
+        <td>Mindenki</td>
+        <td>Csapatos megbeszélés a haladásról</td>
+    </tr>
+    <tr>
+        <td>2024.11.29</td>
+        <td>3 óra</td>
+        <td>Dokumentum véglegesítése</td>
+        <td>Mindenki</td>
+        <td>Utolsó változtatások a dokumentációkon</td>
+    </tr>
+    <tr>
+        <td>2024.11.30</td>
+        <td>3 óra</td>
+        <td>Feltöltés</td>
+        <td>Mindenki</td>
+        <td>A kész dokumentumok ellenőrzése</td>
+    </tr>
+    <tr>
+        <td>2024.12.01</td>
+        <td>2 óra</td>
+        <td>Áttekintés</td>
+        <td>Mindenki</td>
+        <td>A dokumentumok weboldalra feltöltése és szerkesztése</td>
+    </tr>
+</table>
+
+
+
+</div>
+
+    <!-- Non-sticky Footer -->
+    <footer>
+        <p>&copy; 2024 Kód Betyárok</p>
+    </footer>
+
+</body>
+</html>
+
