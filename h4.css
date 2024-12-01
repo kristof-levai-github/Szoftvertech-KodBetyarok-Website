@@ -192,5 +192,9 @@ a:hover {
  	font-style: italic;
 } 	
 
-
+.responsive-container {
+    width: 100%;
+    overflow-x: auto; /* Ha szükséges, engedélyezd a görgetést */
+    text-align: center;
+}
 
