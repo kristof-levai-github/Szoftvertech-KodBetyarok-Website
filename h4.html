@@ -11,48 +11,47 @@
     <header>Kód Betyárok - Fitness Applikáció</header>
 
     <div class="button-container">
-            <a href="index.html" target="index.html">H1</a>
-            <a href="h2.html" target="h2.html">H2</a>
-            <a href="h3.html" target="h3.html">H3</a>
-            <a href="h4.html" target="_blank">H4</a>
-            <a href="h5.html" target="_blank">H5</a>
+        <a href="index.html" target="index.html">H1</a>
+        <a href="h2.html" target="h2.html">H2</a>
+        <a href="h3.html" target="h3.html">H3</a>
+        <a href="h4.html" target="_blank">H4</a>
     </div>
 <hr>
     <h2>Gyakorlatvezető: Mileff Péter</h3>
 
-    <table>
-        <tr>
-            <th>Csoport tagjai</th>
-            <th>Neptun Kód</th>
-            <th>Email</th>
-        </tr>
-        <tr>
-            <td>Vass Martin</td>
-            <td>I03URB</td>
-            <td>martin.vass@student.uni-miskolc.hu</td>
-        </tr>
-        <tr>
-            <td>Hliva Gábor</td>
-            <td>F5484N</td>
-            <td>gabor.hliva@student.uni-miskolc.hu</td>
-        </tr>
-        <tr>
-            <td>Bodó Tamás</td>
-            <td>HDK6NX</td>
-            <td>tamas.bodo@student.uni-miskolc.hu</td>
-        </tr>
-        <tr>
-            <td>Varga Bence</td>
-            <td>HK74CE</td>
-            <td>varga.bence@student.uni-miskolc.hu</td>
-        </tr>
-        <tr>
-            <td>Lévai Kristóf Zalán</td>
-            <td>EDMO16</td>
-            <td>kristof.zalan.levai@student.uni-miskolc.hu</td>
-        </tr>
-    </table>
-	
+        <table>
+            <tr>
+                <th>Csoport tagjai</th>
+                <th>Neptun Kód</th>
+                <th>Email</th>
+            </tr>
+            <tr>
+                <td>Vass Martin</td>
+                <td>I03URB</td>
+                <td>martin.vass@student.uni-miskolc.hu</td>
+            </tr>
+            <tr>
+                <td>Hliva Gábor</td>
+                <td>F5484N</td>
+                <td>gabor.hliva@student.uni-miskolc.hu</td>
+            </tr>
+            <tr>
+                <td>Bodó Tamás</td>
+                <td>HDK6NX</td>
+                <td>tamas.bodo@student.uni-miskolc.hu</td>
+            </tr>
+            <tr>
+                <td>Varga Bence</td>
+                <td>HK74CE</td>
+                <td>varga.bence@student.uni-miskolc.hu</td>
+            </tr>
+            <tr>
+                <td>Lévai Kristóf Zalán</td>
+                <td>EDMO16</td>
+                <td>kristof.zalan.levai@student.uni-miskolc.hu</td>
+            </tr>
+        </table>
+
     <div class="paragraphs">
         <p id="alahuzott">Résztevők:</p>
 
@@ -565,6 +564,636 @@
         <p>A jelen dokumentum célja, hogy bemutassa a tervezett szoftver objektum-orientált analízisét az analízis modell keretein belül. Az elkészített modell a rendszer főbb osztályait, azok kapcsolatait és funkcionális egységeit tárja fel. Az elemzés az SRS dokumentumban meghatározott használati esetek és követelmények alapján készült, célja pedig, hogy a rendszer alapját képező osztályok és alrendszerek logikus és átlátható struktúráját biztosítsa.</p>
        
     
+        <h3 class="feladatcim">X. Az osztályok logikai csoportosítása felhasználás szerint</h3>
+        <p>Ez a rész a rendszer összes modulját részletesen bemutatja, amelyek különböző funkciókat látnak el az alkalmazásban. A modulok célja, hogy biztosítsák az alkalmazás hatékony működését, lehetővé téve a felhasználói élmény javítását, az adatkezelést, az edzési és étkezési tervek kezelését, valamint a külső eszközökkel való integrációt. Az alkalmazás felhasználói kezelési, adatkezelési és statisztikai funkciókat egyaránt biztosít, valamint támogatja a közösségi interakciókat és a személyre szabott ajánlásokat.</p>
+    
+        <h2>1. Felhasználói kezelési modulok</h2>
+        <p>A felhasználói kezelési modulok biztosítják a felhasználók számára szükséges személyre szabott élményt és interakciókat az alkalmazásban. A felhasználói profilok kezelésétől kezdve a közösségi funkciókig és az edzéscélok eléréséig mindent lefednek. Ezen modulok segítségével a felhasználók könnyedén kezelhetik saját fiókjukat, motivációjukat, közösségi kapcsolataikat és védelmüket.</p>
+        <ul>
+            <li>Main</li>
+            <li>Felhasználókezelő (UserManager)</li>
+            <li>Cél (Goal)</li>
+            <li>Motivációkezelő (MotivationManager)</li>
+            <li>Kihívás (Challenge)</li>
+            <li>Felhasználói Beállítások (UserSettings)</li>
+            <li>Felhasználó (User)</li>
+            <li>Személyes Adatvédelem (PrivacySettings)</li>
+            <li>Bejelentkezési Napló (LoginLog)</li>
+            <li>Bejelentkezési Védelem (LoginSecurity)</li>
+            <li>Gamifikációs Rendszer (GamificationSystem)</li>
+            <li>Jelvény (Badge)</li>
+            <li>Eredménytábla (Leaderboard)</li>
+            <li>Hírcsatorna (Feed)</li>
+            <li>Üzenetküldő Rendszer (MessagingSystem)</li>
+            <li>Szakértői Tanácsok (ExpertAdvice)</li>
+            <li>Edzői Profil (TrainerProfile)</li>
+            <li>Közösségi Szavazások (CommunityPolls)</li>
+            <li>Közösségi Poszt (SocialPost)</li>
+            <li>Barátok és Követés (FriendsAndFollow)</li>
+            <li>Helyalapú Szolgáltatások (LocationServices)</li>
+            <li>Személyre Szabott Ajánlások (PersonalizedRecommendations)</li>
+        </ul>
+    
+        <h2>2. Adatkezelési és mentési modulok</h2>
+        <p>Az adatkezelési és mentési modulok feladata az alkalmazás adatainak biztonságos tárolása, mentése és visszaállítása. A modulok biztosítják az alkalmazás erőforrásainak kezelését, a felhasználói adatok szervezését, valamint a teljesítményfigyelést és a naplózást. Az adatok sorosítása, az adatbázis-kezelés és az alkalmazás naplózása mind fontos szerepet játszanak az adatok biztonságában és integritásában.</p>
+        <ul>
+            <li>ResourceManager (Erőforrás-kezelő)</li>
+            <li>EntityFactory (Entitásgyár)</li>
+            <li>EntityManager (Entitáskezelő)</li>
+            <li>Collection (Gyűjtemény)</li>
+            <li>SaveManager (Mentéskezelő)</li>
+            <li>Serializable (Sorosítás)</li>
+            <li>Adatbázis-kezelő (DatabaseManager)</li>
+            <li>AppLog (Alkalmazás Napló)</li>
+            <li>LoginLog (Bejelentkezési Napló)</li>
+            <li>SystemMonitor (Rendszerfigyelő)</li>
+        </ul>
+    
+        <h2>3. Edzés és étkezés kezelése</h2>
+        <p>Ez a modul a felhasználók edzési és étkezési terveit kezeli. Segít nyomon követni az egyéni edzéscélokat, rögzíti a gyakorlatokat, edzési naplókat, valamint a teljesítmény statisztikáit. Ezen kívül a modulok lehetővé teszik az étkezési tervek, napi étkezések, receptek, bevásárlólisták és mérföldkövek kezelését is, amely segít a felhasználóknak a táplálkozási és edzési céljaik elérésében.</p>
+        <ul>
+            <li>Edzésterv (WorkoutPlan)</li>
+            <li>Gyakorlat (Exercise)</li>
+            <li>Edzésterv Napló (WorkoutLog)</li>
+            <li>Teljesítmény Statisztika (PerformanceStats)</li>
+            <li>Statisztikai Jelentés (Report)</li>
+            <li>Vizuális Statisztikák (VisualStats)</li>
+            <li>Statisztikai Elemző (StatisticalAnalyzer)</li>
+            <li>Étrend (DietPlan)</li>
+            <li>Étrend Napi Terv (DailyMealPlan)</li>
+            <li>Étel (Meal)</li>
+            <li>Recept (Recipe)</li>
+            <li>Bevásárlólista (ShoppingList)</li>
+            <li>Mérföldkő (Milestone)</li>
+        </ul>
+    
+        <h2>4. Külső integráció és eszközkezelés</h2>
+        <p>
+          A külső integráció és eszközkezelési modulok lehetővé teszik az alkalmazás számára, hogy más rendszerekkel és eszközökkel is kapcsolatba lépjen. Az API kapcsolat, a külső eszközök szinkronizálása és az időjárási adatkezelés mind azt szolgálják, hogy az alkalmazás még több információval és szolgáltatással lássa el a felhasználót. Ez a modul biztosítja az alkalmazás széleskörű kompatibilitását külső szolgáltatásokkal és eszközökkel.
+        </p>
+        <ul>
+          <li>Integration (Integráció)</li>
+          <li>API Kapcsolat (APIConnection)</li>
+          <li>ExternalDeviceSync (Külső Eszközök Szinkronizáló)</li>
+          <li>WeatherDataManager (Időjárási Adatkezelő)</li>
+        </ul>
+      
+      
+      
+        <h2>5. Értesítési rendszer és időzítők</h2>
+        <p>
+          Az értesítési rendszer és időzítők segítenek a felhasználóknak az alkalmazáson belüli feladatok, emlékeztetők és értesítések kezelésében. A modulok célja, hogy emlékeztessék a felhasználókat a fontos eseményekre, például az edzéseikre, étkezéseikre vagy más napi feladataikra. Az automatikus emlékeztetők és időzítők javítják a felhasználói élményt, és segítenek a célok elérésében.
+        </p>
+        <ul>
+          <li>NotificationManager (Értesítési Kezelő)</li>
+          <li>Timer (Időzítő)</li>
+          <li>AutoReminder (Automatikus Emlékeztető)</li>
+        </ul>
+     
+      
+      
+        <h2>6. Logikai és üzleti műveletek kezelése</h2>
+        <p>
+          A logikai és üzleti műveletek kezelése biztosítja az alkalmazás üzleti logikáját és döntési folyamatait. Ezen modulok felelnek az alkalmazás működésének szabályainak kialakításáért és alkalmazásáért, mint például a különböző felhasználói műveletek vagy az üzleti döntések kezelése, amely biztosítja a rendszer gördülékeny működését és a felhasználók számára biztosított szolgáltatásokat.
+        </p>
+        <ul>
+          <li>Logic (Üzleti logika)</li>
+          <li>LogicManager (Üzleti logika menedzser)</li>
+        </ul>
+     
+        <h2>7. Komponens és entitás kezelése</h2>
+        <p>
+          A komponens és entitás kezelő modulok az alkalmazás különböző adatmoduljait és azok interakcióit kezelik. A komponensek és entitások tárolása és manipulálása alapvető fontosságú az alkalmazás adatainak strukturált kezelésében, legyen szó felhasználói információkról, edzéscélokról vagy étkezési tervekről. A gyűjtemények és entitásgyár segítenek az adatok egyszerű és hatékony kezelésében.
+        </p>
+        <ul>
+          <li>Component (Komponens)</li>
+          <li>Entity (Entitás)</li>
+          <li>EntityFactory (Entitásgyár)</li>
+          <li>Collection (Gyűjtemény)</li>
+        </ul>
+    
+      
+        <h2>8. Rendszerfigyelő és biztonság</h2>
+        <p>
+          A rendszerfigyelő és biztonsági modulok biztosítják az alkalmazás védelmét és folyamatos működésének figyelését. A rendszerfigyelő figyeli az alkalmazás teljesítményét és naplózza a rendszeres hibákat, míg a bejelentkezési védelem a felhasználói fiókok biztonságát biztosítja. Ez a modul segít megelőzni a biztonsági kockázatokat és biztosítja az adatvédelmet.
+        </p>
+        <ul>
+          <li>SystemMonitor (Rendszerfigyelő)</li>
+          <li>LoginSecurity (Bejelentkezési Védelem)</li>
+        </ul>
+    
+    
+        <h2>9. Segédmodulok és kiegészítők</h2>
+        <p>
+          A segédmodulok és kiegészítők az alkalmazás működésének támogató eszközei. Például a Szakértői Tanácsok modul segíthet a felhasználóknak edzés- és táplálkozási kérdésekben, miközben a többi kiegészítő funkció segíthet az alkalmazás által kínált szolgáltatások szélesítésében.
+        </p>
+        <ul>
+          <li>ExpertAdvice (Szakértői Tanácsok)</li>
+        </ul>
+    
+      
+    
+        <h2>10. Statisztikai és Közösségi Funkciók Bővítése</h2>
+        <p>
+          A statisztikai és közösségi funkciók bővítése célja, hogy javítsa a felhasználók élményét a közösségi interakciók és aktivitások segítségével. Az aktivitáskövetők, a közösségi ranglisták és a csoportos kihívások növelik a motivációt és a versenyszellemet, miközben a közösségi interakciók és az aktivitások megosztása új szintre emeli a felhasználói élményt.
+        </p>
+        <ul>
+          <li>UserActivityTracker</li>
+          <li>SocialInteractionManager</li>
+          <li>ActivityFeed</li>
+          <li>GroupChallengeManager</li>
+          <li>CommunityLeaderboard</li>
+        </ul>
+    
+        <h2>11. Képernyőmegvalósítás</h2>
+        <p>
+          A képernyőmegvalósítás biztosítja az alkalmazás vizuális megjelenését és felhasználói interakcióit. Az egyes képernyők, mint a bejelentkezési, fő, profil és beállítások képernyője biztosítják, hogy a felhasználók könnyedén navigálhassanak az alkalmazásban, és gyorsan elérhessék a kívánt szolgáltatásokat.
+        </p>
+        <ul>
+          <li>LoginScreen</li>
+          <li>SplashScreen</li>
+          <li>HomeScreen</li>
+          <li>ProfileScreen</li>
+          <li>SettingsScreen</li>
+          <li>WorkoutScreen</li>
+        </ul>
+      </section>
+      
+    
+        <h2>12. Login Folyamatok Kezelése</h2>
+        <p>
+          A bejelentkezési folyamatok kezelése biztosítja a felhasználók biztonságos bejelentkezését és munkameneteit. Az autentikációs és jelszókezelő rendszerek segítenek megvédeni a felhasználói fiókokat, míg a kétfaktoros hitelesítés és a munkamenetkezelés segíti a rendszer biztonságát és megbízhatóságát.
+        </p>
+        <ul>
+          <li>LoginHandler</li>
+          <li>AuthenticationService</li>
+          <li>PasswordManager</li>
+          <li>SessionManager</li>
+          <li>TwoFactorAuthentication</li>
+        </ul>
+    
+        <h2>13. Hálózatmegvalósítás</h2>
+        <p>
+          A hálózatmegvalósítás modulok biztosítják, hogy az alkalmazás sikeresen kommunikáljon a felhasználókkal és a külső rendszerekkel. Az API kéréskezelés, a hálózati kapcsolat monitorozása és a socket kapcsolatkezelés lehetővé teszik az alkalmazás zökkenőmentes működését és adatáramlását, miközben biztosítják a rendszer stabilitását.
+        </p>
+        <ul>
+          <li>NetworkManager</li>
+          <li>APIRequestHandler</li>
+          <li>NetworkMonitor</li>
+          <li>SocketConnection</li>
+        </ul>
+    
+    
+    
+    
+            <h3 class="feladatcim">X. Dinamikus Modell</h3>
+            
+            <div class="button-container">
+                <a href="dinmodel.html" target="_blank">Dinamikus modell</a>
+                </div>
+
+              <h2>1. Felhasználó Bejelentkezése (Login)</h2>
+              <p>
+                Ebben az esetben a Felhasználó a Felhasználókezelő osztályhoz küld egy bejelentkezési kérést. Az osztály ellenőrzi az adatokat és naplózza a bejelentkezést.
+              </p>
+              <ul>
+                <li>**Szekvenciadiagram:**
+                  <ul>
+                    <li>User -> UserManager: Login(username, password)</li>
+                    <li>UserManager -> LoginSecurity: Verify credentials</li>
+                    <li>LoginSecurity -> UserManager: Credentials valid</li>
+                    <li>UserManager -> LoginLog: Log successful login</li>
+                    <li>UserManager -> Main: Load user settings</li>
+                    <li>Main -> User: Display dashboard</li>
+                  </ul>
+                </li>
+              </ul>
+    
+          
+         
+              <h2>2. Edzésnaplózás (Workout Log)</h2>
+              <p>
+                A felhasználó edzéseinek naplózása során a WorkoutPlan osztály nyomon követi az edzéseket, a WorkoutLog osztály rögzíti a napi adatokat, és a PerformanceStats frissíti a teljesítményt.
+              </p>
+              <ul>
+                <li>**Szekvenciadiagram:**
+                  <ul>
+                    <li>User -> WorkoutPlan: Start workout</li>
+                    <li>WorkoutPlan -> WorkoutLog: Log exercise progress</li>
+                    <li>WorkoutLog -> PerformanceStats: Update performance stats</li>
+                    <li>PerformanceStats -> User: Display stats</li>
+                  </ul>
+                </li>
+              </ul>
+    
+    
+                <h2>3. Étrend Tervezése (Diet Plan)</h2>
+                <p>
+                  A felhasználó megadja a célját (pl. fogyás), és az Étrend osztály generál egy személyre szabott étrendet. A rendszer a Recept osztályokkal részletezi a napi étkezéseket.
+                </p>
+                <ul>
+                  <li>**Szekvenciadiagram:**
+                    <ul>
+                      <li>User -> Goal: Set goal (e.g., weight loss)</li>
+                      <li>Goal -> Logic: Generate diet plan based on goal</li>
+                      <li>Logic -> DietPlan: Create diet plan</li>
+                      <li>DietPlan -> DailyMealPlan: Create daily meal plans</li>
+                      <li>DailyMealPlan -> Recipe: Assign recipes to meals</li>
+                      <li>User -> DailyMealPlan: View daily meal plan</li>
+                    </ul>
+                  </li>
+                </ul>
+    
+                <h2>4. Statisztikai Jelentés Készítése (Statistical Report)</h2>
+                <p>
+                  A Statisztikai Elemző osztály elemzi a felhasználó edzéseit és étrendjét, majd a Report osztály statisztikai jelentést generál. A VisualStats osztály grafikus formában jeleníti meg az eredményeket.
+                </p>
+                <ul>
+                  <li>**Szekvenciadiagram:**
+                    <ul>
+                      <li>DatabaseManager -> StatisticalAnalyzer: Fetch data</li>
+                      <li>StatisticalAnalyzer -> Report: Generate report</li>
+                      <li>Report -> VisualStats: Generate graphical statistics</li>
+                      <li>VisualStats -> User: Display stats</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+    
+                <h2>5. Külső Eszközök Integrálása (External Device Integration)</h2>
+                <p>
+                  A külső eszközök, például okosórák adatait a rendszer az APIConnection osztály segítségével integrálja. Az eszközinformációkat a DatabaseManager és a PerformanceStats osztályok dolgozzák fel.
+                </p>
+                <ul>
+                  <li>**Szekvenciadiagram:**
+                    <ul>
+                      <li>ExternalDeviceSync -> APIConnection: Sync data with external device</li>
+                      <li>APIConnection -> DatabaseManager: Save data to database</li>
+                      <li>DatabaseManager -> User: Update user data</li>
+                      <li>User -> PerformanceStats: Update performance data</li>
+                    </ul>
+                  </li>
+                </ul>
+    
+                <h2>6. Célok Beállítása (Goal Setting)</h2>
+                <p>
+                  A felhasználó beállítja a céljait (pl. fogyás, izomtömeg növelése), és a rendszer a célok alapján ajánlásokat készít.
+                </p>
+                <ul>
+                  <li>**Szekvenciadiagram:**
+                    <ul>
+                      <li>User -> Goal: Set goal (e.g., weight loss)</li>
+                      <li>Goal -> Logic: Analyze goal and adjust recommendations</li>
+                      <li>Logic -> User: Provide personalized advice</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+    
+                <h2>7. Napi Étkezés Terv (Daily Meal Plan)</h2>
+                <p>
+                  A napi étkezés tervezése során a DietPlan osztály generálja a napi étkezéseket, a DailyMealPlan osztályok felhasználják az étkezési javaslatokat, majd a Recipe osztályok részletezik az étkezéseket.
+                </p>
+                <ul>
+                  <li>**Szekvenciadiagram:**
+                    <ul>
+                      <li>User -> DietPlan: Request daily meal plan</li>
+                      <li>DietPlan -> DailyMealPlan: Generate daily meal plan</li>
+                      <li>DailyMealPlan -> Recipe: Assign recipes</li>
+                      <li>User -> DailyMealPlan: View meal plan</li>
+                    </ul>
+                  </li>
+                </ul>
+    
+                <h2>8. Teljesítmény Nyomonkövetés (Performance Tracking)</h2>
+                <p>
+                  A felhasználó edzését és étrendjét követően a rendszer az összegyűjtött adatokat a PerformanceStats osztályba menti, amely aztán frissíti a statisztikai adatokat.
+                </p>
+                <ul>
+                  <li>**Szekvenciadiagram:**
+                    <ul>
+                      <li>User -> WorkoutLog: Start workout log</li>
+                      <li>WorkoutLog -> PerformanceStats: Track performance data</li>
+                      <li>PerformanceStats -> User: Display progress</li>
+                    </ul>
+                  </li>
+                </ul>
+    
+                <h2>9. Étrend Értékelése (Diet Evaluation)</h2>
+                <p>
+                  A DietPlan osztály értékeli az étrend hatékonyságát a PerformanceStats adatai alapján, és szükség esetén módosításokat ajánl.
+                </p>
+                <ul>
+                  <li>**Szekvenciadiagram:**
+                    <ul>
+                      <li>User -> DietPlan: Evaluate diet</li>
+                      <li>DietPlan -> PerformanceStats: Compare results with performance</li>
+                      <li>PerformanceStats -> DietPlan: Suggest adjustments</li>
+                      <li>DietPlan -> User: Display recommendations</li>
+                    </ul>
+                  </li>
+                </ul>
+    
+    
+                <h2>10. Jelentés Készítése és Megosztás (Report Generation and Sharing)</h2>
+                <p>
+                  A rendszer készít egy részletes edzési és étrendi jelentést, amit a felhasználó megoszthat a közösséggel vagy szakértőkkel.
+                </p>
+                <ul>
+                  <li>**Szekvenciadiagram:**
+                    <ul>
+                      <li>User -> Report: Request report</li>
+                      <li>Report -> StatisticalAnalyzer: Fetch data</li>
+                      <li>StatisticalAnalyzer -> Report: Generate report</li>
+                      <li>User -> Report: Share or export report</li>
+                    </ul>
+                  </li>
+                </ul>
+    
+                <h2>11. Rendszer Adminisztráció (System Administration)</h2>
+                <p>
+                  A rendszer adminisztrátora kezelheti a felhasználói adatokat, beállításokat és a rendszer teljesítményét. Az adminisztrátor interakcióba léphet a UserManager és a DatabaseManager osztályokkal.
+                </p>
+                <ul>
+                  <li>**Szekvenciadiagram:**
+                    <ul>
+                      <li>Admin -> UserManager: Manage user accounts</li>
+                      <li>UserManager -> DatabaseManager: Update user data</li>
+                      <li>DatabaseManager -> Admin: Confirm changes</li>
+                    </ul>
+                  </li>
+                </ul>
+    
+                <h2>12. Hálózati Kommunikáció (Network Communication)</h2>
+                <p>
+                  A hálózati kommunikációs komponens az adatok küldésére és fogadására szolgál a rendszer és az externális eszközök között. Az APIConnection osztály felelős a kapcsolatért, amely lehetővé teszi az adatcsere folyamatát.
+                </p>
+                <ul>
+                  <li>**Szekvenciadiagram (Hálózati kommunikáció):**
+                    <ul>
+                      <li>ExternalDevice -> APIConnection: Request data sync</li>
+                      <li>APIConnection -> Network: Establish connection</li>
+                      <li>Network -> APIConnection: Data sync success</li>
+                      <li>APIConnection -> DatabaseManager: Save data to DB</li>
+                      <li>DatabaseManager -> User: Update user information</li>
+                      <li>APIConnection -> ExternalDevice: Sync status update</li>
+                    </ul>
+                  </li>
+                </ul>
+            
+    
+    
+            <h2>13. Adatbázis Kezelés (Database Management)</h2>
+      <p>
+        A rendszer adatbázis-kezelő része tárolja a felhasználói adatokat, edzésnaplókat és egyéb statisztikákat. A DatabaseManager felelős az adatok olvasásáért és írásáért.
+      </p>
+      <ul>
+        <li>**Szekvenciadiagram (Adatbázis-kezelés):**
+          <ul>
+            <li>User -> DatabaseManager: Request data update</li>
+            <li>DatabaseManager -> Database: Fetch user data</li>
+            <li>Database -> DatabaseManager: Return data</li>
+            <li>DatabaseManager -> User: Update user interface</li>
+          </ul>
+        </li>
+      </ul>
+    
+      <h2>14. Edzési Tanácsadás (Workout Advice)</h2>
+      <p>
+        Az edzési tanácsadás az edzésadatok és célok alapján egyedi edzéstervet generál. Az ExerciseAdvisor osztály felelős az edzések személyre szabásáért a WorkoutPlan segítségével.
+      </p>
+      <ul>
+        <li>**Szekvenciadiagram (Edzési tanácsadás):**
+          <ul>
+            <li>User -> ExerciseAdvisor: Set fitness goal</li>
+            <li>ExerciseAdvisor -> WorkoutPlan: Generate workout plan</li>
+            <li>WorkoutPlan -> PerformanceStats: Evaluate current performance</li>
+            <li>PerformanceStats -> WorkoutPlan: Adjust plan based on performance</li>
+            <li>WorkoutPlan -> User: Provide workout advice</li>
+          </ul>
+        </li>
+      </ul>
+    
+      <h2>15. Erőforrás Kezelés (Resource Management)</h2>
+      <p>
+        A rendszer különböző erőforrásokat kezel, mint például a felhasználói adatok, eszközinformációk, statisztikák és edzésnaplók. Az ResourceManager osztály felelős a különböző erőforrások kezeléséért és elosztásáért.
+      </p>
+      <ul>
+        <li>**Szekvenciadiagram (Erőforrás-kezelés):**
+          <ul>
+            <li>User -> ResourceManager: Request workout resource</li>
+            <li>ResourceManager -> DatabaseManager: Fetch workout resources</li>
+            <li>DatabaseManager -> ResourceManager: Return workout data</li>
+            <li>ResourceManager -> User: Provide workout resource</li>
+          </ul>
+        </li>
+      </ul>
+    
+        <h2>16. Adatok Megosztása és Szinkronizálása (Data Sharing and Synchronization)</h2>
+        <p>
+          Ez a szekvenciadiagram a felhasználói adatokat és edzésnaplókat osztja meg más rendszerekkel vagy felhasználókkal. Az adatokat az APIConnection küldi el az externális platformokra, például közösségi oldalakon való megosztásra.
+        </p>
+        <ul>
+          <li>**Szekvenciadiagram (Adatok megosztása):**
+            <ul>
+              <li>User -> DataSharing: Request to share workout data</li>
+              <li>DataSharing -> APIConnection: Send data to external platform</li>
+              <li>APIConnection -> ExternalPlatform: Post data</li>
+              <li>ExternalPlatform -> APIConnection: Return success</li>
+              <li>APIConnection -> DataSharing: Confirm data sharing</li>
+              <li>DataSharing -> User: Notify sharing success</li>
+            </ul>
+          </li>
+        </ul>
+    
+        <h2>17. Erőforrások Módosítása és Frissítése (Resource Update)</h2>
+        <p>
+          A rendszer lehetőséget biztosít arra, hogy az erőforrásokat frissítse, például új edzésprogramot vagy étkezési tervet adjon a felhasználóknak. A frissítések az ResourceManager osztályon keresztül történnek.
+        </p>
+        <ul>
+          <li>**Szekvenciadiagram (Erőforrások frissítése):**
+            <ul>
+              <li>User -> ResourceManager: Request update for workout plan</li>
+              <li>ResourceManager -> DatabaseManager: Save updated workout plan</li>
+              <li>DatabaseManager -> ResourceManager: Confirm update</li>
+              <li>ResourceManager -> User: Notify successful update</li>
+            </ul>
+          </li>
+        </ul>
+     
+        <h2>18. Események és Figyelmeztetések (Event and Notification Management)</h2>
+        <p>
+          A rendszer figyeli a felhasználó tevékenységeit és eseményeket generál, mint például egy edzés befejezését vagy cél elérését. Az EventManager és NotificationManager osztályok felelősek az események kezeléséért és figyelmeztetések küldéséért.
+        </p>
+        <ul>
+          <li>**Szekvenciadiagram (Események és figyelmeztetések):**
+            <ul>
+              <li>WorkoutLog -> EventManager: Log workout event</li>
+              <li>EventManager -> NotificationManager: Generate notification</li>
+              <li>NotificationManager -> User: Send notification</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h2>Összefoglalva:</h2>
+    
+            <ul>
+              <li>User -> UserManager: A felhasználó bejelentkezési kérelmet küld a UserManager osztálynak (felhasználónév és jelszó).</li>
+              <li>UserManager -> LoginSecurity: A UserManager ellenőrzi a bejelentkezési adatokat a LoginSecurity segítségével.</li>
+              <li>LoginSecurity -> UserManager: A LoginSecurity válaszol a bejelentkezési adatok érvényességéről.</li>
+              <li>UserManager -> LoginLog: A UserManager naplózza a sikeres bejelentkezést.</li>
+              <li>UserManager -> Main: A UserManager betölti a felhasználó beállításait a Main komponensbe.</li>
+              <li>Main -> User: A Main komponens megjeleníti a felhasználó irányítópultját.</li>
+            </ul>
+    
+                <hr>
+            <ul>
+              <li>User -> WorkoutPlan: A felhasználó elindítja az edzést a WorkoutPlan osztály segítségével.</li>
+              <li>WorkoutPlan -> WorkoutLog: A WorkoutPlan naplózza az edzés előrehaladását a WorkoutLog osztályba.</li>
+              <li>WorkoutLog -> PerformanceStats: A WorkoutLog frissíti a teljesítménystatisztikákat a PerformanceStats segítségével.</li>
+              <li>PerformanceStats -> User: A PerformanceStats megjeleníti a felhasználónak a statisztikákat.</li>
+            </ul>
+            <hr>
+            <ul>
+              <li>User -> Goal: A felhasználó megadja a célját (pl. fogyás).</li>
+              <li>Goal -> Logic: A Goal elemzi a célt és átadja a Logic osztálynak.</li>
+              <li>Logic -> DietPlan: A Logic létrehozza a személyre szabott étrendet a DietPlan segítségével.</li>
+              <li>DietPlan -> DailyMealPlan: A DietPlan generálja a napi étkezési terveket.</li>
+              <li>DailyMealPlan -> Recipe: A DailyMealPlan hozzárendeli a napi étkezéseket a megfelelő receptekhez.</li>
+              <li>User -> DailyMealPlan: A felhasználó megtekinti a napi étkezési tervet.</li>
+            </ul>
+    
+            <hr>
+    
+            <ul>
+              <li>DatabaseManager -> StatisticalAnalyzer: A DatabaseManager lekéri a szükséges adatokat a StatisticalAnalyzer számára.</li>
+              <li>StatisticalAnalyzer -> Report: A StatisticalAnalyzer generál egy statisztikai jelentést.</li>
+              <li>Report -> VisualStats: A Report grafikus statisztikákat generál a VisualStats segítségével.</li>
+              <li>VisualStats -> User: A VisualStats megjeleníti a statisztikai adatokat a felhasználónak.</li>
+            </ul>
+    
+            <hr>
+    
+            <ul>
+              <li>ExternalDeviceSync -> APIConnection: A külső eszköz adatokat szinkronizál az APIConnection osztállyal.</li>
+              <li>APIConnection -> DatabaseManager: Az APIConnection elmenti az adatokat az adatbázisba a DatabaseManager segítségével.</li>
+              <li>DatabaseManager -> User: A DatabaseManager frissíti a felhasználói adatokat.</li>
+              <li>User -> PerformanceStats: A felhasználó frissíti a teljesítménystatisztikákat.</li>
+            </ul>
+            <hr>
+            <ul>
+              <li>User -> Goal: A felhasználó beállítja a célt (pl. fogyás).</li>
+              <li>Goal -> Logic: A Goal átadja az adatokat a Logic osztálynak, amely elemzi a célt.</li>
+              <li>Logic -> User: A Logic személyre szabott tanácsokat ad a felhasználónak.</li>
+            </ul>
+            <hr>
+            <ul>
+              <li>User -> DietPlan: A felhasználó napi étkezési tervet kér a DietPlan osztálytól.</li>
+              <li>DietPlan -> DailyMealPlan: A DietPlan generálja a napi étkezési tervet.</li>
+              <li>DailyMealPlan -> Recipe: A DailyMealPlan hozzárendeli a napi étkezéseket a megfelelő receptekhez.</li>
+              <li>User -> DailyMealPlan: A felhasználó megtekinti a napi étkezési tervet.</li>
+            </ul>
+            <hr>
+            <ul>
+              <li>User -> WorkoutLog: A felhasználó elindítja az edzésnaplózást a WorkoutLog segítségével.</li>
+              <li>WorkoutLog -> PerformanceStats: A WorkoutLog rögzíti a teljesítménystatisztikákat a PerformanceStats osztályban.</li>
+              <li>PerformanceStats -> User: A PerformanceStats megjeleníti a felhasználó előrehaladását.</li>
+            </ul>
+            <hr>
+            <ul>
+              <li>User -> DietPlan: A felhasználó értékeli az étrendet.</li>
+              <li>DietPlan -> PerformanceStats: A DietPlan összehasonlítja az eredményeket a PerformanceStats adataival.</li>
+              <li>PerformanceStats -> DietPlan: A PerformanceStats javaslatokat tesz az étrend módosítására.</li>
+            </ul>
+    
+            <hr>
+     
+              <ul>
+                  <li>User -> Report: A felhasználó kéri a jelentést.</li>
+                  <li>Report -> StatisticalAnalyzer: A Report lekéri az adatokat a StatisticalAnalyzer osztálytól.</li>
+                  <li>StatisticalAnalyzer -> Report: A StatisticalAnalyzer generálja a jelentést.</li>
+                  <li>User -> Report: A felhasználó megoszthatja vagy exportálhatja a jelentést.</li>
+              </ul>
+          
+              <hr>
+              <ul>
+                  <li>Admin -> UserManager: Az adminisztrátor kezeli a felhasználói fiókokat.</li>
+                  <li>UserManager -> DatabaseManager: A UserManager frissíti a felhasználói adatokat a DatabaseManager segítségével.</li>
+                  <li>DatabaseManager -> Admin: A DatabaseManager megerősíti a változásokat.</li>
+              </ul>
+              <hr>
+              
+              <ul>
+                  <li>ExternalDevice -> APIConnection: A külső eszköz adatokat kér a szinkronizáláshoz az APIConnection segítségével.</li>
+                  <li>APIConnection -> Network: Az APIConnection kapcsolatot épít a Network komponenssel.</li>
+                  <li>Network -> APIConnection: A Network megerősíti a szinkronizálás sikerességét.</li>
+                  <li>APIConnection -> DatabaseManager: Az APIConnection elmenti az adatokat az adatbázisba.</li>
+                  <li>DatabaseManager -> User: A DatabaseManager frissíti a felhasználói adatokat.</li>
+                  <li>APIConnection -> ExternalDevice: Az APIConnection visszajelzést küld a külső eszköznek a szinkronizálás állapotáról.</li>
+              </ul>
+          
+              <hr>
+              <ul>
+                  <li>User -> DatabaseManager: A felhasználó adatokat kér a frissítéshez.</li>
+                  <li>DatabaseManager -> Database: A DatabaseManager lekéri az adatokat az adatbázisból.</li>
+                  <li>Database -> DatabaseManager: Az adatbázis visszaküldi az adatokat a DatabaseManager-nek.</li>
+                  <li>DatabaseManager -> User: A DatabaseManager frissíti a felhasználói felületet.</li>
+              </ul>
+              <hr>
+              
+              <ul>
+                  <li>User -> ExerciseAdvisor: A felhasználó beállítja a fitnesz célokat.</li>
+                  <li>ExerciseAdvisor -> WorkoutPlan: Az ExerciseAdvisor edzéstervet generál.</li>
+                  <li>WorkoutPlan -> PerformanceStats: Az edzésterv kiértékeli a felhasználó teljesítményét.</li>
+                  <li>PerformanceStats -> WorkoutPlan: A PerformanceStats módosítja az edzéstervet a teljesítmény alapján.</li>
+                  <li>WorkoutPlan -> User: Az edzésterv tanácsokat ad a felhasználónak.</li>
+              </ul>
+          
+              <hr>
+              <ul>
+                  <li>User -> ResourceManager: A felhasználó erőforrást kér a ResourceManager-től.</li>
+                  <li>ResourceManager -> DatabaseManager: A ResourceManager lekéri az erőforrást a DatabaseManager-ből.</li>
+                  <li>DatabaseManager -> ResourceManager: A DatabaseManager visszaküldi az erőforrást.</li>
+                  <li>ResourceManager -> User: A ResourceManager biztosítja a szükséges erőforrást a felhasználónak.</li>
+              </ul>
+          
+              <hr>
+              <ul>
+                  <li>User -> DataSharing: A felhasználó kéri az adatokat megosztásra.</li>
+                  <li>DataSharing -> APIConnection: A DataSharing az APIConnection segítségével elküldi az adatokat egy külső platformra.</li>
+                  <li>APIConnection -> ExternalPlatform: Az APIConnection közzéteszi az adatokat.</li>
+                  <li>ExternalPlatform -> APIConnection: A külső platform visszaigazolja az adatközlést.</li>
+                  <li>APIConnection -> DataSharing: Az APIConnection megerősíti az adatok megosztását.</li>
+                  <li>DataSharing -> User: A DataSharing értesíti a felhasználót a sikeres megosztásról.</li>
+              </ul>
+              <hr>
+             
+              <ul>
+                  <li>User -> ResourceManager: A felhasználó frissíteni kívánja az erőforrást.</li>
+                  <li>ResourceManager -> DatabaseManager: A ResourceManager elmenti a frissített adatokat a DatabaseManager-be.</li>
+                  <li>DatabaseManager -> ResourceManager: A DatabaseManager megerősíti a frissítést.</li>
+                  <li>ResourceManager -> User: A ResourceManager értesíti a felhasználót a sikeres frissítésről.</li>
+              </ul>
+              <hr>
+              
+              <ul>
+                  <li>WorkoutLog -> EventManager: Az edzésnapló eseményt generál.</li>
+                  <li>EventManager -> NotificationManager: Az EventManager értesítést generál a NotificationManager számára.</li>
+                  <li>NotificationManager -> User: A NotificationManager figyelmeztetést küld a felhasználónak.</li>
+              </u>
+              <hr>
+
+
+
+
+
+
+
+
+
+
+
+
         <h3 class="feladatcim">2. Kezdeti osztálydiagram</h3>
             <div class="button-container">
             <a href="Kezdeti.html" target="_blank">Kezdeti osztálydiagram</a>
@@ -679,7 +1308,7 @@
 
 
 
-
+      
 	<h3 class="feladatcim">3. Kezdeti osztálydiagram elemzése</h3>
 
 
@@ -1157,9 +1786,140 @@
     </li>
 </ul>
 
-
-
-
+<li><strong>LoginScreen</strong><br>
+    <ul>
+        <li><strong>Leírás:</strong> A bejelentkezési képernyő, ahol a felhasználók bejelentkezhetnek vagy regisztrálhatnak az alkalmazásba. Az oldal tartalmazza a felhasználónév és jelszó mezőket, valamint az autentikációs lehetőségeket.</li>
+    </ul>
+</li>
+<hr>
+<li><strong>SplashScreen</strong><br>
+    <ul>
+        <li><strong>Leírás:</strong> Az alkalmazás indításakor megjelenő képernyő, amely a márkát és az alkalmazás betöltését vizuálisan reprezentálja. Ez egy átmeneti képernyő, amely nem tartalmaz interaktív elemeket.</li>
+    </ul>
+</li>
+<hr>
+<li><strong>HomeScreen</strong><br>
+    <ul>
+        <li><strong>Leírás:</strong> Az alkalmazás fő képernyője, amely központi navigációs pontként szolgál, hozzáférést biztosít az edzés- és étrendmodulokhoz, statisztikákhoz és közösségi funkciókhoz, mint a hírcsatorna és a felhasználói teljesítmények.</li>
+    </ul>
+</li>
+<hr>
+<li><strong>ProfileScreen</strong><br>
+    <ul>
+        <li><strong>Leírás:</strong> A felhasználói profil oldala, amely tartalmazza az egyéni adatokat, a felhasználó eddigi teljesítményeit és statisztikáit, valamint lehetőséget biztosít a személyes beállítások módosítására.</li>
+    </ul>
+</li>
+<hr>
+<li><strong>SettingsScreen</strong><br>
+    <ul>
+        <li><strong>Leírás:</strong> A beállítások képernyője, ahol a felhasználók személyre szabhatják az alkalmazást. Itt módosíthatók a nyelvi preferenciák, az adatvédelmi beállítások és az értesítési preferenciák.</li>
+    </ul>
+</li>
+<hr>
+<li><strong>WorkoutScreen</strong><br>
+    <ul>
+        <li><strong>Leírás:</strong> Az edzés közbeni képernyő, amely az aktuális gyakorlatokat, időzítőket és a felhasználó előrehaladását mutatja. Segít a felhasználóknak nyomon követni edzéseiket és motiválja őket a céljaik elérésére.</li>
+    </ul>
+</li>
+<hr>
+<li><strong>NetworkManager</strong><br>
+    <ul>
+        <li><strong>Leírás:</strong> Az alkalmazás hálózati kapcsolatainak kezeléséért felelős osztály. Az API hívások, adatátvitel és szerverkommunikáció irányítását végzi.</li>
+        <li><strong>Kapcsolatok:</strong> Kapcsolódik az API Kapcsolat és Integráció osztályokhoz, segítve a külső eszközök szinkronizálását és adatátvitelt.</li>
+    </ul>
+</li>
+<hr>
+<li><strong>APIRequestHandler</strong><br>
+    <ul>
+        <li><strong>Leírás:</strong> Az API hívások kezelésére szolgáló osztály, amely lehetővé teszi az adatokat külső szerverekre küldeni és onnan visszaérni.</li>
+        <li><strong>Kapcsolatok:</strong> Kapcsolódik az API Kapcsolat és a NetworkManager osztályokhoz.</li>
+    </ul>
+</li>
+<hr>
+<li><strong>NetworkMonitor</strong><br>
+    <ul>
+        <li><strong>Leírás:</strong> A hálózati állapot és kapcsolat figyelésére szolgáló osztály, amely jelez a felhasználónak, ha nincs aktív kapcsolat.</li>
+        <li><strong>Kapcsolatok:</strong> Kapcsolódik a NetworkManager osztályhoz és értesítéseket küldhet a NotificationManagernek.</li>
+    </ul>
+</li>
+<hr>
+<li><strong>SocketConnection</strong><br>
+    <ul>
+        <li><strong>Leírás:</strong> WebSocket kapcsolatokat kezelő osztály, amely lehetővé teszi a valós idejű adatcserét az alkalmazás és a szerver között (pl. chat, élő edzési statisztikák).</li>
+        <li><strong>Kapcsolatok:</strong> Kapcsolódik az APIRequestHandler és a NetworkManager osztályokhoz.</li>
+    </ul>
+</li>
+<hr>
+<li><strong>LoginHandler</strong><br>
+    <ul>
+        <li><strong>Leírás:</strong> Az alkalmazás bejelentkezési folyamatait irányítja. Kezeli a felhasználó hitelesítését, beleértve a jelszó ellenőrzést és a felhasználói fiókok lekérdezését.</li>
+        <li><strong>Kapcsolatok:</strong> Kapcsolódik a Felhasználókezelő és a LoginLog osztályokhoz.</li>
+    </ul>
+</li>
+<hr>
+<li><strong>AuthenticationService</strong><br>
+    <ul>
+        <li><strong>Leírás:</strong> Az autentikációt végző szolgáltatás, amely külső szolgáltatókat (pl. Google, Facebook) is integrálhat, hogy támogassa a szociális bejelentkezéseket.</li>
+        <li><strong>Kapcsolatok:</strong> Kapcsolódik a LoginHandler és a UserManager osztályokhoz.</li>
+    </ul>
+</li>
+<hr>
+<li><strong>PasswordManager</strong><br>
+    <ul>
+        <li><strong>Leírás:</strong> A felhasználói jelszavak titkosítását és biztonságos tárolását végző osztály.</li>
+        <li><strong>Kapcsolatok:</strong> Kapcsolódik a LoginHandler és a UserSettings osztályokhoz.</li>
+    </ul>
+</li>
+<hr>
+<li><strong>SessionManager</strong><br>
+    <ul>
+        <li><strong>Leírás:</strong> A felhasználói munkamenet kezelésére szolgáló osztály. Biztosítja, hogy a felhasználói munkamenet aktiválódjon a sikeres bejelentkezés után és lejárjon a kijelentkezéskor.</li>
+        <li><strong>Kapcsolatok:</strong> Kapcsolódik a LoginHandler és a UserManager osztályokhoz.</li>
+    </ul>
+</li>
+<hr>
+<li><strong>TwoFactorAuthentication</strong><br>
+    <ul>
+        <li><strong>Leírás:</strong> Kétfaktoros autentikációs folyamatokat biztosít a felhasználói fiók biztonságának növelésére.</li>
+        <li><strong>Kapcsolatok:</strong> Kapcsolódik a LoginHandler és a LoginSecurity osztályokhoz.</li>
+    </ul>
+</li>
+<hr>
+<li><strong>UserActivityTracker</strong><br>
+    <ul>
+        <li><strong>Leírás:</strong> A felhasználók aktivitásának követése, mint edzés, étkezés, kihívások teljesítése. Az aktivitás alapján készíthetőek statisztikák.</li>
+        <li><strong>Kapcsolatok:</strong> Kapcsolódik a PerformanceStats és GamificationSystem osztályokhoz.</li>
+    </ul>
+</li>
+<hr>
+<li><strong>SocialInteractionManager</strong><br>
+    <ul>
+        <li><strong>Leírás:</strong> A felhasználók közötti interakciókat és közösségi tevékenységeket kezeli, mint például a barátok meghívása, követés, üzenetküldés és közösségi posztok.</li>
+        <li><strong>Kapcsolatok:</strong> Kapcsolódik a Hírcsatorna és Közösségi Poszt osztályokhoz.</li>
+    </ul>
+</li>
+<hr>
+<li><strong>ActivityFeed</strong><br>
+    <ul>
+        <li><strong>Leírás:</strong> Az aktivitásokat megjelenítő hírfolyam, amely tartalmazza a felhasználói interakciókat, eredményeket és közösségi posztokat.</li>
+        <li><strong>Kapcsolatok:</strong> Kapcsolódik a Feed és SocialInteractionManager osztályokhoz.</li>
+    </ul>
+</li>
+<hr>
+<li><strong>GroupChallengeManager</strong><br>
+    <ul>
+        <li><strong>Leírás:</strong> Csoportos kihívások létrehozása és kezelése. A felhasználók csatlakozhatnak, kihívásokra jelentkezhetnek, és versenyezhetnek másokkal.</li>
+        <li><strong>Kapcsolatok:</strong> Kapcsolódik a Kihívás és Közösségi Poszt osztályokhoz.</li>
+    </ul>
+</li>
+<hr>
+<li><strong>CommunityLeaderboard</strong><br>
+    <ul>
+        <li><strong>Leírás:</strong> Közösségi ranglista, amely a felhasználók versengését mutatja a kihívásokban és aktivitásokban.</li>
+        <li><strong>Kapcsolatok:</strong> Kapcsolódik a Eredménytábla és GroupChallengeManager osztályokhoz.</li>
+    </ul>
+</li>
+<hr>
 
 <h3 class="feladatcim">4.2 Attribútumok azonosítása</h3>
 
@@ -2743,7 +3503,608 @@
     </ul>
 </div>
 
+<div>
+    <h2>4.2.55. NetworkManager osztály (class: NetworkManager)</h2>
+    <p><strong>Felelőssége, feladata:</strong> Felelős az alkalmazás hálózati kapcsolatainak kezeléséért. Az API hívások, adatátvitel és szerverkommunikáció irányítását végzi. Különböző hálózati szolgáltatások integrálásával biztosítja az adatküldést és -fogadást, valamint a külső eszközökkel való szinkronizálást.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>kapcsolódó API hívások (api_calls) - a küldött és fogadott API hívások listája
+            <ul>
+                <li>private List&lt;String&gt; api_calls</li>
+            </ul>
+        </li>
+        <li>aktív kapcsolat (active_connection) - jelzi, hogy az alkalmazás hálózati kapcsolata aktív-e
+            <ul>
+                <li>private boolean active_connection</li>
+            </ul>
+        </li>
+        <li>kapcsolati állapot (connection_status) - a hálózati kapcsolat állapota
+            <ul>
+                <li>private String connection_status</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void connectToNetwork() - hálózati kapcsolat létrehozása</li>
+        <li>public void disconnectFromNetwork() - hálózati kapcsolat megszakítása</li>
+        <li>public void sendDataToServer(String data) - adat küldése a szerverre</li>
+        <li>public String receiveDataFromServer() - adat fogadása a szerverről</li>
+    </ul>
+</div>
 
+<div>
+    <h2>4.2.56. APIRequestHandler osztály (class: APIRequestHandler)</h2>
+    <p><strong>Felelőssége, feladata:</strong> Az API hívások kezelésére szolgáló osztály, amely lehetővé teszi az adatokat külső szerverekre küldeni és onnan visszaérni. Az API válaszokat kezeli és feldolgozza.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>API hívások (api_requests) - az összes végrehajtott API kérés listája
+            <ul>
+                <li>private List&lt;String&gt; api_requests</li>
+            </ul>
+        </li>
+        <li>API válaszok (api_responses) - a válaszok listája, amelyeket a külső szerverek küldenek
+            <ul>
+                <li>private List&lt;String&gt; api_responses</li>
+            </ul>
+        </li>
+        <li>válasz idő (response_time) - az API válaszok ideje
+            <ul>
+                <li>private long response_time</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void sendRequest(String request) - API kérés küldése</li>
+        <li>public void handleResponse(String response) - API válasz kezelése</li>
+        <li>public void logRequest(String request) - API kérés naplózása</li>
+    </ul>
+</div>
+
+<div>
+    <h2>4.2.57. NetworkMonitor osztály (class: NetworkMonitor)</h2>
+    <p><strong>Felelőssége, feladata:</strong> A hálózati állapot és kapcsolat figyelésére szolgáló osztály, amely értesítéseket küld a felhasználónak, ha nincs aktív kapcsolat. Feladata továbbá a kapcsolat megszakadásának detektálása és annak kezelésére vonatkozó intézkedések meghozatala.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>kapcsolati állapot (connection_state) - a hálózati kapcsolat állapota
+            <ul>
+                <li>private String connection_state</li>
+            </ul>
+        </li>
+        <li>értesítési szint (notification_level) - a szükséges értesítési szint
+            <ul>
+                <li>private String notification_level</li>
+            </ul>
+        </li>
+        <li>hibák (errors) - figyelt hibák listája
+            <ul>
+                <li>private List&lt;String&gt; errors</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void monitorConnection() - a kapcsolat folyamatos figyelése</li>
+        <li>public void sendNotification(String message) - értesítés küldése a felhasználónak</li>
+        <li>public void checkConnectionStatus() - kapcsolat állapotának ellenőrzése</li>
+    </ul>
+</div>
+
+<div>
+    <h2>4.2.58. SocketConnection osztály (class: SocketConnection)</h2>
+    <p><strong>Felelőssége, feladata:</strong> WebSocket kapcsolatokat kezelő osztály, amely lehetővé teszi a valós idejű adatcserét az alkalmazás és a szerver között (pl. chat, élő edzési statisztikák). Biztosítja az adatfolyamok stabilitását és megbízhatóságát.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>aktív WebSocket kapcsolat (active_socket_connection) - jelzi, hogy az alkalmazás aktív WebSocket kapcsolattal rendelkezik-e
+            <ul>
+                <li>private boolean active_socket_connection</li>
+            </ul>
+        </li>
+        <li>kapcsolat típus (connection_type) - a kapcsolat típusa (pl. chat, statisztikai adatok)
+            <ul>
+                <li>private String connection_type</li>
+            </ul>
+        </li>
+        <li>üzenetek (messages) - az üzenetek listája, amelyeket a felhasználók és a szerver cserélnek
+            <ul>
+                <li>private List&lt;String&gt; messages</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void openSocketConnection() - WebSocket kapcsolat megnyitása</li>
+        <li>public void sendMessage(String message) - üzenet küldése a WebSocket-en keresztül</li>
+        <li>public String receiveMessage() - üzenet fogadása WebSocket-en keresztül</li>
+    </ul>
+</div>
+
+<div>
+    <h2>4.2.59. LoginHandler osztály (class: LoginHandler)</h2>
+    <p><strong>Felelőssége, feladata:</strong> Az alkalmazás bejelentkezési folyamatait irányítja. Kezeli a felhasználó hitelesítését, beleértve a jelszó ellenőrzést és a felhasználói fiókok lekérdezését. Biztosítja, hogy a felhasználók sikeresen bejelentkezzenek a megfelelő hitelesítési mechanizmusok használatával.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>aktív felhasználó (active_user) - a bejelentkezett felhasználó azonosítója
+            <ul>
+                <li>private String active_user</li>
+            </ul>
+        </li>
+        <li>hitelesítési állapot (authentication_status) - a hitelesítés sikerességének mutatója (sikeres vagy sikertelen)
+            <ul>
+                <li>private boolean authentication_status</li>
+            </ul>
+        </li>
+        <li>hibaüzenetek (error_messages) - a hitelesítési folyamat során keletkezett hibák listája
+            <ul>
+                <li>private List&lt;String&gt; error_messages</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Kapcsolatok:</strong></p>
+    <ul>
+        <li>Felhasználókezelő osztály (UserManager) - a felhasználók adatait kezeli</li>
+        <li>LoginLog osztály (LoginLog) - a bejelentkezési eseményeket naplózza</li>
+    </ul>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public boolean authenticateUser(String username, String password) - hitelesíti a felhasználót, ellenőrzi a jelszót</li>
+        <li>public void handleLoginError(String error_message) - a hitelesítési hibák kezelése</li>
+        <li>public void logLoginAttempt(String username) - a bejelentkezési próbálkozás naplózása</li>
+        <li>public void logoutUser() - felhasználó kijelentkeztetése</li>
+    </ul>
+</div>
+
+
+<div>
+    <h2>4.2.60. AuthenticationService osztály (class: AuthenticationService)</h2>
+    <p><strong>Felelőssége, feladata:</strong> Az autentikációt végző szolgáltatás, amely külső szolgáltatókat (pl. Google, Facebook) is integrálhat, hogy támogassa a szociális bejelentkezéseket. Kezeli a különböző autentikációs mechanizmusokat és biztosítja, hogy az alkalmazás különböző típusú bejelentkezéseket támogasson.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>szociális fiók típusok (social_account_types) - a támogatható szociális fiók típusok listája (pl. Google, Facebook)
+            <ul>
+                <li>private List&lt;String&gt; social_account_types</li>
+            </ul>
+        </li>
+        <li>hitelesítési állapot (authentication_status) - a külső hitelesítés sikeressége
+            <ul>
+                <li>private boolean authentication_status</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Kapcsolatok:</strong></p>
+    <ul>
+        <li>LoginHandler osztály (LoginHandler) - a bejelentkezési folyamatot kezeli</li>
+        <li>UserManager osztály (UserManager) - a felhasználói fiókok adatait kezeli</li>
+    </ul>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public boolean authenticateWithSocialAccount(String account_type, String account_credentials) - hitelesítés szociális fiókkal</li>
+        <li>public void linkSocialAccountToUserAccount(String user_id, String account_type) - szociális fiók összekapcsolása a felhasználói fiókkal</li>
+        <li>public boolean getAuthenticationStatus() - az autentikáció állapotának lekérdezése</li>
+    </ul>
+</div>
+
+<div>
+    <h2>4.2.61. PasswordManager osztály (class: PasswordManager)</h2>
+    <p><strong>Felelőssége, feladata:</strong> A felhasználói jelszavak titkosítását és biztonságos tárolását végző osztály. Biztosítja, hogy a felhasználói jelszavak ne legyenek hozzáférhetők a rendszer többi részéből. Titkosítja a jelszavakat a tárolás során és dekódolja őket a hitelesítéshez.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>titkosított jelszó (encrypted_password) - a felhasználói jelszó titkosított verziója
+            <ul>
+                <li>private String encrypted_password</li>
+            </ul>
+        </li>
+        <li>jelszó titkosítási algoritmus (encryption_algorithm) - a jelszó titkosítására használt algoritmus neve
+            <ul>
+                <li>private String encryption_algorithm</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Kapcsolatok:</strong></p>
+    <ul>
+        <li>LoginHandler osztály (LoginHandler) - a bejelentkezési folyamatban szerepel</li>
+        <li>UserSettings osztály (UserSettings) - felhasználói beállítások kezeléséhez szükséges</li>
+    </ul>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public String encryptPassword(String password) - jelszó titkosítása</li>
+        <li>public String decryptPassword(String encrypted_password) - titkosított jelszó dekódolása</li>
+        <li>public boolean validatePassword(String password, String stored_encrypted_password) - a jelszó validálása</li>
+    </ul>
+</div>
+
+<div>
+    <h2>4.2.62. SessionManager osztály (class: SessionManager)</h2>
+    <p><strong>Felelőssége, feladata:</strong> A felhasználói munkamenet kezelésére szolgáló osztály. Biztosítja, hogy a felhasználói munkamenet aktiválódjon a sikeres bejelentkezés után, és lejárjon a kijelentkezéskor. Gondoskodik a munkamenet adatainak biztonságos tárolásáról.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>aktív munkamenet (active_session) - a felhasználó munkamenetének aktív állapota
+            <ul>
+                <li>private boolean active_session</li>
+            </ul>
+        </li>
+        <li>munkamenet időkorlát (session_timeout) - az időkorlát, amely után a munkamenet lejár
+            <ul>
+                <li>private long session_timeout</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Kapcsolatok:</strong></p>
+    <ul>
+        <li>LoginHandler osztály (LoginHandler) - a bejelentkezés során aktiválódik</li>
+        <li>UserManager osztály (UserManager) - felhasználói fiók adataihoz kapcsolódik</li>
+    </ul>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void startSession(String user_id) - felhasználói munkamenet indítása</li>
+        <li>public void endSession() - munkamenet lezárása</li>
+        <li>public boolean checkSessionStatus() - a munkamenet állapotának ellenőrzése</li>
+    </ul>
+</div>
+
+<div>
+    <h2>4.2.63. TwoFactorAuthentication osztály (class: TwoFactorAuthentication)</h2>
+    <p><strong>Felelőssége, feladata:</strong> Kétfaktoros autentikációs folyamatokat biztosít a felhasználói fiók biztonságának növelésére. Lehetővé teszi a felhasználók számára, hogy további hitelesítési lépéseket tegyenek, például egy SMS-ben vagy alkalmazásban kapott kód megadásával.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>aktív kétfaktoros autentikáció (active_2fa) - jelzi, hogy a kétfaktoros autentikáció engedélyezve van-e
+            <ul>
+                <li>private boolean active_2fa</li>
+            </ul>
+        </li>
+        <li>kétfaktoros kód (two_factor_code) - a kétfaktoros autentikáció során használt kód
+            <ul>
+                <li>private String two_factor_code</li>
+            </ul>
+        </li>
+        <li>kétfaktoros hitelesítés állapota (2fa_status) - a kétfaktoros autentikáció sikerességi mutatója
+            <ul>
+                <li>private boolean 2fa_status</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Kapcsolatok:</strong></p>
+    <ul>
+        <li>LoginHandler osztály (LoginHandler) - a bejelentkezési folyamat során kapcsolódik</li>
+        <li>LoginSecurity osztály (LoginSecurity) - a felhasználói fiók biztonságát kezeli</li>
+    </ul>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public String generate2FACode() - kétfaktoros hitelesítő kód generálása</li>
+        <li>public boolean verify2FACode(String code) - a kétfaktoros kód ellenőrzése</li>
+        <li>public void enable2FA(String user_id) - kétfaktoros autentikáció engedélyezése</li>
+        <li>public void disable2FA(String user_id) - kétfaktoros autentikáció letiltása</li>
+    </ul>
+</div>
+
+<div>
+    <h2>4.2.64. UserActivityTracker osztály (class: UserActivityTracker)</h2>
+    <p><strong>Felelőssége, feladata:</strong> A felhasználók aktivitásának követése, mint edzés, étkezés, kihívások teljesítése. Az aktivitás alapján statisztikák készíthetők, amelyek segítenek a felhasználói előrehaladás mérésében és motiválják őket a céljaik elérésére.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>aktivitások listája (activity_list) - a felhasználók különböző aktivitásainak listája, mint edzés, étkezés, kihívások
+            <ul>
+                <li>private List<String> activity_list</li>
+            </ul>
+        </li>
+        <li>aktivitási statisztikák (activity_statistics) - az aktivitásokat összegző statisztikák (pl. edzések száma, elégetett kalóriák)
+            <ul>
+                <li>private Map<String, Integer> activity_statistics</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Kapcsolatok:</strong></p>
+    <ul>
+        <li>PerformanceStats osztály (PerformanceStats) - a felhasználó teljesítményét követi és tárolja</li>
+        <li>GamificationSystem osztály (GamificationSystem) - a felhasználói aktivitásokhoz jutalmazási rendszert kapcsol</li>
+    </ul>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void trackActivity(String activity) - egy új aktivitás rögzítése</li>
+        <li>public Map<String, Integer> generateActivityReport() - aktivitás statisztikák generálása</li>
+        <li>public void updateActivityStats() - aktivitási statisztikák frissítése</li>
+    </ul>
+</div>
+
+<div>
+    <h2>4.2.65. SocialInteractionManager osztály (class: SocialInteractionManager)</h2>
+    <p><strong>Felelőssége, feladata:</strong> A felhasználók közötti interakciókat és közösségi tevékenységeket kezeli, mint például a barátok meghívása, követés, üzenetküldés és közösségi posztok. Biztosítja a közösségi élményeket és interakciókat a felhasználók között.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>felhasználói interakciók (user_interactions) - a felhasználók közötti interakciók listája (pl. üzenetek, követések)
+            <ul>
+                <li>private List<String> user_interactions</li>
+            </ul>
+        </li>
+        <li>aktív barátok (active_friends) - a felhasználó aktív barátainak listája
+            <ul>
+                <li>private List<String> active_friends</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Kapcsolatok:</strong></p>
+    <ul>
+        <li>Hírcsatorna osztály (Feed) - közösségi aktivitások és posztok megjelenítése</li>
+        <li>Közösségi Poszt osztály (SocialPost) - közösségi bejegyzések létrehozása és kezelése</li>
+    </ul>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void sendMessageToUser(String receiver, String message) - üzenet küldése más felhasználónak</li>
+        <li>public void addFriend(String user_id) - barát hozzáadása</li>
+        <li>public void createSocialPost(String content) - közösségi poszt létrehozása</li>
+        <li>public void followUser(String user_id) - egy felhasználó követése</li>
+    </ul>
+</div>
+
+<div>
+    <h2>4.2.66. ActivityFeed osztály (class: ActivityFeed)</h2>
+    <p><strong>Felelőssége, feladata:</strong> Az aktivitásokat megjelenítő hírfolyam, amely tartalmazza a felhasználói interakciókat, eredményeket és közösségi posztokat. Az aktivitások megjelenítésére szolgál, lehetővé téve a felhasználók számára, hogy követni tudják mások előrehaladását és posztjait.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>feed elemek (feed_items) - a hírfolyamban megjelenő bejegyzések listája
+            <ul>
+                <li>private List<String> feed_items</li>
+            </ul>
+        </li>
+        <li>aktivitási típusok (activity_types) - az aktivitások típusai, amelyeket a feed tartalmazhat (pl. edzés, poszt, üzenet)
+            <ul>
+                <li>private List<String> activity_types</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Kapcsolatok:</strong></p>
+    <ul>
+        <li>Feed osztály (Feed) - a feed tartalmát szolgáltatja</li>
+        <li>SocialInteractionManager osztály (SocialInteractionManager) - interakciók és közösségi tevékenységek kezelése</li>
+    </ul>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void addFeedItem(String item) - új elem hozzáadása a hírfolyamhoz</li>
+        <li>public List<String> generateActivityFeed() - hírfolyam generálása felhasználói aktivitások alapján</li>
+        <li>public void displayFeed() - a hírfolyam megjelenítése</li>
+    </ul>
+</div>
+
+<div>
+    <h2>4.2.67. GroupChallengeManager osztály (class: GroupChallengeManager)</h2>
+    <p><strong>Felelőssége, feladata:</strong> Csoportos kihívások létrehozása és kezelése. A felhasználók csatlakozhatnak, kihívásokra jelentkezhetnek, és versenyezhetnek másokkal. A kihívások versenyt biztosítanak, hogy a felhasználók motiváltak maradjanak és előrehaladjanak céljaik elérésében.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>kihívások listája (challenges_list) - a rendszerben elérhető csoportos kihívások listája
+            <ul>
+                <li>private List<String> challenges_list</li>
+            </ul>
+        </li>
+        <li>aktív kihívások (active_challenges) - a felhasználók számára elérhető aktív kihívások
+            <ul>
+                <li>private List<String> active_challenges</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Kapcsolatok:</strong></p>
+    <ul>
+        <li>Kihívás osztály (Challenge) - kihívások adatainak kezelése</li>
+        <li>Közösségi Poszt osztály (SocialPost) - a kihívásokhoz kapcsolódó közösségi posztok kezelése</li>
+    </ul>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void createChallenge(String challenge_name, String challenge_description) - új kihívás létrehozása</li>
+        <li>public void joinChallenge(String challenge_id) - csatlakozás egy kihíváshoz</li>
+        <li>public void postChallengeResult(String challenge_id, String result) - eredmény közzététele a kihívásban</li>
+    </ul>
+</div>
+
+<div>
+    <h2>4.2.68. CommunityLeaderboard osztály (class: CommunityLeaderboard)</h2>
+    <p><strong>Felelőssége, feladata:</strong> Közösségi ranglista, amely a felhasználók versengését mutatja a kihívásokban és aktivitásokban. A ranglisták segítenek motiválni a felhasználókat, hogy jobban teljesítsenek a közösségi és versenyjellegű aktivitásokban.</p>
+    <p><strong>Attribútumok:</strong></p>
+    <ul>
+        <li>ranglista adatai (leaderboard_data) - a ranglistát alkotó adatok, mint a felhasználó neve és eredményei
+            <ul>
+                <li>private Map<String, Integer> leaderboard_data</li>
+            </ul>
+        </li>
+        <li>aktív versenyek (active_competitions) - a jelenleg futó versenyek és kihívások listája
+            <ul>
+                <li>private List<String> active_competitions</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Kapcsolatok:</strong></p>
+    <ul>
+        <li>Eredménytábla osztály (Leaderboard) - az egyéni és csoportos ranglisták megjelenítése</li>
+        <li>GroupChallengeManager osztály (GroupChallengeManager) - csoportos kihívások kezelése</li>
+    </ul>
+    <p><strong>Metódusok:</strong></p>
+    <ul>
+        <li>public void generateLeaderboard() - ranglista generálása a felhasználók aktivitása és eredményei alapján</li>
+        <li>public void updateLeaderboard(String user_id, Integer score) - ranglista frissítése egy felhasználó új eredményével</li>
+        <li>public void displayLeaderboard() - ranglista megjelenítése</li>
+    </ul>
+</div>
+
+<div>
+    <h2>4.2.69.LoginScreen Class (class: LoginScreen)</h2>
+    <p><strong>Responsibility:</strong> Displays the login screen, allowing users to log in or register. Users enter their login details or create a new account here.</p>
+    <h3>Attributes:</h3>
+    <ul>
+        <li><strong>login_fields</strong> - Map containing login fields (username, password).</li>
+        <li><strong>registration_button</strong> - Button directing to the registration process.</li>
+    </ul>
+    <h3>Relationships:</h3>
+    <ul>
+        <li><strong>LoginHandler</strong> - Manages the login process.</li>
+        <li><strong>AuthenticationService</strong> - Executes authentication processes.</li>
+    </ul>
+    <h3>Methods:</h3>
+    <ul>
+        <li><strong>displayLoginScreen()</strong> - Displays the login screen.</li>
+        <li><strong>onLoginButtonClick()</strong> - Handles login button click events.</li>
+        <li><strong>onRegisterButtonClick()</strong> - Handles registration button click events.</li>
+    </ul>
+</div>
+
+<div>
+    <h2>4.2.70. SplashScreen Class (class: SplashScreen)</h2>
+    <p><strong>Responsibility:</strong> Displays at application startup, showing the logo and necessary startup information. This screen allows users to wait while the application fully loads.</p>
+    <h3>Attributes:</h3>
+    <ul>
+        <li><strong>logo_display</strong> - The logo displayed on the splash screen.</li>
+        <li><strong>loading_animation</strong> - Animation symbolizing the application's loading process.</li>
+    </ul>
+    <h3>Relationships:</h3>
+    <ul>
+        <li>No direct relationships with other classes.</li>
+    </ul>
+    <h3>Methods:</h3>
+    <ul>
+        <li><strong>showSplashScreen()</strong> - Displays the splash screen.</li>
+        <li><strong>hideSplashScreen()</strong> - Hides the splash screen after the system has loaded.</li>
+    </ul>
+</div>
+
+<div>
+    <h2>4.2.71.HomeScreen Class (class: HomeScreen)</h2>
+    <p><strong>Responsibility:</strong> The main screen of the application, providing access to workout and diet modules, statistics, and community features. It offers quick access to core functionalities.</p>
+    <h3>Attributes:</h3>
+    <ul>
+        <li><strong>workout_and_diet_modules</strong> - Buttons or menu for workout and diet modules.</li>
+        <li><strong>statistics_display</strong> - Display for the user's performance and activities.</li>
+        <li><strong>feed_button</strong> - Button for displaying the community feed.</li>
+    </ul>
+    <h3>Relationships:</h3>
+    <ul>
+        <li><strong>WorkoutPlan</strong> - Handles workout programs.</li>
+        <li><strong>DietPlan</strong> - Manages diet plans.</li>
+        <li><strong>Feed</strong> - Displays community news.</li>
+        <li><strong>PerformanceStats</strong> - Displays statistical data.</li>
+    </ul>
+    <h3>Methods:</h3>
+    <ul>
+        <li><strong>displayHomeScreen()</strong> - Displays the main screen.</li>
+        <li><strong>onWorkoutButtonClick()</strong> - Access to workout programs.</li>
+        <li><strong>onDietButtonClick()</strong> - Access to diet information.</li>
+        <li><strong>onFeedButtonClick()</strong> - Displays community feed.</li>
+    </ul>
+</div>
+
+
+<div>
+    <h2>4.2.72. ProfileScreen Class (class: ProfileScreen)</h2>
+    <p><strong>Responsibility:</strong> Displays the user's profile, including previous performances, personal information, statistics, and settings. Presents user information in a clear and detailed manner.</p>
+    <h3>Attributes:</h3>
+    <ul>
+        <li><strong>user_information</strong> - The user's personal details (e.g., name, age, gender).</li>
+        <li><strong>performance_statistics</strong> - The user's previous performance results.</li>
+        <li><strong>settings_button</strong> - A button leading to the settings screen.</li>
+    </ul>
+    <h3>Relationships:</h3>
+    <ul>
+        <li><strong>UserManager</strong> - Handles user data management.</li>
+        <li><strong>PerformanceStats</strong> - Statistical data of user performances.</li>
+        <li><strong>UserSettings</strong> - Manages user settings.</li>
+    </ul>
+    <h3>Methods:</h3>
+    <ul>
+        <li><strong>displayProfileScreen()</strong> - Displays the user profile.</li>
+        <li><strong>onSettingsButtonClick()</strong> - Navigate to the settings screen.</li>
+        <li><strong>updateUserInformation()</strong> - Update user information.</li>
+    </ul>
+</div>
+
+<div>
+    <h2>4.2.73SettingsScreen Class (class: SettingsScreen)</h2>
+    <p><strong>Responsibility:</strong> Handles user settings where language, privacy, and notification preferences can be modified. Controls settings affecting the application's operation.</p>
+    <h3>Attributes:</h3>
+    <ul>
+        <li><strong>language_settings</strong> - User's language preferences setting.</li>
+        <li><strong>privacy_settings</strong> - User's privacy preferences setting.</li>
+        <li><strong>notification_settings</strong> - User's notification preferences setting.</li>
+    </ul>
+    <h3>Relationships:</h3>
+    <ul>
+        <li><strong>UserSettings</strong> - Stores and manages user settings.</li>
+        <li><strong>NotificationManager</strong> - Handles notification settings.</li>
+    </ul>
+    <h3>Methods:</h3>
+    <ul>
+        <li><strong>displaySettingsScreen()</strong> - Displays the settings screen.</li>
+        <li><strong>onLanguageChange()</strong> - Modifies language settings.</li>
+        <li><strong>onPrivacyChange()</strong> - Modifies privacy settings.</li>
+        <li><strong>onNotificationChange()</strong> - Modifies notification settings.</li>
+    </ul>
+</div>
+
+<div>
+    <h2>4.2.74. WorkoutScreen Class (class: WorkoutScreen)</h2>
+    <p><strong>Responsibility:</strong> Displays the screen during a workout, including current exercises, timers, and the user's progress. Provides tracking and motivation during workouts.</p>
+    <h3>Attributes:</h3>
+    <ul>
+        <li><strong>current_workouts</strong> - The user's current workout program and exercises.</li>
+        <li><strong>timer</strong> - The timer associated with the workout.</li>
+        <li><strong>workout_log</strong> - Tracking of the user's workout.</li>
+    </ul>
+    <h3>Relationships:</h3>
+    <ul>
+        <li><strong>WorkoutPlan</strong> - Displays workout plans.</li>
+        <li><strong>Timer</strong> - Manages workout timing.</li>
+        <li><strong>WorkoutLog</strong> - Tracks and logs the workout.</li>
+    </ul>
+    <h3>Methods:</h3>
+    <ul>
+        <li><strong>displayWorkoutScreen()</strong> - Displays the workout screen.</li>
+        <li><strong>startWorkoutTimer()</strong> - Starts the workout timer.</li>
+        <li><strong>logWorkoutProgress()</strong> - Logs workout progress.</li>
+        <li><strong>updateWorkoutStatus()</strong> - Updates the workout status.</li>
+    </ul>
+</div>
+
+
+    <h3 class="feladatcim">X. Képernyőtervek</h3>
+
+    <div class="screen">
+        <h2>LoginScreen</h2>
+        <p>A bejelentkezési képernyő, ahol a felhasználók bejelentkezhetnek vagy regisztrálhatnak az alkalmazásba. Az oldal tartalmazza a felhasználónév és jelszó mezőket, valamint az autentikációs lehetőségeket.</p>
+
+        <img src="loginscreen.png" alt="Loginscreen" class="responsive-container">
+    </div>
+
+    <div class="screen">
+        <h2>SplashScreen</h2>
+        <p>Az alkalmazás indításakor megjelenő képernyő, amely a márkát és az alkalmazás betöltését vizuálisan reprezentálja. Ez egy átmeneti képernyő, amely nem tartalmaz interaktív elemeket.</p>
+
+        <img src="Splashscreen.png" alt="Splashscreen" class="responsive-container">
+    </div>
+
+    <div class="screen">
+        <h2>HomeScreen</h2>
+        <p>Az alkalmazás fő képernyője, amely központi navigációs pontként szolgál, hozzáférést biztosít az edzés- és étrendmodulokhoz, statisztikákhoz és közösségi funkciókhoz, mint a hírcsatorna és a felhasználói teljesítmények.</p>
+
+        <img src="Homescreen.png" alt="Homescreen" class="responsive-container">
+    </div>
+
+    <div class="screen">
+        <h2>ProfileScreen</h2>
+        <p>A felhasználói profil oldala, amely tartalmazza az egyéni adatokat, a felhasználó eddigi teljesítményeit és statisztikáit, valamint lehetőséget biztosít a személyes beállítások módosítására.</p>
+    </div>
+
+    <div class="screen">
+        <h2>SettingsScreen</h2>
+        <p>A beállítások képernyője, ahol a felhasználók személyre szabhatják az alkalmazást. Itt módosíthatók a nyelvi preferenciák, az adatvédelmi beállítások és az értesítési preferenciák.</p>
+
+        <img src="Settingscreen.png" alt="Settings_screen" class="responsive-container">
+    </div>
+
+    <div class="screen">
+        <h2>WorkoutScreen</h2>
+        <p>Az edzés közbeni képernyő, amely az aktuális gyakorlatokat, időzítőket és a felhasználó előrehaladását mutatja. Segít a felhasználóknak nyomon követni edzéseiket és motiválja őket a céljaik elérésére.</p>
+
+        <img src="Workout_screen.drawio.png" alt="Splashscreen" class="responsive-container">
+    </div>
+
+    
+    
 <h3 class="feladatcim">5. Bázisosztályok keresése</h3>
 
 
